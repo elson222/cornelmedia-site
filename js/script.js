@@ -90,7 +90,7 @@ if (contactForm) {
         }
         
         // Create mailto link (since we're using static hosting)
-        const mailtoLink = `mailto:hello@cornel.media?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
+        const mailtoLink = `mailto:cornelmedia@icloud.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
         
         // Open default email client
         window.location.href = mailtoLink;
