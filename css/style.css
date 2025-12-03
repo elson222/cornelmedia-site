@@ -1,14 +1,18 @@
 /* Global Reset & Variables */
 :root {
-    --color-bg: #050505; /* Deep Black */
-    --color-text: #f0f0f0; /* Off-white */
-    --color-gold: #D4AF37; /* Luxury Gold */
-    --color-cream: #FFFDD0; /* Cream */
+    --color-bg: #050505;
+    /* Deep Black */
+    --color-text: #f0f0f0;
+    /* Off-white */
+    --color-gold: #D4AF37;
+    /* Luxury Gold */
+    --color-cream: #FFFDD0;
+    /* Cream */
     --color-grey: #333333;
-    
+
     --font-heading: 'Playfair Display', serif;
     --font-body: 'Inter', sans-serif;
-    
+
     --spacing-container: 1200px;
     --spacing-section: 100px;
 }
@@ -27,7 +31,12 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: var(--font-heading);
     color: var(--color-gold);
     font-weight: 400;
@@ -54,10 +63,24 @@ img {
 }
 
 /* Typography */
-h1 { font-size: 3.5rem; line-height: 1.2; }
-h2 { font-size: 2.5rem; margin-bottom: 2rem; }
-h3 { font-size: 1.5rem; }
-p { margin-bottom: 1.5rem; color: #cccccc; }
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+p {
+    margin-bottom: 1.5rem;
+    color: #cccccc;
+}
 
 /* Layout Utilities */
 .container {
@@ -75,14 +98,32 @@ p { margin-bottom: 1.5rem; color: #cccccc; }
     gap: 2rem;
 }
 
-.grid-2 { grid-template-columns: repeat(2, 1fr); }
-.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
 
 @media (max-width: 768px) {
-    .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    .section { padding: 60px 0; }
+
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
 }
 
 /* Buttons */
@@ -137,6 +178,18 @@ nav {
     color: var(--color-gold);
     font-weight: bold;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 40px;
+    width: auto;
+}
+
+footer .logo-img {
+    height: 60px;
+    margin-bottom: 10px;
 }
 
 .nav-links {
@@ -170,11 +223,11 @@ nav {
         text-align: center;
         border-bottom: 1px solid var(--color-gold);
     }
-    
+
     .nav-links.active {
         display: flex;
     }
-    
+
     .mobile-menu-btn {
         display: block;
     }
