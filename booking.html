@@ -144,179 +144,28 @@
                 </div>
             </div>
             <div class="copyright">
-                <!DOCTYPE html>
-                <html lang="en">
+                &copy; 2025 Cornel Media Productions All rights reserved.
+            </div>
+        </div>
+    </footer>
 
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Book Now | Cornel Media Productions</title>
-                    <link rel="preconnect" href="https://fonts.googleapis.com">
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
-                        rel="stylesheet">
-                    <link rel="stylesheet" href="css/style.css">
-                    <style>
-                        .form-group {
-                            margin-bottom: 20px;
-                        }
+    <script src="js/main.js"></script>
+    <script>
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const type = document.getElementById('type').value;
+            const date = document.getElementById('date').value;
+            const location = document.getElementById('location').value;
+            const budget = document.getElementById('budget').value;
+            const message = document.getElementById('message').value;
 
-                        label {
-                            display: block;
-                            margin-bottom: 8px;
-                            color: var(--color-gold);
-                            font-family: var(--font-heading);
-                        }
+            const text = `*Booking Inquiry*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Event Type:* ${type}%0A*Date:* ${date}%0A*Location:* ${location}%0A*Budget:* ${budget}%0A%0A*Details:*%0A${message}`;
 
-                        input,
-                        select,
-                        textarea {
-                            width: 100%;
-                            padding: 12px;
-                            background-color: #111;
-                            border: 1px solid #333;
-                            color: #fff;
-                            font-family: var(--font-body);
-                        }
+            window.open(`https://wa.me/233500020168?text=${text}`, '_blank');
+        }
+    </script>
+</body>
 
-                        input:focus,
-                        select:focus,
-                        textarea:focus {
-                            outline: none;
-                            border-color: var(--color-gold);
-                        }
-                    </style>
-                </head>
-
-                <body>
-
-                    <!-- Header -->
-                    <header>
-                        <div class="container">
-                            <nav>
-                                <a href="index.html" class="logo"><img src="assets/images/logo.png"
-                                        alt="Cornel Media Productions" class="logo-img"></a>
-                                <div class="mobile-menu-btn">☰</div>
-                                <div class="nav-links">
-                                    <a href="index.html">Home</a>
-                                    <a href="about.html">About</a>
-                                    <a href="services.html">Services</a>
-                                    <a href="portfolio.html">Portfolio</a>
-                                    <a href="pricing.html">Pricing</a>
-                                    <a href="contact.html">Contact</a>
-                                    <a href="booking.html" class="btn btn-primary" style="padding: 8px 20px;">Book
-                                        Now</a>
-                                </div>
-                            </nav>
-                        </div>
-                    </header>
-
-                    <!-- Page Header -->
-                    <section class="section" style="padding-top: 150px; background-color: #0a0a0a;">
-                        <div class="container">
-                            <h1 style="text-align: center;">Book Your Session</h1>
-                            <p style="text-align: center; max-width: 600px; margin: 0 auto;">Tell us about your project,
-                                and let's
-                                create something amazing together.</p>
-                        </div>
-                    </section>
-
-                    <!-- Booking Form -->
-                    <section class="section">
-                        <div class="container">
-                            <div style="max-width: 600px; margin: 0 auto;">
-                                <form id="bookingForm" onsubmit="sendWhatsApp(event)">
-                                    <div class="form-group">
-                                        <label for="name">Full Name</label>
-                                        <input type="text" id="name" name="name" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email Address</label>
-                                        <input type="email" id="email" name="email" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="type">Event / Project Type</label>
-                                        <select id="type" name="type">
-                                            <option value="Wedding">Wedding</option>
-                                            <option value="Corporate Event">Corporate Event</option>
-                                            <option value="Commercial">Commercial / Brand Shoot</option>
-                                            <option value="Portrait">Portrait Session</option>
-                                            <option value="Music Video">Music Video</option>
-                                            <option value="Live Stream">Live Stream</option>
-                                            <option value="Drone Service">Drone Service</option>
-                                            <option value="Other">Other</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="date">Date</label>
-                                        <input type="date" id="date" name="date">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="location">Location</label>
-                                        <input type="text" id="location" name="location"
-                                            placeholder="City, Venue, etc.">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="budget">Estimated Budget</label>
-                                        <select id="budget" name="budget">
-                                            <option value="Standard">Standard</option>
-                                            <option value="Premium">Premium</option>
-                                            <option value="Luxury">Luxury</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="message">Additional Details</label>
-                                        <textarea id="message" name="message" rows="5"
-                                            placeholder="Tell us more about your vision..."></textarea>
-                                    </div>
-                                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send
-                                        Inquiry</button>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Footer -->
-                    <footer>
-                        <div class="container">
-                            <div class="footer-content">
-                                <div class="logo" style="margin-bottom: 20px;"><img src="assets/images/logo.png"
-                                        alt="Cornel Media Productions" class="logo-img"></div>
-                                <p>Modern. Minimal. Luxury.</p>
-                                <div class="social-links">
-                    <a href="https://www.instagram.com/quaysoncornel">Instagram</a>
-                    <a href="https://x.com/cornelmedia_">X</a>
-                    <a href="https://www.tiktok.com/@cornelmedia">TikTok</a>
-                    <a href="https://youtube.com/@quaysoncornel">YouTube</a>
-                    <a href="#">WhatsApp</a>
-                    <a href="mailto:cornelmedia@icloud.com">Email</a>
-                </div>
-                            </div>
-                            <div class="copyright">
-                                &copy; 2025 Cornel Media Productions All rights reserved.
-                            </div>
-                        </div>
-                    </footer>
-
-                    <script src="js/main.js"></script>
-                    <script>
-                        function sendWhatsApp(e) {
-                            e.preventDefault();
-                            const name = document.getElementById('name').value;
-                            const email = document.getElementById('email').value;
-                            const type = document.getElementById('type').value;
-                            const date = document.getElementById('date').value;
-                            const location = document.getElementById('location').value;
-                            const budget = document.getElementById('budget').value;
-                            const message = document.getElementById('message').value;
-
-                            const text = `*Booking Inquiry*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Event Type:* ${type}%0A*Date:* ${date}%0A*Location:* ${location}%0A*Budget:* ${budget}%0A%0A*Details:*%0A${message}`;
-
-                            window.open(`https://wa.me/233500020168?text=${text}`, '_blank');
-                        }
-                    </script>
-                </body>
-
-                </html>
-
+</html>
