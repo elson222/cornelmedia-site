@@ -20,7 +20,7 @@
             display: block;
             margin-bottom: 8px;
             color: var(--color-gold);
-            font-size: 0.9rem;
+            font-family: var(--font-heading);
         }
 
         input,
@@ -32,8 +32,6 @@
             border: 1px solid #333;
             color: #fff;
             font-family: var(--font-body);
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
         }
 
         input:focus,
@@ -41,22 +39,6 @@
         textarea:focus {
             outline: none;
             border-color: var(--color-gold);
-        }
-
-        .checkbox-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .checkbox-item input {
-            width: auto;
         }
     </style>
 </head>
@@ -94,9 +76,9 @@
 
     <!-- Booking Form -->
     <section class="section">
-        <div class="container" style="max-width: 800px;">
-            <form name="booking" method="POST" data-netlify="true" netlify>
-                <div class="grid grid-2">
+        <div class="container">
+            <div style="max-width: 600px; margin: 0 auto;">
+                <form id="bookingForm" onsubmit="sendEmail(event)">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" required>
@@ -105,69 +87,43 @@
                         <label for="email">Email Address</label>
                         <input type="email" id="email" name="email" required>
                     </div>
-                </div>
-
-                <div class="grid grid-2">
                     <div class="form-group">
-                        <label for="event-type">Event Type</label>
-                        <select id="event-type" name="event-type">
-                            <option value="wedding">Wedding</option>
-                            <option value="graduation">Graduation</option>
-                            <option value="corporate">Corporate Event</option>
-                            <option value="commercial">Commercial/Ad</option>
-                            <option value="portrait">Portrait Session</option>
-                            <option value="other">Other</option>
+                        <label for="type">Event / Project Type</label>
+                        <select id="type" name="type">
+                            <option value="Wedding">Wedding</option>
+                            <option value="Corporate Event">Corporate Event</option>
+                            <option value="Commercial">Commercial / Brand Shoot</option>
+                            <option value="Portrait">Portrait Session</option>
+                            <option value="Music Video">Music Video</option>
+                            <option value="Live Stream">Live Stream</option>
+                            <option value="Drone Service">Drone Service</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="date">Event Date</label>
+                        <label for="date">Date</label>
                         <input type="date" id="date" name="date">
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="location">Location (City/Venue)</label>
-                    <input type="text" id="location" name="location">
-                </div>
-
-                <div class="form-group">
-                    <label>Services Needed</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="videography" name="services" value="videography">
-                            <label for="videography" style="margin: 0; color: #ccc;">Videography</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="photography" name="services" value="photography">
-                            <label for="photography" style="margin: 0; color: #ccc;">Photography</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="editing" name="services" value="editing">
-                            <label for="editing" style="margin: 0; color: #ccc;">Video Editing</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="drone" name="services" value="drone">
-                            <label for="drone" style="margin: 0; color: #ccc;">Drone Coverage</label>
-                        </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="City, Venue, etc.">
                     </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="budget">Estimated Budget (GHS)</label>
-                    <input type="text" id="budget" name="budget" placeholder="e.g. 2000 - 5000">
-                </div>
-
-                <div class="form-group">
-                    <label for="notes">Additional Details</label>
-                    <textarea id="notes" name="notes" rows="5"
-                        placeholder="Tell us more about your vision..."></textarea>
-                </div>
-
-                <div style="text-align: center; margin-top: 40px;">
-                    <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 300px;">Submit
-                        Inquiry</button>
-                </div>
-            </form>
+                    <div class="form-group">
+                        <label for="budget">Estimated Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="Standard">Standard</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Luxury">Luxury</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Tell us more about your vision..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -191,6 +147,23 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        function sendEmail(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const type = document.getElementById('type').value;
+            const date = document.getElementById('date').value;
+            const location = document.getElementById('location').value;
+            const budget = document.getElementById('budget').value;
+            const message = document.getElementById('message').value;
+
+            const subject = `Booking Inquiry: ${type} - ${name}`;
+            const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0AEvent Type: ${type}%0D%0ADate: ${date}%0D%0ALocation: ${location}%0D%0ABudget: ${budget}%0D%0A%0D%0ADetails:%0D%0A${message}`;
+
+            window.location.href = `mailto:cornelmedia@icloud.com?subject=${subject}&body=${body}`;
+        }
+    </script>
 </body>
 
 </html>
