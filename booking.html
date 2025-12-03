@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now | Cornel Creative Co.</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--color-gold);
+            font-size: 0.9rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: #111;
+            border: 1px solid #333;
+            color: #fff;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--color-gold);
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-item input {
+            width: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">CORNEL CREATIVE CO.</a>
+                <div class="mobile-menu-btn">☰</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="booking.html" class="btn btn-primary" style="padding: 8px 20px;">Book Now</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="section" style="padding-top: 150px; background-color: #0a0a0a;">
+        <div class="container">
+            <h1 style="text-align: center;">Book Your Session</h1>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto;">Tell us about your project, and let's
+                create something amazing together.</p>
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="section">
+        <div class="container" style="max-width: 800px;">
+            <form name="booking" method="POST" data-netlify="true" netlify>
+                <div class="grid grid-2">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+
+                <div class="grid grid-2">
+                    <div class="form-group">
+                        <label for="event-type">Event Type</label>
+                        <select id="event-type" name="event-type">
+                            <option value="wedding">Wedding</option>
+                            <option value="graduation">Graduation</option>
+                            <option value="corporate">Corporate Event</option>
+                            <option value="commercial">Commercial/Ad</option>
+                            <option value="portrait">Portrait Session</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Event Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location (City/Venue)</label>
+                    <input type="text" id="location" name="location">
+                </div>
+
+                <div class="form-group">
+                    <label>Services Needed</label>
+                    <div class="checkbox-group">
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="videography" name="services" value="videography">
+                            <label for="videography" style="margin: 0; color: #ccc;">Videography</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="photography" name="services" value="photography">
+                            <label for="photography" style="margin: 0; color: #ccc;">Photography</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="editing" name="services" value="editing">
+                            <label for="editing" style="margin: 0; color: #ccc;">Video Editing</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" id="drone" name="services" value="drone">
+                            <label for="drone" style="margin: 0; color: #ccc;">Drone Coverage</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="budget">Estimated Budget (GHS)</label>
+                    <input type="text" id="budget" name="budget" placeholder="e.g. 2000 - 5000">
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Details</label>
+                    <textarea id="notes" name="notes" rows="5"
+                        placeholder="Tell us more about your vision..."></textarea>
+                </div>
+
+                <div style="text-align: center; margin-top: 40px;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 300px;">Submit
+                        Inquiry</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo" style="margin-bottom: 20px;">CORNEL CREATIVE CO.</div>
+                <p>Modern. Minimal. Luxury.</p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">WhatsApp</a>
+                    <a href="mailto:cornelmedia@icloud.com">Email</a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Cornel Creative Co. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
