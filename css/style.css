@@ -20,7 +20,8 @@
 }
 
 body {
-    background-color: var(--color-bg);
+    background-color: transparent;
+    /* Changed to transparent to show fixed background */
     color: var(--color-text);
     font-family: var(--font-body);
     line-height: 1.6;
@@ -228,6 +229,17 @@ nav {
     color: var(--color-gold);
 }
 
+.hero-brand-name {
+    font-family: var(--font-heading);
+    font-size: 6rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+
 .hero-tags {
     margin-top: 40px;
     display: flex;
@@ -318,6 +330,10 @@ nav {
 
     h2 {
         font-size: 2.5rem;
+    }
+
+    .hero-brand-name {
+        font-size: 3rem;
     }
 
     .grid-2,
