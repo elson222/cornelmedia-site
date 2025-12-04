@@ -32,6 +32,13 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Global Image Reset - Responsive Fix */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 /* Background Animation */
 .background-gradient {
     position: fixed;
@@ -296,18 +303,36 @@ nav {
     gap: 40px;
 }
 
+/* Navigation Link Animation */
 .nav-links a {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
     opacity: 0.7;
-    transition: opacity 0.3s;
+    transition: all 0.3s ease;
     color: #fff;
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--color-gold);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover {
     opacity: 1;
     color: var(--color-gold);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Hero Section */
@@ -425,7 +450,7 @@ nav {
     color: var(--color-grey);
 }
 
-/* Buttons */
+/* Button Animation */
 .btn {
     display: inline-block;
     padding: 15px 40px;
@@ -434,12 +459,33 @@ nav {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
-    transition: all 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-decoration: none;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--color-gold);
+    transition: width 0.3s ease;
+    z-index: -1;
 }
 
 .btn:hover {
-    background: var(--color-gold);
     color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+}
+
+.btn:hover::before {
+    width: 100%;
 }
 
 .btn-primary {
@@ -451,6 +497,11 @@ nav {
     background: transparent;
     color: var(--color-gold);
 }
+
+.btn-primary:hover::before {
+    background: transparent;
+}
+
 
 /* Circular 3D Gallery */
 .gallery-section {
@@ -503,6 +554,18 @@ nav {
     margin: 0;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
+
+/* Card Hover Animation (Generic) */
+.gallery-card,
+.grid>div {
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.gallery-card:hover,
+.grid>div:hover {
+    transform: translateY(-5px);
+}
+
 
 /* Mobile Adjustments for Gallery */
 @media (max-width: 768px) {
