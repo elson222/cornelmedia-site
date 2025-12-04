@@ -34,17 +34,17 @@ window.addEventListener('scroll', () => {
 const tl = gsap.timeline({ delay: 0.5 });
 
 tl.from(".hero-subtitle", {
-    y: 30,
+    y: 20,
     opacity: 0,
-    duration: 1,
+    duration: 1.2,
     ease: "power3.out"
 })
     .from(".brand-highlight", {
-        y: 50,
+        scale: 0, /* Start from nothing */
         opacity: 0,
-        scale: 0.9,
-        duration: 1.2,
-        ease: "back.out(1.7)", /* Bouncy/Sleek effect */
+        duration: 1.5,
+        ease: "elastic.out(1, 0.5)", /* Water drop pop effect */
+        transformOrigin: "center center"
     }, "-=0.8")
     .from(".brand-secondary", {
         y: 20,
@@ -55,10 +55,10 @@ tl.from(".hero-subtitle", {
     .from(".hero-title", {
         y: 30,
         opacity: 0,
-        duration: 1,
-        ease: "power2.out"
+        duration: 1.2,
+        ease: "power3.out"
     }, "-=0.8")
-    .from(".hero-tags span", {
+    .from(".hero-tags a", {
         y: 20,
         opacity: 0,
         duration: 0.8,
@@ -66,15 +66,16 @@ tl.from(".hero-subtitle", {
         ease: "power2.out"
     }, "-=0.8");
 
-// Section Fade Up
+// Section Fade Up (Apple-style smooth reveal)
 gsap.utils.toArray('.section').forEach(section => {
     gsap.from(section, {
         opacity: 0,
-        y: 50,
-        duration: 1,
+        y: 80, /* Larger movement */
+        duration: 1.5, /* Slower duration */
+        ease: "power3.out", /* Smooth ease */
         scrollTrigger: {
             trigger: section,
-            start: "top 80%",
+            start: "top 85%", /* Trigger slightly later */
             end: "top 20%",
             toggleActions: "play none none reverse"
         }

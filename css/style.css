@@ -264,36 +264,46 @@ nav {
 
 .hero-brand-name {
     font-family: var(--font-heading);
-    line-height: 1;
+    line-height: 0.9;
+    /* Tighter line height */
     margin-bottom: 20px;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
+    width: fit-content;
+    /* Shrink to fit content */
+    max-width: 100%;
+    /* Prevent overflow */
 }
 
 .brand-highlight {
     font-size: clamp(3.5rem, 9vw, 7rem);
-    /* Larger */
     font-weight: 700;
     color: #fff;
     letter-spacing: -2px;
-    word-spacing: 0.4em;
-    /* Added space between Cornel and Media */
+    word-spacing: 0.2em;
+    /* Slightly reduced word spacing */
     background: linear-gradient(45deg, #fff, #e0e0e0);
-    /* Subtle gradient */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: block;
+    /* Ensure it takes up space */
 }
 
 .brand-secondary {
-    font-size: clamp(2rem, 5vw, 4rem);
-    /* Smaller */
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    /* Adjusted size */
     font-weight: 400;
     color: var(--color-grey);
-    /* Lighter color */
-    letter-spacing: 4px;
-    /* Spaced out */
-    margin-top: 10px;
+    margin-top: 0px;
+    /* Removed top margin for tighter spacing */
+    display: block;
+    text-align: justify;
+    /* Justify text */
+    text-align-last: justify;
+    /* Force justification on last line */
+    width: 100%;
+    /* Fill the container width (defined by Cornel Media) */
 }
 
 .hero-title {
