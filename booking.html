@@ -50,49 +50,106 @@
         textarea:focus {
             outline: none;
             border-color: var(--color-gold);
-            <label for="email">Email Address</label><input type="email" id="email" name="email" required></div><div class="form-group"><label for="type">Event / Project Type</label><select id="type" name="type"><option value="Wedding">Wedding</option><option value="Corporate Event">Corporate Event</option><option value="Commercial">Commercial / Brand Shoot</option><option value="Portrait">Portrait Session</option><option value="Music Video">Music Video</option><option value="Live Stream">Live Stream</option><option value="Drone Service">Drone Service</option><option value="Other">Other</option></select></div><div class="form-group"><label for="date">Date</label><input type="date" id="date" name="date"></div><div class="form-group"><label for="location">Location</label><input type="text" id="location" name="location" placeholder="City, Venue, etc."></div><div class="form-group"><label for="budget">Estimated Budget</label><select id="budget" name="budget"><option value="Standard">Standard</option><option value="Premium">Premium</option><option value="Luxury">Luxury</option></select></div><div class="form-group"><label for="message">Additional Details</label><textarea id="message" name="message" rows="5"
+        }
+    </style>
+</head>
 
-            placeholder="Tell us more about your vision..."></textarea></div><button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button></form></div></div></section>< !-- Footer --><script src="js/main.js"></script><script>function sendWhatsApp(e) {
-                e.preventDefault();
-                const name=document.getElementById('name').value;
-                const email=document.getElementById('email').value;
-                const type=document.getElementById('type').value;
-                const date=document.getElementById('date').value;
-                const location=document.getElementById('location').value;
-                const budget=document.getElementById('budget').value;
-                const message=document.getElementById('message').value;
+<body>
 
-                const text=`*Booking Inquiry*%0A%0A*Name:* $ {
-                    name
-                }
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
+                        style="height: 100px;">
+                </a>
+                <div class="mobile-menu-btn">☰</div>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="portfolio.html">Portfolio</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="booking.html" class="btn btn-primary" style="padding: 8px 20px;">Book Now</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-                %0A*Email:* $ {
-                    email
-                }
+    <section class="section">
+        <div class="container">
+            <div class="form-container" style="max-width: 600px; margin: 0 auto;">
+                <h2 style="text-align: center; margin-bottom: 40px;">Book Your Session</h2>
+                <form id="bookingForm" onsubmit="sendWhatsApp(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">Event / Project Type</label>
+                        <select id="type" name="type">
+                            <option value="Wedding">Wedding</option>
+                            <option value="Corporate Event">Corporate Event</option>
+                            <option value="Commercial">Commercial / Brand Shoot</option>
+                            <option value="Portrait">Portrait Session</option>
+                            <option value="Music Video">Music Video</option>
+                            <option value="Live Stream">Live Stream</option>
+                            <option value="Drone Service">Drone Service</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date">
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" id="location" name="location" placeholder="City, Venue, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="budget">Estimated Budget</label>
+                        <select id="budget" name="budget">
+                            <option value="Standard">Standard</option>
+                            <option value="Premium">Premium</option>
+                            <option value="Luxury">Luxury</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Additional Details</label>
+                        <textarea id="message" name="message" rows="5"
+                            placeholder="Tell us more about your vision..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-                %0A*Event Type:* $ {
-                    type
-                }
+    <!-- Footer -->
 
-                %0A*Date:* $ {
-                    date
-                }
+    <script src="js/main.js"></script>
+    <script>
+        function sendWhatsApp(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const type = document.getElementById('type').value;
+            const date = document.getElementById('date').value;
+            const location = document.getElementById('location').value;
+            const budget = document.getElementById('budget').value;
+            const message = document.getElementById('message').value;
 
-                %0A*Location:* $ {
-                    location
-                }
+            const text = `*Booking Inquiry*%0A%0A*Name:* ${name}%0A*Email:* ${email}%0A*Event Type:* ${type}%0A*Date:* ${date}%0A*Location:* ${location}%0A*Budget:* ${budget}%0A%0A*Details:*%0A${message}`;
 
-                %0A*Budget:* $ {
-                    budget
-                }
+            window.open(`https://api.whatsapp.com/send?phone=233500020168&text=${text}`, '_blank');
+        }
+    </script>
+</body>
 
-                %0A%0A*Details:*%0A$ {
-                    message
-                }
-
-                `;
-
-                window.open(`https: //api.whatsapp.com/send?phone=233500020168&text=${text}`, '_blank');
-                }
-
-                </script> </body> </html>
+</html>
