@@ -53,6 +53,31 @@ document.addEventListener('mousemove', (e) => {
     }
 });
 
+// Hero Background Blur on Scroll
+gsap.to(".hero-bg", {
+    scrollTrigger: {
+        trigger: ".hero-section",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+    },
+    filter: "blur(10px)",
+    ease: "none"
+});
+
+// Hero Content Parallax
+gsap.to(".hero-content", {
+    scrollTrigger: {
+        trigger: ".hero-section",
+        start: "top top",
+        end: "bottom top",
+        scrub: true
+    },
+    y: 100,
+    opacity: 0,
+    ease: "none"
+});
+
 // Hero Text Animation
 const tl = gsap.timeline({ delay: 0.5 });
 
@@ -111,7 +136,6 @@ gsap.utils.toArray('.section, .hero-section').forEach(section => {
             }
         );
 
-        // Fade out when leaving (Book effect)
         // Fade out when leaving (Book effect)
         gsap.to(content, {
             opacity: 0,

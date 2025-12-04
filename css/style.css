@@ -649,29 +649,6 @@ nav {
 /* Circular 3D Gallery */
 .gallery-section {
     perspective: 2000px;
-    overflow: hidden;
-}
-
-.gallery-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform-style: preserve-3d;
-}
-
-.gallery-wheel {
-    position: relative;
-    width: 600px;
-    height: 600px;
-    transform-style: preserve-3d;
-    will-change: transform;
-}
-
-.gallery-card {
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
