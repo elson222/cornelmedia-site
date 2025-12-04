@@ -11,6 +11,9 @@
 
     --spacing-container: 1400px;
     --spacing-section: 120px;
+
+    color-scheme: dark;
+    /* Enforce dark mode in browser UI */
 }
 
 * {
@@ -46,10 +49,10 @@ body {
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.8;
-    /* High opacity for visibility */
-    animation: float 10s infinite alternate ease-in-out;
+    animation: float 3s infinite alternate ease-in-out;
+    /* Very Fast (3s) */
     mix-blend-mode: screen;
-    /* Ensures colors pop on dark bg */
+    will-change: transform;
 }
 
 .blob-1 {
@@ -58,8 +61,8 @@ body {
     width: 60vw;
     height: 60vw;
     background: radial-gradient(circle, rgba(0, 100, 255, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
-    /* Bright Blue */
-    animation-duration: 15s;
+    animation-duration: 4s;
+    /* Very Fast */
 }
 
 .blob-2 {
@@ -68,9 +71,9 @@ body {
     width: 70vw;
     height: 70vw;
     background: radial-gradient(circle, rgba(0, 50, 150, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
-    /* Deep Blue */
-    animation-duration: 20s;
-    animation-delay: -5s;
+    animation-duration: 5s;
+    /* Very Fast */
+    animation-delay: -1s;
 }
 
 .blob-3 {
@@ -79,9 +82,9 @@ body {
     width: 50vw;
     height: 50vw;
     background: radial-gradient(circle, rgba(200, 255, 255, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
-    /* White/Cyan */
-    animation-duration: 12s;
-    animation-delay: -8s;
+    animation-duration: 3.5s;
+    /* Very Fast */
+    animation-delay: -2s;
 }
 
 .noise-overlay {
@@ -100,12 +103,16 @@ body {
         transform: translate(0, 0) scale(1) rotate(0deg);
     }
 
-    50% {
-        transform: translate(50px, 30px) scale(1.1) rotate(5deg);
+    33% {
+        transform: translate(50px, -50px) scale(1.1) rotate(10deg);
+    }
+
+    66% {
+        transform: translate(-30px, 20px) scale(0.9) rotate(-5deg);
     }
 
     100% {
-        transform: translate(-20px, 50px) scale(0.95) rotate(-5deg);
+        transform: translate(20px, 60px) scale(1.05) rotate(5deg);
     }
 }
 
@@ -185,6 +192,20 @@ header {
     background: rgba(5, 5, 5, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    /* Initial State: Hidden */
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    pointer-events: none;
+    /* Prevent clicks when hidden */
+}
+
+header.scrolled {
+    /* Visible State after scroll */
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 nav {
@@ -243,13 +264,34 @@ nav {
 
 .hero-brand-name {
     font-family: var(--font-heading);
-    font-size: 6rem;
-    font-weight: 700;
-    color: #fff;
     line-height: 1;
     margin-bottom: 20px;
     text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-highlight {
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    /* Larger */
+    font-weight: 700;
+    color: #fff;
     letter-spacing: -2px;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    /* Subtle gradient */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-secondary {
+    font-size: clamp(2rem, 5vw, 4rem);
+    /* Smaller */
+    font-weight: 400;
+    color: var(--color-grey);
+    /* Lighter color */
+    letter-spacing: 4px;
+    /* Spaced out */
+    margin-top: 10px;
 }
 
 .hero-tags {
