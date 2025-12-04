@@ -277,6 +277,8 @@ nav {
     font-weight: 700;
     color: #fff;
     letter-spacing: -2px;
+    word-spacing: 0.4em;
+    /* Added space between Cornel and Media */
     background: linear-gradient(45deg, #fff, #e0e0e0);
     /* Subtle gradient */
     -webkit-background-clip: text;
@@ -294,19 +296,35 @@ nav {
     margin-top: 10px;
 }
 
+.hero-title {
+    font-size: 1.5rem !important;
+    /* Reduced size (was 2rem) */
+    margin-top: 20px;
+}
+
 .hero-tags {
     margin-top: 40px;
     display: flex;
     gap: 20px;
 }
 
-.hero-tags span {
+.hero-tags a {
     border: 1px solid rgba(255, 255, 255, 0.2);
     padding: 10px 20px;
     border-radius: 50px;
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-tags a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
 }
 
 /* Philosophy & Process */
