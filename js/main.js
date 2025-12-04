@@ -20,13 +20,36 @@ requestAnimationFrame(raf);
 // GSAP Animations
 gsap.registerPlugin(ScrollTrigger);
 
-// Header Scroll Effect
+// Smart Header (Hide on scroll down, show on scroll up/hover)
 const header = document.querySelector('header');
+let lastScrollY = window.scrollY;
+
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 50) {
+    const currentScrollY = window.scrollY;
+
+    // Add background when scrolled
+    if (currentScrollY > 50) {
         header.classList.add('scrolled');
     } else {
         header.classList.remove('scrolled');
+    }
+
+    // Hide/Show based on direction
+    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        // Scrolling Down -> Hide
+        header.classList.add('hidden');
+    } else {
+        // Scrolling Up -> Show
+        header.classList.remove('hidden');
+    }
+
+    lastScrollY = currentScrollY;
+});
+
+// Show header on mouse hover near top
+document.addEventListener('mousemove', (e) => {
+    if (e.clientY < 100) {
+        header.classList.remove('hidden');
     }
 });
 
@@ -66,38 +89,96 @@ tl.from(".hero-subtitle", {
         ease: "power2.out"
     }, "-=0.8");
 
-// Section Fade Up (Apple-style smooth reveal)
-gsap.utils.toArray('.section').forEach(section => {
-    gsap.from(section, {
-        opacity: 0,
-        y: 80, /* Larger movement */
-        duration: 1.5, /* Slower duration */
-        ease: "power3.out", /* Smooth ease */
+// Section Transitions (Book-style fade away)
+gsap.utils.toArray('.section, .hero-section').forEach(section => {
+    const content = section.querySelector('.container');
+
+    if (content) {
+        // Fade in when entering
+        gsap.fromTo(content,
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 1,
+                ease: "power3.out",
+                scrollTrigger: {
+                    trigger: section,
+                    start: "top 80%",
+                    end: "top 50%",
+                    toggleActions: "play none none reverse"
+                }
+            }
+        );
+
+        // Fade out when leaving (Book effect)
+        // Fade out when leaving (Book effect)
+        gsap.to(content, {
+            opacity: 0,
+            scale: 0.95,
+            y: -50,
+            scrollTrigger: {
+                trigger: section,
+                start: "top top",
+                end: "bottom top",
+                scrub: true
+            }
+        });
+    }
+});
+
+// Circular 3D Gallery
+const gallerySection = document.querySelector('.gallery-section');
+const galleryWheel = document.querySelector('.gallery-wheel');
+const cards = gsap.utils.toArray('.gallery-card');
+
+if (gallerySection && galleryWheel && cards.length) {
+    const numCards = cards.length;
+    const radius = 300; // Distance from center
+    const angleStep = 360 / numCards;
+
+    // Initial positioning of cards
+    cards.forEach((card, index) => {
+        const angle = index * angleStep;
+        gsap.set(card, {
+            rotationY: angle,
+            z: radius,
+            transformOrigin: "50% 50% -300px" // Center of rotation
+        });
+    });
+
+    // Rotate the wheel on scroll
+    gsap.to(galleryWheel, {
+        rotationY: -360, // Full rotation
+        ease: "none",
         scrollTrigger: {
-            trigger: section,
-            start: "top 85%", /* Trigger slightly later */
-            end: "top 20%",
-            toggleActions: "play none none reverse"
+            trigger: ".gallery-section",
+            start: "top bottom",
+            end: "bottom top",
+            scrub: 1,
+            // markers: true // Uncomment for debugging
         }
     });
-});
+}
 
 // Mobile Menu Toggle
 const mobileBtn = document.querySelector('.mobile-menu-btn');
 const navLinks = document.querySelector('.nav-links');
 
-mobileBtn.addEventListener('click', () => {
-    if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-    } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '80px';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = 'rgba(5, 5, 5, 0.95)';
-        navLinks.style.padding = '20px';
-        navLinks.style.textAlign = 'center';
-    }
-});
+if (mobileBtn && navLinks) {
+    mobileBtn.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+
+        // Toggle hamburger icon
+        const icon = mobileBtn.textContent.trim() === '☰' ? '✕' : '☰';
+        mobileBtn.textContent = icon;
+    });
+
+    // Close menu when clicking a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+            mobileBtn.textContent = '☰';
+        });
+    });
+}

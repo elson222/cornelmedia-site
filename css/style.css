@@ -264,20 +264,12 @@ header {
     background: rgba(5, 5, 5, 0.95);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-
-    /* Initial State: Hidden */
-    opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    pointer-events: none;
-    /* Prevent clicks when hidden */
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-header.scrolled {
-    /* Visible State after scroll */
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
+header.hidden {
+    transform: translateY(-100%);
+    /* Hide upwards */
 }
 
 nav {
@@ -336,16 +328,13 @@ nav {
 
 .hero-brand-name {
     font-family: var(--font-heading);
-    line-height: 0.9;
-    /* Tighter line height */
+    line-height: 1;
+    /* Reset line height */
     margin-bottom: 20px;
     text-transform: uppercase;
     display: flex;
     flex-direction: column;
-    width: fit-content;
-    /* Shrink to fit content */
-    max-width: 100%;
-    /* Prevent overflow */
+    /* Removed width constraints */
 }
 
 .brand-highlight {
@@ -354,27 +343,216 @@ nav {
     color: #fff;
     letter-spacing: -2px;
     word-spacing: 0.2em;
-    /* Slightly reduced word spacing */
     background: linear-gradient(45deg, #fff, #e0e0e0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    display: block;
-    /* Ensure it takes up space */
 }
 
 .brand-secondary {
     font-size: clamp(1.5rem, 4vw, 3rem);
-    /* Adjusted size */
     font-weight: 400;
     color: var(--color-grey);
-    margin-top: 0px;
-    /* Removed top margin for tighter spacing */
+    margin-top: 10px;
+    /* Restored margin */
+    display: block;
+    /* Reset to block */
+    letter-spacing: 4px;
+    /* Removed justification styles */
+}
+
+.hero-title {
+    font-size: 1.5rem !important;
+    /* Reduced size (was 2rem) */
+    margin-top: 20px;
+}
+
+.hero-tags {
+    margin-top: 40px;
     display: flex;
-    /* Flexbox for full justification */
-    justify-content: space-between;
-    /* Spread letters out */
+    gap: 20px;
+}
+
+.hero-tags a {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.hero-tags a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Philosophy & Process */
+.section-header {
+    margin-bottom: 60px;
+}
+
+.section-number {
+    display: block;
+    font-family: var(--font-body);
+    color: var(--color-gold);
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+}
+
+.stat-item {
+    margin-bottom: 30px;
+}
+
+.stat-number {
+    display: block;
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    color: #fff;
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-grey);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid var(--color-gold);
+    color: var(--color-gold);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    background: var(--color-gold);
+    color: #000;
+}
+
+.btn-primary {
+    background: var(--color-gold);
+    color: #000;
+}
+
+gap: 2rem;
+}
+
+/* Header */
+header {
+    padding: 15px 0;
+    position: fixed;
     width: 100%;
-    /* Fill the container width (defined by Cornel Media) */
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+header.hidden {
+    transform: translateY(-100%);
+    /* Hide upwards */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo-img {
+    height: 80px;
+    /* Restored size */
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    color: #fff;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+    color: var(--color-gold);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.hero-subtitle {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    color: var(--color-gold);
+}
+
+.hero-brand-name {
+    font-family: var(--font-heading);
+    line-height: 1;
+    /* Reset line height */
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    /* Removed width constraints */
+}
+
+.brand-highlight {
+    font-size: clamp(3.5rem, 9vw, 7rem);
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -2px;
+    word-spacing: 0.2em;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-secondary {
+    font-size: clamp(1.5rem, 4vw, 3rem);
+    font-weight: 400;
+    color: var(--color-grey);
+    margin-top: 10px;
+    /* Restored margin */
+    display: block;
+    /* Reset to block */
+    letter-spacing: 4px;
+    /* Removed justification styles */
 }
 
 .hero-title {
@@ -468,6 +646,93 @@ nav {
     color: var(--color-gold);
 }
 
+/* Circular 3D Gallery */
+.gallery-section {
+    perspective: 2000px;
+    overflow: hidden;
+}
+
+.gallery-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform-style: preserve-3d;
+}
+
+.gallery-wheel {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+.gallery-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transition: filter 0.3s;
+}
+
+.gallery-card:hover img {
+    filter: brightness(1);
+}
+
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.gallery-card:hover .card-overlay {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.card-overlay h3 {
+    font-size: 2rem;
+    color: #fff;
+    margin: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile Adjustments for Gallery */
+@media (max-width: 768px) {
+    .gallery-wheel {
+        width: 300px;
+        height: 400px;
+    }
+
+    .card-overlay h3 {
+        font-size: 1.5rem;
+    }
+}
+
 /* Mobile */
 .mobile-menu-btn {
     display: none;
@@ -489,21 +754,59 @@ nav {
         font-size: 3rem;
     }
 
+    .brand-highlight {
+        font-size: 2.2rem;
+    }
+
+    /* Further reduced to 2.2rem to fit */
+    .brand-secondary {
+        font-size: 1.1rem;
+    }
+
+    /* Adjusted proportional size */
     .grid-2,
     .grid-3 {
         grid-template-columns: 1fr;
         gap: 2rem;
     }
 
-    .nav-links {
-        display: none;
-    }
-
     .mobile-menu-btn {
         display: block;
+        z-index: 1001;
+        /* Ensure above overlay */
+        position: relative;
     }
 
     .logo-img {
         height: 60px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(5, 5, 5, 0.98);
+        backdrop-filter: blur(15px);
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transform: translateY(-100%);
+        /* Hidden by default */
+        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        transform: translateY(0);
+        /* Slide down */
+    }
+
+    .nav-links a {
+        font-size: 1.5rem;
+        opacity: 1;
     }
 }
