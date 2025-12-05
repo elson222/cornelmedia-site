@@ -200,6 +200,9 @@ nav {
 /* =========================================
    5. BUTTONS
    ========================================= */
+/* =========================================
+   5. BUTTONS
+   ========================================= */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -210,12 +213,15 @@ nav {
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
+    /* Increased weight */
     transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     position: relative;
     overflow: hidden;
     background: transparent;
     cursor: pointer;
+    text-decoration: none;
+    z-index: 1;
 }
 
 .btn::before {
@@ -231,7 +237,8 @@ nav {
 }
 
 .btn:hover {
-    color: var(--color-bg);
+    color: #000000;
+    /* Ensure black text on gold hover */
     border-color: var(--color-gold);
 }
 
@@ -241,11 +248,20 @@ nav {
 
 .btn-primary {
     background: var(--color-gold);
-    color: var(--color-bg);
+    color: #000000;
+    /* Force black for contrast */
 }
 
+/* Primary btn hover effect: slide to dark/transparent */
 .btn-primary::before {
     background: var(--color-bg);
+    /* Slide in dark background */
+}
+
+.btn-primary:hover {
+    color: var(--color-gold);
+    /* Gold text on dark background */
+    border-color: var(--color-gold);
 }
 
 .btn-primary:hover {
