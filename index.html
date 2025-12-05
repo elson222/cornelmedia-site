@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -27,38 +27,20 @@
     <meta property="og:title" content="Cornel Media Productions">
     <meta property="og:description" content="Premium Videography, Photography, and Creative Direction based in Ghana.">
     <meta property="og:image" content="https://cornel.media/assets/images/og-preview.png">
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Cornel Media Productions",
-      "image": "https://cornel.media/assets/images/logo.png",
-      "description": "Premium media production brand specializing in Videography, Photography, Live Streaming, and Drone Services.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ghana",
-        "addressCountry": "GH"
-      },
-      "url": "https://cornel.media",
-      "email": "cornelmedia@icloud.com",
-      "priceRange": "$$"
-    }
-    </script>
 </head>
 
-<body class="loading">
+<body>
 
     <!-- Header -->
-    <header>
+    <header id="main-header">
         <div class="container">
             <nav>
                 <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                        style="height: 100px;">
+                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
                 </a>
-                <div class="mobile-menu-btn">☰</div>
+                <div class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <div class="nav-links">
                     <a href="index.html" class="active">Home</a>
                     <a href="about.html">About</a>
@@ -66,32 +48,30 @@
                     <a href="portfolio.html">Portfolio</a>
                     <a href="pricing.html">Pricing</a>
                     <a href="contact.html">Contact</a>
-                    <a href="booking.html" class="btn btn-primary" style="padding: 8px 20px;">Book Now</a>
+                    <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero-section" style="position: relative; overflow: hidden;">
-        <div class="hero-bg"
-            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('assets/images/IMG_2701.JPG') no-repeat center center/cover; z-index: -1;">
-        </div>
+    <section class="hero-section">
+        <div class="hero-bg" style="background-image: url('assets/images/IMG_2701.JPG');"></div>
         <div class="container">
             <div class="hero-content">
-                <p class="hero-subtitle animate-text">Visual Stories</p>
-                <div class="hero-brand-name animate-text">
+                <span class="hero-subtitle">Visual Stories</span>
+                <div class="hero-brand-name">
                     <span class="brand-highlight">Cornel Media</span>
                     <span class="brand-secondary">Productions</span>
                 </div>
-                <h2 class="hero-title animate-text">
+                <h1 class="hero-title">
                     Visuals are good.<br>
                     <span class="text-gold">Stories are better.</span>
-                </h2>
-                <div class="hero-tags animate-text">
-                    <a href="services.html">Studio</a>
-                    <a href="portfolio.html">Urban</a>
-                    <a href="portfolio.html">Cinematic</a>
+                </h1>
+                <div class="hero-tags">
+                    <a href="services.html" class="tag">Studio</a>
+                    <a href="portfolio.html" class="tag">Urban</a>
+                    <a href="portfolio.html" class="tag">Cinematic</a>
                 </div>
             </div>
         </div>
@@ -104,33 +84,27 @@
                 <span class="section-number">01 / Philosophy</span>
                 <h2>Cinematic Precision</h2>
             </div>
-            <div class="grid grid-2" style="align-items: center;">
+            <div class="grid grid-2">
                 <div class="philosophy-text">
                     <p>Every frame is calculated. We treat videography not as documentation, but as
                         high-performance engineering.</p>
-                    <div style="margin-top: 30px; border-left: 2px solid var(--color-gold); padding-left: 20px;">
-                        <p style="font-style: italic; color: #ccc;">"Capturing the essence of the moment, one smile at a
-                            time."</p>
+                    <div class="quote-box">
+                        <p>"Capturing the essence of the moment, one smile at a time."</p>
                     </div>
                 </div>
-                <div class="philosophy-image" style="position: relative;">
-                    <div
-                        style="position: absolute; top: -20px; left: -20px; width: 100%; height: 100%; border: 1px solid var(--color-gold); z-index: -1;">
-                    </div>
-                    <img src="assets/images/IMG_4341.JPG" alt="Creative Portrait" loading="lazy"
-                        style="width: 100%; height: auto; display: block; filter: grayscale(20%) contrast(1.1);">
+                <div class="philosophy-image">
+                    <img src="assets/images/IMG_4341.JPG" alt="Creative Portrait" loading="lazy">
                 </div>
             </div>
+
             <div class="grid grid-2" style="margin-top: 50px;">
-                <div class="philosophy-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">4K</span>
-                        <span class="stat-label">Resolution</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">60fps</span>
-                        <span class="stat-label">Frame Rate</span>
-                    </div>
+                <div class="stat-item">
+                    <span class="stat-number">4K</span>
+                    <span class="stat-label">Resolution</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">60fps</span>
+                    <span class="stat-label">Frame Rate</span>
                 </div>
             </div>
         </div>
@@ -148,7 +122,7 @@
                     <p>From pre-production to the final cut, our workflow is fluid, adaptive, and relentlessly
                         efficient.</p>
                 </div>
-                <div class="process-stats">
+                <div class="grid grid-2"> <!-- Nested Grid -->
                     <div class="stat-item">
                         <span class="stat-number">48h</span>
                         <span class="stat-label">Turnaround</span>
@@ -162,8 +136,8 @@
         </div>
     </section>
 
-    <!-- Featured Works (Circular 3D Gallery) -->
-    <section class="section gallery-section" style="height: 100vh; overflow: hidden; position: relative;">
+    <!-- Featured Works -->
+    <section class="section gallery-section">
         <div class="container">
             <div class="section-header">
                 <span class="section-number">03 / Featured</span>
@@ -172,62 +146,46 @@
         </div>
 
         <div class="gallery-container">
-            <div class="gallery-wheel">
-                <!-- Card 1: Wedding -->
-                <div class="gallery-card">
-                    <img src="assets/images/IMG_3256.jpg" alt="Wedding" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Weddings</h3>
-                    </div>
+            <!-- Card 1: Wedding -->
+            <div class="gallery-card">
+                <img src="assets/images/IMG_3256.jpg" alt="Wedding" loading="lazy">
+                <div class="card-overlay">
+                    <h3>Weddings</h3>
                 </div>
-                <!-- Card 2: Creative -->
-                <div class="gallery-card">
-                    <img src="assets/images/IMG_4339.JPG" alt="Creative" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Creative</h3>
-                    </div>
+            </div>
+            <!-- Card 2: Creative -->
+            <div class="gallery-card">
+                <img src="assets/images/_MG_9516.jpg" alt="Creative" loading="lazy">
+                <div class="card-overlay">
+                    <h3>Creative</h3>
                 </div>
-                <!-- Card 3: Portrait -->
-                <div class="gallery-card">
-                    <img src="assets/images/IMG_4341.JPG" alt="Portrait" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Portrait</h3>
-                    </div>
+            </div>
+            <!-- Card 3: Portrait -->
+            <div class="gallery-card">
+                <img src="assets/images/IMG_4341.JPG" alt="Portrait" loading="lazy">
+                <div class="card-overlay">
+                    <h3>Portrait</h3>
                 </div>
-                <!-- Card 4: Retouching -->
-                <div class="gallery-card">
-                    <img src="assets/images/CD-TEASE-8.jpg" alt="Retouching" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Retouching</h3>
-                    </div>
+            </div>
+            <!-- Card 4: Retouching -->
+            <div class="gallery-card">
+                <img src="assets/images/CD-TEASE-8.jpg" alt="Retouching" loading="lazy">
+                <div class="card-overlay">
+                    <h3>Retouching</h3>
                 </div>
-                <!-- Card 5: Music Video -->
-                <div class="gallery-card">
-                    <img src="assets/images/videography.jpg" alt="Music Video" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Music</h3>
-                    </div>
+            </div>
+            <!-- Card 5: Music Video -->
+            <div class="gallery-card">
+                <img src="assets/images/IMG_4333.heic" alt="Music Video" loading="lazy">
+                <div class="card-overlay">
+                    <h3>Music</h3>
                 </div>
-                <!-- Card 6: Drone -->
-                <div class="gallery-card">
-                    <img src="assets/images/drone.jpg" alt="Drone" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Drone</h3>
-                    </div>
-                </div>
-                <!-- Card 7: Graduation -->
-                <div class="gallery-card">
-                    <img src="assets/images/_MG_8311-Recovered.jpg" alt="Graduation" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Graduation</h3>
-                    </div>
-                </div>
-                <!-- Card 8: Commercial -->
-                <div class="gallery-card">
-                    <img src="assets/images/saved.jpg" alt="Commercial" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Commercial</h3>
-                    </div>
+            </div>
+            <!-- Card 6: Drone -->
+            <div class="gallery-card">
+                <img src="assets/images/IMG_1180.JPG" alt="Drone" loading="lazy">
+                <div class="card-overlay">
+                    <h3>Drone</h3>
                 </div>
             </div>
         </div>
@@ -237,9 +195,8 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo" style="justify-content: center; margin-bottom: 20px;">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                        style="height: 100px;">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
                 </div>
                 <p>Crafting visual stories that resonate, inspire, and endure.</p>
                 <div class="social-links">
@@ -257,9 +214,18 @@
 
     <!-- Scripts -->
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
+    <script>
+        // Simple scroll listener for header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 
 </html>

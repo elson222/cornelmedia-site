@@ -27,14 +27,15 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header id="main-header">
         <div class="container">
             <nav>
                 <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                        style="height: 100px;">
+                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
                 </a>
-                <div class="mobile-menu-btn">☰</div>
+                <div class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <div class="nav-links">
                     <a href="index.html">Home</a>
                     <a href="about.html" class="active">About</a>
@@ -53,14 +54,20 @@
         <div class="container">
             <div class="grid grid-2">
                 <div>
-                    <h1 style="font-size: 3rem; margin-bottom: 20px;">About the Founder</h1>
-                    <p style="margin-bottom: 20px;">Cornel Media Productions is led by a visionary creative director
-                        passionate about storytelling through the lens. Based in Tarkwa, Ghana, we specialize in
-                        creating cinematic visuals that leave a lasting impression.</p>
-                    <p>With a focus on precision, emotion, and quality, Cornel Media Productions aims to be the leading
-                        media brand in Ghana, offering high-end services for weddings, corporate events, and personal
+                    <h1 style="font-size: 3rem; margin-bottom: 20px;">Cornelius Quayson</h1>
+                    <p class="text-gold"
+                        style="font-size: 1.2rem; margin-bottom: 20px; font-family: var(--font-heading);">Founder &
+                        Creative Director</p>
+                    <p style="margin-bottom: 20px;">Cornel Media Productions is the brainchild of Cornelius Quayson, a
+                        visionary creative director
+                        passionate about storytelling through the lens. Known widely as "Cornel", he specializes in
+                        creating cinematic visuals that capture raw emotion and leave a lasting impression.</p>
+                    <p>With a focus on precision, emotion, and quality, Cornel aims to position Cornel Media Productions
+                        as the leading
+                        media brand in Ghana, offering bespoke high-end services for weddings, corporate events, and
+                        personal
                         brands.</p>
-                    <a href="portfolio.html" class="btn" style="margin-top: 20px;">View Our Work</a>
+                    <a href="portfolio.html" class="btn" style="margin-top: 20px;">View My Work</a>
                 </div>
                 <div style="position: relative;">
                     <div
@@ -98,9 +105,8 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="logo" style="justify-content: center; margin-bottom: 20px;">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                        style="height: 100px;">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
                 </div>
                 <p>Crafting visual stories that resonate, inspire, and endure.</p>
                 <div class="social-links">
@@ -117,6 +123,19 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script>
+        // Simple scroll listener for header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (header) {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

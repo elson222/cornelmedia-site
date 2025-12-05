@@ -5,281 +5,161 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Cornel Media Productions</title>
+    <meta name="description" content="Explore our portfolio of cinematic videography and photography.">
+    <meta name="color-scheme" content="dark">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/logo.png">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cornel.media/portfolio.html">
-    <meta property="og:title" content="Portfolio | Cornel Media Productions">
-    <meta property="og:description" content="Premium Videography, Photography, and Creative Direction based in Ghana.">
-    <meta property="og:image" content="https://cornel.media/assets/images/og-preview.png">
 </head>
 
 <body>
 
     <!-- Header -->
-    <header>
+    <header id="main-header">
         <div class="container">
             <nav>
                 <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                        style="height: 100px;">
+                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
                 </a>
-                <div class="mobile-menu-btn">☰</div>
+                <div class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">
+                    <i class="fas fa-bars"></i>
+                </div>
                 <div class="nav-links">
-                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content:
-                    center; flex-direction: column; overflow: hidden;">
-                    <img src="assets/images/_MG_8311-Recovered.jpg" alt="Graduation Photography"
-                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                    <span style="color: #666; margin-bottom: 10px;">Graduation Shoot</span>
-                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="portfolio.html" class="active">Portfolio</a>
+                    <a href="pricing.html">Pricing</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="booking.html" class="btn btn-primary">Book Now</a>
                 </div>
-                <!-- Wedding / Event -->
-                <div
-                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                    <img src="assets/images/IMG_3256.jpg" alt="Wedding Photography"
-                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                    <span style="color: #666; margin-bottom: 10px;">Wedding Photography</span>
-                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
-                </div>
-                <!-- Creative / Portrait -->
-                <div
-                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                    <img src="assets/images/IMG_4339.JPG" alt="Creative Portrait"
-                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                    <span style="color: #666; margin-bottom: 10px;">Creative Portrait</span>
-                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
-                </div>
-                <!-- Saved / Other -->
-                <div
-                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                    <img src="assets/images/saved.jpg" alt="Featured Project"
-                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                    <span style="color: #666; margin-bottom: 10px;">Featured Project</span>
-                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
-                </div>
-                <!-- Music Video -->
-                <div
-                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                    <img src="assets/images/videography.jpg" alt="Music Video"
-                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                    <span style="color: #666; margin-bottom: 10px;">Music Video</span>
-                    <a href="https://youtube.com/@quaysoncornel" target="_blank"
-                        style="color: var(--color-gold); font-size: 0.9rem;">View on YouTube</a>
-                </div>
-                <!-- Drone -->
-                <div
-                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                    <img src="assets/images/drone.jpg" alt="Drone Shots"
-                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                    <span style="color: #666; margin-bottom: 10px;">Drone Shots</span>
-                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
-                </div>
+            </nav>
         </div>
+    </header>
 
-        <!-- Retouching Section -->
-        <div style="margin-top: 80px;">
-            <h2 style="text-align: center; margin-bottom: 30px;">High-End Retouching</h2>
-            <p style="text-align: center; color: #999; margin-bottom: 40px;">Professional retouching for
-                international clients.</p>
-            <div class="grid grid-4"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                <img src="assets/images/CD-TEASE-8.jpg" alt="Retouching Work"
-                    style="width: 100%; height: auto; border-radius: 4px;">
-                <!-- Add more CD-TEASE images here if available, currently only found CD-TEASE-8.jpg -->
+    <!-- Portfolio Header -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 60px;">
+        <div class="container text-center">
+            <span class="section-number">Our Work</span>
+            <h1>Selected Projects</h1>
+            <p style="color: var(--color-text-secondary); max-width: 600px; margin: 20px auto;">
+                A collection of our finest moments, captured with precision and passion.
+            </p>
+        </div>
+    </section>
+
+    <!-- Portfolio Grid -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="grid grid-3">
+                <!-- Project 1 -->
+                <div class="gallery-card">
+                    <img src="assets/images/_MG_8311-Recovered.jpg" alt="Graduation Photography" loading="lazy">
+                    <div class="card-overlay">
+                        <h3>Graduation</h3>
+                    </div>
+                </div>
+                <!-- Project 2 -->
+                <div class="gallery-card">
+                    <img src="assets/images/IMG_3256.jpg" alt="Wedding Photography" loading="lazy">
+                    <div class="card-overlay">
+                        <h3>Wedding</h3>
+                    </div>
+                </div>
+                <!-- Project 3 -->
+                <div class="gallery-card">
+                    <img src="assets/images/_MG_9516.jpg" alt="Creative Portrait" loading="lazy">
+                    <div class="card-overlay">
+                        <h3>Creative</h3>
+                    </div>
+                </div>
+                <!-- Project 4 -->
+                <div class="gallery-card">
+                    <img src="assets/images/saved.jpg" alt="Featured" loading="lazy">
+                    <div class="card-overlay">
+                        <h3>Featured</h3>
+                    </div>
+                </div>
+                <!-- Project 5 -->
+                <div class="gallery-card">
+                    <img src="assets/images/IMG_4333.heic" alt="Music Video" loading="lazy">
+                    <div class="card-overlay">
+                        <h3>Music Video</h3>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="gallery-card">
+                    <img src="assets/images/IMG_1180.JPG" alt="Drone" loading="lazy">
+                    <div class="card-overlay">
+                        <h3>Drone</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Retouching Highlight -->
+            <div class="section-header" style="margin-top: 100px; text-align: center;">
+                <span class="section-number">Detail Work</span>
+                <h2>High-End Retouching</h2>
+            </div>
+            <div class="grid grid-2">
+                <div class="gallery-card" style="height: 600px;">
+                    <img src="assets/images/CD-TEASE-8.jpg" alt="Retouching Work" style="object-position: top;">
+                    <div class="card-overlay">
+                        <h3>Beauty Retouch</h3>
+                    </div>
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: center;">
+                    <h3 style="margin-bottom: 20px;">Flawless Execution</h3>
+                    <p style="color: var(--color-text-secondary); margin-bottom: 20px;">
+                        Our post-production process is where the magic happens. We spend hours refining skin tones,
+                        color grading, and ensuring every pixel meets our high standards.
+                    </p>
+                    <a href="contact.html" class="btn">Request Service</a>
+                </div>
             </div>
         </div>
+    </section>
 
-        </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="logo" style="justify-content: center; margin-bottom: 20px;">
-                        <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                            style="height: 100px;">
-                    </div>
-                    <p>Crafting visual stories that resonate, inspire, and endure.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/quaysoncornel" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com/cornel_media" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://youtube.com/@quaysoncornel" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
                 </div>
-                <!DOCTYPE html>
-                <html lang="en">
+                <p>Crafting visual stories that resonate, inspire, and endure.</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="https://twitter.com/cornel_media" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://youtube.com/@quaysoncornel" target="_blank"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2025 Cornel Media. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
-                <head>
-                    <meta charset="UTF-8">
-                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                    <title>Portfolio | Cornel Media Productions</title>
-                    <link rel="preconnect" href="https://fonts.googleapis.com">
-                    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-                    <link
-                        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
-                        rel="stylesheet">
-                    <link rel="stylesheet" href="css/style.css">
-                    <link rel="stylesheet"
-                        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Scripts -->
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // Simple scroll listener for header
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
 
-                    <!-- Favicon -->
-                    <link rel="icon" type="image/png" href="assets/images/logo.png">
-
-                    <!-- Open Graph / Social Media -->
-                    <meta property="og:type" content="website">
-                    <meta property="og:url" content="https://cornel.media/portfolio.html">
-                    <meta property="og:title" content="Portfolio | Cornel Media Productions">
-                    <meta property="og:description"
-                        content="Premium Videography, Photography, and Creative Direction based in Ghana.">
-                    <meta property="og:image" content="https://cornel.media/assets/images/og-preview.png">
-                </head>
-
-                <body>
-
-                    <!-- Header -->
-                    <header>
-                        <div class="container">
-                            <nav>
-                                <a href="index.html" class="logo">
-                                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                                        style="height: 100px;">
-                                </a>
-                                <div class="mobile-menu-btn">☰</div>
-                                <div class="nav-links">
-                                    <a href="index.html">Home</a>
-                                    <a href="about.html">About</a>
-                                    <a href="services.html">Services</a>
-                                    <a href="portfolio.html" class="active">Portfolio</a>
-                                    <a href="pricing.html">Pricing</a>
-                                    <a href="contact.html">Contact</a>
-                                    <iframe src="https://www.youtube.com/embed/7A--jzxDxUE"
-                                        style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                        allowfullscreen>
-                                    </iframe>
-                                </div>
-                            </nav>
-                        </div>
-                    </header>
-
-                    <section class="portfolio-content">
-                        <div class="container">
-                            <h2 style="text-align: center; margin-bottom: 30px;">Recent Projects</h2>
-                            <div class="grid grid-3">
-                                <!-- Graduation / Portrait -->
-                                <div
-                                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                                    <img src="assets/images/_MG_8311-Recovered.jpg" alt="Graduation Photography"
-                                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                                    <span style="color: #666; margin-bottom: 10px;">Graduation Shoot</span>
-                                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
-                                </div>
-                                <!-- Wedding / Event -->
-                                <div
-                                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                                    <img src="assets/images/IMG_3256.jpg" alt="Wedding Photography"
-                                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                                    <span style="color: #666; margin-bottom: 10px;">Wedding Photography</span>
-                                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
-                                </div>
-                                <!-- Creative / Portrait -->
-                                <div
-                                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                                    <img src="assets/images/IMG_4339.JPG" alt="Creative Portrait"
-                                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                                    <span style="color: #666; margin-bottom: 10px;">Creative Portrait</span>
-                                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
-                                </div>
-                                <!-- Saved / Other -->
-                                <div
-                                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                                    <img src="assets/images/saved.jpg" alt="Featured Project"
-                                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                                    <span style="color: #666; margin-bottom: 10px;">Featured Project</span>
-                                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
-                                </div>
-                                <!-- Music Video -->
-                                <div
-                                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                                    <img src="assets/images/videography.jpg" alt="Music Video"
-                                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                                    <span style="color: #666; margin-bottom: 10px;">Music Video</span>
-                                    <a href="https://youtube.com/@quaysoncornel" target="_blank"
-                                        style="color: var(--color-gold); font-size: 0.9rem;">View on YouTube</a>
-                                </div>
-                                <!-- Drone -->
-                                <div
-                                    style="background-color: #222; height: 300px; display: flex; align-items: center; justify-content: center; flex-direction: column; overflow: hidden;">
-                                    <img src="assets/images/drone.jpg" alt="Drone Shots"
-                                        style="width: 100%; height: 200px; object-fit: cover; margin-bottom: 10px;">
-                                    <span style="color: #666; margin-bottom: 10px;">Drone Shots</span>
-                                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                                        style="color: var(--color-gold); font-size: 0.9rem;">View on Instagram</a>
-                                </div>
-                            </div>
-
-                            <!-- Retouching Section -->
-                            <div style="margin-top: 80px;">
-                                <h2 style="text-align: center; margin-bottom: 30px;">High-End Retouching</h2>
-                                <p style="text-align: center; color: #999; margin-bottom: 40px;">Professional retouching
-                                    for
-                                    international clients.</p>
-                                <div class="grid grid-4"
-                                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-                                    <img src="assets/images/CD-TEASE-8.jpg" alt="Retouching Work"
-                                        style="width: 100%; height: auto; border-radius: 4px;">
-                                    <!-- Add more CD-TEASE images here if available, currently only found CD-TEASE-8.jpg -->
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-
-                    <!-- Footer -->
-                    <footer>
-                        <div class="container">
-                            <div class="footer-content">
-                                <div class="logo" style="justify-content: center; margin-bottom: 20px;">
-                                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                                        style="height: 100px;">
-                                </div>
-                                <p>Crafting visual stories that resonate, inspire, and endure.</p>
-                                <div class="social-links">
-                                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"><i
-                                            class="fab fa-instagram"></i></a>
-                                    <a href="https://twitter.com/cornel_media" target="_blank"><i
-                                            class="fab fa-twitter"></i></a>
-                                    <a href="https://youtube.com/@quaysoncornel" target="_blank"><i
-                                            class="fab fa-youtube"></i></a>
-                                </div>
-                            </div>
-                            <div class="copyright">
-                                &copy; 2025 Cornel Media. All rights reserved.
-                            </div>
-                        </div>
-                    </footer>
-
-                    <script src="js/main.js"></script>
-                </body>
-
-                </html>
+</html>
