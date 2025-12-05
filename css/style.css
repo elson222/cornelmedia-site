@@ -325,6 +325,8 @@ nav {
 
 .brand-highlight {
     display: block;
+    font-family: var(--font-heading);
+    /* Cinematic font */
     font-size: 5rem;
     font-weight: 700;
     line-height: 1;
@@ -336,9 +338,12 @@ nav {
 
 .brand-secondary {
     display: block;
+    font-family: var(--font-heading);
+    /* Cinematic font */
     font-size: 2rem;
     color: var(--color-text-secondary);
-    font-weight: 300;
+    font-weight: 400;
+    /* Adjusted for Playfair */
     letter-spacing: 2px;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.6s;
