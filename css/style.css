@@ -248,7 +248,7 @@ nav {
 
 .btn-primary {
     background: var(--color-gold);
-    color: #000000;
+    color: #000000 !important;
     /* Force black for contrast */
 }
 
