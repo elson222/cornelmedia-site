@@ -39,161 +39,7 @@ img {
     display: block;
 }
 
-/* Background Animation */
-.background-gradient {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    overflow: hidden;
-    background: #050505;
-}
-
-.gradient-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    opacity: 0.8;
-    animation: float 4s infinite alternate ease-in-out;
-    /* Fast base speed */
-    mix-blend-mode: screen;
-    will-change: transform;
-}
-
-.blob-1 {
-    top: -10%;
-    left: -10%;
-    width: 60vw;
-    height: 60vw;
-    background: radial-gradient(circle, rgba(0, 100, 255, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
-    animation-duration: 5s;
-    animation-name: float-cycle-1;
-    /* Custom cycle */
-}
-
-.blob-2 {
-    bottom: -10%;
-    right: -10%;
-    width: 70vw;
-    height: 70vw;
-    background: radial-gradient(circle, rgba(0, 50, 150, 0.8) 0%, rgba(0, 0, 0, 0) 70%);
-    animation-duration: 6s;
-    animation-delay: -2s;
-    animation-name: float-cycle-2;
-    /* Custom cycle */
-}
-
-.blob-3 {
-    top: 40%;
-    left: 40%;
-    width: 50vw;
-    height: 50vw;
-    background: radial-gradient(circle, rgba(200, 255, 255, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
-    animation-duration: 4.5s;
-    animation-delay: -4s;
-    animation-name: float-cycle-3;
-    /* Custom cycle */
-}
-
-/* Gold Blob */
-.blob-gold {
-    top: 20%;
-    right: 20%;
-    width: 40vw;
-    height: 40vw;
-    background: radial-gradient(circle, rgba(212, 175, 55, 0.6) 0%, rgba(0, 0, 0, 0) 70%);
-    animation-duration: 7s;
-    animation-delay: -1s;
-    animation-name: float-cycle-gold;
-    /* Custom cycle */
-    opacity: 0.6;
-}
-
-.noise-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAA5OTkAAABMTExERERmZmYzMzNmZmYAAAC4J06DAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfmBwYQKjD787s3AAAAH0lEQVQ4y2NgQAX8DIoM2AigJYzYCNB4I4yqKKuqCAAA804C1Yy2+t0AAAAASUVORK5CYII=');
-    opacity: 0.04;
-    pointer-events: none;
-}
-
-/* Complex Animation Cycles */
-@keyframes float-cycle-1 {
-    0% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-
-    25% {
-        transform: translate(50px, -30px) scale(1.1) rotate(10deg);
-    }
-
-    50% {
-        transform: translate(-20px, 40px) scale(0.9) rotate(-5deg);
-    }
-
-    75% {
-        transform: translate(30px, -50px) scale(1.05) rotate(15deg);
-    }
-
-    100% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-}
-
-@keyframes float-cycle-2 {
-    0% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-
-    33% {
-        transform: translate(-40px, 50px) scale(1.1) rotate(-10deg);
-    }
-
-    66% {
-        transform: translate(30px, -20px) scale(0.9) rotate(5deg);
-    }
-
-    100% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-}
-
-@keyframes float-cycle-3 {
-    0% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-
-    50% {
-        transform: translate(60px, 60px) scale(1.2) rotate(20deg);
-    }
-
-    100% {
-        transform: translate(0, 0) scale(1) rotate(0deg);
-    }
-}
-
-@keyframes float-cycle-gold {
-    0% {
-        transform: translate(0, 0) scale(1);
-    }
-
-    33% {
-        transform: translate(-30px, -30px) scale(1.1);
-    }
-
-    66% {
-        transform: translate(20px, 40px) scale(0.9);
-    }
-
-    100% {
-        transform: translate(0, 0) scale(1);
-    }
-}
+/* Background Animation Removed */
 
 /* Typography */
 h1,
@@ -238,62 +84,6 @@ p {
 .container {
     max-width: var(--spacing-container);
     margin: 0 auto;
-    padding: 0 40px;
-}
-
-.section {
-    padding: var(--spacing-section) 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.grid {
-    display: grid;
-    gap: 4rem;
-}
-
-.grid-2 {
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-}
-
-.grid-3 {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-/* Header */
-header {
-    padding: 15px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    background: rgba(5, 5, 5, 0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s ease, background-color 0.3s ease;
-}
-
-header.hidden {
-    transform: translateY(-100%);
-    /* Hide upwards */
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.logo-img {
-    height: 80px;
-    /* Restored size */
     width: auto;
     object-fit: contain;
 }
@@ -618,9 +408,9 @@ nav {
 
     .mobile-menu-btn {
         display: block;
-        z-index: 1001;
-        /* Ensure above overlay */
+        z-index: 2000;
         position: relative;
+        font-size: 2rem;
     }
 
     .logo-img {
@@ -643,7 +433,7 @@ nav {
         transform: translateY(-100%);
         /* Hidden by default */
         transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        z-index: 1000;
+        z-index: 1500;
     }
 
     .nav-links.active {
