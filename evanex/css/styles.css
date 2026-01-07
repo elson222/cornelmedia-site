@@ -193,6 +193,8 @@ a {
     border: none;
     cursor: pointer;
     line-height: 1;
+    margin: 0 auto;
+    /* Ensures centering if max-width is applied */
 }
 
 /* Ensure Icon has no extra spacing triggers */
@@ -220,6 +222,8 @@ a {
     width: 100%;
     border: 2px solid var(--primary);
     line-height: 1;
+    margin: 0 auto;
+    /* Ensures centering if max-width is applied */
 }
 
 @media (min-width: 768px) {
@@ -231,6 +235,8 @@ a {
         font-size: 16px;
         /* Restore size on desktop */
         padding: 16px 20px;
+        margin: 0;
+        /* Reset auto margin on desktop if needed, or keep it */
     }
 }
 
