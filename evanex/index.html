@@ -5,15 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evanex Pharmacy | Reliable Healthcare in Agona Nkwanta</title>
-    <meta name="description"
-        content="Trusted Pharmacy, Laboratory, and Scan Center in Agona Nkwanta. Call us today for reliable healthcare services.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- GA4 Tag -->
+    <!-- GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -25,156 +23,126 @@
 
 <body>
 
-    <!-- Header -->
+    <!-- 8. NAVIGATION POLISH -->
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="Evanex Logo">
-                    Evanex
-                </a>
-                <div class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <!-- Navigation -->
-                <div class="nav-menu">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-            </nav>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Evanex Logo">
+                Evanex
+            </a>
+            <!-- Simple Mobile Menu Toggle Hook (kept simple) -->
+            <div class="hamburger" onclick="document.querySelector('.nav-mobile').classList.toggle('hidden')">
+                <i class="fas fa-bars" style="font-size: 24px; color: var(--primary);"></i>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+        <!-- Mobile Menu Container (Hidden by default via CSS in real app, simplistic here) -->
+        <div class="nav-mobile hidden"
+            style="display:none; padding:16px; background:white; position:absolute; width:100%; border-bottom:1px solid #e2e8f0;">
+            <a href="index.html" style="display:block; padding:12px;">Home</a>
+            <a href="about.html" style="display:block; padding:12px;">About</a>
+            <a href="services.html" style="display:block; padding:12px;">Services</a>
+            <a href="contact.html" style="display:block; padding:12px;">Contact</a>
         </div>
+        <script>
+            document.querySelector('.hamburger').onclick = function () {
+                const nav = document.querySelector('.nav-mobile');
+                nav.style.display = nav.style.display === 'none' ? 'block' : 'none';
+            }
+        </script>
     </header>
 
-    <!-- Hero Section -->
+    <!-- 4. HERO SYSTEM -->
     <section class="hero">
-        <div class="container fade-in">
-            <div class="hero-content-box">
-                <h1>Evanex Pharmacy, Laboratory & Scan Center</h1>
-                <p class="mb-lg">Trusted healthcare services in Agona Nkwanta</p>
-                <div class="hero-actions">
-                    <a href="tel:0531423368" class="btn btn-primary btn-full">
-                        <i class="fas fa-phone-alt" style="margin-right:8px;"></i> Call Evanex Pharmacy
-                    </a>
-                    <a href="contact.html" class="btn btn-secondary btn-full">
-                        <i class="fas fa-calendar-check" style="margin-right:8px;"></i> Book Appointment
-                    </a>
-                </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in">
+            <h1>Evanex Pharmacy, Laboratory & Scan Center</h1>
+            <p>Trusted professional healthcare in Agona Nkwanta. Your health is our priority.</p>
+            <div style="display: flex; flex-direction: column; gap: 16px;">
+                <a href="tel:0531423368" class="cta-primary">📞 Call Evanex Now</a>
+                <a href="contact.html" class="cta-secondary">📅 Book Appointment</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Overview -->
-    <section class="fade-in delay-1">
+    <!-- 5. CARD SYSTEM -->
+    <section class="section">
         <div class="container">
-            <h2 class="text-center mb-lg">Our Core Services</h2>
-            <div class="grid grid-3">
-                <!-- Pharmacy Card -->
+            <h2 class="text-center mb-8 fade-in">Our Core Services</h2>
+            <div class="card-grid fade-in delay-1">
+                <!-- Pharmacy -->
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-pills"></i></div>
                     <h3>Pharmacy</h3>
-                    <p>Wide range of prescription and OTC medications with expert counseling.</p>
-                    <a href="services.html" class="btn btn-secondary" style="margin-top:auto; width:100%">View
-                        Services</a>
+                    <p>Prescription dispensing, OTC medications, and expert counseling.</p>
+                    <a href="services.html" style="color:var(--primary); font-weight:600;">Learn More →</a>
                 </div>
-                <!-- Lab Card -->
+                <!-- Laboratory -->
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-flask"></i></div>
                     <h3>Laboratory</h3>
-                    <p>Accurate diagnostic testing with quick turnaround times.</p>
-                    <a href="contact.html" class="btn btn-secondary" style="margin-top:auto; width:100%">Call to
-                        Book</a>
+                    <p>Comprehensive diagnostic testing with accurate, fast results.</p>
+                    <a href="contact.html" style="color:var(--primary); font-weight:600;">Book Test →</a>
                 </div>
-                <!-- Scan Card -->
+                <!-- Scan -->
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-radiation"></i></div>
                     <h3>Scan Center</h3>
-                    <p>Professional ultrasound imaging and digital reporting.</p>
-                    <a href="contact.html" class="btn btn-secondary" style="margin-top:auto; width:100%">Book Scan</a>
+                    <p>Advanced ultrasound and imaging services for clear diagnosis.</p>
+                    <a href="contact.html" style="color:var(--primary); font-weight:600;">Book Scan →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Evanex (Trust Points) -->
-    <section style="background: var(--surface);">
+    <!-- TRUST SECTION -->
+    <section class="section" style="background: var(--primary-soft);">
         <div class="container">
-            <h2 class="text-center mb-lg">Why Choose Evanex?</h2>
-            <div class="grid grid-3">
-                <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-user-md"></i></div>
-                    <h3>Professional Care</h3>
-                    <p>Licensed pharmacists and technicians dedicated to your health.</p>
+            <h2 class="text-center mb-8 fade-in">Why Choose Evanex?</h2>
+            <div class="card-grid fade-in delay-2">
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon"><i class="fas fa-user-md"></i></div>
+                    <h3>Expert Staff</h3>
+                    <p>Licensed pharmacists and technicians.</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-check-circle"></i></div>
-                    <h3>Reliable Diagnostics</h3>
-                    <p>Modern equipment ensuring accurate lab and scan results.</p>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Reliable Results</h3>
+                    <p>Modern equipment for accuracy.</p>
                 </div>
-                <div class="trust-item">
-                    <div class="trust-icon"><i class="fas fa-hands-helping"></i></div>
-                    <h3>Community Trust</h3>
-                    <p>Servicing Agona Nkwanta with integrity and compassion.</p>
+                <div class="card" style="text-align:center;">
+                    <div class="card-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Community Care</h3>
+                    <p>Serving Agona Nkwanta with heart.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Location & Access -->
-    <section>
-        <div class="container text-center">
+    <!-- LOCATION PREVIEW -->
+    <section class="section">
+        <div class="container text-center fade-in">
             <h2>Visit Us Today</h2>
-            <p>We are conveniently located to serve you.</p>
-            <div class="grid grid-2" style="text-align: left; max-width: 800px; margin: 0 auto;">
-                <div class="card">
-                    <h3><i class="fas fa-map-marker-alt" style="color:var(--primary); margin-right:8px;"></i> Location
-                    </h3>
-                    <p>Opposite Ahantaman Rural Bank<br>Agona Nkwanta, Western Region</p>
-                </div>
-                <div class="card">
-                    <h3><i class="far fa-clock" style="color:var(--primary); margin-right:8px;"></i> Hours</h3>
-                    <p>Monday - Sunday<br>7:00 AM - 11:00 PM</p>
-                </div>
-            </div>
-            <div style="margin-top: var(--space-lg);">
-                <a href="tel:0531423368" class="btn btn-primary btn-full" style="max-width: 300px;">
-                    <i class="fas fa-phone-alt" style="margin-right:8px;"></i> Call 053 142 3368
-                </a>
-            </div>
+            <p>Opposite Ahantaman Rural Bank, Agona Nkwanta</p>
+            <a href="contact.html" class="cta-primary" style="max-width:300px; margin-top:24px;">Get Directions</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3>Evanex Pharmacy</h3>
-                    <p>Your partner in health and wellness.</p>
-                </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <a href="index.html" class="footer-link">Home</a>
-                    <a href="services.html" class="footer-link">Services</a>
-                    <a href="contact.html" class="footer-link">Contact</a>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <a href="tel:0531423368" class="footer-link"><i class="fas fa-phone"></i> 053 142 3368</a>
-                    <span class="footer-link"><i class="fas fa-map-marker-alt"></i> Agona Nkwanta</span>
-                </div>
-            </div>
-            <div class="text-center"
-                style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--border);">
-                <p>&copy; 2025 Evanex Pharmacy, Laboratory & Scan Center.</p>
-            </div>
+        <div class="container text-center">
+            <p class="mb-8"><strong>Evanex Pharmacy, Laboratory & Scan Center</strong><br>Agona Nkwanta, Western Region
+            </p>
+            <p>&copy; 2025 Evanex. All Rights Reserved.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
+    <!-- Phone Tracker -->
     <script>
-        // Simple Phone Tracker
         document.querySelectorAll('a[href^="tel:"]').forEach(link => {
             link.addEventListener('click', () => {
                 gtag('event', 'phone_click', { event_category: 'conversion', event_label: 'phone_call' });

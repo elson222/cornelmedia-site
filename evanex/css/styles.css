@@ -1,65 +1,205 @@
+/* EVANEX — PROFESSIONAL HEALTHCARE DESIGN SYSTEM (v1) */
+
 :root {
-    /* Brand Colors */
-    --primary: #00557E;
-    --primary-dark: #003E5C;
-    --accent: #00A99D;
-    --bg-color: #FFFFFF;
-    --surface: #F8FAFC;
-    --text-main: #111827;
-    --text-body: #4B5563;
-    --border: #E5E7EB;
-
-    /* Spacing */
-    --space-sm: 16px;
-    --space-md: 24px;
-    --space-lg: 32px;
-    /* Card/Grid Gap */
-    --space-section: 60px;
-    /* Mobile Section Padding */
-
-    /* Typography */
-    --font-stack: 'Inter', system-ui, -apple-system, sans-serif;
+    /* 1. COLOR SYSTEM (CALM, MEDICAL, TRUSTED) */
+    --primary: #0f766e;
+    /* Evanex green (controlled) */
+    --primary-soft: #e6f4f2;
+    /* Light medical background */
+    --accent: #134e4a;
+    /* Darker green for text */
+    --white: #ffffff;
+    --bg-light: #f8fafc;
+    /* Soft off-white */
+    --text-main: #0f172a;
+    /* Almost black */
+    --text-muted: #475569;
+    /* Secondary text */
+    --border-soft: #e2e8f0;
 }
 
-@media (min-width: 768px) {
-    :root {
-        --space-section: 80px;
-        /* Desktop Section Padding */
-    }
-}
-
-/* Base Reset */
-* {
-    box-sizing: border-box;
+/* 2. TYPOGRAPHY SYSTEM (APPLE-LEVEL CLARITY) */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
+    color: var(--text-main);
+    background: var(--bg-light);
+    line-height: 1.6;
     margin: 0;
     padding: 0;
-}
-
-body {
-    font-family: var(--font-stack);
-    background: var(--bg-color);
-    color: var(--text-body);
-    font-size: 16px;
-    line-height: 1.6;
     -webkit-font-smoothing: antialiased;
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(16px);
+h1 {
+    font-size: clamp(28px, 5vw, 44px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+p {
+    font-size: 16px;
+    color: var(--text-muted);
+    max-width: 65ch;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+
+/* 3. LAYOUT SYSTEM (SPACING FIX) */
+.section {
+    padding: 64px 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 4. HERO SYSTEM (FIXES THE WHITE BLOCK ISSUE) */
+.hero {
+    position: relative;
+    min-height: 90vh;
+    /* Changed to vh for immersive feel */
+    background: url("../images/hero.jpg") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(15, 118, 110, 0.55),
+            rgba(15, 118, 110, 0.65));
+}
+
+.hero-content {
+    position: relative;
+    background: rgba(255, 255, 255, 0.85);
+    /* Slightly higher opacity for readability */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 16px;
+    padding: 32px;
+    max-width: 520px;
+    margin-left: 16px;
+    /* Mobile margin */
+    margin-right: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        margin-left: auto;
+        margin-right: auto;
+        /* Or keep left aligned if preferred, but auto/auto centers it nicely if max-width set */
+        margin-left: 10%;
+        /* Offset for desktop */
+    }
+}
+
+
+/* 5. CARD SYSTEM (SERVICES, ABOUT, TRUST) */
+.card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid var(--border-soft);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.card-grid {
+    display: grid;
+    gap: 24px;
+}
+
+@media (min-width: 768px) {
+    .card-grid {
+        grid-template-columns: repeat(3, 1fr);
     }
 
+    .grid-2 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.card-icon {
+    font-size: 48px;
+    color: var(--primary);
+    margin-bottom: 16px;
+}
+
+/* 6. BUTTON SYSTEM (CONVERSION-FOCUSED) */
+.cta-primary {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+}
+
+.cta-secondary {
+    display: inline-block;
+    background: transparent;
+    color: var(--primary);
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    width: 100%;
+    text-align: center;
+    border: 2px solid var(--primary);
+}
+
+@media (min-width: 768px) {
+
+    .cta-primary,
+    .cta-secondary {
+        width: auto;
+        min-width: 200px;
+    }
+}
+
+/* 7. MICRO-ANIMATIONS (PROFESSIONAL, NOT CHILDISH) */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
     to {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.fade-in {
-    opacity: 0;
-    animation: fadeIn 0.8s ease-out forwards;
 }
 
 .delay-1 {
@@ -70,113 +210,25 @@ body {
     animation-delay: 0.2s;
 }
 
-.delay-3 {
-    animation-delay: 0.3s;
-}
-
-/* Visual Utilities */
-.glass-panel {
-    background: rgba(255, 255, 255, 0.65);
-    /* Increased opacity for readability */
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-}
-
-.shadow-soft {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    /* Requested Apple-style shadow */
-}
-
-img {
-    max-width: 100%;
-    display: block;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-    transition: 0.2s;
-}
-
-/* Typography */
-h1,
-h2,
-h3 {
-    color: var(--text-main);
-    line-height: 1.2;
-    font-weight: 700;
-}
-
-h1 {
-    font-size: 2rem;
-    /* 32px Mobile */
-    margin-bottom: var(--space-sm);
-}
-
-h2 {
-    font-size: 1.5rem;
-    /* 24px Mobile */
-    margin-bottom: var(--space-sm);
-}
-
-h3 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-}
-
-@media (min-width: 768px) {
-    h1 {
-        font-size: 3rem;
-    }
-
-    h2 {
-        font-size: 2.25rem;
-    }
-}
-
-/* Layout */
-.container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--space-sm);
-}
-
-section {
-    padding: var(--space-section) 0;
-}
-
-.grid {
-    display: grid;
-    gap: var(--space-lg);
-}
-
-@media (min-width: 768px) {
-    .grid-3 {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .grid-2 {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-/* Header */
+/* 8. NAVIGATION POLISH */
 header {
-    background: #fff;
     position: sticky;
     top: 0;
-    z-index: 100;
-    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
-    padding: var(--space-sm) 0;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-soft);
+    z-index: 1000;
+    padding: 16px 0;
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 16px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
@@ -185,237 +237,72 @@ nav {
     color: var(--primary);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
 }
 
 .logo img {
     height: 32px;
 }
 
-.nav-toggle {
+.nav-links {
     display: none;
-    /* Add JS for mobile menu if needed, or stick to simple valid structure */
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-.nav-menu {
-    display: none;
-}
-
-/* Simple Mobile Nav Strategy: Just show links if space, or hamburger.
-   For simplicity in this HTML replace, we'll keep the hamburger logic from script.js 
-   but ensure styles support it. */
-.nav-menu.active {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    padding: var(--space-md);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
-
-.nav-menu a {
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-    font-weight: 500;
-    color: var(--text-main);
 }
 
 @media (min-width: 768px) {
-    .nav-toggle {
+    .nav-links {
+        display: flex;
+        gap: 32px;
+    }
+
+    .nav-links a {
+        font-weight: 500;
+        color: var(--text-main);
+    }
+
+    .hamburger {
         display: none;
     }
-
-    .nav-menu {
-        display: flex;
-        gap: var(--space-lg);
-        position: static;
-        width: auto;
-        padding: 0;
-        box-shadow: none;
-        flex-direction: row;
-        border: none;
-    }
-
-    .nav-menu a {
-        border: none;
-        padding: 0;
-    }
 }
 
-/* Hero */
-.hero {
-    text-align: center;
-    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url('../images/hero.jpg') center/cover;
-    padding: 80px 0 60px;
-}
-
-/* Buttons */
-.btn {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    padding: 14px 28px;
-    border-radius: 8px;
-    /* Rounded */
-    font-weight: 600;
-    text-align: center;
-    min-height: 48px;
-    /* Tap Target */
-    cursor: pointer;
-}
-
-.btn-primary {
-    background: var(--primary);
-    color: #fff;
-}
-
-.btn-primary:hover {
-    background: var(--primary-dark);
-}
-
-.btn-secondary {
-    background: transparent;
-    border: 2px solid var(--primary);
-    color: var(--primary);
-}
-
-.btn-secondary:hover {
-    background: var(--surface);
-}
-
-.btn-full {
-    width: 100%;
-    margin-bottom: var(--space-sm);
-}
-
-@media (min-width: 768px) {
-    .hero-actions {
-        display: flex;
-        justify-content: center;
-        gap: var(--space-sm);
-    }
-
-    .btn-full {
-        width: auto;
-        margin-bottom: 0;
-    }
-}
-
-/* Cards */
-.card {
-    background: #fff;
-    padding: var(--space-md);
-    border-radius: 12px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    border: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
-
-.card-icon {
-    font-size: 3rem;
-    color: var(--accent);
-    margin-bottom: var(--space-sm);
-}
-
-.card ul {
-    list-style: none;
-    margin: var(--space-sm) 0;
-    color: var(--text-body);
-}
-
-.card li {
-    margin-bottom: 8px;
-    padding-left: 12px;
-    position: relative;
-}
-
-.card li::before {
-    content: "•";
-    color: var(--accent);
-    position: absolute;
-    left: 0;
-}
-
-/* Trust Section */
-.trust-item {
-    text-align: center;
-    padding: var(--space-md);
-}
-
-.trust-icon {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 12px;
-}
-
-/* Footer */
+/* Footer & Utilities */
 footer {
-    background: var(--surface);
-    border-top: 1px solid var(--border);
-    padding: var(--space-section) 0;
-    font-size: 0.9rem;
+    background: var(--white);
+    padding: 64px 16px;
+    border-top: 1px solid var(--border-soft);
+    margin-top: 64px;
 }
 
-.footer-grid {
-    display: grid;
-    gap: var(--space-lg);
+.text-center {
+    text-align: center;
 }
 
-@media (min-width: 768px) {
-    .footer-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-.footer-link {
-    display: block;
-    margin-bottom: 8px;
-    color: var(--text-body);
-}
-
-.footer-link i {
-    margin-right: 8px;
-    color: var(--primary);
+.mb-8 {
+    margin-bottom: 32px;
 }
 
 /* Forms */
 .form-group {
-    margin-bottom: var(--space-md);
+    margin-bottom: 20px;
 }
 
 .form-label {
     display: block;
     margin-bottom: 8px;
-    font-weight: 500;
-    color: var(--text-main);
+    font-weight: 600;
+    font-size: 14px;
 }
 
 .form-input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border);
+    padding: 16px;
+    border: 1px solid var(--border-soft);
     border-radius: 8px;
-    font-family: inherit;
     font-size: 16px;
+    background: var(--bg-light);
 }
 
 .form-input:focus {
-    border-color: var(--primary);
     outline: none;
-}
-
-/* Utilities */
-.text-center {
-    text-align: center;
-}
-
-.mb-lg {
-    margin-bottom: var(--space-lg);
+    border-color: var(--primary);
+    background: var(--white);
 }

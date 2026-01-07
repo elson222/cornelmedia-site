@@ -4,15 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | Evanex Pharmacy</title>
-    <meta name="description" content="Explore our services: Pharmacy, Medical Laboratory, and Ultrasound Scan Center.">
+    <title>Services | Evanex Pharmacy</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- GA4 Tag -->
+    <!-- GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -24,118 +22,93 @@
 
 <body>
 
-    <!-- Header -->
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="Evanex Logo">
-                    Evanex
-                </a>
-                <div class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="nav-menu">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-            </nav>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Evanex Logo">
+                Evanex
+            </a>
+            <div class="hamburger"
+                onclick="document.querySelector('.nav-mobile').style.display = document.querySelector('.nav-mobile').style.display === 'block' ? 'none' : 'block'">
+                <i class="fas fa-bars" style="font-size: 24px; color: var(--primary);"></i>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+        <div class="nav-mobile"
+            style="display:none; padding:16px; background:white; position:absolute; width:100%; border-bottom:1px solid #e2e8f0; z-index:999;">
+            <a href="index.html" style="display:block; padding:12px;">Home</a>
+            <a href="about.html" style="display:block; padding:12px;">About</a>
+            <a href="services.html" style="display:block; padding:12px;">Services</a>
+            <a href="contact.html" style="display:block; padding:12px;">Contact</a>
         </div>
     </header>
 
-    <!-- Intro -->
-    <section style="background: var(--surface);" class="fade-in">
-        <div class="container">
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container fade-in">
             <h1>Our Services</h1>
-            <p>Comprehensive healthcare solutions under one roof.</p>
+            <p>Comprehensive, professional healthcare under one roof.</p>
         </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="fade-in delay-1">
+    <section class="section">
         <div class="container">
-            <div class="grid grid-3">
+            <div class="card-grid fade-in delay-1">
 
-                <!-- Pharmacy Card -->
+                <!-- Pharmacy -->
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-prescription-bottle-alt"></i></div>
                     <h3>Pharmacy</h3>
-                    <ul>
+                    <p>We dispense prescriptions accurately and provide expert counseling on dosage and interactions.
+                    </p>
+                    <ul style="color:var(--text-muted); margin-bottom:24px; padding-left:20px;">
                         <li>Prescription Dispensing</li>
-                        <li>Over-the-Counter Medicines</li>
-                        <li>Medication Counseling</li>
-                        <li>Wellness Products</li>
+                        <li>Wellness Supplements</li>
+                        <li>Pain Management</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top:auto; width:100%">Call to Book</a>
+                    <a href="contact.html" class="cta-primary">Order Medication</a>
                 </div>
 
-                <!-- Laboratory Card -->
+                <!-- Lab -->
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-vial"></i></div>
                     <h3>Laboratory</h3>
-                    <ul>
-                        <li>Malaria Testing</li>
-                        <li>Blood Sugar / Diabetes</li>
-                        <li>Widal Test</li>
-                        <li>Full Blood Count</li>
+                    <p>Our modern lab creates fast, accurate reports to aid diagnosis and treatment.</p>
+                    <ul style="color:var(--text-muted); margin-bottom:24px; padding-left:20px;">
+                        <li>Malaria & Widal Tests</li>
+                        <li>Blood Sugar Levels</li>
+                        <li>General Health Check</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top:auto; width:100%">Call to Book</a>
+                    <a href="contact.html" class="cta-primary">Book Lab Test</a>
                 </div>
 
-                <!-- Scan Center Card -->
+                <!-- Scan -->
                 <div class="card">
                     <div class="card-icon"><i class="fas fa-radiation"></i></div>
                     <h3>Scan Center</h3>
-                    <ul>
+                    <p>High-resolution ultrasound imaging with digital reporting for clear insights.</p>
+                    <ul style="color:var(--text-muted); margin-bottom:24px; padding-left:20px;">
                         <li>Obstetric Ultrasound</li>
                         <li>Abdominal Scans</li>
-                        <li>Pelvic Scans</li>
-                        <li>Digital Reporting</li>
+                        <li>Pelvic Imaging</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-primary" style="margin-top:auto; width:100%">Call to Book</a>
+                    <a href="contact.html" class="cta-primary">Book Scan</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3>Evanex Pharmacy</h3>
-                    <p>Your partner in health and wellness.</p>
-                </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <a href="index.html" class="footer-link">Home</a>
-                    <a href="services.html" class="footer-link">Services</a>
-                    <a href="contact.html" class="footer-link">Contact</a>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <a href="tel:0531423368" class="footer-link"><i class="fas fa-phone"></i> 053 142 3368</a>
-                    <span class="footer-link"><i class="fas fa-map-marker-alt"></i> Agona Nkwanta</span>
-                </div>
-            </div>
-            <div class="text-center"
-                style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--border);">
-                <p>&copy; 2025 Evanex Pharmacy, Laboratory & Scan Center.</p>
-            </div>
+        <div class="container text-center">
+            <p class="mb-8"><strong>Evanex Pharmacy</strong><br>Agona Nkwanta</p>
+            <p>&copy; 2025 Evanex.</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', () => {
-                gtag('event', 'phone_click', { event_category: 'conversion', event_label: 'phone_call' });
-            });
-        });
-    </script>
 </body>
 
 </html>

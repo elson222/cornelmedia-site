@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Evanex Pharmacy</title>
-    <meta name="description"
-        content="Learn about Evanex Pharmacy's mission to provide quality healthcare, laboratory, and scan services to Agona Nkwanta.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- GA4 Tag -->
+    <!-- GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -25,117 +22,78 @@
 
 <body>
 
-    <!-- Header -->
     <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="images/logo.png" alt="Evanex Logo">
-                    Evanex
-                </a>
-                <div class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="nav-menu">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-            </nav>
+        <nav>
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="Evanex Logo">
+                Evanex
+            </a>
+            <div class="hamburger"
+                onclick="document.querySelector('.nav-mobile').style.display = document.querySelector('.nav-mobile').style.display === 'block' ? 'none' : 'block'">
+                <i class="fas fa-bars" style="font-size: 24px; color: var(--primary);"></i>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </nav>
+        <div class="nav-mobile"
+            style="display:none; padding:16px; background:white; position:absolute; width:100%; border-bottom:1px solid #e2e8f0; z-index:999;">
+            <a href="index.html" style="display:block; padding:12px;">Home</a>
+            <a href="about.html" style="display:block; padding:12px;">About</a>
+            <a href="services.html" style="display:block; padding:12px;">Services</a>
+            <a href="contact.html" style="display:block; padding:12px;">Contact</a>
         </div>
     </header>
 
-    <!-- Intro Section -->
-    <section class="fade-in">
-        <div class="container">
+    <!-- Standard Section (Not full hero, but styled header) -->
+    <section class="section" style="background: var(--bg-light);">
+        <div class="container fade-in">
             <h1>About Evanex</h1>
-            <p>Evanex Pharmacy, Laboratory & Scan Center is a leading healthcare provider in the Western Region,
-                dedicated to delivering accessible and professional medical services to the Agona Nkwanta community.</p>
+            <p>Dedicated to delivering accessible and professional medical services to the Agona Nkwanta community.</p>
         </div>
     </section>
 
-    <!-- Mission -->
-    <section style="background: var(--surface);" class="fade-in delay-1">
+    <section class="section">
         <div class="container">
-            <h2>Our Mission</h2>
-            <p style="font-size: 1.1em; font-weight: 500; color: var(--primary);">To enhance the health and well-being
-                of our community by providing high-quality pharmaceutical, laboratory, and diagnostic services with
-                integrity and compassion.</p>
-        </div>
-    </section>
-
-    <!-- What We Offer -->
-    <section class="fade-in delay-2">
-        <div class="container">
-            <h2>What We Offer</h2>
-            <div class="grid grid-3">
+            <div class="card-grid fade-in delay-1">
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-pills"></i></div>
-                    <h3>Pharmacy</h3>
-                    <p>Fully stocked dispensary with expert advice on medication management.</p>
+                    <div class="card-icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Our Mission</h3>
+                    <p>To enhance community health by providing high-quality pharmaceutical, laboratory, and diagnostic
+                        services with integrity.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-microscope"></i></div>
-                    <h3>Laboratory</h3>
-                    <p>Modern lab conducting a wide range of diagnostic tests.</p>
+                    <div class="card-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Our Values</h3>
+                    <p>Compassion, Accuracy, Professionalism, and Accessibility in everything we do.</p>
                 </div>
                 <div class="card">
-                    <div class="card-icon"><i class="fas fa-desktop"></i></div>
-                    <h3>Scan Services</h3>
-                    <p>Ultrasound and imaging services for accurate diagnosis.</p>
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>Our Team</h3>
+                    <p>Led by licensed pharmacists and certified laboratory technicians committed to your care.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Reinforcement -->
-    <section style="background: var(--surface);">
-        <div class="container text-center">
-            <h2>Committed to Excellence</h2>
-            <p class="mb-lg">Our team of licensed professionals works tirelessly to ensure you receive the best care
-                possible. Your health is our priority.</p>
-            <a href="tel:0531423368" class="btn btn-primary btn-full" style="max-width: 300px;">
-                <i class="fas fa-phone-alt" style="margin-right:8px;"></i> Contact Evanex Pharmacy
-            </a>
+    <!-- Action -->
+    <section class="section" style="background: var(--primary-soft);">
+        <div class="container text-center fade-in delay-2">
+            <h2>Experience Better Care</h2>
+            <p class="mb-8" style="margin: 0 auto 32px;">Visit us today to speak with our specialists.</p>
+            <a href="contact.html" class="cta-primary" style="max-width:300px;">Contact Us</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div>
-                    <h3>Evanex Pharmacy</h3>
-                    <p>Your partner in health and wellness.</p>
-                </div>
-                <div>
-                    <h3>Quick Links</h3>
-                    <a href="index.html" class="footer-link">Home</a>
-                    <a href="services.html" class="footer-link">Services</a>
-                    <a href="contact.html" class="footer-link">Contact</a>
-                </div>
-                <div>
-                    <h3>Contact</h3>
-                    <a href="tel:0531423368" class="footer-link"><i class="fas fa-phone"></i> 053 142 3368</a>
-                    <span class="footer-link"><i class="fas fa-map-marker-alt"></i> Agona Nkwanta</span>
-                </div>
-            </div>
-            <div class="text-center"
-                style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--border);">
-                <p>&copy; 2025 Evanex Pharmacy, Laboratory & Scan Center.</p>
-            </div>
+        <div class="container text-center">
+            <p class="mb-8"><strong>Evanex Pharmacy</strong><br>Agona Nkwanta</p>
+            <p>&copy; 2025 Evanex.</p>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-            link.addEventListener('click', () => {
-                gtag('event', 'phone_click', { event_category: 'conversion', event_label: 'phone_call' });
-            });
-        });
-    </script>
 </body>
 
 </html>
