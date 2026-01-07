@@ -15,6 +15,15 @@
         rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- GA4 Base Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
 </head>
 
 <body>
@@ -196,6 +205,17 @@
         </div>
     </footer>
 
+    <!-- Phone Click Event Tracking -->
+    <script>
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                gtag('event', 'phone_click', {
+                    event_category: 'conversion',
+                    event_label: 'phone_call'
+                });
+            });
+        });
+    </script>
     <script src="js/script.js"></script>
 </body>
 
