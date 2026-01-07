@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function () {
         hamburger.addEventListener('click', function (e) {
             e.preventDefault(); // Prevent default behavior
             navLinks.classList.toggle('active');
-            console.log('Hamburger clicked, menu toggled');
         });
 
         // Close menu when clicking ANY link inside nav-links
@@ -17,24 +16,23 @@ document.addEventListener('DOMContentLoaded', function () {
                 navLinks.classList.remove('active');
             });
         });
-    });
     } else {
-    console.error('Hamburger or nav-links not found!');
-}
+        console.error('Hamburger or nav-links not found!');
+    }
 
-// Scroll Animation Observer
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: "0px 0px -50px 0px"
-};
+    // Scroll Animation Observer
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: "0px 0px -50px 0px"
+    };
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-        }
-    });
-}, observerOptions);
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, observerOptions);
 
-document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 });

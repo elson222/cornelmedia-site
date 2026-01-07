@@ -141,18 +141,26 @@ img {
 
 /* Navigation - Mobile First */
 nav {
-    position: sticky;
+    justify-content: space-between;
+    padding: 0 0.5rem;
+    position: fixed !important;
     top: 0;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
     z-index: 9999;
+}
+
+body {
+    padding-top: 60px;
 }
 
 nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 .logo a {
@@ -160,7 +168,7 @@ nav .container {
     align-items: center;
     gap: 0.5rem;
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     color: var(--primary-color);
 }
 
@@ -168,13 +176,15 @@ nav .container {
     height: 32px;
 }
 
-/* Hamburger */
+/* Hamburger - Right Aligned */
 .hamburger {
     font-size: 1.5rem;
     color: var(--primary-color);
     cursor: pointer;
     display: block;
-    /* Visible on mobile */
+    margin-left: auto;
+    /* Push to right */
+    padding: 0.5rem;
 }
 
 /* Nav Links - Hidden on Mobile unless Toggled */
