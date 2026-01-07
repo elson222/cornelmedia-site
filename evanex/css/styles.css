@@ -163,22 +163,23 @@ a {
 /* 6. BUTTON SYSTEM (CONVERSION-FOCUSED) */
 .cta-primary {
     display: flex !important;
-    /* Changed from inline-block to flex for alignment */
     justify-content: center;
     align-items: center;
-    gap: 10px;
-    /* specific space between icon and text */
+    gap: 8px;
+    /* Reduced gap for safety */
     background: var(--primary);
     color: white;
-    padding: 16px 20px;
+    padding: 14px 16px;
+    /* Reduced padding for mobile fit */
     border-radius: 12px;
     font-weight: 600;
+    font-size: 15px;
+    /* Reduced font size for mobile fit */
     text-decoration: none;
     width: 100%;
     border: none;
     cursor: pointer;
     line-height: 1;
-    /* Strict line height */
 }
 
 /* Ensure Icon has no extra spacing triggers */
@@ -191,15 +192,17 @@ a {
 
 .cta-secondary {
     display: flex !important;
-    /* Changed from inline-block to flex */
     justify-content: center;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
     background: transparent;
     color: var(--primary);
-    padding: 16px 20px;
+    padding: 14px 16px;
+    /* Reduced padding */
     border-radius: 12px;
     font-weight: 600;
+    font-size: 15px;
+    /* Reduced font size */
     text-decoration: none;
     width: 100%;
     border: 2px solid var(--primary);
@@ -212,6 +215,9 @@ a {
     .cta-secondary {
         width: auto;
         min-width: 200px;
+        font-size: 16px;
+        /* Restore size on desktop */
+        padding: 16px 20px;
     }
 }
 
@@ -246,7 +252,6 @@ header {
     position: sticky;
     top: 0;
     background: rgba(255, 255, 255, 0.85);
-    /* Increased opacity */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-soft);
@@ -266,14 +271,13 @@ nav {
 .logo {
     font-weight: 700;
     font-size: 1.1rem;
-    /* Slightly smaller for mobile safety */
-    color: var(--primary);
+    color: #1e3a8a;
+    /* Deep Blue to match Logo */
     display: flex;
     align-items: center;
     gap: 8px;
     text-decoration: none;
     white-space: nowrap;
-    /* Prevent wrapping */
 }
 
 .logo img {
@@ -281,6 +285,7 @@ nav {
     width: auto;
     display: block;
 }
+
 
 .nav-links {
     display: none;
