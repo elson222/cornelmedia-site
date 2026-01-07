@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Evanex Pharmacy</title>
     <meta name="description"
-        content="Learn about Evanex Pharmacy, serving the Tarkwa-Nsuaem community with professional pharmaceutical care.">
+        content="Learn about Evanex Pharmacy, serving the Agona Nkwanta community with professional pharmaceutical care.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -23,10 +25,16 @@
                 <div class="logo">
                     <a href="index.html">
                         <img src="images/logo.png" alt="Evanex Logo">
-                        EVANEX PHARMACY
+                        <span class="logo-text">Evanex Pharmacy</span>
                     </a>
                 </div>
                 <div class="hamburger">☰</div>
+                <div style="margin-left: auto; margin-right: 1rem;">
+                    <button id="theme-toggle" class="btn btn-secondary"
+                        style="padding: 0.5rem 0.75rem; border: none; background: transparent; font-size: 1.2rem;">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html" class="active">About Us</a></li>
@@ -54,14 +62,13 @@
             <div class="content" style="max-width: 800px; margin: 0 auto;">
                 <h2>Our Story</h2>
                 <div class="divider" style="margin: 0 0 2rem 0;"></div>
-                <p>Evanex Pharmacy is a premier healthcare facility located in <strong>Agona Nkwanta</strong> in the
-                    Ahanta West Municipal District. We have grown to become a trusted name for comprehensive medical
-                    services.</p>
+                <p>Evanex Pharmacy is a comprehensive healthcare facility located in <strong>Agona Nkwanta</strong>. We
+                    have grown from a community pharmacy into a full-service health hub, now offering Laboratory and
+                    Ultrasound Scan services under one roof.</p>
 
-                <p>We understand that a pharmacy is more than just a place to buy medicine—it is a sanctuary for health
-                    advice, a reliable source for wellness products, and a partner in your journey to better health. Our
-                    team of qualified professionals ensures that every patient receives personalized care and accurate
-                    information regarding their prescriptions.</p>
+                <p>We are dedicated to providing accessible, high-quality medical services. Whether you need
+                    prescription medication, a diagnostic blood test, or an ultrasound scan, our qualified professionals
+                    are here to ensure you receive the best care possible.</p>
 
                 <h3 style="margin-top: 3rem;">Our Location & Community</h3>
                 <p>We are conveniently located <strong>opposite the Ahantaman Rural Bank</strong> in Agona Nkwanta. Our
@@ -69,18 +76,20 @@
                     laboratory, and scan center services daily from 7:00 AM to 11:00 PM.</p>
 
                 <h3 style="margin-top: 3rem;">Our Mission</h3>
+                <p style="margin-bottom: 2rem;">To provide professional pharmaceutical care, reliable diagnostics, and
+                    accessible medication to improve the health and well-being of our community.</p>
                 <ul style="list-style-type: none; margin-top: 1rem;">
                     <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
                         <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
-                        <span>To provide genuine, high-quality pharmaceutical products.</span>
+                        <span>Professional & Ethical Standards</span>
                     </li>
                     <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
                         <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
-                        <span>To offer expert health counseling and medication therapy management.</span>
+                        <span>Accurate & Timely Diagnostics</span>
                     </li>
                     <li style="margin-bottom: 1rem; display: flex; gap: 1rem;">
                         <i class="fas fa-check-circle" style="color: var(--primary-color);"></i>
-                        <span>To contribute to the overall well-being of the Western Region.</span>
+                        <span>Patient-Centered Care</span>
                     </li>
                 </ul>
             </div>
@@ -94,7 +103,7 @@
                 <div class="footer-logo">
                     <h4>Evanex Pharmacy</h4>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: #9CA3AF;">Providing quality healthcare
-                        services to the Tarkwa-Nsuaem community.</p>
+                        services to the Agona Nkwanta community.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
@@ -105,14 +114,23 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list" style="margin-top: 1rem; color: #D1D5DB; font-size: 0.9rem;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt" style="width: 20px;"></i>
+                            Agona Nkwanta, opp. Ahantaman Rural Bank</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-phone-alt" style="width: 20px;"></i> 053 142
+                            3368</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="far fa-clock" style="width: 20px;"></i> 7:00 AM -
+                            11:00 PM (Daily)</li>
+                    </ul>
+                </div>
                 <!-- ... social ... -->
                 <div class="footer-social">
-                    <h4>Connect With Us</h4>
+                    <h4>Connect</h4>
                     <div class="social-icons" style="margin-top: 1rem;">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/233531423368" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -123,6 +141,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 
 </html>

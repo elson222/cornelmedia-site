@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evanex Pharmacy | Reliable Healthcare in Tarkwa-Nsuaem</title>
+    <title>Evanex Pharmacy | Reliable Healthcare in Agona Nkwanta</title>
     <meta name="description"
-        content="Evanex Pharmacy provides prescription and over-the-counter medication, health advice, and wellness products to the Tarkwa-Nsuaem community in Ghana.">
+        content="Evanex Pharmacy provides prescription and over-the-counter medication, health advice, and wellness products to residents in Agona Nkwanta.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -23,12 +25,17 @@
             <nav>
                 <div class="logo">
                     <a href="index.html">
-                        <!-- <img src="images/logo.png" alt="Evanex Logo"> -->
-                        <i class="fas fa-prescription-bottle-medical" style="color: var(--primary-color);"></i>
-                        EVANEX PHARMACY
+                        <img src="images/logo.png" alt="Evanex Logo" class="home-logo-img">
+                        <span class="logo-text">Evanex Pharmacy</span>
                     </a>
                 </div>
                 <div class="hamburger">☰</div>
+                <div style="margin-left: auto; margin-right: 1rem;">
+                    <button id="theme-toggle" class="btn btn-secondary"
+                        style="padding: 0.5rem 0.75rem; border: none; background: transparent; font-size: 1.2rem;">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -43,12 +50,17 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-content">
-            <h1>Reliable Pharmacy Services in Tarkwa-Nsuaem</h1>
-            <p>Your trusted partner for prescription medication, lab services, and diagnostic scans in the Western
-                Region of Ghana.</p>
-            <div style="display: flex; gap: 1rem; justify-content: center;">
-                <a href="contact.html" class="btn btn-primary">Find Our Location</a>
-                <a href="services.html" class="btn btn-secondary">Our Services</a>
+            <h1 style="margin-bottom: 0.5rem;">Evanex Pharmacy, Laboratory and Scan Center</h1>
+            <h2
+                style="font-size: clamp(1.25rem, 3vw, 1.75rem); color: #E5E7EB; margin-bottom: 2rem; font-weight: 500; letter-spacing: 0.02em;">
+                Reliable Healthcare in Agona Nkwanta</h2>
+            <p>Providing professional pharmaceutical services, lab testing, and diagnostic scans for the Agona Nkwanta
+                community. Quality care you can trust.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+                <a href="contact.html" class="btn btn-secondary">Book a Test</a>
+                <a href="#" class="btn btn-secondary" style="opacity: 0.8; cursor: not-allowed;">Online Store (Coming
+                    Soon)</a>
             </div>
         </div>
     </section>
@@ -70,7 +82,7 @@
                 <div class="service-card" style="text-align: center;">
                     <i class="fas fa-heart service-icon" style="margin: 0 auto 1rem;"></i>
                     <h3>Community Care</h3>
-                    <p>Serving the health needs of the Tarkwa-Nsuaem district.</p>
+                    <p>Serving the health needs of Agona Nkwanta.</p>
                 </div>
             </div>
         </div>
@@ -90,14 +102,25 @@
                 <div class="about-text">
                     <h2>Your Local Healthcare Partner</h2>
                     <div class="divider" style="margin: 0 0 2rem 0;"></div>
-                    <p>Evanex Pharmacy is a community pharmacy located in Tarkwa-Nsuaem Municipal District in the
-                        Western Region of Ghana. We are dedicated to serving local patients with professional
+                    <p>Evanex Pharmacy is a community pharmacy located in Agona Nkwanta. We are dedicated to serving
+                        local
+                        patients with professional
                         pharmaceutical care and access to essential medicines.</p>
                     <p>Located conveniently near the Kingdom Hall of Jehovah’s Witnesses and Nsuaem Post Office, we are
                         easily accessible to all residents.</p>
                     <a href="about.html" class="btn btn-primary">Learn More About Us</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" style="padding: 0;">
+        <div class="map-responsive" style="margin-top: 0; border-radius: 0;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31792.83441775878!2d-1.986617937748897!3d4.887648342205513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfd8aa7e35234505%3A0xe54911043324c453!2sAgona%20Nkwanta!5e0!3m2!1sen!2sgh!4v1709845201234!5m2!1sen!2sgh"
+                width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
@@ -108,7 +131,7 @@
                 <div class="footer-logo">
                     <h4>Evanex Pharmacy</h4>
                     <p style="margin-top: 1rem; font-size: 0.9rem; color: #9CA3AF;">Providing quality healthcare
-                        services to the Tarkwa-Nsuaem community.</p>
+                        services to the community in Agona Nkwanta.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
@@ -119,13 +142,22 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list" style="margin-top: 1rem; color: #D1D5DB; font-size: 0.9rem;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt" style="width: 20px;"></i>
+                            Agona Nkwanta, opp. Ahantaman Rural Bank</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-phone-alt" style="width: 20px;"></i> 053 142
+                            3368</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="far fa-clock" style="width: 20px;"></i> 7:00 AM -
+                            11:00 PM (Daily)</li>
+                    </ul>
+                </div>
                 <div class="footer-social">
-                    <h4>Connect With Us</h4>
+                    <h4>Connect</h4>
                     <div class="social-icons" style="margin-top: 1rem;">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/233531423368" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -135,7 +167,8 @@
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 
 </html>
