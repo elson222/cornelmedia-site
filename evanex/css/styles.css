@@ -162,11 +162,11 @@ a {
 
 /* 6. BUTTON SYSTEM (CONVERSION-FOCUSED) */
 .cta-primary {
-    display: flex;
+    display: flex !important;
     /* Changed from inline-block to flex for alignment */
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     /* specific space between icon and text */
     background: var(--primary);
     color: white;
@@ -177,16 +177,24 @@ a {
     width: 100%;
     border: none;
     cursor: pointer;
-    line-height: 1.2;
-    /* Reset line height for flex items */
+    line-height: 1;
+    /* Strict line height */
+}
+
+/* Ensure Icon has no extra spacing triggers */
+.cta-primary i,
+.cta-secondary i {
+    margin: 0 !important;
+    line-height: 1;
+    display: inline-block;
 }
 
 .cta-secondary {
-    display: flex;
+    display: flex !important;
     /* Changed from inline-block to flex */
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     background: transparent;
     color: var(--primary);
     padding: 16px 20px;
@@ -195,7 +203,7 @@ a {
     text-decoration: none;
     width: 100%;
     border: 2px solid var(--primary);
-    line-height: 1.2;
+    line-height: 1;
 }
 
 @media (min-width: 768px) {
@@ -207,7 +215,7 @@ a {
     }
 }
 
-/* 7. MICRO-ANIMATIONS (PROFESSIONAL, NOT CHILDISH) */
+/* 7. MICRO-ANIMATIONS */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -229,13 +237,18 @@ a {
     animation-delay: 0.2s;
 }
 
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
 /* 8. NAVIGATION POLISH */
 header {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.85);
+    /* Increased opacity */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-soft);
     z-index: 1000;
     padding: 16px 0;
@@ -252,15 +265,21 @@ nav {
 
 .logo {
     font-weight: 700;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+    /* Slightly smaller for mobile safety */
     color: var(--primary);
     display: flex;
     align-items: center;
     gap: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    /* Prevent wrapping */
 }
 
 .logo img {
     height: 32px;
+    width: auto;
+    display: block;
 }
 
 .nav-links {
