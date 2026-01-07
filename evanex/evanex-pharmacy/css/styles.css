@@ -238,10 +238,10 @@ nav {
 .hero h1 {
     font-size: 3.5rem;
     color: var(--white);
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     text-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     letter-spacing: -0.02em;
-    line-height: 1.1;
+    line-height: 1.2;
 }
 
 .hero p {
