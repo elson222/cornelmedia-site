@@ -315,9 +315,14 @@ nav {
 /* Footer & Utilities */
 footer {
     background: var(--white);
-    padding: 64px 16px;
+    padding: 48px 16px;
+    /* Updated padding */
     border-top: 1px solid var(--border-soft);
     margin-top: 64px;
+    color: var(--text-muted);
+    /* Ensure text color */
+    text-align: center;
+    /* Center footer */
 }
 
 .text-center {
