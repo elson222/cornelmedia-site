@@ -225,13 +225,23 @@ nav {
 
 /* Specific Override for Hero Buttons Contrast */
 .hero .btn-primary {
-    background-color: var(--white);
-    color: var(--primary-color);
+    background-color: #00A99D;
+    /* Teal from reference */
+    color: var(--white);
+    border: none;
+    font-weight: 600;
 }
 
 .hero .btn-secondary {
-    border-color: var(--white);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.8);
     color: var(--white);
+    font-weight: 500;
+}
+
+.hero .btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
 }
 
 
@@ -331,6 +341,19 @@ footer {
     background: #F9FAFB;
     padding: var(--spacing-section) 0 2rem;
     border-top: 1px solid var(--border-color);
+    color: #333333;
+    /* Darker Text Base */
+}
+
+footer p,
+footer li,
+footer a {
+    color: #444444 !important;
+    /* Force readability */
+}
+
+footer h3 {
+    color: #111111;
 }
 
 .footer-content {
