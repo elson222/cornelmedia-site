@@ -369,19 +369,22 @@ footer {
     background: #F9FAFB;
     padding: var(--spacing-section) 0 2rem;
     border-top: 1px solid var(--border-color);
-    color: #333333;
-    /* Darker Text Base */
+    color: #000000 !important;
+    /* Force Black */
 }
 
+footer * {
+    color: #000000 !important;
+    /* Force EVERYTHING Black */
+}
+
+footer h3,
+footer h4,
 footer p,
+footer a,
 footer li,
-footer a {
-    color: #444444 !important;
-    /* Force readability */
-}
-
-footer h3 {
-    color: #111111;
+footer i {
+    color: #000000 !important;
 }
 
 .footer-content {
