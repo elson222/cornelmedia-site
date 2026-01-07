@@ -112,7 +112,8 @@ a {
     /* add margin from edges on mobile */
     text-align: center;
     /* centering text */
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    /* Softer user-requested shadow */
 }
 
 @media (min-width: 768px) {
