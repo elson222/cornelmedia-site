@@ -44,6 +44,51 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.1s;
+}
+
+.delay-2 {
+    animation-delay: 0.2s;
+}
+
+.delay-3 {
+    animation-delay: 0.3s;
+}
+
+/* Visual Utilities */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.65);
+    /* Increased opacity for readability */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.shadow-soft {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    /* Requested Apple-style shadow */
+}
+
 img {
     max-width: 100%;
     display: block;
