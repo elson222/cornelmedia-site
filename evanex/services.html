@@ -5,15 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Services | Evanex Pharmacy</title>
-    <meta name="description"
-        content="Explore the pharmaceutical services offered by Evanex Pharmacy, from prescription verification to wellness advice.">
+    <meta name="description" content="Explore our services: Pharmacy, Medical Laboratory, and Ultrasound Scan Center.">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- GA4 Tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXX');
+    </script>
 </head>
 
 <body>
@@ -22,175 +28,114 @@
     <header>
         <div class="container">
             <nav>
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="images/logo.png" alt="Evanex Logo">
-                        <span class="logo-text">Evanex Pharmacy</span>
-                    </a>
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Evanex Logo">
+                    Evanex
+                </a>
+                <div class="nav-toggle" onclick="document.querySelector('.nav-menu').classList.toggle('active')">
+                    <i class="fas fa-bars"></i>
                 </div>
-                <div class="hamburger">☰</div>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html" class="active">Services</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="#footer-hours">Hours</a></li>
-                </ul>
+                <div class="nav-menu">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                </div>
             </nav>
         </div>
     </header>
 
-    <!-- Page Header -->
-    <section class="page-header"
-        style="background-color: var(--secondary-color); color: var(--white); padding: 4rem 0; text-align: center;">
+    <!-- Intro -->
+    <section style="background: var(--surface);">
         <div class="container">
             <h1>Our Services</h1>
-            <p style="color: #E5E7EB; max-width: 600px; margin: 0 auto;">Comprehensive healthcare solutions tailored to
-                your needs.</p>
+            <p>Comprehensive healthcare solutions under one roof.</p>
         </div>
     </section>
 
-    <!-- Services List -->
-    <section class="services-list">
+    <!-- Services Grid -->
+    <section>
         <div class="container">
-            <!-- Pharmacy Section -->
-            <div class="service-category" style="margin-bottom: 4rem;">
-                <div class="section-title">
-                    <h2>Pharmacy Services</h2>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-prescription"></i></div>
-                        <h3>Prescription Medication</h3>
-                        <p>Accurate dispensing of prescription medications with detailed counseling on dosage.</p>
-                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Order
-                            Prescription</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-pills"></i></div>
-                        <h3>Over-the-Counter</h3>
-                        <p>Quality products for pain relief, cold & flu, allergies, and first aid.</p>
-                        <a href="contact.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">View
-                            Products</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-user-md"></i></div>
-                        <h3>Health & Wellness</h3>
-                        <p>Professional advice on lifestyle management and supplements.</p>
-                        <a href="contact.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">Speak to
-                            Pharmacist</a>
-                    </div>
-                </div>
-            </div>
+            <div class="grid grid-3">
 
-            <!-- Laboratory Section -->
-            <div class="service-category" style="margin-bottom: 4rem;">
-                <div class="section-title">
-                    <h2>Laboratory Services</h2>
+                <!-- Pharmacy Card -->
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-prescription-bottle-alt"></i></div>
+                    <h3>Pharmacy</h3>
+                    <ul>
+                        <li>Prescription Dispensing</li>
+                        <li>Over-the-Counter Medicines</li>
+                        <li>Medication Counseling</li>
+                        <li>Wellness Products</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top:auto; width:100%">Call to Book</a>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-vial"></i></div>
-                        <h3>Blood & Lab Tests</h3>
-                        <p>Comprehensive testing including Malaria, Widal, and Blood Sugar.</p>
-                        <a href="contact.html" class="btn btn-primary" style="margin-top: 1rem; width: 100%;">Book Lab
-                            Test</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-flask"></i></div>
-                        <h3>Sample Collection</h3>
-                        <p>Hygienic sample collection with quick turnaround times.</p>
-                        <a href="contact.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">Schedule
-                            Pickup</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-microscope"></i></div>
-                        <h3>Diagnostic Analysis</h3>
-                        <p>Accurate reports to assist doctors in effective treatment plans.</p>
-                        <a href="contact.html" class="btn btn-secondary" style="margin-top: 1rem; width: 100%;">Learn
-                            More</a>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Scan Center Section -->
-            <div class="service-category">
-                <div class="section-title">
-                    <h2>Scan Center</h2>
+                <!-- Laboratory Card -->
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-vial"></i></div>
+                    <h3>Laboratory</h3>
+                    <ul>
+                        <li>Malaria Testing</li>
+                        <li>Blood Sugar / Diabetes</li>
+                        <li>Widal Test</li>
+                        <li>Full Blood Count</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top:auto; width:100%">Call to Book</a>
                 </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-radiation"></i></div>
-                        <h3>Ultrasound Imaging</h3>
-                        <p>Professional scans for pregnancy (OB/GYN), abdominal, and pelvic exams.</p>
-                        <a href="contact.html" class="btn btn-secondary" style="margin-top:1rem; width:100%;">Book
-                            Scan</a>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-x-ray"></i></div>
-                        <h3>General Screenings</h3>
-                        <p>Routine health screenings to detect internal issues early.</p>
-                        <a href="contact.html" class="btn btn-secondary" style="margin-top:1rem; width:100%;">Book
-                            Screening</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="cta" style="background-color: var(--accent-color); text-align: center;">
-        <div class="container">
-            <h2>Need Specific Medication?</h2>
-            <p>Contact us ahead of time to check availability or request a special order.</p>
-            <a href="contact.html" class="btn btn-primary">Contact Us Now</a>
+                <!-- Scan Center Card -->
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-radiation"></i></div>
+                    <h3>Scan Center</h3>
+                    <ul>
+                        <li>Obstetric Ultrasound</li>
+                        <li>Abdominal Scans</li>
+                        <li>Pelvic Scans</li>
+                        <li>Digital Reporting</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top:auto; width:100%">Call to Book</a>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h4>Evanex Pharmacy</h4>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #9CA3AF;">Providing quality healthcare
-                        services to the Agona Nkwanta community.</p>
+            <div class="footer-grid">
+                <div>
+                    <h3>Evanex Pharmacy</h3>
+                    <p>Your partner in health and wellness.</p>
                 </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
+                <div>
+                    <h3>Quick Links</h3>
+                    <a href="index.html" class="footer-link">Home</a>
+                    <a href="services.html" class="footer-link">Services</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
                 </div>
-                <div class="footer-contact">
-                    <h4>Contact Us</h4>
-                    <ul class="contact-list" style="margin-top: 1rem; color: #D1D5DB; font-size: 0.9rem;">
-                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt" style="width: 20px;"></i>
-                            Agona Nkwanta, opp. Ahantaman Rural Bank</li>
-                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-phone-alt" style="width: 20px;"></i> 053 142
-                            3368</li>
-                        <li style="margin-bottom: 0.5rem;"><i class="far fa-clock" style="width: 20px;"></i> 7:00 AM -
-                            11:00 PM (Daily)</li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <div class="social-icons" style="margin-top: 1rem;">
-                        <a href="https://wa.me/233531423368" class="social-link"><i class="fab fa-whatsapp"></i></a>
-                        <a href="https://facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                    </div>
+                <div>
+                    <h3>Contact</h3>
+                    <a href="tel:0531423368" class="footer-link"><i class="fas fa-phone"></i> 053 142 3368</a>
+                    <span class="footer-link"><i class="fas fa-map-marker-alt"></i> Agona Nkwanta</span>
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 Evanex Pharmacy. All Rights Reserved.</p>
+            <div class="text-center"
+                style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--border);">
+                <p>&copy; 2025 Evanex Pharmacy, Laboratory & Scan Center.</p>
             </div>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <!-- Scripts -->
+    <script>
+        document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+            link.addEventListener('click', () => {
+                gtag('event', 'phone_click', { event_category: 'conversion', event_label: 'phone_call' });
+            });
+        });
+    </script>
 </body>
 
 </html>
