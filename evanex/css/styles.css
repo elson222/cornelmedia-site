@@ -91,19 +91,27 @@ h4 {
 
 h1 {
     font-size: 2rem;
-    /* Mobile: ~32px */
+    /* Mobile: 32px */
 }
 
 h2 {
     font-size: 1.5rem;
-    /* Mobile: ~24px */
+    /* Mobile: 24px */
 }
 
 p {
     margin-bottom: 1.5rem;
 }
 
-/* Navigation - Mobile First */
+/* Service Icons */
+.service-icon {
+    font-size: 4rem;
+    /* 64px per Directive */
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+
+/* ... existing nav code (preserved for now) ... */
 nav {
     display: flex;
     justify-content: space-between;
