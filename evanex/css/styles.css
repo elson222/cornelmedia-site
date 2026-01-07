@@ -230,6 +230,7 @@ a {
 
     .cta-primary,
     .cta-secondary {
+        display: inline-flex !important;
         width: auto;
         min-width: 200px;
         font-size: 16px;
@@ -345,6 +346,12 @@ footer {
     text-align: center;
 }
 
+.text-center p {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
 .mb-8 {
     margin-bottom: 32px;
 }
@@ -374,4 +381,65 @@ footer {
     outline: none;
     border-color: var(--primary);
     background: var(--white);
+}
+
+/* Utilities replacing inline styles */
+.map-container {
+    width: 100%;
+    height: 400px;
+    background: #eeeeee;
+}
+
+.icon-primary {
+    color: var(--primary);
+}
+
+.text-accent {
+    color: var(--accent);
+}
+
+.text-sm {
+    font-size: 14px;
+}
+
+.text-muted {
+    color: var(--text-muted);
+}
+
+.pl-4 {
+    padding-left: 20px;
+}
+
+.mb-6 {
+    margin-bottom: 24px;
+}
+
+.bg-primary-soft {
+    background: var(--primary-soft);
+}
+
+.max-w-600 {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.mobile-menu {
+    display: none;
+    padding: 16px;
+    background: white;
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #e2e8f0;
+    z-index: 999;
+    top: 60px;
+    /* Adjust based on header height */
+    left: 0;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
 }
