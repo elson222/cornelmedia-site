@@ -17,7 +17,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 navLinks.classList.remove('active');
             });
         });
+    });
     } else {
-        console.error('Hamburger or nav-links not found!');
-    }
+    console.error('Hamburger or nav-links not found!');
+}
+
+// Scroll Animation Observer
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        }
+    });
+}, observerOptions);
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 });
