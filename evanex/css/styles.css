@@ -141,6 +141,8 @@ nav {
     margin-left: auto;
     /* Push to right */
     padding: 0.5rem;
+    flex-shrink: 0;
+    /* Never shrink */
 }
 
 /* Nav Links - Hidden on Mobile unless Toggled */
