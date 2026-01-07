@@ -16,6 +16,44 @@
     --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
+[data-theme="dark"] {
+    --text-dark: #F3F4F6;
+    --text-light: #D1D5DB;
+    --white: #111827;
+    /* Dark background */
+    --secondary-color: #60A5FA;
+    /* Lighter blue for dark mode */
+    --accent-color: #1F2937;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+header {
+    transition: background-color 0.3s;
+}
+
+[data-theme="dark"] header {
+    background-color: rgba(17, 24, 39, 0.95);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .service-card,
+[data-theme="dark"] .contact-container,
+[data-theme="dark"] .contact-form,
+[data-theme="dark"] .nav-links {
+    background-color: #1F2937;
+    /* Darker card bg */
+    color: var(--text-dark);
+}
+
+[data-theme="dark"] .logo-text {
+    color: #F3F4F6;
+}
+
 * {
     margin: 0;
     padding: 0;
