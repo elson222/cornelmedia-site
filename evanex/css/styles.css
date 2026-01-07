@@ -22,28 +22,27 @@
     --white: #FFFFFF;
     --border-color: #E2E8F0;
 
-    /* Spacing System (8pt Grid) */
+    /* Spacing System (Refined) */
     --spacing-xs: 8px;
     --spacing-sm: 16px;
     --spacing-md: 24px;
-    --spacing-lg: 48px;
+    --spacing-lg: 32px;
+    /* Card Gap */
     --spacing-xl: 80px;
     /* Section Padding */
 
     /* Typography */
     --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
 
-    /* Premium UI Tokens */
+    /* UI Tokens */
     --radius-sm: 8px;
-    --radius-md: 16px;
+    --radius-md: 12px;
+    /* Consistent Rounding */
     --radius-full: 9999px;
-    /* Pill */
 
-    /* Apple-Style Shadows (Soft & Diffused) */
-    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    /* Shadows */
+    --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.05);
+    /* Very light, premium */
 }
 
 /* Reset & Base */
@@ -52,7 +51,6 @@
     padding: 0;
     box-sizing: border-box;
     -webkit-font-smoothing: antialiased;
-    /* Crisp text */
 }
 
 html {
@@ -65,7 +63,18 @@ body {
     background-color: var(--background-color);
     color: var(--text-body);
     line-height: 1.6;
+    /* Readable */
     font-size: 16px;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    max-width: 1200px;
+    /* Desktop Constraint */
 }
 
 /* Typography Hierarchy */
@@ -76,38 +85,109 @@ h4 {
     color: var(--text-main);
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: var(--spacing-sm);
-    letter-spacing: -0.02em;
-    /* Tight premium tracking */
+    margin-bottom: var(--spacing-md);
+    letter-spacing: -0.01em;
 }
 
 h1 {
-    font-size: 2.5rem;
-    /* Mobile Base */
+    font-size: 2rem;
+    /* Mobile: ~32px */
 }
 
 h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    /* Mobile: ~24px */
 }
 
 p {
     margin-bottom: 1.5rem;
 }
 
-/* ... existing nav code (preserved for now) ... */
+/* Navigation - Mobile First */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    /* Sticky */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 64px;
+    /* Touch friendly */
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
 
-/* Hero Section - World Class Rebuild */
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.logo img {
+    height: 36px;
+}
+
+.hamburger {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    padding: 0.5rem;
+    /* Easy reach */
+}
+
+.nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid var(--border-color);
+}
+
+.nav-links li {
+    list-style: none;
+    margin-bottom: 1.5rem;
+    /* 24px spacing */
+}
+
+.nav-links a {
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var(--text-main);
+    display: block;
+}
+
+.nav-links.active {
+    display: flex;
+}
+
+/* Hero Section */
 .hero {
     position: relative;
-    padding: var(--spacing-xl) var(--spacing-md);
-    min-height: 85vh;
-    /* Taller, more impressive */
+    padding: var(--spacing-xl) 0;
+    /* 80px */
+    min-height: auto;
+    /* Let content dictate on mobile */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     background: url('../images/hero.jpg') no-repeat center center/cover;
-    overflow: hidden;
+    margin-top: 60px;
+    /* Offset fixed header */
 }
 
 /* Sophisticated Overlay */
