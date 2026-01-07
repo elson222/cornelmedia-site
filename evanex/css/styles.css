@@ -88,6 +88,12 @@ img {
     display: block;
 }
 
+.img-circle {
+    border-radius: 50%;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+}
+
 .container {
     width: 100%;
     padding: 0 var(--spacing-container);
