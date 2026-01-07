@@ -162,7 +162,12 @@ a {
 
 /* 6. BUTTON SYSTEM (CONVERSION-FOCUSED) */
 .cta-primary {
-    display: inline-block;
+    display: flex;
+    /* Changed from inline-block to flex for alignment */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    /* specific space between icon and text */
     background: var(--primary);
     color: white;
     padding: 16px 20px;
@@ -170,13 +175,18 @@ a {
     font-weight: 600;
     text-decoration: none;
     width: 100%;
-    text-align: center;
     border: none;
     cursor: pointer;
+    line-height: 1.2;
+    /* Reset line height for flex items */
 }
 
 .cta-secondary {
-    display: inline-block;
+    display: flex;
+    /* Changed from inline-block to flex */
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
     background: transparent;
     color: var(--primary);
     padding: 16px 20px;
@@ -184,8 +194,8 @@ a {
     font-weight: 600;
     text-decoration: none;
     width: 100%;
-    text-align: center;
     border: 2px solid var(--primary);
+    line-height: 1.2;
 }
 
 @media (min-width: 768px) {
