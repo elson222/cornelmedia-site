@@ -515,19 +515,25 @@ footer {
     }
 }
 
-/* Mobile Nav & Overrides */
+/* Mobile Nav & Overrides - STRICT ENFORCEMENT */
 @media (max-width: 768px) {
+
+    html,
     body {
-        overflow-x: hidden;
+        overflow-x: hidden !important;
+        width: 100vw;
+        position: relative;
     }
 
     .hamburger {
-        display: block;
+        display: block !important;
         font-size: 1.5rem;
         cursor: pointer;
         padding: 0.5rem;
+        color: var(--text-main);
     }
 
+    /* Force hide nav links by default */
     .nav-links {
         display: none;
         flex-direction: column;
@@ -539,10 +545,13 @@ footer {
         padding: 2rem;
         border-bottom: 1px solid var(--border-color);
         box-shadow: var(--shadow-md);
+        z-index: 9999;
+        /* Ensure it floats above everything */
     }
 
+    /* Show when active class is added by JS */
     .nav-links.active {
-        display: flex;
+        display: flex !important;
     }
 
     .nav-links a {
@@ -551,73 +560,59 @@ footer {
         border-bottom: 1px solid #f0f0f0;
         width: 100%;
         display: block;
+        color: var(--text-main);
     }
 
     /* Hero Fixes */
     .hero {
         padding: 6rem 1rem;
         text-align: center;
-        /* Force center on mobile */
         clip-path: none;
         min-height: auto;
     }
 
     .hero-content {
-        padding-left: 0;
-        padding-right: 0;
         width: 100%;
+        padding: 0;
     }
 
     .hero h1 {
         font-size: 2.25rem;
-        /* Safe for 360px screens */
         line-height: 1.2;
     }
 
-    /* Fix Button Contrast in Hero */
+    /* FORCE Button Contrast in Hero */
     .hero .btn {
         width: 100%;
         margin-bottom: 1rem;
         display: flex;
+        justify-content: center;
     }
 
+    /* Target the exact button class for the Outline button */
     .hero .btn-secondary {
-        border-color: rgba(255, 255, 255, 0.4);
-        color: var(--white);
-        /* Force readable white text */
-        background: rgba(0, 0, 0, 0.2);
-        /* Slight backing for readability */
+        border: 1px solid rgba(255, 255, 255, 0.6) !important;
+        color: #FFFFFF !important;
+        background: rgba(0, 0, 0, 0.3) !important;
     }
 
+    /* Target the exact button class for the Primary button */
     .hero .btn-primary {
-        background-color: var(--secondary-color);
-        color: var(--white);
-        border: none;
+        background-color: var(--secondary-color) !important;
+        color: #FFFFFF !important;
+        border: none !important;
     }
 
+    /* Layout Stacking Overrides */
     .about-preview .content,
     .contact-container,
     .footer-content {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 
     /* Fix Header Spacing */
     nav {
         justify-content: space-between;
         padding: 0 0.5rem;
-    }
-
-    .logo-text {
-        font-size: 1rem;
-        /* Reduce logo size to fit */
-    }
-
-    .contact-info,
-    .contact-form {
-        padding: 1.5rem;
-    }
-
-    .footer-content {
-        gap: 2.5rem;
     }
 }
