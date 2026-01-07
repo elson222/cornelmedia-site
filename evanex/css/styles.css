@@ -183,6 +183,34 @@ nav {
     width: 100%;
 }
 
+/* Buttons Base */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border-radius: 9999px !important;
+    /* Force Pill Shape */
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    width: 100%;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+    transform: translateY(0) scale(0.98);
+}
+
 /* Hero Section */
 .hero {
     padding: var(--spacing-section) 0;
