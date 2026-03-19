@@ -118,16 +118,26 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Trust Architecture: GDPR/Cookie Consent UI -->
-    <div id="cookieCon" class="fixed bottom-24 md:bottom-8 left-6 z-50 max-w-xs bg-black/90 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl flex flex-col gap-4">
-        <p class="text-xs text-white/70 font-medium leading-relaxed">We utilize secure caching and architectural cookies to ensure a perfectly seamless cinematic experience.</p>
+        <!-- Persistent GDPR Cookie Consent Module -->
+    <div id="cookieCon" class="hidden fixed bottom-24 md:bottom-8 left-6 z-50 max-w-xs bg-black/90 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl flex-col gap-4">
+        <p class="text-[11px] text-white/70 font-medium leading-relaxed">We utilize secure caching and architectural cookies to ensure a perfectly seamless cinematic experience.</p>
         <div class="flex gap-2">
-            <button onclick="document.getElementById('cookieCon').style.display='none'" class="bg-white text-black px-4 py-2 rounded-lg text-[11px] font-black uppercase tracking-wider w-full hover:bg-white/80 transition shadow-lg">Acknowledge</button>
+            <button onclick="acceptCookies()" class="bg-white text-black px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider w-full hover:bg-white/80 transition shadow-lg">Acknowledge</button>
             <a href="privacy-policy.html" class="bg-transparent text-white px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest w-full text-center border border-white/20 hover:bg-white/10 transition">Policy</a>
         </div>
     </div>
+    <script>
+        if (!localStorage.getItem('cmp_cookie_consented')) {
+            document.getElementById('cookieCon').style.display = 'flex';
+        }
+        function acceptCookies() {
+            localStorage.setItem('cmp_cookie_consented', 'true');
+            document.getElementById('cookieCon').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
+
 
 
 

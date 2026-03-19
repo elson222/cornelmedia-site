@@ -77,7 +77,7 @@
     <!-- Floating Pill Navigation exactly like screenshot -->
             <!-- Cinematic Background Image Underlay -->
     <div class="fixed inset-0 w-full h-full z-0 pointer-events-none">
-        <img src="assets/images/IMG_2701.JPG" class="w-full h-full object-cover opacity-70 blur-xl scale-110" onerror="this.style.display='none'"> alt="Cornel Media Premium Showcase"  loading="lazy" 
+        <img src="assets/images/IMG_2701.JPG" class="w-full h-full object-cover opacity-70 blur-xl scale-110" onerror="this.style.display='none'" alt="Cornel Media Premium Showcase">loading="lazy" 
         <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/95"></div>
     </div>
     <!-- Floating Pill Navigation exactly like screenshot layout but with Cornel Media tabs -->
@@ -184,8 +184,7 @@
     <!-- Footer -->
     <footer class="mt-auto border-t border-white/[0.05] pt-10 pb-6 px-6 md:px-20 xl:px-32 relative z-10 w-full mb-4">
         <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto w-full">
-            <img src="assets/images/logo.png" alt="Cornel Media Productions" class="h-10 object-contain opacity-60 hover:opacity-100 transition"> loading="lazy" 
-            <div class="flex gap-6 text-[13px] text-white/40">
+            <img src="assets/images/logo.png" alt="Cornel Media Productions" class="h-10 object-contain opacity-60 hover:opacity-100 transition" loading="lazy"><div class="flex gap-6 text-[13px] text-white/40">
                 <a href="about.html" class="hover:text-white transition">About</a>
                 <a href="services.html" class="hover:text-white transition">Services</a>
                 <a href="pricing.html" class="hover:text-white transition">Pricing</a>
@@ -235,16 +234,26 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Trust Architecture: GDPR/Cookie Consent UI -->
-    <div id="cookieCon" class="fixed bottom-24 md:bottom-8 left-6 z-50 max-w-xs bg-black/90 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl flex flex-col gap-4">
-        <p class="text-xs text-white/70 font-medium leading-relaxed">We utilize secure caching and architectural cookies to ensure a perfectly seamless cinematic experience.</p>
+        <!-- Persistent GDPR Cookie Consent Module -->
+    <div id="cookieCon" class="hidden fixed bottom-24 md:bottom-8 left-6 z-50 max-w-xs bg-black/90 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl flex-col gap-4">
+        <p class="text-[11px] text-white/70 font-medium leading-relaxed">We utilize secure caching and architectural cookies to ensure a perfectly seamless cinematic experience.</p>
         <div class="flex gap-2">
-            <button onclick="document.getElementById('cookieCon').style.display='none'" class="bg-white text-black px-4 py-2 rounded-lg text-[11px] font-black uppercase tracking-wider w-full hover:bg-white/80 transition shadow-lg">Acknowledge</button>
+            <button onclick="acceptCookies()" class="bg-white text-black px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider w-full hover:bg-white/80 transition shadow-lg">Acknowledge</button>
             <a href="privacy-policy.html" class="bg-transparent text-white px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest w-full text-center border border-white/20 hover:bg-white/10 transition">Policy</a>
         </div>
     </div>
+    <script>
+        if (!localStorage.getItem('cmp_cookie_consented')) {
+            document.getElementById('cookieCon').style.display = 'flex';
+        }
+        function acceptCookies() {
+            localStorage.setItem('cmp_cookie_consented', 'true');
+            document.getElementById('cookieCon').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
+
 
 
 

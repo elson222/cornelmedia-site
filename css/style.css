@@ -658,3 +658,11 @@ footer {
         padding: 0 var(--spacing-sm);
     }
 }
+/* Globally hide native device scrollbars on horizontally swipeable filter nodes */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
