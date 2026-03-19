@@ -87,11 +87,19 @@
             <button class="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-2 rounded-full text-sm font-semibold transition cursor-pointer whitespace-nowrap">Documentaries</button>
         </div>
 
-                                        <!-- Cinematic YouTube Showcase -->
-        <div class="w-full aspect-video md:aspect-[21/9] lg:aspect-[2.35/1] rounded-2xl overflow-hidden bg-black border border-white/10 mb-12 shadow-2xl relative group">
-            <iframe class="absolute inset-0 w-full h-full pointer-events-auto" src="https://www.youtube.com/embed/7A--jzxDxUE?si=SGT4VxpLrN2HfA5C" title="Cornel Media Cinematic Promo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            <div class="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
-            <div class="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black/80 to-transparent pointer-events-none"></div>
+                                                <!-- Cinematic YouTube Showcases (Dual Grid) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <!-- Video 1 -->
+            <div class="w-full aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl relative group">
+                <iframe class="absolute inset-0 w-full h-full pointer-events-auto" src="https://www.youtube.com/embed/7A--jzxDxUE?si=SGT4VxpLrN2HfA5C" title="Cornel Media Cinematic Promo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
+            </div>
+            
+            <!-- Video 2 -->
+            <div class="w-full aspect-video rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl relative group">
+                <iframe class="absolute inset-0 w-full h-full pointer-events-auto" src="https://www.youtube.com/embed/8cTaV0KdM5o?si=vTzxMS6lFtWL5UmU" title="Cornel Media Secondary Promo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div class="absolute inset-x-0 bottom-0 h-6 bg-gradient-to-t from-black/80 to-transparent pointer-events-none"></div>
+            </div>
         </div>
 
         <!-- Grid of Posters (App style) -->
@@ -240,6 +248,7 @@
     </nav>
 </body>
 </html>
+
 
 
 
