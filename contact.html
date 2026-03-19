@@ -40,7 +40,12 @@
 <body class="bg-black antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
     
     <!-- Floating Pill Navigation exactly like screenshot -->
-        <!-- Floating Pill Navigation exactly like screenshot layout but with Cornel Media tabs -->
+            <!-- Cinematic Background Image Underlay -->
+    <div class="fixed inset-0 w-full h-full z-0 pointer-events-none overflow-hidden">
+        <img src="assets/images/creative-portrait.jpg" class="w-full h-full object-cover opacity-80 blur-[28px] scale-[1.05]" onerror="this.style.display='none'">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/95"></div>
+    </div>
+    <!-- Floating Pill Navigation exactly like screenshot layout but with Cornel Media tabs -->
     <nav class="hidden md:flex fixed top-8 left-1/2 -translate-x-1/2 z-50 items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
         <a href="index.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
             <i class="fas fa-home"></i> Home
@@ -239,6 +244,7 @@
     </nav>
 </body>
 </html>
+
 
 
 
