@@ -1,181 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Cornel Media Productions</title>
-    <meta name="description" content="Explore our portfolio of cinematic videography and photography.">
-    <meta name="color-scheme" content="dark">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Tailwind CSS for rapid 1:1 structural replica -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Cornel Media Productions",
-      "url": "https://cornel.media",
-      "logo": "https://cornel.media/assets/images/logo.png",
-      "sameAs": [
-        "https://www.instagram.com/quaysoncornel",
-        "https://twitter.com/cornel_media",
-        "https://youtube.com/@quaysoncornel"
-      ]
-    }
-    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #080c13; color: #fff; overflow-x: hidden; }
+        .pill-nav {
+            background: rgba(36, 43, 58, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        .nav-item { transition: all 0.2s ease; }
+        .nav-item:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .nav-active { background: #fff; color: #000; box-shadow: 0 2px 10px rgba(255,255,255,0.2); }
+        .nav-active:hover { color: #000; text-shadow: none; background: #f0f0f0; }
+        
+        .hero-bg-vignette {
+            background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%);
+        }
+        
+        .movie-card { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .movie-card:hover { transform: scale(1.05); z-index: 10; border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+    </style>
 </head>
+<body class="antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
+    
+    <!-- Floating Pill Navigation exactly like screenshot -->
+    <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
+        <a href="index.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="portfolio.html" class="nav-active flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-film"></i> Movies
+        </a>
+        <a href="services.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-tv"></i> TV
+        </a>
+        <a href="contact.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-user-circle"></i> Contact
+        </a>
+        
+        <div class="w-px h-5 bg-white/10 mx-2"></div>
+        
+        <button class="nav-item text-white/70 px-3 py-2 text-sm">
+            <i class="fas fa-search"></i>
+        </button>
+    </nav>
 
-<body>
-
-    <!-- Header -->
-    <header id="main-header">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
-                </a>
-                <div class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="portfolio.html" class="active">Portfolio</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="booking.html" class="btn btn-primary">Book Now</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Portfolio Header -->
-    <section class="section" style="padding-top: 150px; padding-bottom: 60px;">
-        <div class="container text-center">
-            <span class="section-number">Our Work</span>
-            <h1>Selected Projects</h1>
-            <p style="color: var(--color-text-secondary); max-width: 600px; margin: 20px auto;">
-                A collection of our finest moments, captured with precision and passion.
-            </p>
-        </div>
-    </section>
-
-    <!-- Portfolio Grid -->
-    <section class="section" style="padding-top: 0;">
-        <div class="container">
-            <div class="grid grid-3">
-                <!-- Project 1 -->
-                <div class="gallery-card">
-                    <img src="assets/images/graduation-project.jpg" alt="Graduation Photography" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Graduation</h3>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="gallery-card">
-                    <img src="assets/images/IMG_3256.jpg" alt="Wedding Photography" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Wedding</h3>
-                    </div>
-                </div>
-                <!-- Project 3 -->
-                <div class="gallery-card">
-                    <img src="assets/images/creative-portrait.jpg" alt="Creative Portrait" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Creative</h3>
-                    </div>
-                </div>
-                <!-- Project 4 -->
-                <div class="gallery-card">
-                    <img src="assets/images/saved.jpg" alt="Featured" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Featured</h3>
-                    </div>
-                </div>
-                <!-- Project 5 -->
-                <div class="gallery-card">
-                    <img src="assets/images/music-video-project.jpg" alt="Music Video" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Music Video</h3>
-                    </div>
-                </div>
-                <!-- Project 6 -->
-                <div class="gallery-card">
-                    <img src="assets/images/IMG_1180.JPG" alt="Drone" loading="lazy">
-                    <div class="card-overlay">
-                        <h3>Drone</h3>
-                    </div>
-                </div>
+    <!-- Main Content Area adjusted for Top Pill Nav (120px pt) -->
+    <main class="flex-grow pt-32 pb-24 px-10 md:px-20 xl:px-32 max-w-[100rem] mx-auto w-full relative z-10">
+        
+        <!-- Header -->
+        <div class="mb-10">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="h-[2px] w-8 bg-white drop-shadow-md"></div>
+                <h1 class="text-4xl md:text-5xl font-black tracking-widest text-white uppercase drop-shadow-2xl">
+                    FEATURED <span class="font-light opacity-60">MOVIES</span>
+                </h1>
             </div>
+            <p class="text-zinc-400 text-lg max-w-2xl font-medium">Browse our most recent top-tier cinematic works and production galleries.</p>
+        </div>
 
-            <!-- Retouching Highlight -->
-            <div class="section-header" style="margin-top: 100px; text-align: center;">
-                <span class="section-number">Detail Work</span>
-                <h2>High-End Retouching</h2>
-            </div>
-            <div class="grid grid-2">
-                <div class="gallery-card" style="height: 600px;">
-                    <img src="assets/images/CD-TEASE-8.jpg" alt="Retouching Work" style="object-position: top;">
-                    <div class="card-overlay">
-                        <h3>Beauty Retouch</h3>
+        <!-- Filter / Genres Menu (Movies style) -->
+        <div class="flex gap-4 mb-10 overflow-x-auto pb-4">
+            <button class="bg-white text-black px-6 py-2 rounded-full text-sm font-bold shadow-md cursor-pointer whitespace-nowrap">All Releases</button>
+            <button class="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-2 rounded-full text-sm font-semibold transition cursor-pointer whitespace-nowrap">Weddings</button>
+            <button class="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-2 rounded-full text-sm font-semibold transition cursor-pointer whitespace-nowrap">Music Videos</button>
+            <button class="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-2 rounded-full text-sm font-semibold transition cursor-pointer whitespace-nowrap">Commercials</button>
+            <button class="bg-white/5 hover:bg-white/10 text-white border border-white/10 px-6 py-2 rounded-full text-sm font-semibold transition cursor-pointer whitespace-nowrap">Documentaries</button>
+        </div>
+
+        <!-- Grid of Posters (App style) -->
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 md:gap-8">
+            
+            <!-- Card 1 -->
+            <a href="contact.html" class="movie-card w-full aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5 block group">
+                <img src="assets/images/IMG_3256.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Wedding'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100 group-hover:bg-black/40 transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="w-14 h-14 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 shadow-2xl">
+                        <i class="fas fa-play text-white ml-1"></i>
                     </div>
                 </div>
-                <div style="display: flex; flex-direction: column; justify-content: center;">
-                    <h3 style="margin-bottom: 20px;">Flawless Execution</h3>
-                    <p style="color: var(--color-text-secondary); margin-bottom: 20px;">
-                        Our post-production process is where the magic happens. We spend hours refining skin tones,
-                        color grading, and ensuring every pixel meets our high standards.
-                    </p>
-                    <a href="contact.html" class="btn">Request Service</a>
+                <div class="absolute top-3 left-3 px-2 py-1 bg-red-600 text-white text-[10px] font-bold rounded shadow-lg">NEW</div>
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="font-bold text-lg text-white line-clamp-1 mb-1 shadow-black">The Royal Wedding</h3>
+                    <div class="flex justify-between items-center text-[12px] text-white/80 font-medium">
+                        <span class="text-green-400 font-bold">98% Match</span>
+                        <span class="border border-white/30 px-1 rounded shadow-sm">4K</span>
+                    </div>
                 </div>
-            </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a href="contact.html" class="movie-card w-full aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5 block group">
+                <img src="assets/images/creative-portrait.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Creative'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100 group-hover:bg-black/40 transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="w-14 h-14 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 shadow-2xl">
+                        <i class="fas fa-play text-white ml-1"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="font-bold text-lg text-white line-clamp-1 mb-1 shadow-black">Creative Shoot</h3>
+                    <div class="flex justify-between items-center text-[12px] text-white/80 font-medium">
+                        <span class="text-green-400 font-bold">95% Match</span>
+                        <span class="border border-white/30 px-1 rounded shadow-sm">HD</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a href="contact.html" class="movie-card w-full aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5 block group">
+                <img src="assets/images/music-video-project.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Music'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100 group-hover:bg-black/40 transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="w-14 h-14 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 shadow-2xl">
+                        <i class="fas fa-play text-white ml-1"></i>
+                    </div>
+                </div>
+                <div class="absolute top-3 left-3 px-2 py-1 bg-zinc-800 border border-zinc-600 text-white text-[10px] font-bold rounded shadow-lg">TOP 10</div>
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="font-bold text-lg text-white line-clamp-1 mb-1 shadow-black">Music Anthem</h3>
+                    <div class="flex justify-between items-center text-[12px] text-white/80 font-medium">
+                        <span class="text-green-400 font-bold">99% Match</span>
+                        <span class="border border-white/30 px-1 rounded shadow-sm">4K</span>
+                    </div>
+                </div>
+            </a>
+
+            <!-- Card 4 -->
+            <a href="contact.html" class="movie-card w-full aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5 block group">
+                <img src="assets/images/IMG_1180.JPG" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Drone'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100 group-hover:bg-black/40 transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="w-14 h-14 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 shadow-2xl">
+                        <i class="fas fa-play text-white ml-1"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="font-bold text-lg text-white line-clamp-1 mb-1 shadow-black">Aerial Landscapes</h3>
+                    <div class="flex justify-between items-center text-[12px] text-white/80 font-medium">
+                        <span class="text-green-400 font-bold">92% Match</span>
+                        <span class="border border-white/30 px-1 rounded shadow-sm">4K</span>
+                    </div>
+                </div>
+            </a>
+            
+            <!-- Card 5 -->
+            <a href="contact.html" class="movie-card w-full aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5 block group">
+                <img src="assets/images/IMG_4341.JPG" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Portrait'">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100 group-hover:bg-black/40 transition"></div>
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                    <div class="w-14 h-14 bg-white/30 backdrop-blur-md rounded-full flex items-center justify-center border border-white/50 shadow-2xl">
+                        <i class="fas fa-play text-white ml-1"></i>
+                    </div>
+                </div>
+                <div class="absolute bottom-0 left-0 p-4 w-full">
+                    <h3 class="font-bold text-lg text-white line-clamp-1 mb-1 shadow-black">Studio Portraits</h3>
+                    <div class="flex justify-between items-center text-[12px] text-white/80 font-medium">
+                        <span class="text-green-400 font-bold">96% Match</span>
+                        <span class="border border-white/30 px-1 rounded shadow-sm">HD</span>
+                    </div>
+                </div>
+            </a>
+
         </div>
-    </section>
+
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
-                </div>
-                <p>Crafting visual stories that resonate, inspire, and endure.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/cornel_media" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/@quaysoncornel" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
+    <footer class="mt-auto border-t border-white/[0.05] pt-10 pb-6 px-10 md:px-20 xl:px-32 relative z-10 w-full mb-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-[100rem] mx-auto w-full">
+            <div class="text-sm font-semibold tracking-widest text-white/50 uppercase">Cornel Media Productions</div>
+            <div class="flex gap-6 text-[13px] text-white/40">
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="services.html" class="hover:text-white transition">Services</a>
+                <a href="pricing.html" class="hover:text-white transition">Pricing</a>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
             </div>
-            <div class="copyright">
-                &copy; 2025 Cornel Media. All rights reserved.
-            </div>
+            <div class="text-xs text-white/30">© 2026 CMP. All rights reserved.</div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        // Simple scroll listener for header
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
 </body>
-
 </html>

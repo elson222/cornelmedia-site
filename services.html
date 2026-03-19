@@ -1,184 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services | Cornel Media Productions</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Tailwind CSS for rapid 1:1 structural replica -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cornel.media/services.html">
-    <meta property="og:title" content="Services | Cornel Media Productions">
-    <meta property="og:description" content="Premium Videography, Photography, and Creative Direction based in Ghana.">
-    <meta property="og:image" content="https://cornel.media/assets/images/og-preview.png">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Cornel Media Productions",
-      "url": "https://cornel.media",
-      "logo": "https://cornel.media/assets/images/logo.png",
-      "sameAs": [
-        "https://www.instagram.com/quaysoncornel",
-        "https://twitter.com/cornel_media",
-        "https://youtube.com/@quaysoncornel"
-      ]
-    }
-    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #080c13; color: #fff; overflow-x: hidden; }
+        .pill-nav {
+            background: rgba(36, 43, 58, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        .nav-item { transition: all 0.2s ease; }
+        .nav-item:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .nav-active { background: #fff; color: #000; box-shadow: 0 2px 10px rgba(255,255,255,0.2); }
+        .nav-active:hover { color: #000; text-shadow: none; background: #f0f0f0; }
+        
+        .glass-panel { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.05); }
+        .glass-panel:hover { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
+        
+        .glass-btn { background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(8px); }
+        
+        .hero-bg-vignette {
+            background: radial-gradient(circle at 100% 0%, rgba(255,255,255,0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 0% 100%, rgba(255,0,50,0.02) 0%, transparent 50%);
+        }
+    </style>
 </head>
+<body class="antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
+    
+    <!-- Floating Pill Navigation exactly like screenshot -->
+    <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
+        <a href="index.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="portfolio.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-film"></i> Movies
+        </a>
+        <a href="services.html" class="nav-active flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-tv"></i> TV
+        </a>
+        <a href="contact.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-user-circle"></i> Contact
+        </a>
+        
+        <div class="w-px h-5 bg-white/10 mx-2"></div>
+        
+        <button class="nav-item text-white/70 px-3 py-2 text-sm">
+            <i class="fas fa-search"></i>
+        </button>
+    </nav>
 
-<body>
+    <!-- Main Content Area -->
+    <main class="flex-grow pt-32 pb-24 px-10 md:px-20 xl:px-32 max-w-[90rem] mx-auto w-full relative z-10">
+        
+        <!-- Header -->
+        <div class="mb-14 text-center flex flex-col items-center">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="h-[2px] w-8 bg-white drop-shadow-md"></div>
+                <h1 class="text-4xl md:text-5xl font-black tracking-widest text-white uppercase drop-shadow-2xl">
+                    OUR <span class="font-light opacity-60">SERVICES</span>
+                </h1>
+                <div class="h-[2px] w-8 bg-white drop-shadow-md"></div>
+            </div>
+            <p class="text-zinc-400 text-lg max-w-2xl font-medium">Professional media production delivering cinematic quality for every occasion, modeled exactly after top-tier streaming services.</p>
+        </div>
 
-    <!-- Header -->
-    <header id="main-header">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Service 1 -->
+            <div class="glass-panel p-10 rounded-3xl flex flex-col items-start transition duration-300">
+                <div class="w-16 h-16 rounded-2xl glass-btn flex items-center justify-center mb-8 border border-white/5">
+                    <i class="fas fa-video text-2xl drop-shadow"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4 tracking-tight">Cinematic Videography</h3>
+                <p class="text-zinc-400 text-[15px] mb-8 flex-grow leading-relaxed">High-end video production for commercials, documentaries, and creative direction shot on industry-standard 4K cinematic cameras.</p>
+                <a href="contact.html" class="text-[13px] font-bold text-white hover:text-white/70 py-2 border-b-2 border-white/50 hover:border-white transition flex items-center gap-3 tracking-widest uppercase">
+                    Book Now <i class="fas fa-arrow-right text-xs"></i>
                 </a>
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
+            </div>
+            
+            <!-- Service 2 -->
+             <div class="glass-panel p-10 rounded-3xl flex flex-col items-start transition duration-300">
+                <div class="w-16 h-16 rounded-2xl glass-btn flex items-center justify-center mb-8 border border-white/5">
+                    <i class="fas fa-camera text-2xl drop-shadow"></i>
                 </div>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html" class="active">Services</a>
-                    <a href="portfolio.html">Portfolio</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="booking.html" class="btn btn-primary" style="padding: 8px 20px;">Book Now</a>
+                <h3 class="text-2xl font-bold text-white mb-4 tracking-tight">Premium Photography</h3>
+                <p class="text-zinc-400 text-[15px] mb-8 flex-grow leading-relaxed">Portrait, editorial, and commercial photography utilizing expert studio lighting techniques and world-class retouching.</p>
+                <a href="contact.html" class="text-[13px] font-bold text-white hover:text-white/70 py-2 border-b-2 border-white/50 hover:border-white transition flex items-center gap-3 tracking-widest uppercase">
+                    Book Now <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+            
+            <!-- Service 3 -->
+             <div class="glass-panel p-10 rounded-3xl flex flex-col items-start transition duration-300">
+                <div class="w-16 h-16 rounded-2xl glass-btn flex items-center justify-center mb-8 border border-white/5">
+                    <i class="fas fa-paper-plane text-2xl drop-shadow"></i>
                 </div>
-            </nav>
+                <h3 class="text-2xl font-bold text-white mb-4 tracking-tight">Drone Piloting</h3>
+                <p class="text-zinc-400 text-[15px] mb-8 flex-grow leading-relaxed">Breathtaking aerial views, dramatic landscape reveals, and dynamic establishing shots utilizing top-tier DJI drones.</p>
+                <a href="contact.html" class="text-[13px] font-bold text-white hover:text-white/70 py-2 border-b-2 border-white/50 hover:border-white transition flex items-center gap-3 tracking-widest uppercase">
+                    Book Now <i class="fas fa-arrow-right text-xs"></i>
+                </a>
+            </div>
+            
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section" style="height: 60vh; min-height: 400px; position: relative; overflow: hidden;">
-        <div class="hero-bg"
-            style="background-image: url('assets/images/AS8A3155.JPG'); filter: blur(4px); transform: scale(1.1);">
-        </div>
-        <div style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.5);"></div>
-        <div class="container" style="position: relative; z-index: 1;">
-            <div class="hero-content">
-                <p class="hero-subtitle animate-text">What We Do</p>
-                <h1 class="animate-text">Our Services</h1>
+        <!-- Featured Large Sub-Service -->
+        <div class="mt-8 glass-panel p-10 md:p-14 rounded-[2rem] flex flex-col lg:flex-row items-center gap-10 lg:gap-16 border border-white/5 transition duration-300 hover:bg-white/5">
+            <div class="w-24 h-24 shrink-0 rounded-3xl glass-btn flex items-center justify-center border border-white/20">
+                <i class="fas fa-broadcast-tower text-[40px] text-white"></i>
+            </div>
+            <div class="flex-grow text-center lg:text-left">
+                <h3 class="text-3xl font-black text-white mb-3 tracking-tight">Multi-Cam Live Streaming</h3>
+                <p class="text-zinc-400 text-[16px] leading-relaxed max-w-3xl">Professional event broadcasting globally via YouTube, Facebook, or custom platforms with multi-angle switching, perfect audio mixing, and integrated real-time graphics. Your virtual audience deserves the absolute best front-row view.</p>
+            </div>
+            <div class="shrink-0 mt-2 lg:mt-0">
+                <a href="contact.html" class="bg-white text-black hover:bg-zinc-200 hover:scale-105 px-8 py-4 rounded-full font-bold transition shadow-2xl flex items-center gap-3 tracking-widest uppercase text-[12px]">
+                    Request Quote <i class="fas fa-chevron-right text-[10px]"></i>
+                </a>
             </div>
         </div>
-    </section>
 
-    <!-- Services Section -->
-    <section class="section">
-        <div class="container">
-            <!-- Video Editing -->
-            <div class="grid grid-2" style="align-items: center; margin-bottom: 120px;">
-                <div>
-                    <h2>Video Editing</h2>
-                    <p style="margin-bottom: 25px; line-height: 1.6; color: #ddd;">Professional post-production services
-                        to bring your footage to life. We handle everything from
-                        cutting and trimming to color grading and sound design.</p>
-                    <ul style="margin-bottom: 30px; list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><span
-                                style="color: var(--color-gold);">✓</span> Cinematic Highlights</li>
-                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><span
-                                style="color: var(--color-gold);">✓</span> Corporate Edits</li>
-                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><span
-                                style="color: var(--color-gold);">✓</span> Color Grading</li>
-                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><span
-                                style="color: var(--color-gold);">✓</span> Social Media Content</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Request Editing</a>
-                </div>
-                <div
-                    style="background-color: #222; height: 315px; display: flex; align-items: center; justify-content: center;">
-                    <iframe width="100%" height="315"
-                        src="https://www.youtube.com/embed/8cTaV0KdM5o?si=1v7APgeU4l9PpDpK" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-
-            <!-- Drone Mapping -->
-            <div class="grid grid-2" style="align-items: center;">
-                <div style="order: 2;">
-                    <h2>Drone Services</h2>
-                    <p style="margin-bottom: 25px; line-height: 1.6; color: #ddd;">High-precision aerial videography and
-                        mapping for events, construction, agriculture, and land
-                        development.</p>
-                    <ul style="margin-bottom: 30px; list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><span
-                                style="color: var(--color-gold);">✓</span> 4K Aerial Videography</li>
-                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><span
-                                style="color: var(--color-gold);">✓</span> 2D Orthomosaics</li>
-                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><span
-                                style="color: var(--color-gold);">✓</span> 3D Models</li>
-                        <li style="margin-bottom: 12px; display: flex; align-items: center; gap: 10px;"><span
-                                style="color: var(--color-gold);">✓</span> Topographic Surveys</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Book Drone Service</a>
-                </div>
-                <div
-                    style="order: 1; background-color: #222; height: 315px; display: flex; align-items: center; justify-content: center;">
-                    <iframe width="100%" height="315"
-                        src="https://www.youtube.com/embed/jDNwMnoHC_8?si=oK-KThXufnJVVVQc" title="YouTube video player"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo" style="justify-content: center; margin-bottom: 20px;">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                        style="height: 100px;">
-                </div>
-                <p>Crafting visual stories that resonate, inspire, and endure.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/cornel_media" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/@quaysoncornel" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
+    <footer class="mt-auto border-t border-white/[0.05] pt-10 pb-6 px-10 md:px-20 xl:px-32 relative z-10 w-full mb-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-[90rem] mx-auto w-full">
+            <div class="text-sm font-semibold tracking-widest text-white/50 uppercase">Cornel Media Productions</div>
+            <div class="flex gap-6 text-[13px] text-white/40">
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="services.html" class="hover:text-white transition">Services</a>
+                <a href="pricing.html" class="hover:text-white transition">Pricing</a>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
             </div>
-            <div class="copyright">
-                &copy; 2025 Cornel Media. All rights reserved.
-            </div>
+            <div class="text-xs text-white/30">© 2026 CMP. All rights reserved.</div>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="js/main.js"></script>
-    <script>
-        // Simple scroll listener for header
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
 </body>
-
 </html>

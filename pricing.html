@@ -1,147 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | Cornel Media Productions</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Pricing Plans | Cornel Media Productions</title>
+    <!-- Tailwind CSS for rapid 1:1 structural replica -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cornel.media/pricing.html">
-    <meta property="og:title" content="Pricing | Cornel Media Productions">
-    <meta property="og:description" content="Premium Videography, Photography, and Creative Direction based in Ghana.">
-    <meta property="og:image" content="https://cornel.media/assets/images/og-preview.png">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Cornel Media Productions",
-      "url": "https://cornel.media",
-      "logo": "https://cornel.media/assets/images/logo.png",
-      "sameAs": [
-        "https://www.instagram.com/quaysoncornel",
-        "https://twitter.com/cornel_media",
-        "https://youtube.com/@quaysoncornel"
-      ]
-    }
-    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #080c13; color: #fff; overflow-x: hidden; }
+        .pill-nav {
+            background: rgba(36, 43, 58, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        .nav-item { transition: all 0.2s ease; }
+        .nav-item:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .nav-active { background: #fff; color: #000; box-shadow: 0 2px 10px rgba(255,255,255,0.2); }
+        .nav-active:hover { color: #000; text-shadow: none; background: #f0f0f0; }
+        
+        .glass-panel { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.05); }
+        .glass-panel:hover { background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); }
+        .glass-panel-featured { background: linear-gradient(135deg, rgba(80, 20, 20, 0.8) 0%, rgba(20, 10, 30, 0.9) 100%); border: 1px solid rgba(255,100,100,0.3); }
+        
+        .hero-bg-vignette {
+            background: radial-gradient(circle at 0% 0%, rgba(255,255,255,0.03) 0%, transparent 60%);
+        }
+    </style>
 </head>
+<body class="antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
+    
+    <!-- Floating Pill Navigation exactly like screenshot -->
+    <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
+        <a href="index.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="portfolio.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-film"></i> Movies
+        </a>
+        <a href="services.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-tv"></i> TV
+        </a>
+        <a href="contact.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-user-circle"></i> Contact
+        </a>
+        
+        <div class="w-px h-5 bg-white/10 mx-2"></div>
+        
+        <button class="nav-item text-white/70 px-3 py-2 text-sm">
+            <i class="fas fa-search"></i>
+        </button>
+    </nav>
 
-<body>
-
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                        style="height: 100px;">
-                </a>
-                <div class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="portfolio.html">Portfolio</a>
-                    <a href="pricing.html" class="active">Pricing</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="booking.html" class="btn btn-primary" style="padding: 8px 20px;">Book Now</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <section class="section">
-        <div class="container">
-            <div class="grid grid-3">
-                <!-- Package 1 -->
-                <div
-                    style="border: 1px solid #333; padding: 40px; text-align: center; transition: transform 0.3s ease;">
-                    <h3>Photoshoot</h3>
-                    <p style="font-size: 2rem; color: var(--color-gold); margin: 20px 0;">Custom Quote</p>
-                    <ul style="text-align: left; margin-bottom: 30px; color: #ccc;">
-                        <li style="margin-bottom: 10px;">• 1 Hour Session</li>
-                        <li style="margin-bottom: 10px;">• 10 Retouched Photos</li>
-                        <li style="margin-bottom: 10px;">• 1 Outfit Change</li>
-                        <li style="margin-bottom: 10px;">• Online Gallery</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Book Now</a>
-                </div>
-
-                <!-- Package 2 -->
-                <div
-                    style="border: 1px solid var(--color-gold); padding: 40px; text-align: center; transform: scale(1.05); background-color: #111;">
-                    <h3 style="color: var(--color-gold);">Wedding Package</h3>
-                    <p style="font-size: 2rem; color: var(--color-gold); margin: 20px 0;">Custom Quote</p>
-                    <ul style="text-align: left; margin-bottom: 30px; color: #ccc;">
-                        <li style="margin-bottom: 10px;">• Full Day Coverage</li>
-                        <li style="margin-bottom: 10px;">• Photography & Videography</li>
-                        <li style="margin-bottom: 10px;">• Drone Coverage</li>
-                        <li style="margin-bottom: 10px;">• Highlight Reel + Full Film</li>
-                        <li style="margin-bottom: 10px;">• Photobook Included</li>
-                    </ul>
-                    <a href="booking.html" class="btn btn-primary">Inquire Now</a>
-                </div>
-
-                <!-- Package 3 -->
-                <div style="border: 1px solid #333; padding: 40px; text-align: center;">
-                    <h3>Corporate Event</h3>
-                    <p style="font-size: 2rem; color: var(--color-gold); margin: 20px 0;">Custom Quote</p>
-                    <ul style="text-align: left; margin-bottom: 30px; color: #ccc;">
-                        <li style="margin-bottom: 10px;">• 4 Hours Coverage</li>
-                        <li style="margin-bottom: 10px;">• Photo & Video Highlights</li>
-                        <li style="margin-bottom: 10px;">• Fast Turnaround</li>
-                        <li style="margin-bottom: 10px;">• Commercial Usage Rights</li>
-                    </ul>
-                    <a href="booking.html" class="btn">Book Now</a>
-                </div>
-
+    <!-- Main Content Area -->
+    <main class="flex-grow pt-32 pb-24 px-10 md:px-20 xl:px-32 max-w-7xl mx-auto w-full relative z-10">
+        
+        <!-- Header -->
+        <div class="mb-14 text-center flex flex-col items-center">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="h-[2px] w-8 bg-white drop-shadow-md"></div>
+                <h1 class="text-4xl md:text-5xl font-black tracking-widest text-white uppercase drop-shadow-2xl">
+                    CHOOSE YOUR <span class="font-light opacity-60">PLAN</span>
+                </h1>
+                <div class="h-[2px] w-8 bg-white drop-shadow-md"></div>
             </div>
-            <p style="text-align: center; margin-top: 40px; color: #666;">* Prices are subject to change based on
-                location and specific requirements.</p>
+            <p class="text-zinc-400 text-lg max-w-2xl font-medium">Simple, transparent pricing for world-class streaming-quality media production. No hidden fees.</p>
         </div>
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="logo" style="justify-content: center; margin-bottom: 20px;">
-                        <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                            style="height: 100px;">
-                    </div>
-                    <p>Crafting visual stories that resonate, inspire, and endure.</p>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/quaysoncornel" target="_blank"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="https://twitter.com/cornel_media" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a href="https://youtube.com/@quaysoncornel" target="_blank"><i class="fab fa-youtube"></i></a>
-                    </div>
-                </div>
-                <div class="copyright">
-                    &copy; 2025 Cornel Media. All rights reserved.
-                </div>
-            </div>
-        </footer>
 
-        <!-- Scripts -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-        <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-        <script src="js/main.js"></script>
+        <!-- Pricing Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            
+            <!-- Basic Plan -->
+            <div class="glass-panel p-10 rounded-[2rem] flex flex-col items-center text-center transition duration-300 relative overflow-hidden">
+                <h3 class="text-xl font-bold text-white mb-2 uppercase tracking-widest text-white/60">Photoshoot</h3>
+                <div class="flex items-start justify-center gap-1 mb-6">
+                    <span class="text-2xl font-bold text-zinc-400 mt-2">GH₵</span>
+                    <span class="text-6xl font-black text-white tracking-tighter">800</span>
+                </div>
+                <p class="text-zinc-400 text-sm mb-8 leading-relaxed h-12">Perfect for professional headshots, modeling portfolios, and birthday portraits.</p>
+                
+                <ul class="w-full space-y-4 text-sm text-zinc-300 font-medium text-left mb-10 flex-grow">
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> 2 Hour Studio Session</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> 15 High-End Retouched Photos</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> 2 Outfit Changes</li>
+                    <li class="flex items-center gap-3 text-zinc-500"><i class="fas fa-times"></i> No Drone Coverage</li>
+                </ul>
+                
+                <a href="contact.html" class="w-full bg-white/10 hover:bg-white/20 text-white py-3.5 rounded-full font-bold transition">Book Session</a>
+            </div>
+            
+            <!-- Pro / Featured Plan -->
+            <div class="glass-panel-featured p-10 py-12 rounded-[2rem] flex flex-col items-center text-center transition duration-300 relative overflow-hidden transform scale-105 z-10 shadow-2xl">
+                <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-red-600 via-yellow-500 to-red-600"></div>
+                <div class="inline-block bg-red-600 text-white text-[10px] uppercase font-black tracking-widest px-3 py-1 rounded-full mb-4">Most Popular</div>
+                
+                <h3 class="text-xl font-bold text-white mb-2 uppercase tracking-widest">Wedding Film</h3>
+                <div class="flex items-start justify-center gap-1 mb-6">
+                    <span class="text-2xl font-bold text-red-200 mt-2">GH₵</span>
+                    <span class="text-6xl font-black text-white tracking-tighter">3,500</span>
+                </div>
+                <p class="text-red-100/70 text-sm mb-8 leading-relaxed h-12">Full cinematic coverage of your special day including drone establishing shots.</p>
+                
+                <ul class="w-full space-y-4 text-sm text-white font-medium text-left mb-10 flex-grow">
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-red-400"></i> 10 Hours Event Coverage</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-red-400"></i> 1 Hour Cinematic Documentary</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-red-400"></i> 5 Minute Highlight Trailer</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-red-400"></i> Premium Drone Footage Included</li>
+                </ul>
+                
+                <a href="contact.html" class="w-full bg-white text-black hover:bg-zinc-200 py-4 rounded-full font-bold transition shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:scale-105">Book Premier Session</a>
+            </div>
+            
+            <!-- Commercial Plan -->
+            <div class="glass-panel p-10 rounded-[2rem] flex flex-col items-center text-center transition duration-300 relative overflow-hidden">
+                <h3 class="text-xl font-bold text-white mb-2 uppercase tracking-widest text-white/60">Commercial</h3>
+                <div class="flex items-start justify-center gap-1 mb-6">
+                    <span class="text-xl font-bold text-zinc-400 mt-2 text-sm uppercase">Custom Form</span>
+                </div>
+                <p class="text-zinc-400 text-sm mb-8 leading-relaxed h-12">Tailored for corporate events, music videos, and cinematic ad campaigns.</p>
+                
+                <ul class="w-full space-y-4 text-sm text-zinc-300 font-medium text-left mb-10 flex-grow">
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Custom Production Scale</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> 4K / 6K Cinematic Options</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Complete Editing & Color Grading</li>
+                    <li class="flex items-center gap-3"><i class="fas fa-check text-green-500"></i> Dedicated Creative Director</li>
+                </ul>
+                
+                <a href="contact.html" class="w-full bg-white/10 hover:bg-white/20 text-white py-3.5 rounded-full font-bold transition">Request Quote</a>
+            </div>
+            
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="mt-auto border-t border-white/[0.05] pt-10 pb-6 px-10 md:px-20 xl:px-32 relative z-10 w-full mb-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto w-full">
+            <div class="text-sm font-semibold tracking-widest text-white/50 uppercase">Cornel Media Productions</div>
+            <div class="flex gap-6 text-[13px] text-white/40">
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="services.html" class="hover:text-white transition">Services</a>
+                <a href="pricing.html" class="hover:text-white transition">Pricing</a>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
+            </div>
+            <div class="text-xs text-white/30">© 2026 CMP. All rights reserved.</div>
+        </div>
+    </footer>
+
 </body>
-
 </html>

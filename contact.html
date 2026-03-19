@@ -1,140 +1,206 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact | Cornel Media Productions</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Contact Us | Cornel Media Productions</title>
+    <!-- Tailwind CSS for rapid 1:1 structural replica -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cornel.media/contact.html">
-    <meta property="og:title" content="Contact | Cornel Media Productions">
-    <meta property="og:description" content="Premium Videography, Photography, and Creative Direction based in Ghana.">
-    <meta property="og:image" content="https://cornel.media/assets/images/og-preview.png">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Cornel Media Productions",
-      "url": "https://cornel.media",
-      "logo": "https://cornel.media/assets/images/logo.png",
-      "sameAs": [
-        "https://www.instagram.com/quaysoncornel",
-        "https://twitter.com/cornel_media",
-        "https://youtube.com/@quaysoncornel"
-      ]
-    }
-    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #080c13; color: #fff; overflow-x: hidden; }
+        .pill-nav {
+            background: rgba(36, 43, 58, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        .nav-item { transition: all 0.2s ease; }
+        .nav-item:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .nav-active { background: #fff; color: #000; box-shadow: 0 2px 10px rgba(255,255,255,0.2); }
+        .nav-active:hover { color: #000; text-shadow: none; background: #f0f0f0; }
+        
+        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.05); }
+        .glass-btn { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.1); }
+        .glass-btn:hover { background: rgba(255, 255, 255, 0.25); }
+        
+        .form-input { 
+            background: rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.1); color: white; transition: all 0.3s ease; 
+        }
+        .form-input:focus { border-color: rgba(255,255,255,0.5); outline: none; box-shadow: 0 0 15px rgba(255,255,255,0.1); }
+        
+        .hero-bg-vignette {
+            background: radial-gradient(circle at 100% 0%, rgba(255,0,50,0.05) 0%, transparent 50%),
+                        radial-gradient(circle at 0% 100%, rgba(0,255,255,0.05) 0%, transparent 50%);
+        }
+    </style>
 </head>
+<body class="antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
+    
+    <!-- Floating Pill Navigation exactly like screenshot -->
+    <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
+        <a href="index.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="portfolio.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-film"></i> Movies
+        </a>
+        <a href="services.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-tv"></i> TV
+        </a>
+        <a href="contact.html" class="nav-active flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-user-circle"></i> Contact
+        </a>
+        
+        <div class="w-px h-5 bg-white/10 mx-2"></div>
+        
+        <button class="nav-item text-white/70 px-3 py-2 text-sm">
+            <i class="fas fa-search"></i>
+        </button>
+    </nav>
 
-<body>
+    <!-- Main Content Area adjusted for Top Pill Nav (120px pt) -->
+    <main class="flex-grow pt-32 pb-24 px-10 md:px-20 xl:px-32 max-w-7xl mx-auto w-full relative z-10">
+        
+        <!-- Header -->
+        <div class="mb-12">
+            <div class="flex items-center gap-4 mb-4">
+                <div class="h-[2px] w-8 bg-white drop-shadow-md"></div>
+                <h1 class="text-4xl md:text-5xl font-black tracking-widest text-white uppercase drop-shadow-2xl">
+                    CONTACT <span class="font-light opacity-60">US</span>
+                </h1>
+            </div>
+            <p class="text-zinc-400 text-lg max-w-2xl font-medium">Your one-stop shop for events, video, audio, & live streaming. Let's make something great together.</p>
+        </div>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img"
-                        style="height: 100px;">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <!-- Left Column: Contact Methods -->
+            <div class="lg:col-span-4 space-y-6">
+                <!-- Email -->
+                <a href="mailto:info@cornelmedia.com" class="glass-panel p-6 rounded-2xl flex items-start gap-4 hover:bg-white/5 transition group cursor-pointer">
+                    <div class="w-12 h-12 rounded-full glass-btn flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-black transition">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-bold text-lg mb-1">Send us an email</h3>
+                        <p class="text-zinc-400 text-sm">info@cornelmedia.com</p>
+                    </div>
                 </a>
-                <div class="mobile-menu-btn">☰</div>
-                <div class="nav-links">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="portfolio.html">Portfolio</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="contact.html" class="active">Contact</a>
-                    <a href="booking.html" class="btn btn-primary" style="padding: 8px 20px;">Book Now</a>
-                </div>
-            </nav>
-        </div>
-    </header>
-
-    <section class="section">
-        <div class="container">
-            <div class="grid grid-2">
-                <div>
-                    <h2>Contact Information</h2>
-                    <p style="margin-bottom: 30px;">We are based in Tarkwa, Ghana and available for travel worldwide.
-                    </p>
-
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="color: var(--color-gold);">Location</h4>
-                        <p style="font-size: 1.2rem;">Tarkwa, Western Region, Ghana</p>
+                
+                <!-- Phone -->
+                <a href="tel:+233240750838" class="glass-panel p-6 rounded-2xl flex items-start gap-4 hover:bg-white/5 transition group cursor-pointer">
+                    <div class="w-12 h-12 rounded-full glass-btn flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-black transition">
+                        <i class="fas fa-phone-alt text-lg"></i>
                     </div>
-
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="color: var(--color-gold);">Phone / WhatsApp</h4>
-                        <a href="https://api.whatsapp.com/send?phone=233500020168" style="font-size: 1.2rem;">+233 50
-                            002 0168</a>
+                    <div>
+                        <h3 class="text-white font-bold text-lg mb-1">Give us a call today</h3>
+                        <p class="text-zinc-400 text-sm">+233 24 075 0838</p>
                     </div>
+                </a>
 
-                    <div style="margin-bottom: 30px;">
-                        <h4 style="color: var(--color-gold);">Email</h4>
-                        <a href="mailto:info@cornel.media" style="font-size: 1.2rem;">info@cornel.media</a>
+                <!-- Location -->
+                <div class="glass-panel p-6 rounded-2xl flex flex-col gap-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-full glass-btn flex items-center justify-center shrink-0 border border-white/10">
+                            <i class="fas fa-map-marker-alt text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-white font-bold text-lg mb-1">Our Studio</h3>
+                            <p class="text-zinc-400 text-sm">Tarkwa-Nsuaem, Western Region, Ghana</p>
+                        </div>
                     </div>
-
-                    <div style="display: flex; gap: 20px;">
-                        <a href="https://www.instagram.com/quaysoncornel" target="_blank"
-                            style="font-size: 1.5rem; color: #fff;"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@cornel.edits" target="_blank"
-                            style="font-size: 1.5rem; color: #fff;"><i class="fab fa-tiktok"></i></a>
-                        <a href="https://youtube.com/@quaysoncornel" target="_blank"
-                            style="font-size: 1.5rem; color: #fff;"><i class="fab fa-youtube"></i></a>
+                    
+                    <!-- Stylized Map Thumbnail / Box -->
+                    <div class="w-full h-32 mt-2 bg-black rounded-xl overflow-hidden grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition duration-500 cursor-pointer border border-white/10">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127506.13627708573!2d-2.0620251125211833!3d5.300645163650226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfa27d0577a6ddc3%3A0xe526d1cd62a4f489!2sTarkwa!5e0!3m2!1sen!2sgh!4v1717281829094!5m2!1sen!2sgh" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
+            </div>
 
-                <div
-                    style="background-color: #222; height: 400px; display: flex; align-items: center; justify-content: center; overflow: hidden; border-radius: 8px;">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15849.569486055!2d-2.0076292!3d5.3023246!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdc729221545619%3A0xc3af770146036125!2sTarkwa!5e0!3m2!1sen!2sgh!4v1701234567890"
-                        width="100%" height="100%" style="border:0; filter: grayscale(100%) invert(90%);"
-                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <!-- Right Column: Project Description Form -->
+            <div class="lg:col-span-8">
+                <div class="glass-panel p-8 md:p-10 rounded-2xl h-full relative overflow-hidden flex flex-col justify-center">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
+                    
+                    <h2 class="text-2xl font-bold text-white mb-2">Describe your project</h2>
+                    <p class="text-zinc-400 text-sm mb-8">Fill out the form below and our production team will get back to you within 24 hours.</p>
+
+                    <form action="#" method="POST" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Your Name <span class="text-red-500">*</span></label>
+                                <input type="text" required class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="John Doe">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Email Address <span class="text-red-500">*</span></label>
+                                <input type="email" required class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Phone Number</label>
+                                <input type="tel" class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="+233 (0) ...">
+                            </div>
+                            <div class="space-y-2">
+                                <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Project Type <span class="text-red-500">*</span></label>
+                                <select required class="w-full form-input px-4 py-3.5 rounded-lg text-sm appearance-none cursor-pointer">
+                                    <option value="" disabled selected class="text-black">Select a service...</option>
+                                    <option value="music-video" class="text-black">Music Video</option>
+                                    <option value="wedding" class="text-black">Wedding & Elopement</option>
+                                    <option value="commercial" class="text-black">Commercial / Corporate</option>
+                                    <option value="drone" class="text-black">Drone / Aerial Footage</option>
+                                    <option value="event-stream" class="text-black">Live Streaming</option>
+                                    <option value="portrait" class="text-black">Portrait Photography</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="space-y-2">
+                            <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Project Details <span class="text-red-500">*</span></label>
+                            <textarea required rows="4" class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="Tell us about your vision, location, required deliverables..."></textarea>
+                        </div>
+
+                        <div class="pt-2">
+                            <button type="submit" class="w-full md:w-auto px-10 bg-white text-black hover:bg-zinc-200 py-3.5 rounded-full font-bold transition shadow-xl flex justify-center items-center gap-2 border border-white/20 hover:scale-[1.02]">
+                                Send Request <i class="fas fa-paper-plane text-xs"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
-                </div>
-                <p>Crafting visual stories that resonate, inspire, and endure.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/cornel_media" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/@quaysoncornel" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
+    <!-- Standard Footer embedded to match app scale -->
+    <footer class="mt-auto border-t border-white/[0.05] pt-10 pb-6 px-10 md:px-20 xl:px-32 relative z-10 w-full mb-4">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto w-full">
+            <div class="text-sm font-semibold tracking-widest text-white/50 uppercase">Cornel Media Productions</div>
+            <div class="flex gap-6 text-[13px] text-white/40">
+                <a href="about.html" class="hover:text-white transition">About</a>
+                <a href="services.html" class="hover:text-white transition">Services</a>
+                <a href="pricing.html" class="hover:text-white transition">Pricing</a>
+                <a href="contact.html" class="hover:text-white transition">Contact</a>
             </div>
-            <div class="copyright">
-                &copy; 2025 Cornel Media. All rights reserved.
-            </div>
+            <div class="text-xs text-white/30">© 2026 CMP. All rights reserved.</div>
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-    <script src="js/main.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > 20) {
+                    nav.style.background = 'rgba(20, 24, 32, 0.9)';
+                    nav.style.border = '1px solid rgba(255,255,255,0.1)';
+                } else {
+                    nav.style.background = 'rgba(36, 43, 58, 0.7)';
+                    nav.style.border = '1px solid rgba(255,255,255,0.05)';
+                }
+            });
+        });
+    </script>
 </body>
-
 </html>
