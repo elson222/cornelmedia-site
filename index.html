@@ -3,22 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cornel Media Productions | Cinematic Shows</title>
+    <title>Cornel Media Productions</title>
     <!-- Tailwind CSS for rapid 1:1 structural replica -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #080c13; color: #fff; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background-color: #000000; color: #fff; overflow-x: hidden; }
         .hero-bg-vignette {
-            background: radial-gradient(circle at 70% 50%, transparent 40%, #080c13 100%),
-                        linear-gradient(to right, rgba(8,12,19,0.95) 0%, rgba(8,12,19,0.4) 40%, transparent 100%);
+            background: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
         }
-        .bottom-vignette { background: linear-gradient(to top, #080c13 0%, transparent 100%); }
-        .top-vignette { background: linear-gradient(to bottom, rgba(8,12,19,0.7) 0%, transparent 100%); }
+        .bottom-vignette { background: linear-gradient(to top, #000000 0%, transparent 100%); }
+        .top-vignette { background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%); }
         
         .pill-nav {
-            background: rgba(36, 43, 58, 0.7);
+            background: rgba(20, 20, 20, 0.85);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
@@ -38,183 +37,161 @@
         .movie-card:hover { transform: scale(1.05); z-index: 10; border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
     </style>
 </head>
-<body class="antialiased selection:bg-white selection:text-black min-h-screen">
+<body class="antialiased selection:bg-white selection:text-black min-h-screen border-0 m-0">
     
-    <!-- Floating Pill Navigation exactly like screenshot -->
+    <!-- Floating Pill Navigation exactly like screenshot layout but with Cornel Media tabs -->
     <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
-        <a href="index.html" class="nav-active flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold">
+        <a href="index.html" class="nav-active flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
             <i class="fas fa-home"></i> Home
         </a>
-        <a href="#movies" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
-            <i class="fas fa-film"></i> Movies
+        <a href="about.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-info-circle"></i> About
         </a>
-        <a href="#tv" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
-            <i class="fas fa-tv"></i> TV
+        <a href="services.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-video"></i> Services
         </a>
-        <a href="#sports" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
-            <i class="fas fa-futbol"></i> Sports
+        <a href="portfolio.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-image"></i> Portfolio
+        </a>
+        <a href="pricing.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-tag"></i> Pricing
         </a>
         
         <div class="w-px h-5 bg-white/10 mx-2"></div>
         
-        <button class="nav-item text-white/70 px-3 py-2 text-sm">
-            <i class="fas fa-search"></i>
-        </button>
-        <button class="nav-item text-white/70 px-3 py-2 text-sm">
-            <i class="fas fa-user-circle"></i>
-        </button>
+        <a href="contact.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-envelope"></i> Contact
+        </a>
     </nav>
 
     <!-- Full Screen Immersive App Hero -->
-    <section class="relative w-full h-screen overflow-hidden flex items-center">
+    <section class="relative w-full h-screen overflow-hidden flex items-center bg-black">
         <!-- Background Video/Cover -->
         <div class="absolute inset-0 w-full h-full z-0">
-            <!-- Using the cornel media showreel as the background video mimicking "War Machine" -->
-            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <!-- Ensure video plays on all devices -->
+            <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover opacity-80">
                 <source src="assets/images/cornelmediawebsiteshowreel.mp4" type="video/mp4">
+                Your browser does not support the video tag.
             </video>
-            <!-- Heavy Vignettes for typography readability -->
+            <!-- Heavy Vignettes for typography readability using absolute black -->
             <div class="absolute inset-0 hero-bg-vignette pointer-events-none"></div>
             <div class="absolute inset-x-0 bottom-0 h-48 bottom-vignette pointer-events-none"></div>
             <div class="absolute inset-x-0 top-0 h-40 top-vignette pointer-events-none"></div>
         </div>
 
         <!-- Left Aligned Typography & Controls -->
-        <div class="relative z-10 pl-10 md:pl-20 xl:pl-32 w-full max-w-2xl mt-12">
+        <div class="relative z-10 pl-10 md:pl-20 xl:pl-32 w-full max-w-4xl mt-12">
             <!-- Title Design: Mimicking the horizontal line and stacked text "___ WAR MACHINE" -->
             <div class="flex items-center gap-4 mb-2">
                 <div class="h-[2px] w-12 bg-white drop-shadow-md"></div>
-                <h1 class="text-5xl md:text-[5.5rem] font-black tracking-widest text-white leading-[0.85] uppercase drop-shadow-2xl">
-                    CORNEL<br><span class="font-light opacity-90 text-[0.88em]">MEDIA</span>
+                <h1 class="text-4xl md:text-[4rem] font-black tracking-widest text-white leading-[1] uppercase drop-shadow-2xl">
+                    CORNEL MEDIA<br><span class="font-light opacity-90 text-[0.88em]">PRODUCTIONS</span>
                 </h1>
             </div>
             
             <!-- Description / Overview text -->
-            <p class="text-zinc-300 text-lg font-medium mt-8 mb-8 max-w-md drop-shadow-md leading-relaxed hidden md:block">
+            <p class="text-zinc-300 text-lg font-medium mt-8 mb-8 max-w-lg drop-shadow-md leading-relaxed hidden md:block">
                 Visuals are good. Stories are better. Experience premium cinematic videography and aerial drone storytelling.
             </p>
             
             <!-- Exact Button Controls: Play (white pill), Info (glass pill), Mute (glass circle) -->
             <div class="flex items-center gap-4 mt-6">
                 <!-- Watch Now Button -->
-                <a href="#play" class="bg-white text-black hover:bg-zinc-200 px-7 py-2.5 rounded-full font-bold text-[13px] flex items-center gap-2 transition shadow-xl">
-                    <i class="fas fa-play text-[11px]"></i> Play
-                </a>
+                <button onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" class="bg-white text-black hover:bg-zinc-200 px-7 py-2.5 rounded-full font-bold text-[13px] flex items-center gap-2 transition shadow-xl border border-white">
+                    <i class="fas fa-play text-[11px]"></i> Watch Showreel
+                </button>
                 
                 <!-- Info Button -->
-                <a href="portfolio.html" class="glass-btn text-white px-7 py-2.5 rounded-full font-bold text-[13px] flex items-center gap-2 transition shadow-lg border border-white/10">
-                    <i class="fas fa-info-circle text-[11px]"></i> Info
+                <a href="portfolio.html" class="glass-btn text-white hover:text-white px-7 py-2.5 rounded-full font-bold text-[13px] flex items-center gap-2 transition shadow-lg border border-white/20">
+                    <i class="fas fa-info-circle text-[11px]"></i> Our Work
                 </a>
                 
                 <!-- Volume / Mute Toggle -->
-                <button class="glass-btn text-white w-[38px] h-[38px] rounded-full flex items-center justify-center transition shadow-lg border border-white/10">
-                    <i class="fas fa-volume-mute text-[11px]"></i>
+                <button id="muteToggle" class="glass-btn text-white w-[38px] h-[38px] rounded-full flex items-center justify-center transition shadow-lg border border-white/20">
+                    <i id="muteIcon" class="fas fa-volume-mute text-[11px]"></i>
                 </button>
             </div>
         </div>
 
         <!-- Bottom Controls exactly from screenshot -->
         <!-- Expand Chevron -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
-            <button onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" class="glass-btn w-10 h-10 rounded-full flex items-center justify-center text-white transition hover:bg-white/30 border border-white/10">
-                <i class="fas fa-chevron-up text-sm"></i>
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block">
+            <button onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" class="glass-btn w-10 h-10 rounded-full flex items-center justify-center text-white transition hover:bg-white/30 border border-white/20">
+                <i class="fas fa-chevron-down text-sm"></i>
             </button>
         </div>
         
-        <!-- Chatbot / Robot Icon Bottom Right -->
-        <div class="absolute bottom-8 right-8 z-20">
-            <button class="glass-btn w-11 h-11 rounded-full flex items-center justify-center text-white transition hover:bg-white/30 border border-white/10">
-                <i class="fas fa-robot text-lg"></i>
-            </button>
-        </div>
     </section>
 
     <!-- Scrollable Content Interface Below -->
-    <main id="content" class="relative z-20 bg-[#080c13] pt-12 pb-24 px-10 md:px-20 xl:px-32 border-t border-white/5">
+    <main id="content" class="relative z-20 bg-black pt-12 pb-24 px-10 md:px-20 xl:px-32 border-t border-white/10">
         
-        <!-- Video Sections -->
-        <section class="mb-16">
-            <h2 class="text-xl font-bold text-white mb-6 tracking-wide drop-shadow">Continue Watching</h2>
-            <div class="flex gap-4 overflow-x-auto hide-scrollbar pb-6 -mx-4 px-4 md:mx-0 md:px-0">
-                <!-- Example thumbnail -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-64 md:w-80 aspect-video rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
-                    <img src="assets/images/IMG_3256.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/640x360/111/fff?text=Wedding'">
-                    <div class="absolute inset-0 bg-black/30 hover:bg-transparent transition duration-300"></div>
-                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent"></div>
-                    <div class="absolute bottom-3 left-4">
-                        <h3 class="font-bold text-white text-sm">The Royal Wedding</h3>
-                        <p class="text-white/60 text-xs mt-1">1h 45m remaining</p>
-                    </div>
-                    <!-- Red Progess bar -->
-                    <div class="absolute bottom-0 left-0 h-1 bg-red-600 w-1/3"></div>
-                </a>
-                
-                <a href="portfolio.html" class="movie-card shrink-0 w-64 md:w-80 aspect-video rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
-                    <img src="assets/images/music-video-project.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/640x360/111/fff?text=Music'">
-                    <div class="absolute inset-0 bg-black/30 hover:bg-transparent transition duration-300"></div>
-                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent"></div>
-                    <div class="absolute bottom-3 left-4">
-                        <h3 class="font-bold text-white text-sm">Creative Direction</h3>
-                        <p class="text-white/60 text-xs mt-1">20m remaining</p>
-                    </div>
-                    <!-- Red Progess bar -->
-                    <div class="absolute bottom-0 left-0 h-1 bg-red-600 w-2/3"></div>
-                </a>
-            </div>
+        <!-- Vertical Poster Category List -->
+        <section class="mb-4 text-center pb-20 pt-10 max-w-2xl mx-auto">
+            <h2 class="text-3xl font-black text-white mb-6 uppercase tracking-widest drop-shadow-2xl">Visual Excellence</h2>
+            <p class="text-zinc-400 font-medium">From concept to final cut, our world-class production team brings stories to life exactly the way they were meant to be seen.</p>
         </section>
 
-        <!-- Vertical Poster Category List -->
+        <!-- Dynamic Layout Row -->
         <section class="mb-16">
-            <h2 class="text-xl font-bold text-white mb-6 tracking-wide drop-shadow pt-4">Portfolios & Shows</h2>
+            <div class="flex justify-between items-end mb-6">
+                <h2 class="text-xl font-bold text-white tracking-wide">Featured Works</h2>
+                <a href="portfolio.html" class="text-sm font-bold text-red-500 hover:text-white transition group flex items-center gap-2">Explore <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition"></i></a>
+            </div>
+            
             <div class="flex gap-4 overflow-x-auto hide-scrollbar pb-6 -mx-4 px-4 md:mx-0 md:px-0">
                 <!-- Card 1 -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
+                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
                     <img src="assets/images/creative-portrait.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Creative'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100"></div>
-                    <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-red-600 text-white text-[10px] font-bold rounded">NEW SERIES</div>
+                    <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-red-600 text-white text-[10px] font-bold rounded">COMMERCIAL</div>
                     <div class="absolute bottom-0 left-0 p-4 w-full">
-                        <h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Creative Shoots</h3>
+                        <h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Brand Shoots</h3>
                         <div class="flex items-center gap-2 text-[11px] text-zinc-400 mt-1.5 font-medium">
-                            <span class="text-green-500">98% Match</span>
-                            <span>2026</span>
+                            <span class="text-green-500">2026</span>
                             <span class="border border-zinc-600 px-1 rounded">4K</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 2 -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
+                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
                     <img src="assets/images/IMG_4341.JPG" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Portrait'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100"></div>
                     <div class="absolute bottom-0 left-0 p-4 w-full">
                         <h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Portrait Photography</h3>
                         <div class="flex items-center gap-2 text-[11px] text-zinc-400 mt-1.5 font-medium">
-                            <span class="text-green-500">94% Match</span>
-                            <span>2026</span>
+                            <span class="text-green-500">2026</span>
                             <span class="border border-zinc-600 px-1 rounded">HD</span>
                         </div>
                     </div>
                 </a>
 
                 <!-- Card 3 -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
+                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
                     <img src="assets/images/IMG_1180.JPG" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Drone'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100"></div>
-                    <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-zinc-800 text-white text-[10px] font-bold rounded border border-white/10">TOP 10</div>
+                    <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-zinc-800 text-white text-[10px] font-bold rounded border border-white/20">TRENDING</div>
                     <div class="absolute bottom-0 left-0 p-4 w-full">
                         <h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Aerial Footage</h3>
                         <div class="flex items-center gap-2 text-[11px] text-zinc-400 mt-1.5 font-medium">
-                            <span class="text-green-500">99% Match</span>
-                            <span>2025</span>
+                            <span class="text-green-500">2025</span>
                             <span class="border border-zinc-600 px-1 rounded">4K</span>
                         </div>
+                    </div>
+                </a>
+                
+                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 group flex items-center justify-center hover:bg-zinc-800">
+                    <div class="text-center p-4">
+                        <i class="fas fa-plus-circle text-3xl text-zinc-600 mb-2 group-hover:text-white transition"></i>
+                        <h3 class="font-bold text-sm text-zinc-500 group-hover:text-white transition uppercase tracking-widest text-[10px]">View More</h3>
                     </div>
                 </a>
             </div>
         </section>
         
         <!-- Standard Footer embedded to match app scale -->
-        <footer class="mt-20 border-t border-white/[0.05] pt-10 pb-6">
+        <footer class="mt-20 border-t border-white/[0.1] pt-10 pb-6">
             <div class="flex flex-col md:flex-row justify-between items-center gap-6">
                 <div class="text-sm font-semibold tracking-widest text-white/50 uppercase">Cornel Media Productions</div>
                 <div class="flex gap-6 text-[13px] text-white/40">
@@ -238,11 +215,35 @@
                     nav.style.opacity = '0.3';
                     if(window.scrollY > window.innerHeight) {
                         nav.style.opacity = '1';
+                        nav.classList.add('bg-black/90');
                         nav.classList.replace('top-8', 'top-4');
                     }
                 } else {
                     nav.style.opacity = '1';
+                    nav.classList.remove('bg-black/90');
                     nav.classList.replace('top-4', 'top-8');
+                }
+            });
+            
+            // Video and Mute Button logic
+            const video = document.getElementById('heroVideo');
+            const muteButton = document.getElementById('muteToggle');
+            const muteIcon = document.getElementById('muteIcon');
+            
+            // Auto play fallback
+            if (video) {
+                video.play().catch(function(error) {
+                    console.log("Video Autoplay Blocked:", error);
+                });
+            }
+            
+            muteButton.addEventListener('click', () => {
+                if(video.muted) {
+                    video.muted = false;
+                    muteIcon.classList.replace('fa-volume-mute', 'fa-volume-up');
+                } else {
+                    video.muted = true;
+                    muteIcon.classList.replace('fa-volume-up', 'fa-volume-mute');
                 }
             });
         });
