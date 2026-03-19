@@ -23,35 +23,39 @@
         .nav-active:hover { color: #000; text-shadow: none; background: #f0f0f0; }
         
         .hero-bg-vignette {
-            background: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%);
+            background-image: radial-gradient(circle at 50% 0%, rgba(255,255,255,0.03) 0%, transparent 60%);
         }
         
         .movie-card { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
         .movie-card:hover { transform: scale(1.05); z-index: 10; border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
     </style>
 </head>
-<body class="antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
+<body class="bg-black antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
     
     <!-- Floating Pill Navigation exactly like screenshot -->
+        <!-- Floating Pill Navigation exactly like screenshot layout but with Cornel Media tabs -->
     <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
-        <a href="index.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold">
+        <a href="index.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
             <i class="fas fa-home"></i> Home
         </a>
-        <a href="portfolio.html" class="nav-active flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
-            <i class="fas fa-film"></i> Movies
+        <a href="about.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-info-circle"></i> About
         </a>
-        <a href="services.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
-            <i class="fas fa-tv"></i> TV
+        <a href="services.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-video"></i> Services
         </a>
-        <a href="contact.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
-            <i class="fas fa-user-circle"></i> Contact
+        <a href="portfolio.html" class="nav-active text-black bg-white flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-image"></i> Portfolio
+        </a>
+        <a href="pricing.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-tag"></i> Pricing
         </a>
         
         <div class="w-px h-5 bg-white/10 mx-2"></div>
         
-        <button class="nav-item text-white/70 px-3 py-2 text-sm">
-            <i class="fas fa-search"></i>
-        </button>
+        <a href="contact.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-envelope"></i> Contact
+        </a>
     </nav>
 
     <!-- Main Content Area adjusted for Top Pill Nav (120px pt) -->
@@ -192,3 +196,4 @@
 
 </body>
 </html>
+

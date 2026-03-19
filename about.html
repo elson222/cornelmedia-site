@@ -25,34 +25,37 @@
         .glass-panel { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.05); }
         
         .hero-bg-vignette {
-            background: radial-gradient(circle at 100% 100%, rgba(255,255,255,0.05) 0%, transparent 50%),
+            background-image: radial-gradient(circle at 100% 100%, rgba(255,255,255,0.05) 0%, transparent 50%),
                         radial-gradient(circle at 0% 0%, rgba(255,0,50,0.02) 0%, transparent 50%);
         }
     </style>
 </head>
-<body class="antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
+<body class="bg-black antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
     
     <!-- Floating Pill Navigation exactly like screenshot -->
+        <!-- Floating Pill Navigation exactly like screenshot layout but with Cornel Media tabs -->
     <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
-        <a href="index.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold">
+        <a href="index.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
             <i class="fas fa-home"></i> Home
         </a>
-        <a href="portfolio.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
-            <i class="fas fa-film"></i> Movies
+        <a href="about.html" class="nav-active text-black bg-white flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-info-circle"></i> About
         </a>
-        <a href="services.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
-            <i class="fas fa-tv"></i> TV
+        <a href="services.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-video"></i> Services
         </a>
-        <!-- Assume about is accessed via footer or external, keeping nav standard -->
-        <a href="contact.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
-            <i class="fas fa-user-circle"></i> Contact
+        <a href="portfolio.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-image"></i> Portfolio
+        </a>
+        <a href="pricing.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-tag"></i> Pricing
         </a>
         
         <div class="w-px h-5 bg-white/10 mx-2"></div>
         
-        <button class="nav-item text-white/70 px-3 py-2 text-sm">
-            <i class="fas fa-search"></i>
-        </button>
+        <a href="contact.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+            <i class="fas fa-envelope"></i> Contact
+        </a>
     </nav>
 
     <!-- Main Content Area -->
@@ -130,3 +133,4 @@
 
 </body>
 </html>
+
