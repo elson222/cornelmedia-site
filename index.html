@@ -1,247 +1,251 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cornel Media Productions | Cinematic Videography & Photography</title>
-    <meta name="description"
-        content="Cornel Media Productions - Premium Videography, Photography, Live Streaming, and Drone Services in Ghana. Capturing stories with cinematic precision.">
-    <meta name="keywords"
-        content="Videography, Photography, Ghana, Tarkwa, Western Region, Live Streaming, Drone Services, Video Editing, Cornel Media, Wedding Videography, Corporate Events">
-    <meta name="color-scheme" content="dark">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
+    <title>Cornel Media Productions | Cinematic Shows</title>
+    <!-- Tailwind CSS for rapid 1:1 structural replica -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/logo.png">
-
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://cornel.media/">
-    <meta property="og:title" content="Cornel Media Productions">
-    <meta property="og:description" content="Premium Videography, Photography, and Creative Direction based in Ghana.">
-    <meta property="og:image" content="https://cornel.media/assets/images/og-preview.png">
-
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Cornel Media Productions",
-      "url": "https://cornel.media",
-      "logo": "https://cornel.media/assets/images/logo.png",
-      "sameAs": [
-        "https://www.instagram.com/quaysoncornel",
-        "https://twitter.com/cornel_media",
-        "https://youtube.com/@quaysoncornel"
-      ]
-    }
-    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #080c13; color: #fff; overflow-x: hidden; }
+        .hero-bg-vignette {
+            background: radial-gradient(circle at 70% 50%, transparent 40%, #080c13 100%),
+                        linear-gradient(to right, rgba(8,12,19,0.95) 0%, rgba(8,12,19,0.4) 40%, transparent 100%);
+        }
+        .bottom-vignette { background: linear-gradient(to top, #080c13 0%, transparent 100%); }
+        .top-vignette { background: linear-gradient(to bottom, rgba(8,12,19,0.7) 0%, transparent 100%); }
+        
+        .pill-nav {
+            background: rgba(36, 43, 58, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        .nav-item { transition: all 0.2s ease; }
+        .nav-item:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .nav-active { background: #fff; color: #000; box-shadow: 0 2px 10px rgba(255,255,255,0.2); }
+        .nav-active:hover { color: #000; text-shadow: none; background: #f0f0f0; }
+        
+        .glass-btn { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); }
+        .glass-btn:hover { background: rgba(255, 255, 255, 0.25); }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .movie-card { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .movie-card:hover { transform: scale(1.05); z-index: 10; border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+    </style>
 </head>
+<body class="antialiased selection:bg-white selection:text-black min-h-screen">
+    
+    <!-- Floating Pill Navigation exactly like screenshot -->
+    <nav class="fixed top-8 left-1/2 -translate-x-1/2 z-50 flex items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
+        <a href="index.html" class="nav-active flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold">
+            <i class="fas fa-home"></i> Home
+        </a>
+        <a href="#movies" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-film"></i> Movies
+        </a>
+        <a href="#tv" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-tv"></i> TV
+        </a>
+        <a href="#sports" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold">
+            <i class="fas fa-futbol"></i> Sports
+        </a>
+        
+        <div class="w-px h-5 bg-white/10 mx-2"></div>
+        
+        <button class="nav-item text-white/70 px-3 py-2 text-sm">
+            <i class="fas fa-search"></i>
+        </button>
+        <button class="nav-item text-white/70 px-3 py-2 text-sm">
+            <i class="fas fa-user-circle"></i>
+        </button>
+    </nav>
 
-<body>
-
-    <!-- Header -->
-    <header id="main-header">
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
-                </a>
-                <div class="mobile-menu-btn" onclick="document.querySelector('.nav-links').classList.toggle('active')">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <div class="nav-links">
-                    <a href="index.html" class="active">Home</a>
-                    <a href="about.html">About</a>
-                    <a href="services.html">Services</a>
-                    <a href="portfolio.html">Portfolio</a>
-                    <a href="pricing.html">Pricing</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="booking.html" class="btn btn-primary">Book Now</a>
-                </div>
-            </nav>
+    <!-- Full Screen Immersive App Hero -->
+    <section class="relative w-full h-screen overflow-hidden flex items-center">
+        <!-- Background Video/Cover -->
+        <div class="absolute inset-0 w-full h-full z-0">
+            <!-- Using the cornel media showreel as the background video mimicking "War Machine" -->
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="assets/images/cornelmediawebsiteshowreel.mp4" type="video/mp4">
+            </video>
+            <!-- Heavy Vignettes for typography readability -->
+            <div class="absolute inset-0 hero-bg-vignette pointer-events-none"></div>
+            <div class="absolute inset-x-0 bottom-0 h-48 bottom-vignette pointer-events-none"></div>
+            <div class="absolute inset-x-0 top-0 h-40 top-vignette pointer-events-none"></div>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="hero-bg" style="background-image: url('assets/images/IMG_2701.JPG');"></div>
-        <div class="container">
-            <div class="hero-content">
-                <span class="hero-subtitle">Visual Stories</span>
-                <div class="hero-brand-name">
-                    <span class="brand-highlight">CORNEL MEDIA</span>
-                    <span class="brand-secondary">PRODUCTIONS</span>
-                </div>
-                <h1 class="hero-title">
-                    Visuals are good.<br>
-                    <span class="text-gold">Stories are better.</span>
+        <!-- Left Aligned Typography & Controls -->
+        <div class="relative z-10 pl-10 md:pl-20 xl:pl-32 w-full max-w-2xl mt-12">
+            <!-- Title Design: Mimicking the horizontal line and stacked text "___ WAR MACHINE" -->
+            <div class="flex items-center gap-4 mb-2">
+                <div class="h-[2px] w-12 bg-white drop-shadow-md"></div>
+                <h1 class="text-5xl md:text-[5.5rem] font-black tracking-widest text-white leading-[0.85] uppercase drop-shadow-2xl">
+                    CORNEL<br><span class="font-light opacity-90 text-[0.88em]">MEDIA</span>
                 </h1>
-                <div class="hero-tags">
-                    <a href="services.html" class="tag">Studio</a>
-                    <a href="portfolio.html" class="tag">Urban</a>
-                    <a href="portfolio.html" class="tag">Cinematic</a>
-                </div>
             </div>
+            
+            <!-- Description / Overview text -->
+            <p class="text-zinc-300 text-lg font-medium mt-8 mb-8 max-w-md drop-shadow-md leading-relaxed hidden md:block">
+                Visuals are good. Stories are better. Experience premium cinematic videography and aerial drone storytelling.
+            </p>
+            
+            <!-- Exact Button Controls: Play (white pill), Info (glass pill), Mute (glass circle) -->
+            <div class="flex items-center gap-4 mt-6">
+                <!-- Watch Now Button -->
+                <a href="#play" class="bg-white text-black hover:bg-zinc-200 px-7 py-2.5 rounded-full font-bold text-[13px] flex items-center gap-2 transition shadow-xl">
+                    <i class="fas fa-play text-[11px]"></i> Play
+                </a>
+                
+                <!-- Info Button -->
+                <a href="portfolio.html" class="glass-btn text-white px-7 py-2.5 rounded-full font-bold text-[13px] flex items-center gap-2 transition shadow-lg border border-white/10">
+                    <i class="fas fa-info-circle text-[11px]"></i> Info
+                </a>
+                
+                <!-- Volume / Mute Toggle -->
+                <button class="glass-btn text-white w-[38px] h-[38px] rounded-full flex items-center justify-center transition shadow-lg border border-white/10">
+                    <i class="fas fa-volume-mute text-[11px]"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Bottom Controls exactly from screenshot -->
+        <!-- Expand Chevron -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+            <button onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" class="glass-btn w-10 h-10 rounded-full flex items-center justify-center text-white transition hover:bg-white/30 border border-white/10">
+                <i class="fas fa-chevron-up text-sm"></i>
+            </button>
+        </div>
+        
+        <!-- Chatbot / Robot Icon Bottom Right -->
+        <div class="absolute bottom-8 right-8 z-20">
+            <button class="glass-btn w-11 h-11 rounded-full flex items-center justify-center text-white transition hover:bg-white/30 border border-white/10">
+                <i class="fas fa-robot text-lg"></i>
+            </button>
         </div>
     </section>
 
-    <!-- Philosophy Section -->
-    <section class="section philosophy-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">01 / Philosophy</span>
-                <h2>Cinematic Precision</h2>
-            </div>
-            <div class="grid grid-2">
-                <div class="philosophy-text">
-                    <p>Every frame is calculated. We treat videography not as documentation, but as
-                        high-performance engineering.</p>
-                    <div class="quote-box">
-                        <p>"Capturing the essence of the moment, one smile at a time."</p>
+    <!-- Scrollable Content Interface Below -->
+    <main id="content" class="relative z-20 bg-[#080c13] pt-12 pb-24 px-10 md:px-20 xl:px-32 border-t border-white/5">
+        
+        <!-- Video Sections -->
+        <section class="mb-16">
+            <h2 class="text-xl font-bold text-white mb-6 tracking-wide drop-shadow">Continue Watching</h2>
+            <div class="flex gap-4 overflow-x-auto hide-scrollbar pb-6 -mx-4 px-4 md:mx-0 md:px-0">
+                <!-- Example thumbnail -->
+                <a href="portfolio.html" class="movie-card shrink-0 w-64 md:w-80 aspect-video rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
+                    <img src="assets/images/IMG_3256.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/640x360/111/fff?text=Wedding'">
+                    <div class="absolute inset-0 bg-black/30 hover:bg-transparent transition duration-300"></div>
+                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent"></div>
+                    <div class="absolute bottom-3 left-4">
+                        <h3 class="font-bold text-white text-sm">The Royal Wedding</h3>
+                        <p class="text-white/60 text-xs mt-1">1h 45m remaining</p>
                     </div>
-                </div>
-                <div class="philosophy-image">
-                    <img src="assets/images/IMG_4341.JPG" alt="Creative Portrait" loading="lazy">
-                </div>
-            </div>
-
-            <div class="grid grid-2" style="margin-top: 50px;">
-                <div class="stat-item">
-                    <span class="stat-number">4K</span>
-                    <span class="stat-label">Resolution</span>
-                </div>
-                <div class="stat-item">
-                    <span class="stat-number">60fps</span>
-                    <span class="stat-label">Frame Rate</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="section process-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">02 / Process</span>
-                <h2>Seamless Execution</h2>
-            </div>
-            <div class="grid grid-2">
-                <div class="process-text">
-                    <p>From pre-production to the final cut, our workflow is fluid, adaptive, and relentlessly
-                        efficient.</p>
-                </div>
-                <div class="grid grid-2"> <!-- Nested Grid -->
-                    <div class="stat-item">
-                        <span class="stat-number">48h</span>
-                        <span class="stat-label">Turnaround</span>
+                    <!-- Red Progess bar -->
+                    <div class="absolute bottom-0 left-0 h-1 bg-red-600 w-1/3"></div>
+                </a>
+                
+                <a href="portfolio.html" class="movie-card shrink-0 w-64 md:w-80 aspect-video rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
+                    <img src="assets/images/music-video-project.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/640x360/111/fff?text=Music'">
+                    <div class="absolute inset-0 bg-black/30 hover:bg-transparent transition duration-300"></div>
+                    <div class="absolute bottom-0 inset-x-0 h-1/2 bg-gradient-to-t from-black/90 to-transparent"></div>
+                    <div class="absolute bottom-3 left-4">
+                        <h3 class="font-bold text-white text-sm">Creative Direction</h3>
+                        <p class="text-white/60 text-xs mt-1">20m remaining</p>
                     </div>
-                    <div class="stat-item">
-                        <span class="stat-number">100%</span>
-                        <span class="stat-label">Satisfaction</span>
+                    <!-- Red Progess bar -->
+                    <div class="absolute bottom-0 left-0 h-1 bg-red-600 w-2/3"></div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Vertical Poster Category List -->
+        <section class="mb-16">
+            <h2 class="text-xl font-bold text-white mb-6 tracking-wide drop-shadow pt-4">Portfolios & Shows</h2>
+            <div class="flex gap-4 overflow-x-auto hide-scrollbar pb-6 -mx-4 px-4 md:mx-0 md:px-0">
+                <!-- Card 1 -->
+                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
+                    <img src="assets/images/creative-portrait.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Creative'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100"></div>
+                    <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-red-600 text-white text-[10px] font-bold rounded">NEW SERIES</div>
+                    <div class="absolute bottom-0 left-0 p-4 w-full">
+                        <h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Creative Shoots</h3>
+                        <div class="flex items-center gap-2 text-[11px] text-zinc-400 mt-1.5 font-medium">
+                            <span class="text-green-500">98% Match</span>
+                            <span>2026</span>
+                            <span class="border border-zinc-600 px-1 rounded">4K</span>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                </a>
 
-    <!-- Featured Works -->
-    <section class="section gallery-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-number">03 / Featured</span>
-                <h2>Selected Works</h2>
-            </div>
-        </div>
+                <!-- Card 2 -->
+                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
+                    <img src="assets/images/IMG_4341.JPG" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Portrait'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100"></div>
+                    <div class="absolute bottom-0 left-0 p-4 w-full">
+                        <h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Portrait Photography</h3>
+                        <div class="flex items-center gap-2 text-[11px] text-zinc-400 mt-1.5 font-medium">
+                            <span class="text-green-500">94% Match</span>
+                            <span>2026</span>
+                            <span class="border border-zinc-600 px-1 rounded">HD</span>
+                        </div>
+                    </div>
+                </a>
 
-        <div class="gallery-container">
-            <!-- Card 1: Wedding -->
-            <div class="gallery-card">
-                <img src="assets/images/IMG_3256.jpg" alt="Wedding" loading="lazy">
-                <div class="card-overlay">
-                    <h3>Weddings</h3>
-                </div>
+                <!-- Card 3 -->
+                <a href="portfolio.html" class="movie-card shrink-0 w-36 md:w-48 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/5">
+                    <img src="assets/images/IMG_1180.JPG" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Drone'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent opacity-100"></div>
+                    <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-zinc-800 text-white text-[10px] font-bold rounded border border-white/10">TOP 10</div>
+                    <div class="absolute bottom-0 left-0 p-4 w-full">
+                        <h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Aerial Footage</h3>
+                        <div class="flex items-center gap-2 text-[11px] text-zinc-400 mt-1.5 font-medium">
+                            <span class="text-green-500">99% Match</span>
+                            <span>2025</span>
+                            <span class="border border-zinc-600 px-1 rounded">4K</span>
+                        </div>
+                    </div>
+                </a>
             </div>
-            <!-- Card 2: Creative -->
-            <div class="gallery-card">
-                <img src="assets/images/creative-portrait.jpg" alt="Creative" loading="lazy">
-                <div class="card-overlay">
-                    <h3>Creative</h3>
+        </section>
+        
+        <!-- Standard Footer embedded to match app scale -->
+        <footer class="mt-20 border-t border-white/[0.05] pt-10 pb-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+                <div class="text-sm font-semibold tracking-widest text-white/50 uppercase">Cornel Media Productions</div>
+                <div class="flex gap-6 text-[13px] text-white/40">
+                    <a href="about.html" class="hover:text-white transition">About</a>
+                    <a href="services.html" class="hover:text-white transition">Services</a>
+                    <a href="pricing.html" class="hover:text-white transition">Pricing</a>
+                    <a href="contact.html" class="hover:text-white transition">Contact</a>
                 </div>
+                <div class="text-xs text-white/30">© 2026 CMP. All rights reserved.</div>
             </div>
-            <!-- Card 3: Portrait -->
-            <div class="gallery-card">
-                <img src="assets/images/IMG_4341.JPG" alt="Portrait" loading="lazy">
-                <div class="card-overlay">
-                    <h3>Portrait</h3>
-                </div>
-            </div>
-            <!-- Card 4: Retouching -->
-            <div class="gallery-card">
-                <img src="assets/images/CD-TEASE-8.jpg" alt="Retouching" loading="lazy">
-                <div class="card-overlay">
-                    <h3>Retouching</h3>
-                </div>
-            </div>
-            <!-- Card 5: Music Video -->
-            <div class="gallery-card">
-                <img src="assets/images/music-video-project.jpg" alt="Music Video" loading="lazy">
-                <div class="card-overlay">
-                    <h3>Music</h3>
-                </div>
-            </div>
-            <!-- Card 6: Drone -->
-            <div class="gallery-card">
-                <img src="assets/images/IMG_1180.JPG" alt="Drone" loading="lazy">
-                <div class="card-overlay">
-                    <h3>Drone</h3>
-                </div>
-            </div>
-        </div>
-    </section>
+        </footer>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="logo">
-                    <img src="assets/images/logo.png" alt="Cornel Media Productions" class="logo-img">
-                </div>
-                <p>Crafting visual stories that resonate, inspire, and endure.</p>
-                <div class="social-links">
-                    <a href="https://www.instagram.com/quaysoncornel" target="_blank"><i
-                            class="fab fa-instagram"></i></a>
-                    <a href="https://twitter.com/cornel_media" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a href="https://youtube.com/@quaysoncornel" target="_blank"><i class="fab fa-youtube"></i></a>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2025 Cornel Media. All rights reserved.
-            </div>
-        </div>
-    </footer>
+    </main>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/dist/lenis.min.js"></script>
-    <script src="js/main.js"></script>
     <script>
-        // Simple scroll listener for header
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('main-header');
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Intersection observer to fade the navbar out/in if needed based on scroll
+            const nav = document.querySelector('nav');
+            window.addEventListener('scroll', () => {
+                if(window.scrollY > window.innerHeight * 0.5) {
+                    nav.style.opacity = '0.3';
+                    if(window.scrollY > window.innerHeight) {
+                        nav.style.opacity = '1';
+                        nav.classList.replace('top-8', 'top-4');
+                    }
+                } else {
+                    nav.style.opacity = '1';
+                    nav.classList.replace('top-4', 'top-8');
+                }
+            });
         });
     </script>
 </body>
-
 </html>
