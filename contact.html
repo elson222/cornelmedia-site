@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Analytics Integration -->
@@ -180,45 +180,45 @@
                     <h2 class="text-2xl font-bold text-white mb-2">Describe your project</h2>
                     <p class="text-zinc-400 text-sm mb-8">Fill out the form below and our production team will get back to you within 24 hours.</p>
 
-                    <form action="#" method="POST" class="space-y-6">
+                    <form id="bookingForm" class="space-y-6">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Your Name <span class="text-red-500">*</span></label>
-                                <input type="text" required class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="John Doe">
+                                <input type="text" id="name" required class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="John Doe">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Email Address <span class="text-red-500">*</span></label>
-                                <input type="email" required class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="john@example.com">
+                                <input type="email" id="email" required class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="john@example.com">
                             </div>
                         </div>
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div class="space-y-2">
                                 <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Phone Number</label>
-                                <input type="tel" class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="+233 (0) ...">
+                                <input type="tel" id="phone" class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="+233 (0) ...">
                             </div>
                             <div class="space-y-2">
                                 <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Project Type <span class="text-red-500">*</span></label>
-                                <select required class="w-full form-input px-4 py-3.5 rounded-lg text-sm appearance-none cursor-pointer">
+                                <select id="project_type" required class="w-full form-input px-4 py-3.5 rounded-lg text-sm appearance-none cursor-pointer">
                                     <option value="" disabled selected class="text-black">Select a service...</option>
-                                    <option value="music-video" class="text-black">Music Video</option>
-                                    <option value="wedding" class="text-black">Wedding & Elopement</option>
-                                    <option value="commercial" class="text-black">Commercial / Corporate</option>
-                                    <option value="drone" class="text-black">Drone / Aerial Footage</option>
-                                    <option value="event-stream" class="text-black">Live Streaming</option>
-                                    <option value="portrait" class="text-black">Portrait Photography</option>
+                                    <option value="Music Video" class="text-black">Music Video</option>
+                                    <option value="Wedding & Elopement" class="text-black">Wedding & Elopement</option>
+                                    <option value="Commercial / Corporate" class="text-black">Commercial / Corporate</option>
+                                    <option value="Drone / Aerial Footage" class="text-black">Drone / Aerial Footage</option>
+                                    <option value="Live Streaming" class="text-black">Live Streaming</option>
+                                    <option value="Portrait Photography" class="text-black">Portrait Photography</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="space-y-2">
                             <label class="text-[11px] font-bold text-zinc-400 uppercase tracking-widest">Project Details <span class="text-red-500">*</span></label>
-                            <textarea required rows="4" class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="Tell us about your vision, location, required deliverables..."></textarea>
+                            <textarea id="message" required rows="4" class="w-full form-input px-4 py-3.5 rounded-lg text-sm" placeholder="Tell us about your vision, location, required deliverables..."></textarea>
                         </div>
 
                         <div class="pt-2">
                             <button type="submit" class="w-full md:w-auto px-10 bg-white text-black hover:bg-zinc-200 py-3.5 rounded-full font-bold transition shadow-xl flex justify-center items-center gap-2 border border-white/20 hover:scale-[1.02]">
-                                Send Request <i class="fas fa-paper-plane text-xs"></i>
+                                Send via WhatsApp <i class="fab fa-whatsapp text-lg"></i>
                             </button>
                         </div>
                     </form>
@@ -226,6 +226,30 @@
             </div>
         </div>
     </main>
+
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const projectType = document.getElementById('project_type').value;
+            const message = document.getElementById('message').value;
+            
+            let whatsappMessage = `*New Project Inquiry*\n\n`;
+            whatsappMessage += `*Name:* ${name}\n`;
+            whatsappMessage += `*Email:* ${email}\n`;
+            if (phone) whatsappMessage += `*Phone:* ${phone}\n`;
+            whatsappMessage += `*Project Type:* ${projectType}\n`;
+            whatsappMessage += `*Details:*\n${message}`;
+            
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const whatsappNumber = "233500020168"; // Primary phone number from the contact page
+            
+            window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+        });
+    </script>
 
     <!-- Standard Footer embedded to match app scale -->
     <footer class="mt-auto border-t border-white/[0.05] pt-10 pb-6 px-6 md:px-20 xl:px-32 relative z-10 w-full mb-4">
