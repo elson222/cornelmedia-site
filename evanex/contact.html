@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
@@ -23,10 +25,16 @@
                 <div class="logo">
                     <a href="index.html">
                         <img src="images/logo.png" alt="Evanex Logo">
-                        EVANEX PHARMACY
+                        <span class="logo-text">Evanex Pharmacy</span>
                     </a>
                 </div>
                 <div class="hamburger">☰</div>
+                <div style="margin-left: auto; margin-right: 1rem;">
+                    <button id="theme-toggle" class="btn btn-secondary"
+                        style="padding: 0.5rem 0.75rem; border: none; background: transparent; font-size: 1.2rem;">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
@@ -60,10 +68,8 @@
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <h4>Address</h4>
-                            <p>Tarkwa-Nsuaem Municipal District</p>
-                            <p>Western Region, Ghana</p>
-                            <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem;">Based on Lat 5.00193, Long
-                                -2.02508</p>
+                            <p>Agona Nkwanta, Western Region</p>
+                            <p>Opposite Ahantaman Rural Bank</p>
                         </div>
                     </div>
 
@@ -71,7 +77,7 @@
                         <i class="far fa-envelope"></i>
                         <div>
                             <h4>Email</h4>
-                            <p>info@evanexpharmacy.com</p>
+                            <p>evanexpharmacy@gmail.com</p>
                         </div>
                     </div>
 
@@ -79,7 +85,7 @@
                         <i class="fas fa-phone-alt"></i>
                         <div>
                             <h4>Phone</h4>
-                            <p>+233 (0) 55 555 5555</p>
+                            <p>053 142 3368 / 024 533 4506 / 059 123 4567</p>
                         </div>
                     </div>
 
@@ -88,7 +94,7 @@
                         <div>
                             <h4>Business Hours</h4>
                             <p>Mon - Sat: 8:00 AM - 8:00 PM</p>
-                            <p>Sunday: Closed</p>
+                            <p>Sun: Closed</p>
                         </div>
                     </div>
                 </div>
@@ -96,14 +102,15 @@
                 <!-- Form Side -->
                 <div class="contact-form">
                     <h3>Send a Message</h3>
-                    <form id="contactForm">
+                    <!-- Formspree Placeholder - Replace 'YOUR_FORM_ID' with actual ID when available -->
+                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
                         <div class="form-group">
                             <label>Full Name</label>
-                            <input type="text" required placeholder="John Doe">
+                            <input type="text" name="name" required placeholder="John Doe">
                         </div>
                         <div class="form-group">
                             <label>Email Address</label>
-                            <input type="email" required placeholder="john@example.com">
+                            <input type="email" name="email" required placeholder="john@example.com">
                         </div>
                         <div class="form-group">
                             <label>Subject</label>
@@ -111,7 +118,7 @@
                         </div>
                         <div class="form-group">
                             <label>Message</label>
-                            <textarea rows="5" required placeholder="How can we help you?"></textarea>
+                            <textarea rows="5" name="message" required placeholder="How can we help you?"></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary" style="width: 100%; border: none;">Send
                             Message</button>
@@ -120,12 +127,11 @@
             </div>
 
             <!-- Map Embed -->
-            <!-- Using custom coordinates 5.00193, -2.02508 -->
+            <!-- Pointing to Agona Nkwanta approx region since specific marker isn't generated yet -->
             <div class="map-responsive">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15878.53036814285!2d-2.0350800000000003!3d5.0019300000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDAnMDYuOSJOIDLCsDAxJzMwLjMiVw!5e0!3m2!1sen!2sgh!4v1600000000000!5m2!1sen!2sgh"
-                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy">
-                </iframe>
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15896.XXXXX!2d-2.02508!3d5.00193!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDAnMDYuOSJOIDLCsDAxJzMwLjMiVw!5e0!3m2!1sen!2sgh!4v1600000000000!5m2!1sen!2sgh"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
@@ -148,13 +154,22 @@
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul class="contact-list" style="margin-top: 1rem; color: #D1D5DB; font-size: 0.9rem;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt" style="width: 20px;"></i>
+                            Agona Nkwanta, opp. Ahantaman Rural Bank</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fas fa-phone-alt" style="width: 20px;"></i> 053 142
+                            3368</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="far fa-clock" style="width: 20px;"></i> 7:00 AM -
+                            11:00 PM (Daily)</li>
+                    </ul>
+                </div>
                 <div class="footer-social">
-                    <h4>Connect With Us</h4>
+                    <h4>Connect</h4>
                     <div class="social-icons" style="margin-top: 1rem;">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://wa.me/233531423368" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://facebook.com" class="social-link"><i class="fab fa-facebook-f"></i></a>
                     </div>
                 </div>
             </div>
@@ -165,6 +180,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
 </body>
 
 </html>
