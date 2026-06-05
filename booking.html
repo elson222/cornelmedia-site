@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google Analytics Integration -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PLACEHOLDER');
+    </script>
+    <!-- SEO JSON-LD Architectural Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Cornel Media Productions",
+      "image": "https://cornel.media/assets/images/logo.png",
+      "url": "https://cornel.media",
+      "telephone": "+233500020168",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tarkwa",
+        "addressRegion": "Western Region",
+        "addressCountry": "GH"
+      },
+      "priceRange": "GH?3000+"
+    }
+    </script>
+    <!-- Open Graph Social Media Parsing -->
+    <meta property="og:title" content="Cornel Media Productions" />
+    <meta property="og:description" content="Cinematic streaming-quality media production. Weddings, Commercials, and Professional Shoots." />
+    <meta property="og:image" content="https://cornel.media/assets/images/favicon.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="1200" />
+    <meta property="og:url" content="https://cornel.media" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter/X Card Parsing -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cornel Media Productions" />
+    <meta name="twitter:description" content="Cinematic streaming-quality media production. Weddings, Commercials, and Professional Shoots." />
+    <meta name="twitter:image" content="https://cornel.media/assets/images/favicon.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking | Cornel Media Productions</title>
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Tailwind CSS for rapid 1:1 structural replica -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000000; color: #fff; overflow-x: hidden; }
+        .pill-nav {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+        }
+        
+        .nav-item { transition: all 0.2s ease; }
+        .nav-item:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+        .nav-active { background: #fff; color: #000; box-shadow: 0 2px 10px rgba(255,255,255,0.2); }
+        .nav-active:hover { color: #000; text-shadow: none; background: #f0f0f0; }
+    </style>
+</head>
+<body class="bg-black antialiased selection:bg-white selection:text-black min-h-screen flex items-center justify-center p-6">
+    
+    <!-- Minimal UI for Booking Redirect or simple message -->
+    <div class="text-center max-w-lg">
+        <div class="w-20 h-20 rounded-full border border-white/10 bg-white/5 flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-calendar-check text-3xl text-white"></i>
+        </div>
+        <h1 class="text-3xl font-black tracking-widest uppercase mb-4 text-white drop-shadow-md">Redirecting to Support</h1>
+        <p class="text-zinc-400 mb-8 leading-relaxed text-sm">Our booking and project inquiry system is now handled securely via our main contact desk.</p>
+        
+        <div class="flex flex-col gap-4">
+            <a href="contact.html" class="bg-white text-black hover:bg-zinc-200 px-8 py-3.5 rounded-full font-bold transition shadow-xl uppercase tracking-widest text-[12px] flex items-center justify-center gap-3">
+                Go to Project Inquiry Form <i class="fas fa-arrow-right"></i>
+            </a>
+            <a href="index.html" class="text-white/50 hover:text-white transition text-xs font-semibold uppercase tracking-widest">
+                Return to Home Menu
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Auto-redirect to the superior contact page
+        setTimeout(() => {
+            window.location.href = 'contact.html';
+        }, 3000);
+    </script>
+    <!-- Mobile Bottom Navigation (Netflix/Streaming App Style) -->
+    <nav class="md:hidden fixed bottom-0 inset-x-0 z-50 flex justify-between items-center px-6 py-2 bg-black/90 backdrop-blur-xl border-t border-white/10 pb-sanf">
+        <a href="index.html" class="mobile-nav-item text-white/50 flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
+            <i class="fas fa-home text-xl"></i>
+            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Home</span>
+        </a>
+        <a href="services.html" class="mobile-nav-item text-white/50 flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
+            <i class="fas fa-video text-xl"></i>
+            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Services</span>
+        </a>
+        <a href="portfolio.html" class="mobile-nav-item text-white/50 flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
+            <i class="fas fa-image text-xl"></i>
+            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Work</span>
+        </a>
+        <a href="pricing.html" class="mobile-nav-item text-white/50 flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
+            <i class="fas fa-tag text-xl"></i>
+            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Pricing</span>
+        </a>
+        <a href="contact.html" class="mobile-nav-item text-white/50 flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
+            <i class="fas fa-envelope text-xl"></i>
+            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Book</span>
+        </a>
+    </nav>
+    <!-- Conversion: Floating WhatsApp Custom Quote Connector -->
+    <a href="https://wa.me/233500020168" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 md:bottom-8 right-6 z-50 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-[0_0_25px_rgba(34,197,94,0.4)] hover:scale-110 transition hover:bg-green-400 border border-white/20">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+        <!-- Persistent GDPR Cookie Consent Module -->
+    <div id="cookieCon" class="hidden fixed bottom-24 md:bottom-8 left-6 z-50 max-w-xs bg-black/90 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl flex-col gap-4">
+        <p class="text-[11px] text-white/70 font-medium leading-relaxed">We utilize secure caching and architectural cookies to ensure a perfectly seamless cinematic experience.</p>
+        <div class="flex gap-2">
+            <button onclick="acceptCookies()" class="bg-white text-black px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider w-full hover:bg-white/80 transition shadow-lg">Acknowledge</button>
+            <a href="privacy-policy.html" class="bg-transparent text-white px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest w-full text-center border border-white/20 hover:bg-white/10 transition">Policy</a>
+        </div>
+    </div>
+    <script>
+        if (!localStorage.getItem('cmp_cookie_consented')) {
+            document.getElementById('cookieCon').style.display = 'flex';
+        }
+        function acceptCookies() {
+            localStorage.setItem('cmp_cookie_consented', 'true');
+            document.getElementById('cookieCon').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
