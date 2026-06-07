@@ -118,10 +118,19 @@
     <div class="hero-slide" id="slide-3">
       <img src="assets/images/ef-ig-15.jpg" alt="Evanex Foundation donation" loading="lazy">
     </div>
-    <!-- Dark overlay -->
-    <div class="absolute inset-0 bg-black/60"></div>
-    <!-- Orange gradient at bottom -->
-    <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%)"></div>
+    
+    <!-- Base darkening overlay -->
+    <div class="absolute inset-0 bg-black/40"></div>
+    
+    <!-- Edge transition gradients -->
+    <!-- Vignette / Radial fade for sides -->
+    <div class="absolute inset-0" style="background: radial-gradient(circle at center, transparent 30%, rgba(0,0,0,0.7) 100%);"></div>
+    
+    <!-- Top fade to blend with nav -->
+    <div class="absolute inset-0" style="background: linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 25%);"></div>
+    
+    <!-- Bottom fade to blend seamlessly into the next black section -->
+    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.85) 15%, rgba(0,0,0,0) 50%);"></div>
   </div>
 
   <!-- Hero content -->
