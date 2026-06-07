@@ -78,7 +78,7 @@
 <body>
 
 <!-- DESKTOP NAV -->
-<nav class="flex flex-wrap justify-center mx-auto mt-8 w-fit items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
+<nav class="hidden md:flex mx-auto mt-8 w-fit items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
     <a href="evanex-foundation.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
         <i class="fas fa-hands-helping"></i> Overview
     </a>
@@ -97,6 +97,30 @@
 </nav>
 
 
+
+<!-- MOBILE BOTTOM NAV -->
+<nav class="md:hidden fixed bottom-0 inset-x-0 z-50 flex justify-around items-center px-2 py-2 bg-black/90 backdrop-blur-xl border-t border-white/10">
+  <a href="evanex-about.html" class="flex flex-col items-center gap-[3px] px-2 py-1 text-white/50">
+    <i class="fas fa-info-circle text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">About</span>
+  </a>
+  <a href="evanex-projects.html" class="flex flex-col items-center gap-[3px] px-2 py-1 text-white/50">
+    <i class="fas fa-project-diagram text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">Projects</span>
+  </a>
+  <a href="evanex-foundation.html" class="text-white flex flex-col items-center gap-[3px] px-3 py-1 rounded-2xl -mt-5 shadow-lg" style="background:#F26A22">
+    <i class="fas fa-hands-helping text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">Home</span>
+  </a>
+  <a href="evanex-gallery.html" class="flex flex-col items-center gap-[3px] px-2 py-1 text-white/50">
+    <i class="fas fa-images text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">Gallery</span>
+  </a>
+  <a href="evanex-socials.html" class="flex flex-col items-center gap-[3px] px-2 py-1 text-white/50">
+    <i class="fas fa-share-alt text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">Socials</span>
+  </a>
+</nav>
 
 <!-- WHATSAPP FAB -->
 <a href="https://wa.me/233548932274" target="_blank" rel="noopener noreferrer"
@@ -606,4 +630,5 @@ function copyLink() {
 </script>
 </body>
 </html>
+
 
