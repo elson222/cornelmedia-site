@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <style>
-    /* â”€â”€â”€ Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Base  */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -29,7 +29,7 @@
     }
     h1, h2, h3, h4, h5 { font-family: 'Sora', sans-serif; }
 
-    /* â”€â”€â”€ Brand Tokens â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Brand Tokens  */
     :root {
       --orange: #F26A22;
       --navy:   #1B2A5E;
@@ -38,7 +38,7 @@
       --ig-grad-h: linear-gradient(135deg, #9b59b6, #e74c3c, #f39c12);
     }
 
-    /* â”€â”€â”€ Glassmorphism Pill Nav â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Glassmorphism Pill Nav  */
     .glass-nav {
       background: rgba(255,255,255,0.06);
       backdrop-filter: blur(18px);
@@ -59,7 +59,7 @@
     .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
     .nav-link.active { background: var(--orange); color: #fff; }
 
-    /* â”€â”€â”€ Hero Background Floating Icons â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Hero Background Floating Icons  */
     .hero-wrap { position: relative; overflow: hidden; }
     .floating-icon {
       position: absolute;
@@ -83,7 +83,7 @@
       50%       { transform: translateY(-18px) scale(1.06); opacity: 0.12; }
     }
 
-    /* â”€â”€â”€ Section Titles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Section Titles  */
     .section-badge {
       display: inline-block;
       background: rgba(242,106,34,0.15);
@@ -98,7 +98,7 @@
       margin-bottom: 1rem;
     }
 
-    /* â”€â”€â”€ Instagram Hero Card â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Instagram Hero Card  */
     .ig-card {
       background: #111;
       border: 1px solid rgba(255,255,255,0.08);
@@ -163,7 +163,7 @@
     }
     .ig-cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-    /* â”€â”€â”€ Social Channel Cards â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Social Channel Cards  */
     .social-card {
       background: #0d0d0d;
       border: 1px solid rgba(255,255,255,0.07);
@@ -225,7 +225,7 @@
     .social-card.yt-theme .social-visit-btn { border-color: rgba(255,0,0,0.5); color: #f87171; }
     .social-card.yt-theme .social-visit-btn:hover { background: rgba(255,0,0,0.15); }
 
-    /* â”€â”€â”€ Feed Timeline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Feed Timeline  */
     .feed-card {
       background: #0d0d0d;
       border: 1px solid rgba(255,255,255,0.07);
@@ -250,7 +250,7 @@
       cursor: default;
     }
 
-    /* â”€â”€â”€ Newsletter â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Newsletter  */
     .newsletter-wrap {
       background: linear-gradient(135deg, rgba(27,42,94,0.3), rgba(139,77,184,0.2));
       border: 1px solid rgba(139,77,184,0.25);
@@ -278,7 +278,7 @@
     }
     .subscribe-btn:hover { opacity: 0.9; transform: translateY(-2px); }
 
-    /* â”€â”€â”€ Share Section â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Share Section  */
     .share-card {
       background: #0d0d0d;
       border: 1px solid rgba(255,255,255,0.07);
@@ -316,7 +316,7 @@
     }
     #copyToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-    /* â”€â”€â”€ WhatsApp FAB â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  WhatsApp FAB  */
     .whatsapp-fab {
       position: fixed; bottom: 86px; right: 20px; z-index: 990;
       width: 54px; height: 54px; border-radius: 50%;
@@ -334,7 +334,7 @@
       50%      { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
     }
 
-    /* â”€â”€â”€ Mobile Bottom Nav â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Mobile Bottom Nav  */
     .mobile-bottom-nav {
       position: fixed; bottom: 0; left: 0; right: 0; z-index: 980;
       background: rgba(10,10,10,0.95);
@@ -363,19 +363,19 @@
     }
     .mob-nav-center i { font-size: 1.15rem; }
 
-    /* â”€â”€â”€ Scroll Reveal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Scroll Reveal  */
     .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    /* â”€â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Footer  */
     .footer-divider { border-color: rgba(255,255,255,0.07); }
 
-    /* â”€â”€â”€ Utility â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Utility  */
     .orange-text { color: var(--orange); }
     .purple-text { color: var(--purple); }
     .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
 
-    /* â”€â”€â”€ Responsive helpers â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+    /*  Responsive helpers  */
     @media (max-width: 640px) {
       .section-pad { padding-top: 3.5rem; padding-bottom: 3.5rem; }
     }
@@ -397,9 +397,9 @@
 </head>
 <body class="pb-20 md:pb-0">
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      TOP NAV (Pill / Glassmorphism)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <header class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
   <nav class="glass-nav flex items-center gap-1 px-3 py-2 w-full max-w-2xl">
     <!-- Logo -->
@@ -423,9 +423,9 @@
 </header>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      HERO
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section class="hero-wrap relative min-h-screen flex items-center justify-center pt-24 pb-16" style="background: radial-gradient(ellipse at 20% 40%, rgba(139,77,184,0.15) 0%, transparent 55%), radial-gradient(ellipse at 80% 60%, rgba(242,106,34,0.1) 0%, transparent 55%), #000;">
 
   <!-- Floating Social Icons -->
@@ -447,7 +447,7 @@
     </h1>
 
     <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
-      Stay connected with Evanex Foundation across social media as we document every step of our work â€” from hospital renovations to community health camps.
+      Stay connected with Evanex Foundation across social media as we document every step of our work  from hospital renovations to community health camps.
     </p>
 
     <!-- Quick Social Pills -->
@@ -483,14 +483,14 @@
 </section>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      INSTAGRAM EMBED SECTION
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section class="section-pad px-4 max-w-5xl mx-auto">
   <div class="text-center mb-10 reveal">
     <div class="section-badge"><i class="fa-brands fa-instagram mr-1"></i> Instagram</div>
     <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Our Instagram</h2>
-    <p class="text-gray-400 mt-3 max-w-lg mx-auto">Behind-the-scenes moments, project milestones, and community stories â€” all in one place.</p>
+    <p class="text-gray-400 mt-3 max-w-lg mx-auto">Behind-the-scenes moments, project milestones, and community stories  all in one place.</p>
   </div>
 
   <div class="ig-card reveal">
@@ -535,9 +535,9 @@
         <!-- Bio -->
         <div class="py-4 border-b border-gray-800">
           <p class="text-gray-300 text-sm leading-relaxed">
-            Empowering communities in Ghana's Western Region ðŸ§¡<br/>
+            Empowering communities in Ghana's Western Region <br/>
             Healthcare &middot; Education &middot; Welfare<br/>
-            <span class="text-gray-500">ðŸ“ Western Region, Ghana</span>
+            <span class="text-gray-500"> Western Region, Ghana</span>
           </p>
         </div>
       </div>
@@ -570,9 +570,9 @@
 </section>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      SOCIAL CHANNELS GRID
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section class="section-pad px-4 max-w-5xl mx-auto">
   <div class="text-center mb-10 reveal">
     <div class="section-badge"><i class="fa-solid fa-share-nodes mr-1"></i> All Platforms</div>
@@ -669,7 +669,7 @@
         </div>
       </div>
       <p class="text-gray-400 text-sm leading-relaxed mb-4">
-        Documentary-style videos of our projects and impact stories â€” giving you a front-row seat to our work.
+        Documentary-style videos of our projects and impact stories  giving you a front-row seat to our work.
       </p>
       <div class="flex items-center justify-between flex-wrap gap-3">
         <div class="flex gap-4 text-sm">
@@ -687,14 +687,14 @@
 </section>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      LATEST UPDATES FEED
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section class="section-pad px-4 max-w-3xl mx-auto">
   <div class="text-center mb-10 reveal">
     <div class="section-badge"><i class="fa-solid fa-rss mr-1"></i> Recent Posts</div>
     <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Latest Updates</h2>
-    <p class="text-gray-400 mt-3 max-w-lg mx-auto">Fresh from our Instagram â€” the most recent stories from our work in the field.</p>
+    <p class="text-gray-400 mt-3 max-w-lg mx-auto">Fresh from our Instagram  the most recent stories from our work in the field.</p>
   </div>
 
   <div class="flex flex-col gap-5">
@@ -718,7 +718,7 @@
         <i class="fa-solid fa-hospital-user text-4xl text-white opacity-40"></i>
       </div>
       <p class="text-gray-300 text-sm leading-relaxed mb-3">
-        Apinto Hospital renovation milestone reached! ðŸ¥ The children's ward is now fully equipped with new beds, monitors, and medical supplies. This is what your support makes possible â€” every donation counted. Thank you! <span class="text-purple-400">#EvanexFoundation #Ghana #HealthcareForAll</span>
+        Apinto Hospital renovation milestone reached!  The children's ward is now fully equipped with new beds, monitors, and medical supplies. This is what your support makes possible  every donation counted. Thank you! <span class="text-purple-400">#EvanexFoundation #Ghana #HealthcareForAll</span>
       </p>
       <div class="flex items-center justify-between">
         <div class="feed-like-btn">
@@ -750,7 +750,7 @@
         <i class="fa-solid fa-hand-holding-heart text-4xl text-white opacity-40"></i>
       </div>
       <p class="text-gray-300 text-sm leading-relaxed mb-3">
-        Thank you to all our donors for making the Tarkwa Medical Drive possible! ðŸ’š We distributed over 500 medical supply items to families in need across 3 communities. Every item matters, every donor matters. <span class="text-purple-400">#TarkwaMedicalDrive #WesternRegion</span>
+        Thank you to all our donors for making the Tarkwa Medical Drive possible!  We distributed over 500 medical supply items to families in need across 3 communities. Every item matters, every donor matters. <span class="text-purple-400">#TarkwaMedicalDrive #WesternRegion</span>
       </p>
       <div class="flex items-center justify-between">
         <div class="feed-like-btn">
@@ -782,7 +782,7 @@
         <i class="fa-solid fa-truck-medical text-4xl text-white opacity-40"></i>
       </div>
       <p class="text-gray-300 text-sm leading-relaxed mb-3">
-        ðŸš¨ New project announcement: Mobile Health Clinic coming to 6 more communities in Q3 2026! We're expanding our reach to ensure no community is left behind. Stay tuned for location reveals. <span class="text-purple-400">#MobileClinic #HealthcareAccess #Ghana2026</span>
+         New project announcement: Mobile Health Clinic coming to 6 more communities in Q3 2026! We're expanding our reach to ensure no community is left behind. Stay tuned for location reveals. <span class="text-purple-400">#MobileClinic #HealthcareAccess #Ghana2026</span>
       </p>
       <div class="flex items-center justify-between">
         <div class="feed-like-btn">
@@ -814,7 +814,7 @@
         <i class="fa-solid fa-stethoscope text-4xl text-white opacity-40"></i>
       </div>
       <p class="text-gray-300 text-sm leading-relaxed mb-3">
-        Our free health screening camp at Huni Valley served 1,000+ residents this weekend. ðŸ©º Blood pressure, blood sugar, malaria screening, and consultations â€” all free of charge. This is why we do what we do. <span class="text-purple-400">#HuniValley #FreeHealthcare #CommunityFirst</span>
+        Our free health screening camp at Huni Valley served 1,000+ residents this weekend.  Blood pressure, blood sugar, malaria screening, and consultations  all free of charge. This is why we do what we do. <span class="text-purple-400">#HuniValley #FreeHealthcare #CommunityFirst</span>
       </p>
       <div class="flex items-center justify-between">
         <div class="feed-like-btn">
@@ -841,15 +841,15 @@
 </section>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      NEWSLETTER SIGNUP
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section class="section-pad px-4 max-w-3xl mx-auto">
   <div class="newsletter-wrap reveal">
     <div class="text-center mb-8">
       <div class="section-badge mb-3"><i class="fa-solid fa-envelope-open-text mr-1"></i> Newsletter</div>
       <h2 class="text-3xl sm:text-4xl font-black text-white">Stay in the Loop</h2>
-      <p class="text-gray-400 mt-3 max-w-md mx-auto">Get monthly updates on our projects, impact stories, and ways to help â€” straight to your inbox.</p>
+      <p class="text-gray-400 mt-3 max-w-md mx-auto">Get monthly updates on our projects, impact stories, and ways to help  straight to your inbox.</p>
     </div>
 
     <form id="newsletterForm" class="max-w-md mx-auto">
@@ -899,9 +899,9 @@
 </section>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      SHARE SECTION
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section class="section-pad px-4 max-w-4xl mx-auto">
   <div class="text-center mb-10 reveal">
     <div class="section-badge"><i class="fa-solid fa-bullhorn mr-1"></i> Spread the Word</div>
@@ -911,14 +911,14 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
 
-    <!-- Share Card 1 â€” Short Message -->
+    <!-- Share Card 1  Short Message -->
     <div class="share-card reveal">
       <div class="flex items-center gap-2 mb-3">
         <i class="fa-solid fa-quote-left text-orange-500 text-sm"></i>
         <span class="text-gray-400 text-xs font-semibold uppercase tracking-wider">General Awareness</span>
       </div>
       <div class="share-text-box" id="shareText1">
-        "Evanex Foundation is transforming communities in Ghana's Western Region through healthcare, education, and welfare initiatives. Follow their journey and support their mission! ðŸ§¡ #EvanexFoundation"
+        "Evanex Foundation is transforming communities in Ghana's Western Region through healthcare, education, and welfare initiatives. Follow their journey and support their mission!  #EvanexFoundation"
       </div>
       <div class="flex flex-wrap gap-2">
         <a href="https://wa.me/?text=Evanex%20Foundation%20is%20transforming%20communities%20in%20Ghana's%20Western%20Region%20through%20healthcare%2C%20education%2C%20and%20welfare%20initiatives.%20Follow%20their%20journey!%20%F0%9F%A7%A1%20https%3A%2F%2Fwww.instagram.com%2FEvanexFoundation"
@@ -939,14 +939,14 @@
       </div>
     </div>
 
-    <!-- Share Card 2 â€” Volunteer Recruitment -->
+    <!-- Share Card 2  Volunteer Recruitment -->
     <div class="share-card reveal">
       <div class="flex items-center gap-2 mb-3">
         <i class="fa-solid fa-quote-left text-purple-400 text-sm"></i>
         <span class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Volunteer Outreach</span>
       </div>
       <div class="share-text-box" id="shareText2">
-        "Want to make a difference in Ghana? Evanex Foundation is looking for volunteers, donors, and partners to help bring healthcare and education to underserved communities. Join us! ðŸ’œ #VolunteerGhana"
+        "Want to make a difference in Ghana? Evanex Foundation is looking for volunteers, donors, and partners to help bring healthcare and education to underserved communities. Join us!  #VolunteerGhana"
       </div>
       <div class="flex flex-wrap gap-2">
         <a href="https://wa.me/?text=Want%20to%20make%20a%20difference%20in%20Ghana%3F%20Evanex%20Foundation%20is%20looking%20for%20volunteers%2C%20donors%20and%20partners!%20%F0%9F%92%9C%20https%3A%2F%2Fwww.instagram.com%2FEvanexFoundation"
@@ -976,9 +976,9 @@
 </section>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      FOOTER
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <footer class="border-t footer-divider mt-12 px-6 py-12 max-w-5xl mx-auto">
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
     <!-- Brand -->
@@ -1026,7 +1026,7 @@
   </div>
 
   <div class="border-t footer-divider pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-    <p class="text-gray-600 text-xs">Â© 2026 Evanex Foundation. All rights reserved.</p>
+    <p class="text-gray-600 text-xs"> 2026 Evanex Foundation. All rights reserved.</p>
     <p class="text-gray-600 text-xs">
       A <a href="evanex-foundation.html" class="text-gray-500 hover:text-orange-400 transition font-semibold">Evanex Foundation</a> initiative
     </p>
@@ -1034,17 +1034,17 @@
 </footer>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      WHATSAPP FAB
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <a href="https://wa.me/233548932274" target="_blank" rel="noopener" class="whatsapp-fab" title="Chat on WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      MOBILE BOTTOM NAV
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <nav class="mobile-bottom-nav md:hidden">
   <a href="evanex-foundation.html" class="mob-nav-item">
     <i class="fa-solid fa-house"></i>
@@ -1054,7 +1054,7 @@
     <i class="fa-solid fa-circle-info"></i>
     <span>About</span>
   </a>
-  <!-- CENTER ELEVATED â€” Socials (active) -->
+  <!-- CENTER ELEVATED  Socials (active) -->
   <a href="evanex-socials.html" class="mob-nav-item mob-nav-center">
     <i class="fa-solid fa-share-nodes"></i>
     <span>Socials</span>
@@ -1070,11 +1070,11 @@
 </nav>
 
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      JAVASCRIPT
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <script>
-  /* â”€â”€â”€ Scroll Reveal â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /*  Scroll Reveal  */
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1089,7 +1089,7 @@
     revealObserver.observe(el);
   });
 
-  /* â”€â”€â”€ Newsletter Form â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /*  Newsletter Form  */
   const newsletterForm    = document.getElementById('newsletterForm');
   const newsletterSuccess = document.getElementById('newsletterSuccess');
 
@@ -1109,7 +1109,7 @@
     }, 1400);
   });
 
-  /* â”€â”€â”€ Copy Link â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /*  Copy Link  */
   function copyLink(url, btn) {
     navigator.clipboard.writeText(url).then(() => {
       const original = btn.innerHTML;
@@ -1139,7 +1139,7 @@
     });
   }
 
-  /* â”€â”€â”€ Nav active class protection â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /*  Nav active class protection  */
   // Ensure nav stays styled correctly
   document.querySelectorAll('.nav-link').forEach(link => {
     if (link.href === window.location.href) {

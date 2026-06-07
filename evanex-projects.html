@@ -36,12 +36,12 @@
   </script>
 
   <style>
-    /* â”€â”€ Base â”€â”€ */
+    /*  Base  */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body { background: #000; color: #e5e7eb; font-family: 'Inter', sans-serif; overflow-x: hidden; }
 
-    /* â”€â”€ Glass morphism â”€â”€ */
+    /*  Glass morphism  */
     .glass {
       background: rgba(255,255,255,0.05);
       backdrop-filter: blur(16px);
@@ -49,7 +49,7 @@
       border: 1px solid rgba(255,255,255,0.1);
     }
 
-    /* â”€â”€ Pill nav â”€â”€ */
+    /*  Pill nav  */
     .pill-nav {
       background: rgba(0,0,0,0.55);
       backdrop-filter: blur(20px);
@@ -58,7 +58,7 @@
       border-radius: 9999px;
     }
 
-    /* â”€â”€ Scroll reveal â”€â”€ */
+    /*  Scroll reveal  */
     .reveal {
       opacity: 0;
       transform: translateY(36px);
@@ -69,7 +69,7 @@
       transform: translateY(0);
     }
 
-    /* â”€â”€ Project card â”€â”€ */
+    /*  Project card  */
     .project-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
@@ -93,7 +93,7 @@
       transform: scale(1.05);
     }
 
-    /* â”€â”€ Featured banner â”€â”€ */
+    /*  Featured banner  */
     .featured-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(242,106,34,0.35);
@@ -106,7 +106,7 @@
       box-shadow: 0 24px 64px rgba(242,106,34,0.22);
     }
 
-    /* â”€â”€ Filter pill â”€â”€ */
+    /*  Filter pill  */
     .filter-pill {
       padding: 0.45rem 1.2rem;
       border-radius: 9999px;
@@ -126,7 +126,7 @@
       color: #fff;
     }
 
-    /* â”€â”€ Stat chip â”€â”€ */
+    /*  Stat chip  */
     .stat-chip {
       display: inline-flex;
       align-items: center;
@@ -140,7 +140,7 @@
       color: #F26A22;
     }
 
-    /* â”€â”€ Impact counter strip â”€â”€ */
+    /*  Impact counter strip  */
     .impact-strip {
       background: linear-gradient(135deg, rgba(27,42,94,0.8) 0%, rgba(139,77,184,0.35) 100%);
       border: 1px solid rgba(242,106,34,0.2);
@@ -154,14 +154,14 @@
       font-size: clamp(2rem, 5vw, 3rem);
     }
 
-    /* â”€â”€ Hero gradient â”€â”€ */
+    /*  Hero gradient  */
     .hero-gradient {
       background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(27,42,94,0.65) 0%, rgba(0,0,0,0) 70%),
                   radial-gradient(ellipse 50% 40% at 85% 20%, rgba(242,106,34,0.2) 0%, rgba(0,0,0,0) 60%),
                   #000;
     }
 
-    /* â”€â”€ Gradient placeholder (no image) â”€â”€ */
+    /*  Gradient placeholder (no image)  */
     .gradient-placeholder {
       width: 100%;
       height: 200px;
@@ -171,7 +171,7 @@
       justify-content: center;
     }
 
-    /* â”€â”€ Badge â”€â”€ */
+    /*  Badge  */
     .badge-ongoing  { background: rgba(242,106,34,0.2); color: #F26A22; border: 1px solid rgba(242,106,34,0.4); }
     .badge-active   { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.35); }
     .badge-completed{ background: rgba(100,116,139,0.2); color: #94a3b8; border: 1px solid rgba(100,116,139,0.35); }
@@ -188,7 +188,7 @@
       text-transform: uppercase;
     }
 
-    /* â”€â”€ Mobile bottom nav â”€â”€ */
+    /*  Mobile bottom nav  */
     .bottom-nav {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -249,7 +249,7 @@
     }
     .bn-center-pill i { font-size: 1.25rem; }
 
-    /* â”€â”€ WhatsApp FAB â”€â”€ */
+    /*  WhatsApp FAB  */
     .whatsapp-fab {
       position: fixed;
       bottom: 88px;
@@ -269,7 +269,7 @@
     }
     .whatsapp-fab i { color: #fff; font-size: 1.5rem; }
 
-    /* â”€â”€ CTA card â”€â”€ */
+    /*  CTA card  */
     .cta-card {
       background: linear-gradient(135deg, rgba(27,42,94,0.6) 0%, rgba(139,77,184,0.2) 100%);
       border: 1px solid rgba(242,106,34,0.3);
@@ -277,13 +277,13 @@
       backdrop-filter: blur(12px);
     }
 
-    /* â”€â”€ Nav link active â”€â”€ */
+    /*  Nav link active  */
     .nav-link-active {
       color: #F26A22 !important;
       font-weight: 700;
     }
 
-    /* â”€â”€ Subnav â”€â”€ */
+    /*  Subnav  */
     .subnav-link {
       color: #9ca3af;
       font-size: 0.8rem;
@@ -305,11 +305,11 @@
       background: rgba(242,106,34,0.08);
     }
 
-    /* â”€â”€ Hidden card (filter) â”€â”€ */
+    /*  Hidden card (filter)  */
     .project-card-wrap { transition: opacity 0.3s ease, transform 0.3s ease; }
     .project-card-wrap.hidden-card { display: none; }
 
-    /* â”€â”€ Orange text gradient â”€â”€ */
+    /*  Orange text gradient  */
     .text-gradient {
       background: linear-gradient(90deg, #F26A22 0%, #f9a85a 100%);
       -webkit-background-clip: text;
@@ -317,19 +317,19 @@
       background-clip: text;
     }
 
-    /* â”€â”€ Section padding â”€â”€ */
+    /*  Section padding  */
     section { padding: 5rem 1.25rem; }
     @media (min-width: 768px) { section { padding: 6rem 2rem; } }
 
-    /* â”€â”€ Footer â”€â”€ */
+    /*  Footer  */
     footer { padding: 2.5rem 1.25rem; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(255,255,255,0.07); }
   </style>
 </head>
 <body>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      TOP NAVIGATION (desktop: pill nav)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] max-w-5xl">
   <nav class="pill-nav flex items-center justify-between px-5 py-3">
     <!-- Logo / Brand -->
@@ -367,9 +367,9 @@
   </nav>
 </header>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      EVANEX SUB-NAV (scrollable strip)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <div class="fixed top-20 left-0 right-0 z-40 flex justify-center px-4 mt-1 pointer-events-none">
   <div class="pointer-events-auto overflow-x-auto scrollbar-none"
        style="scrollbar-width:none; -ms-overflow-style:none;">
@@ -384,9 +384,9 @@
   </div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      HERO SECTION
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section id="hero" class="hero-gradient min-h-[72vh] flex flex-col items-center justify-center text-center pt-44 pb-20 px-5">
   <!-- Breadcrumb -->
   <div class="reveal flex items-center gap-2 text-xs text-gray-500 mb-6 font-medium">
@@ -438,9 +438,9 @@
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      FEATURED PROJECT BANNER
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section id="featured" style="padding-top:2rem; padding-bottom: 3rem;">
   <div class="max-w-6xl mx-auto px-5">
 
@@ -478,7 +478,7 @@
         <div class="p-8 md:p-10 flex flex-col justify-center">
           <!-- Category -->
           <div class="flex items-center gap-2 mb-3">
-            <span class="text-xs font-700 uppercase tracking-widest text-orange">Healthcare Â· Paediatric</span>
+            <span class="text-xs font-700 uppercase tracking-widest text-orange">Healthcare  Paediatric</span>
           </div>
 
           <!-- Title -->
@@ -494,7 +494,7 @@
 
           <!-- Description -->
           <p class="text-gray-400 text-sm leading-relaxed mb-6">
-            The Evanex Foundation is spearheading a comprehensive renovation of the paediatric ward at Apinto Government Hospital â€” one of the primary public health facilities serving Tarkwa-Nsuaem. The project covers structural rehabilitation of the ward environment, procurement and donation of over 200 medical devices including infant warmers, pulse oximeters, nebulisers, blood pressure monitors, and essential diagnostic tools. The initiative directly improves care conditions for the estimated 3,000+ children treated annually at this facility, ensuring that young patients in Ghana's Western Region receive the quality care they deserve regardless of their socioeconomic background.
+            The Evanex Foundation is spearheading a comprehensive renovation of the paediatric ward at Apinto Government Hospital  one of the primary public health facilities serving Tarkwa-Nsuaem. The project covers structural rehabilitation of the ward environment, procurement and donation of over 200 medical devices including infant warmers, pulse oximeters, nebulisers, blood pressure monitors, and essential diagnostic tools. The initiative directly improves care conditions for the estimated 3,000+ children treated annually at this facility, ensuring that young patients in Ghana's Western Region receive the quality care they deserve regardless of their socioeconomic background.
           </p>
 
           <!-- Stats row -->
@@ -529,9 +529,9 @@
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      PROJECT GRID (6 cards)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section id="projects" style="padding-top: 1.5rem;">
   <div class="max-w-6xl mx-auto px-5">
 
@@ -550,7 +550,7 @@
     <!-- Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="project-grid">
 
-      <!-- â”€â”€ Card 1: Tarkwa Municipal Hospital â”€â”€ -->
+      <!--  Card 1: Tarkwa Municipal Hospital  -->
       <div class="project-card-wrap reveal" data-category="Healthcare" data-status="Completed">
         <div class="project-card">
           <div class="overflow-hidden relative">
@@ -573,7 +573,7 @@
               <i class="fa-solid fa-location-dot text-orange text-xs"></i> Tarkwa Municipal
             </p>
             <h3 class="font-sora font-700 text-white text-base mb-2 leading-snug">
-              Tarkwa Municipal Hospital â€” Medical Supplies Drive
+              Tarkwa Municipal Hospital  Medical Supplies Drive
             </h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-4">
               Donated pharmaceuticals, surgical instruments, and diagnostic equipment worth GHS 45,000 to Tarkwa Municipal Hospital, improving treatment capacity for hundreds of patients each month.
@@ -587,7 +587,7 @@
         </div>
       </div>
 
-      <!-- â”€â”€ Card 2: Mile 8 Rural Clinic â”€â”€ -->
+      <!--  Card 2: Mile 8 Rural Clinic  -->
       <div class="project-card-wrap reveal" data-category="Healthcare" data-status="Active">
         <div class="project-card">
           <div class="overflow-hidden relative">
@@ -610,7 +610,7 @@
               <i class="fa-solid fa-location-dot text-orange text-xs"></i> Agona Nkwanta
             </p>
             <h3 class="font-sora font-700 text-white text-base mb-2 leading-snug">
-              Mile 8 Rural Clinic â€” Health Outreach
+              Mile 8 Rural Clinic  Health Outreach
             </h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-4">
               Free maternal health screenings and clinic infrastructure upgrades for underserved rural households in the Agona Nkwanta district, delivering essential reproductive care to women who lack access to specialist services.
@@ -623,7 +623,7 @@
         </div>
       </div>
 
-      <!-- â”€â”€ Card 3: Community Borehole â”€â”€ -->
+      <!--  Card 3: Community Borehole  -->
       <div class="project-card-wrap reveal" data-category="Welfare" data-status="Completed">
         <div class="project-card">
           <div class="overflow-hidden relative">
@@ -659,7 +659,7 @@
         </div>
       </div>
 
-      <!-- â”€â”€ Card 4: School Supply â”€â”€ -->
+      <!--  Card 4: School Supply  -->
       <div class="project-card-wrap reveal" data-category="Education" data-status="Completed">
         <div class="project-card">
           <div class="overflow-hidden relative">
@@ -696,7 +696,7 @@
         </div>
       </div>
 
-      <!-- â”€â”€ Card 5: Free Health Screening â”€â”€ -->
+      <!--  Card 5: Free Health Screening  -->
       <div class="project-card-wrap reveal" data-category="Healthcare" data-status="Completed">
         <div class="project-card">
           <div class="overflow-hidden relative">
@@ -733,7 +733,7 @@
         </div>
       </div>
 
-      <!-- â”€â”€ Card 6: Mobile Health Clinic (Upcoming) â”€â”€ -->
+      <!--  Card 6: Mobile Health Clinic (Upcoming)  -->
       <div class="project-card-wrap reveal" data-category="Healthcare" data-status="Upcoming">
         <div class="project-card" style="border-color: rgba(139,77,184,0.4);">
           <!-- Gradient placeholder -->
@@ -758,7 +758,7 @@
               <i class="fa-solid fa-location-dot text-orange text-xs"></i> Western Region-wide
             </p>
             <h3 class="font-sora font-700 text-white text-base mb-2 leading-snug">
-              Future Project â€” Mobile Health Clinic
+              Future Project  Mobile Health Clinic
             </h3>
             <p class="text-gray-400 text-sm leading-relaxed mb-4">
               A planned mobile clinic unit designed to serve remote communities across the Western Region with no fixed healthcare facility within 10 km. The clinic will offer primary care consultations, immunisation, ante-natal checks, and basic diagnostic services on a rolling schedule.
@@ -776,9 +776,9 @@
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      IMPACT SUMMARY STRIP
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <section id="impact" style="padding-top: 3rem; padding-bottom: 3rem;">
   <div class="max-w-5xl mx-auto px-5">
     <div class="impact-strip p-8 md:p-12 reveal">
@@ -824,9 +824,9 @@
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     CTA â€” Have a Project Idea?
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- 
+     CTA  Have a Project Idea?
+ -->
 <section id="idea" style="padding-top: 2rem; padding-bottom: 5rem;">
   <div class="max-w-4xl mx-auto px-5">
     <div class="cta-card p-8 md:p-14 text-center reveal">
@@ -859,9 +859,9 @@
   </div>
 </section>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      FOOTER
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <footer>
   <div class="max-w-5xl mx-auto">
     <div class="grid md:grid-cols-3 gap-8 mb-8">
@@ -915,7 +915,7 @@
     </div>
 
     <div class="border-t border-white/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-      <p class="text-xs text-gray-600">Â© 2024 Evanex Foundation. All rights reserved.</p>
+      <p class="text-xs text-gray-600"> 2024 Evanex Foundation. All rights reserved.</p>
       <p class="text-xs text-gray-600">
         A project of <a href="evanex-foundation.html" class="text-orange hover:underline">Evanex Foundation</a>
       </p>
@@ -923,9 +923,9 @@
   </div>
 </footer>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      MOBILE BOTTOM NAV
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <nav class="bottom-nav md:hidden">
   <div class="bottom-nav-inner">
     <a href="evanex-foundation.html" class="bn-item">
@@ -954,18 +954,18 @@
   </div>
 </nav>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      WHATSAPP FAB
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <a href="https://wa.me/233548932274" target="_blank" rel="noopener" class="whatsapp-fab" title="Chat on WhatsApp">
   <i class="fa-brands fa-whatsapp"></i>
 </a>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+<!-- 
      JAVASCRIPT: Scroll Reveal + Counter + Filter
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+ -->
 <script>
-  // â”€â”€ 1. Scroll Reveal via IntersectionObserver â”€â”€
+  //  1. Scroll Reveal via IntersectionObserver 
   const revealEls = document.querySelectorAll('.reveal');
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -983,7 +983,7 @@
 
   revealEls.forEach(el => revealObserver.observe(el));
 
-  // â”€â”€ 2. Animated counters â”€â”€
+  //  2. Animated counters 
   function animateCounter(el) {
     const target  = parseInt(el.dataset.target, 10);
     const suffix  = el.dataset.suffix || '';
@@ -1013,7 +1013,7 @@
 
   counterEls.forEach(el => counterObserver.observe(el));
 
-  // â”€â”€ 3. Filter pills â”€â”€
+  //  3. Filter pills 
   const filterGroup   = document.getElementById('filter-group');
   const cardWraps     = document.querySelectorAll('.project-card-wrap');
   const filterBtns    = filterGroup.querySelectorAll('.filter-pill');
@@ -1050,7 +1050,7 @@
     document.getElementById('projects').scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
-  // â”€â”€ 4. Featured card image hover parallax â”€â”€
+  //  4. Featured card image hover parallax 
   const featuredImg = document.querySelector('.featured-card img');
   if (featuredImg) {
     document.querySelector('.featured-card').addEventListener('mousemove', (e) => {

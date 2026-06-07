@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About | Evanex Foundation</title>
-  <meta name="description" content="Learn about the Evanex Foundation â€” our story, mission, vision, founder, team, and core values driving healthcare and community impact in Ghana's Western Region." />
+  <meta name="description" content="Learn about the Evanex Foundation  our story, mission, vision, founder, team, and core values driving healthcare and community impact in Ghana's Western Region." />
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <style>
-    /* â”€â”€ Base â”€â”€ */
+    /*  Base  */
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -30,14 +30,14 @@
     }
     h1, h2, h3, h4, h5 { font-family: 'Sora', sans-serif; }
 
-    /* â”€â”€ Brand palette â”€â”€ */
+    /*  Brand palette  */
     :root {
       --orange:  #F26A22;
       --navy:    #1B2A5E;
       --purple:  #8B4DB8;
     }
 
-    /* â”€â”€ Glass morphism â”€â”€ */
+    /*  Glass morphism  */
     .glass {
       background: rgba(255,255,255,0.05);
       border: 1px solid rgba(255,255,255,0.10);
@@ -51,7 +51,7 @@
       -webkit-backdrop-filter: blur(16px);
     }
 
-    /* â”€â”€ Nav pill â”€â”€ */
+    /*  Nav pill  */
     .nav-pill {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
@@ -72,7 +72,7 @@
     .nav-link.active { background: #F26A22; color: #fff; }
     .nav-sep { width: 1px; height: 18px; background: rgba(255,255,255,0.15); margin: 0 4px; flex-shrink: 0; }
 
-    /* â”€â”€ Hero â”€â”€ */
+    /*  Hero  */
     .hero-bg {
       background: linear-gradient(135deg, #0a0a0a 0%, #0d1b3e 50%, #1a0a2e 100%);
       position: relative;
@@ -95,7 +95,7 @@
       background-size: 48px 48px;
     }
 
-    /* â”€â”€ Breadcrumb pill â”€â”€ */
+    /*  Breadcrumb pill  */
     .breadcrumb-pill {
       display: inline-flex;
       align-items: center;
@@ -111,7 +111,7 @@
     }
     .breadcrumb-pill:hover { background: rgba(242,106,34,0.18); }
 
-    /* â”€â”€ Section headings â”€â”€ */
+    /*  Section headings  */
     .section-label {
       display: inline-block;
       font-size: 0.7rem;
@@ -133,7 +133,7 @@
       background-clip: text;
     }
 
-    /* â”€â”€ Cards â”€â”€ */
+    /*  Cards  */
     .card-hover {
       transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
       border: 1px solid rgba(255,255,255,0.08);
@@ -144,7 +144,7 @@
       box-shadow: 0 16px 40px rgba(242,106,34,0.12);
     }
 
-    /* â”€â”€ Founder card â”€â”€ */
+    /*  Founder card  */
     .founder-card {
       background: linear-gradient(135deg, rgba(27,42,94,0.35) 0%, rgba(139,77,184,0.15) 100%);
       border: 1px solid rgba(139,77,184,0.3);
@@ -155,7 +155,7 @@
       box-shadow: 0 20px 60px rgba(242,106,34,0.12);
     }
 
-    /* â”€â”€ Avatar placeholder â”€â”€ */
+    /*  Avatar placeholder  */
     .avatar-placeholder {
       display: flex;
       align-items: center;
@@ -168,7 +168,7 @@
       flex-shrink: 0;
     }
 
-    /* â”€â”€ Stats strip â”€â”€ */
+    /*  Stats strip  */
     .stat-item { border-right: 1px solid rgba(255,255,255,0.1); }
     .stat-item:last-child { border-right: none; }
     @media (max-width: 639px) {
@@ -176,7 +176,7 @@
       .stat-item:last-child { border-bottom: none; }
     }
 
-    /* â”€â”€ Value cards â”€â”€ */
+    /*  Value cards  */
     .value-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
@@ -190,7 +190,7 @@
       box-shadow: 0 12px 30px rgba(242,106,34,0.10);
     }
 
-    /* â”€â”€ Team card â”€â”€ */
+    /*  Team card  */
     .team-card {
       background: rgba(255,255,255,0.04);
       border: 1px solid rgba(255,255,255,0.08);
@@ -205,7 +205,7 @@
       box-shadow: 0 14px 36px rgba(139,77,184,0.12);
     }
 
-    /* â”€â”€ CTA banner â”€â”€ */
+    /*  CTA banner  */
     .cta-banner {
       background: linear-gradient(135deg, rgba(27,42,94,0.5) 0%, rgba(139,77,184,0.25) 100%);
       border: 1px solid rgba(139,77,184,0.3);
@@ -220,7 +220,7 @@
       background: radial-gradient(ellipse 70% 80% at 50% 50%, rgba(242,106,34,0.08) 0%, transparent 70%);
     }
 
-    /* â”€â”€ Buttons â”€â”€ */
+    /*  Buttons  */
     .btn-primary {
       background: linear-gradient(135deg, #F26A22, #d45a1a);
       color: #fff;
@@ -248,7 +248,7 @@
     }
     .btn-outline:hover { border-color: #F26A22; background: rgba(242,106,34,0.10); transform: translateY(-2px); }
 
-    /* â”€â”€ WhatsApp FAB â”€â”€ */
+    /*  WhatsApp FAB  */
     .whatsapp-fab {
       position: fixed;
       bottom: 90px;
@@ -267,7 +267,7 @@
     .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.55); }
     @media (min-width: 768px) { .whatsapp-fab { bottom: 24px; right: 24px; } }
 
-    /* â”€â”€ Mobile bottom nav â”€â”€ */
+    /*  Mobile bottom nav  */
     .mobile-nav {
       position: fixed;
       bottom: 0; left: 0; right: 0;
@@ -321,7 +321,7 @@
     }
     .mob-nav-center-pill i { font-size: 1.3rem; color: #fff; }
 
-    /* â”€â”€ Scroll reveal â”€â”€ */
+    /*  Scroll reveal  */
     .reveal {
       opacity: 0;
       transform: translateY(32px);
@@ -338,7 +338,7 @@
     .reveal-delay-5 { transition-delay: 0.50s; }
     .reveal-delay-6 { transition-delay: 0.60s; }
 
-    /* â”€â”€ Quote bar â”€â”€ */
+    /*  Quote bar  */
     .quote-bar {
       border-left: 4px solid #F26A22;
       padding-left: 1.25rem;
@@ -346,7 +346,7 @@
       color: #d1d5db;
     }
 
-    /* â”€â”€ Orange underline deco â”€â”€ */
+    /*  Orange underline deco  */
     .underline-deco {
       display: block;
       width: 48px;
@@ -356,12 +356,12 @@
       margin-top: 12px;
     }
 
-    /* â”€â”€ Scrollbar â”€â”€ */
+    /*  Scrollbar  */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #000; }
     ::-webkit-scrollbar-thumb { background: #F26A22; border-radius: 9999px; }
 
-    /* â”€â”€ Padding for mobile nav â”€â”€ */
+    /*  Padding for mobile nav  */
     .pb-mobile { padding-bottom: 90px; }
     @media (min-width: 768px) { .pb-mobile { padding-bottom: 0; } }
   </style>
@@ -383,9 +383,9 @@
 
 <body class="pb-mobile">
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        TOP PILL NAV
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <div class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
     <nav class="nav-pill rounded-full px-3 py-2 flex items-center gap-1 flex-wrap justify-center max-w-3xl w-full">
       <a href="evanex-foundation.html" class="nav-link">Overview</a>
@@ -399,9 +399,9 @@
     </nav>
   </div>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        1. HERO
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <section class="hero-bg min-h-[88vh] flex items-center pt-24 pb-20 px-4">
     <div class="hero-grid"></div>
     <div class="relative z-10 max-w-5xl mx-auto w-full">
@@ -427,7 +427,7 @@
 
       <!-- Subtext -->
       <p class="text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed mb-10 reveal reveal-delay-3">
-        The Evanex Foundation was born from witnessing the healthcare gaps that persist in Ghana's Western Region â€” communities underserved, families left without care, and futures cut short by preventable illness. We were founded to change that reality, one community at a time.
+        The Evanex Foundation was born from witnessing the healthcare gaps that persist in Ghana's Western Region  communities underserved, families left without care, and futures cut short by preventable illness. We were founded to change that reality, one community at a time.
       </p>
 
       <!-- Pill metrics row -->
@@ -445,9 +445,9 @@
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        2. MISSION & VISION
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <section class="py-20 px-4">
     <div class="max-w-5xl mx-auto">
 
@@ -484,7 +484,7 @@
           <p class="section-label" style="color:#8B4DB8;">Our Vision</p>
           <h3 class="text-xl font-bold text-white mb-4" style="font-family:'Sora',sans-serif;">A Ghana of Equal Access</h3>
           <p class="text-gray-300 leading-relaxed text-base">
-            A Ghana where every citizen â€” regardless of location â€” has equal access to quality healthcare and opportunities for growth.
+            A Ghana where every citizen  regardless of location  has equal access to quality healthcare and opportunities for growth.
           </p>
           <div class="mt-6 pt-6 border-t border-white border-opacity-10">
             <p class="text-xs text-gray-500 font-semibold tracking-widest uppercase">The future we're building</p>
@@ -495,9 +495,9 @@
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        3. FOUNDER SECTION
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <section class="py-20 px-4" style="background: linear-gradient(180deg, transparent, rgba(27,42,94,0.15) 50%, transparent);">
     <div class="max-w-5xl mx-auto">
 
@@ -516,7 +516,7 @@
             <div class="relative">
               <img
                 src="ef-hero.png"
-                alt="Evans Ghartey â€” Founder & Executive Director"
+                alt="Evans Ghartey  Founder & Executive Director"
                 class="w-40 h-40 rounded-full object-cover border-4"
                 style="border-color:#F26A22;"
                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
@@ -554,7 +554,7 @@
 
             <!-- Quote -->
             <blockquote class="quote-bar mb-6 text-base sm:text-lg leading-relaxed">
-              "We started the Evanex Foundation because we saw firsthand the suffering in our communities â€” hospitals without equipment, children without access to care. We decided that complaining wasn't enough. We had to act."
+              "We started the Evanex Foundation because we saw firsthand the suffering in our communities  hospitals without equipment, children without access to care. We decided that complaining wasn't enough. We had to act."
             </blockquote>
 
             <!-- Bio paragraphs -->
@@ -562,7 +562,7 @@
               Evans Ghartey is a community health advocate and licensed pharmacist with over a decade of frontline experience in healthcare service delivery across Ghana's Western Region. Growing up in a community where access to basic medical care was a luxury, Evans developed an early resolve to bridge the gap between policy and lived reality.
             </p>
             <p class="text-gray-400 leading-relaxed">
-              After completing his training in pharmacy and public health, Evans channelled his expertise into founding the Evanex Foundation in 2019 â€” establishing programs that deliver free medical screenings, medicines, educational grants, and welfare support to thousands of Ghanaians who would otherwise go without. Under his leadership, the Foundation has grown from a one-community initiative into a multi-district organisation touching lives across 8+ communities.
+              After completing his training in pharmacy and public health, Evans channelled his expertise into founding the Evanex Foundation in 2019  establishing programs that deliver free medical screenings, medicines, educational grants, and welfare support to thousands of Ghanaians who would otherwise go without. Under his leadership, the Foundation has grown from a one-community initiative into a multi-district organisation touching lives across 8+ communities.
             </p>
 
             <!-- Tags -->
@@ -579,9 +579,9 @@
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        4. STATS STRIP
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <section class="py-14 px-4">
     <div class="max-w-5xl mx-auto">
       <div class="glass rounded-3xl overflow-hidden reveal">
@@ -620,9 +620,9 @@
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        5. CORE VALUES
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <section class="py-20 px-4">
     <div class="max-w-5xl mx-auto">
 
@@ -636,53 +636,53 @@
 
         <!-- Integrity -->
         <div class="value-card reveal reveal-delay-1">
-          <div class="text-3xl mb-3">ðŸ¤</div>
+          <div class="text-3xl mb-3"></div>
           <h4 class="text-white font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Integrity</h4>
           <p class="text-gray-400 text-sm leading-relaxed">We operate with full honesty and accountability in every action we take and every resource we steward.</p>
         </div>
 
         <!-- Compassion -->
         <div class="value-card reveal reveal-delay-2">
-          <div class="text-3xl mb-3">â¤ï¸</div>
+          <div class="text-3xl mb-3"></div>
           <h4 class="text-white font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Compassion</h4>
           <p class="text-gray-400 text-sm leading-relaxed">We lead with empathy, meeting every community member's needs with care, dignity, and genuine concern.</p>
         </div>
 
         <!-- Impact -->
         <div class="value-card reveal reveal-delay-3">
-          <div class="text-3xl mb-3">âš¡</div>
+          <div class="text-3xl mb-3"></div>
           <h4 class="text-white font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Impact</h4>
           <p class="text-gray-400 text-sm leading-relaxed">We focus on measurable, real-world outcomes that meaningfully improve lives rather than just checking boxes.</p>
         </div>
 
         <!-- Sustainability -->
         <div class="value-card reveal reveal-delay-4">
-          <div class="text-3xl mb-3">ðŸŒ±</div>
+          <div class="text-3xl mb-3"></div>
           <h4 class="text-white font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Sustainability</h4>
           <p class="text-gray-400 text-sm leading-relaxed">We design programs built to last, ensuring communities are empowered long after our direct involvement ends.</p>
         </div>
 
         <!-- Transparency -->
         <div class="value-card reveal reveal-delay-5">
-          <div class="text-3xl mb-3">ðŸ”</div>
+          <div class="text-3xl mb-3"></div>
           <h4 class="text-white font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Transparency</h4>
-          <p class="text-gray-400 text-sm leading-relaxed">We share our work, finances, and progress openly â€” earning trust through radical openness with all stakeholders.</p>
+          <p class="text-gray-400 text-sm leading-relaxed">We share our work, finances, and progress openly  earning trust through radical openness with all stakeholders.</p>
         </div>
 
         <!-- Community-First -->
         <div class="value-card reveal reveal-delay-6">
-          <div class="text-3xl mb-3">ðŸ˜ï¸</div>
+          <div class="text-3xl mb-3"></div>
           <h4 class="text-white font-bold text-base mb-2" style="font-family:'Sora',sans-serif;">Community-First</h4>
-          <p class="text-gray-400 text-sm leading-relaxed">The community is our compass â€” every decision starts and ends with asking how it best serves the people we exist for.</p>
+          <p class="text-gray-400 text-sm leading-relaxed">The community is our compass  every decision starts and ends with asking how it best serves the people we exist for.</p>
         </div>
 
       </div>
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        6. TEAM
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <section class="py-20 px-4" style="background: linear-gradient(180deg, transparent, rgba(139,77,184,0.08) 50%, transparent);">
     <div class="max-w-5xl mx-auto">
 
@@ -729,7 +729,7 @@
           <h4 class="text-white font-bold text-lg mb-1" style="font-family:'Sora',sans-serif;">Kofi Acheampong</h4>
           <p class="text-sm font-semibold mb-3" style="color:#F26A22;">Community Liaison</p>
           <p class="text-gray-500 text-xs leading-relaxed">
-            Bridges the Foundation and local communities â€” ensuring programs reach those who need them most, authentically.
+            Bridges the Foundation and local communities  ensuring programs reach those who need them most, authentically.
           </p>
           <div class="flex justify-center gap-3 mt-5">
             <a href="#" class="text-gray-500 hover:text-orange-400 transition-colors text-sm" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -741,9 +741,9 @@
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        7. CTA BANNER
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <section class="py-20 px-4">
     <div class="max-w-4xl mx-auto reveal">
       <div class="cta-banner px-8 py-16 text-center">
@@ -751,7 +751,7 @@
           <p class="section-label mb-3"><i class="fa-solid fa-hands-holding-heart mr-2"></i>Join Us</p>
           <h2 class="section-title text-4xl sm:text-5xl mb-5">Ready to Make a<br/><span class="gradient-text">Difference?</span></h2>
           <p class="text-gray-300 max-w-xl mx-auto mb-10 leading-relaxed">
-            Whether you want to volunteer, donate, or simply learn more â€” there's a place for you in our mission. Together we can close the gap and bring real change to communities across Ghana's Western Region.
+            Whether you want to volunteer, donate, or simply learn more  there's a place for you in our mission. Together we can close the gap and bring real change to communities across Ghana's Western Region.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="evanex-projects.html" class="btn-primary">
@@ -768,9 +768,9 @@
     </div>
   </section>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        FOOTER
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <footer class="py-10 px-4 border-t border-white border-opacity-10">
     <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
 
@@ -800,16 +800,16 @@
     </div>
   </footer>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        WHATSAPP FAB
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <a href="https://wa.me/233548932274" target="_blank" rel="noopener" class="whatsapp-fab" aria-label="Chat on WhatsApp">
     <i class="fa-brands fa-whatsapp text-white text-2xl"></i>
   </a>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        MOBILE BOTTOM NAV
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <nav class="mobile-nav md:hidden" aria-label="Mobile Navigation">
 
     <a href="evanex-foundation.html" class="mob-nav-item">
@@ -822,7 +822,7 @@
       <span>Projects</span>
     </a>
 
-    <!-- Center elevated pill â€” About (active) -->
+    <!-- Center elevated pill  About (active) -->
     <a href="evanex-about.html" class="mob-nav-center" aria-current="page">
       <div class="mob-nav-center-pill">
         <i class="fa-solid fa-circle-info"></i>
@@ -842,14 +842,14 @@
 
   </nav>
 
-  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+  <!-- 
        SCRIPTS
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+   -->
   <script>
-    /* â”€â”€ Footer year â”€â”€ */
+    /*  Footer year  */
     document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-    /* â”€â”€ Scroll-reveal (IntersectionObserver) â”€â”€ */
+    /*  Scroll-reveal (IntersectionObserver)  */
     (function () {
       const revealEls = document.querySelectorAll('.reveal');
       const observer = new IntersectionObserver(
@@ -866,7 +866,7 @@
       revealEls.forEach((el) => observer.observe(el));
     })();
 
-    /* â”€â”€ Counter animation â”€â”€ */
+    /*  Counter animation  */
     (function () {
       const counters = document.querySelectorAll('.counter');
       const speed = 1800; // total duration ms
