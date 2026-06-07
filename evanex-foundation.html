@@ -42,7 +42,7 @@
     <!-- Same stack as parent site -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
 
@@ -54,10 +54,19 @@
             box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
         }
         .nav-item { transition: all 0.2s ease; }
-        .nav-item:hover { color: #fff; }
-        .nav-active { background: #fff; color: #000; box-shadow: 0 2px 10px rgba(255,255,255,0.2); }
-        .glass-btn { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); }
-        .glass-btn:hover { background: rgba(255,255,255,0.22); }
+        .nav-item:hover { color: #fff !important; }
+        .nav-active { background: #fff; color: #000 !important; box-shadow: 0 2px 10px rgba(255,255,255,0.2); border-radius: 9999px; }
+        .glass-btn { background: rgba(255,255,255,0.10); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); transition: all .2s ease; }
+        .glass-btn:hover { background: rgba(255,255,255,0.18); }
+
+        /* Shared design tokens */
+        .ef-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); transition: all .25s ease; }
+        .ef-card:hover { border-color: rgba(242,106,34,.35); transform: translateY(-6px); box-shadow: 0 24px 56px rgba(0,0,0,.5); }
+        .ef-img { transition: transform .55s ease; }
+        .ef-card:hover .ef-img { transform: scale(1.06); }
+        .ef-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #F26A22; }
+        .ef-title { font-family: 'Sora', sans-serif; font-weight: 900; color: #fff; }
+        .grad-text { background: linear-gradient(120deg, #F26A22, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
         /*  Brand tokens  */
         :root {
@@ -134,6 +143,10 @@
         /*  Back link  */
         .back-link { transition: all .2s; }
         .back-link:hover { gap: .65rem; }
+
+        /* Mobile nav padding */
+        body { padding-bottom: 72px; }
+        @media(min-width:768px) { body { padding-bottom: 0; } }
     </style>
 </head>
 <body class="bg-black antialiased min-h-screen overflow-x-hidden">
@@ -156,10 +169,6 @@
     </a>
     <a href="evanex-socials.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
         <i class="fas fa-share-alt"></i> Socials
-    </a>
-    <div class="w-px h-5 bg-white/10 mx-2"></div>
-    <a href="evanex-foundation.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-        <i class="fas fa-globe"></i> evanexfoundation.com
     </a>
 </nav>
 
@@ -552,25 +561,22 @@
      FOOTER (matches parent site style)
  -->
 <footer class="border-t border-white/[0.07] py-10 px-6 md:px-20 bg-black">
-    <div class="max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-            <!-- Foundation home link -->
-            <a href="evanex-foundation.html" class="back-link flex items-center gap-2.5 text-white/40 hover:text-white transition text-[13px] font-semibold">
-                <i class="fas fa-arrow-left text-xs"></i> Back to Evanex Foundation
-            </a>
-            <!-- Footer links -->
-            <div class="flex gap-5 text-[13px] text-white/35">
-                
-                
-                
-                
-            </div>
-            <!-- Copyright -->
-            <div class="text-[12px] text-white/25 font-medium">
-                &copy; <span id="yr"></span> Evanex Foundation &middot; Ghana
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+            <img src="evanex-logo.jpg" alt="Evanex Foundation" class="h-10 w-10 rounded-full object-cover">
+            <div>
+                <div class="font-bold text-sm text-white" style="font-family:'Sora',sans-serif;"><span style="color:#F26A22">Evanex</span> Foundation</div>
+                <div class="text-[11px] text-white/35">Western Region, Ghana</div>
             </div>
         </div>
-        
+        <div class="flex flex-wrap gap-5 text-[13px] text-white/35 justify-center">
+            <a href="evanex-foundation.html" class="hover:text-white transition" style="color:#F26A22">Overview</a>
+            <a href="evanex-about.html" class="hover:text-white transition">About</a>
+            <a href="evanex-projects.html" class="hover:text-white transition">Projects</a>
+            <a href="evanex-gallery.html" class="hover:text-white transition">Gallery</a>
+            <a href="evanex-socials.html" class="hover:text-white transition">Socials</a>
+        </div>
+        <div class="text-[12px] text-white/25">&copy; <span id="ef-yr"></span> Evanex Foundation &middot; Ghana</div>
     </div>
 </footer>
 
@@ -615,7 +621,7 @@
 'use strict';
 
 /* Year */
-document.getElementById('yr').textContent = new Date().getFullYear();
+document.getElementById('ef-yr').textContent = new Date().getFullYear();
 
 /*  Scroll-reveal  */
 const revealObs = new IntersectionObserver(entries => {
