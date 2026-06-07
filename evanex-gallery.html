@@ -61,7 +61,7 @@
         ::-webkit-scrollbar-thumb { background: #F26A22; border-radius: 9999px; }
 
         /* Mobile nav padding */
-        body { padding-bottom: 72px; }
+        body {  }
         @media(min-width:768px) { body { padding-bottom: 0; } }
 
         /* Gallery grid */
@@ -122,7 +122,7 @@
 <body>
 
 <!-- Desktop Nav -->
-<nav class="hidden md:flex mx-auto mt-8 w-fit items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
+<nav class="flex flex-wrap justify-center mx-auto mt-8 w-fit items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
     <a href="evanex-foundation.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
         <i class="fas fa-hands-helping"></i> Overview
     </a>
@@ -140,29 +140,7 @@
     </a>
 </nav>
 
-<!-- Mobile Bottom Nav -->
-<nav class="md:hidden fixed bottom-0 inset-x-0 z-50 flex justify-around items-center px-2 py-2 bg-black/90 backdrop-blur-xl border-t border-white/10">
-    <a href="evanex-about.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
-        <i class="fas fa-info-circle text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">About</span>
-    </a>
-    <a href="evanex-projects.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
-        <i class="fas fa-project-diagram text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">Projects</span>
-    </a>
-    <a href="evanex-foundation.html" class="text-white flex flex-col items-center gap-[3px] px-3 py-1 rounded-2xl -mt-5 shadow-xl" style="background:#F26A22">
-        <i class="fas fa-hands-helping text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">Home</span>
-    </a>
-    <a href="evanex-gallery.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:#F26A22">
-        <i class="fas fa-images text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">Gallery</span>
-    </a>
-    <a href="evanex-socials.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
-        <i class="fas fa-share-alt text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">Socials</span>
-    </a>
-</nav>
+
 
 <!-- ============================================================ -->
 <!-- HERO -->
@@ -365,7 +343,7 @@
                 <video
                     controls
                     preload="none"
-                    poster="ef-hero.png"
+                    poster="assets/images/ef-ig-19.jpg"
                     width="100%"
                     style="display:block;max-height:520px;object-fit:cover;">
                     <source src="ef-showreel.mp4" type="video/mp4">
@@ -408,7 +386,7 @@
 <footer class="border-t border-white/[0.07] py-10 px-6 md:px-20 bg-black">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-3">
-            <img src="evanex-logo.jpg" alt="Evanex Foundation" class="h-10 w-10 rounded-full object-cover">
+            
             <div>
                 <div class="font-bold text-sm text-white" style="font-family:'Sora',sans-serif;"><span style="color:#F26A22">Evanex</span> Foundation</div>
                 <div class="text-[11px] text-white/35">Western Region, Ghana</div>
@@ -512,3 +490,4 @@ lb.addEventListener('click', e=>{ if(e.target===lb) closeLb(); });
 </script>
 </body>
 </html>
+
