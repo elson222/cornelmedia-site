@@ -1,1155 +1,599 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Socials | Evanex Foundation</title>
-  <meta name="description" content="Follow the Evanex Foundation journey across social media. Stay connected as we document our healthcare, education, and welfare work in Ghana's Western Region." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Follow the Evanex Foundation on social media and stay connected with our community work in Ghana's Western Region.">
+    <title>Socials | Evanex Foundation</title>
+    <link rel="icon" type="image/png" href="evanex-logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+        :root { --orange: #F26A22; --navy: #1B2A5E; --purple: #8B4DB8; }
 
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+        /* Nav */
+        .pill-nav { background: rgba(255,255,255,0.08); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5); }
+        .nav-item { transition: all 0.2s ease; }
+        .nav-item:hover { color: #fff !important; }
+        .nav-active { background: #fff; color: #000 !important; box-shadow: 0 2px 10px rgba(255,255,255,0.2); border-radius: 9999px; }
 
-  <!-- Google Fonts: Inter + Sora -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+        /* Buttons */
+        .btn-orange { background: linear-gradient(135deg, #F26A22, #d4561a); box-shadow: 0 8px 28px rgba(242,106,34,.4); transition: all .22s ease; }
+        .btn-orange:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(242,106,34,.55); filter: brightness(1.07); }
+        .glass-btn { background: rgba(255,255,255,0.10); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); transition: all .2s ease; }
+        .glass-btn:hover { background: rgba(255,255,255,0.18); }
 
-  <!-- FontAwesome 6 -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        /* Cards */
+        .ef-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); transition: all .25s ease; }
+        .ef-card:hover { border-color: rgba(242,106,34,.35); transform: translateY(-6px); box-shadow: 0 24px 56px rgba(0,0,0,.5); }
+        .ef-img { transition: transform .55s ease; }
+        .ef-card:hover .ef-img { transform: scale(1.06); }
 
-  <style>
-    /*  Base  */
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: #000;
-      color: #e5e7eb;
-      font-family: 'Inter', sans-serif;
-      overflow-x: hidden;
-    }
-    h1, h2, h3, h4, h5 { font-family: 'Sora', sans-serif; }
+        /* Typography */
+        .ef-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #F26A22; }
+        .ef-title { font-family: 'Sora', sans-serif; font-weight: 900; color: #fff; }
+        .grad-text { background: linear-gradient(120deg, #F26A22, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .counter-num { font-family: 'Sora', sans-serif; background: linear-gradient(120deg, #F26A22, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
 
-    /*  Brand Tokens  */
-    :root {
-      --orange: #F26A22;
-      --navy:   #1B2A5E;
-      --purple: #8B4DB8;
-      --ig-grad: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045);
-      --ig-grad-h: linear-gradient(135deg, #9b59b6, #e74c3c, #f39c12);
-    }
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
+        .reveal.shown { opacity: 1; transform: translateY(0); }
+        .reveal.d1 { transition-delay: .12s; }
+        .reveal.d2 { transition-delay: .24s; }
+        .reveal.d3 { transition-delay: .36s; }
+        .reveal.d4 { transition-delay: .48s; }
+        .reveal.d5 { transition-delay: .60s; }
+        .reveal.d6 { transition-delay: .72s; }
+        @keyframes fadeUp { from { opacity:0; transform:translateY(22px); } to { opacity:1; transform:translateY(0); } }
+        @keyframes pulse-ring { 0% { transform:scale(1); opacity:1; } 100% { transform:scale(2.4); opacity:0; } }
+        .pulse { animation: pulse-ring 2s ease infinite; }
 
-    /*  Glassmorphism Pill Nav  */
-    .glass-nav {
-      background: rgba(255,255,255,0.06);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 9999px;
-    }
-    .nav-link {
-      color: #9ca3af;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.45rem 0.9rem;
-      border-radius: 9999px;
-      transition: all 0.25s;
-      white-space: nowrap;
-      letter-spacing: 0.02em;
-    }
-    .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
-    .nav-link.active { background: var(--orange); color: #fff; }
+        /* Form */
+        .ef-input { background: rgba(255,255,255,.06); border: 1.5px solid rgba(255,255,255,.10); border-radius: .75rem; color: #fff; font-family: 'Inter', sans-serif; transition: border-color .2s, box-shadow .2s; }
+        .ef-input::placeholder { color: rgba(255,255,255,.28); }
+        .ef-input:focus { outline: none; border-color: #F26A22; box-shadow: 0 0 0 3px rgba(242,106,34,.2); }
 
-    /*  Hero Background Floating Icons  */
-    .hero-wrap { position: relative; overflow: hidden; }
-    .floating-icon {
-      position: absolute;
-      opacity: 0.07;
-      animation: floatPulse 6s ease-in-out infinite;
-      pointer-events: none;
-      color: #fff;
-      font-size: 3.5rem;
-    }
-    .floating-icon:nth-child(1)  { top: 12%; left: 6%;  animation-delay: 0s;    font-size: 4.5rem; }
-    .floating-icon:nth-child(2)  { top: 60%; left: 3%;  animation-delay: 1.2s;  font-size: 2.8rem; opacity: 0.05; }
-    .floating-icon:nth-child(3)  { top: 20%; right: 5%; animation-delay: 0.6s;  font-size: 3.8rem; }
-    .floating-icon:nth-child(4)  { top: 70%; right: 8%; animation-delay: 1.8s;  font-size: 2.5rem; opacity: 0.05; }
-    .floating-icon:nth-child(5)  { top: 42%; left: 18%; animation-delay: 0.9s;  font-size: 2rem;   opacity: 0.04; }
-    .floating-icon:nth-child(6)  { top: 30%; right: 22%;animation-delay: 2.4s;  font-size: 2.2rem; opacity: 0.04; }
-    .floating-icon:nth-child(7)  { bottom: 15%; left: 12%;animation-delay: 1.5s;font-size: 3rem; opacity: 0.06;}
-    .floating-icon:nth-child(8)  { top: 55%; right: 15%;animation-delay: 0.3s; font-size: 2.6rem; opacity: 0.05; }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #F26A22; border-radius: 9999px; }
 
-    @keyframes floatPulse {
-      0%, 100% { transform: translateY(0) scale(1); opacity: inherit; }
-      50%       { transform: translateY(-18px) scale(1.06); opacity: 0.12; }
-    }
+        /* Mobile nav padding */
+        body { padding-bottom: 72px; }
+        @media(min-width:768px) { body { padding-bottom: 0; } }
 
-    /*  Section Titles  */
-    .section-badge {
-      display: inline-block;
-      background: rgba(242,106,34,0.15);
-      border: 1px solid rgba(242,106,34,0.35);
-      color: var(--orange);
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 0.3rem 0.85rem;
-      border-radius: 9999px;
-      margin-bottom: 1rem;
-    }
+        /* Instagram grid */
+        .ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+        .ig-cell { aspect-ratio: 1/1; border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: rgba(255,255,255,0.75); }
 
-    /*  Instagram Hero Card  */
-    .ig-card {
-      background: #111;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 1.25rem;
-      overflow: hidden;
-      transition: border-color 0.3s;
-    }
-    .ig-card:hover { border-color: rgba(131,58,180,0.5); }
-    .ig-header-bar {
-      background: var(--ig-grad);
-      padding: 4px;
-    }
-    .ig-inner { background: #111; padding: 2rem; }
-    .ig-avatar {
-      width: 72px; height: 72px;
-      border-radius: 50%;
-      background: var(--ig-grad);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2rem; color: #fff;
-      flex-shrink: 0;
-      box-shadow: 0 0 0 3px #111, 0 0 0 5px rgba(131,58,180,0.4);
-    }
-    .ig-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 4px;
-      border-radius: 0.75rem;
-      overflow: hidden;
-    }
-    .ig-cell {
-      aspect-ratio: 1;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.6rem; color: rgba(255,255,255,0.35);
-      cursor: pointer;
-      transition: opacity 0.25s, transform 0.25s;
-      position: relative;
-      overflow: hidden;
-    }
-    .ig-cell:hover { opacity: 0.85; transform: scale(1.03); }
-    .ig-cell::after {
-      content: '';
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0.18);
-    }
-    .ig-cell:nth-child(1)  { background: linear-gradient(135deg,#2d1b69,#6b21a8); }
-    .ig-cell:nth-child(2)  { background: linear-gradient(135deg,#7f1d1d,#dc2626); }
-    .ig-cell:nth-child(3)  { background: linear-gradient(135deg,#1e3a5f,#2563eb); }
-    .ig-cell:nth-child(4)  { background: linear-gradient(135deg,#064e3b,#059669); }
-    .ig-cell:nth-child(5)  { background: linear-gradient(135deg,#78350f,#d97706); }
-    .ig-cell:nth-child(6)  { background: linear-gradient(135deg,#4a044e,#a21caf); }
-    .ig-cell:nth-child(7)  { background: linear-gradient(135deg,#1c1917,#44403c); }
-    .ig-cell:nth-child(8)  { background: linear-gradient(135deg,#172554,#1d4ed8); }
-    .ig-cell:nth-child(9)  { background: linear-gradient(135deg,#3b0764,#7c3aed); }
-    .ig-cta-btn {
-      display: inline-flex; align-items: center; gap: 0.5rem;
-      background: var(--ig-grad);
-      color: #fff; font-weight: 700;
-      padding: 0.7rem 1.8rem; border-radius: 9999px;
-      font-size: 0.92rem; border: none; cursor: pointer;
-      transition: opacity 0.25s, transform 0.2s;
-      text-decoration: none;
-    }
-    .ig-cta-btn:hover { opacity: 0.9; transform: translateY(-2px); }
+        /* Post card avatar */
+        .ig-avatar { width: 40px; height: 40px; border-radius: 9999px; background: linear-gradient(135deg, #833ab4, #fd1d1d, #fcb045); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 
-    /*  Social Channel Cards  */
-    .social-card {
-      background: #0d0d0d;
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 1.25rem;
-      padding: 1.75rem;
-      transition: border-color 0.3s, transform 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-    .social-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    .social-card:hover { transform: translateY(-5px); }
-    .social-card:hover::before { opacity: 1; }
-
-    .social-card.ig-theme  { --card-color: #833ab4; }
-    .social-card.fb-theme  { --card-color: #1877f2; }
-    .social-card.wa-theme  { --card-color: #25d366; }
-    .social-card.yt-theme  { --card-color: #ff0000; }
-
-    .social-card.ig-theme:hover { border-color: rgba(131,58,180,0.45); }
-    .social-card.fb-theme:hover { border-color: rgba(24,119,242,0.45); }
-    .social-card.wa-theme:hover { border-color: rgba(37,211,102,0.45); }
-    .social-card.yt-theme:hover { border-color: rgba(255,0,0,0.45); }
-
-    .social-card.ig-theme::before { background: var(--ig-grad); }
-    .social-card.fb-theme::before { background: #1877f2; }
-    .social-card.wa-theme::before { background: #25d366; }
-    .social-card.yt-theme::before { background: #ff0000; }
-
-    .social-icon-wrap {
-      width: 52px; height: 52px;
-      border-radius: 1rem;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.5rem; color: #fff; flex-shrink: 0;
-    }
-    .social-card.ig-theme .social-icon-wrap { background: var(--ig-grad); }
-    .social-card.fb-theme .social-icon-wrap { background: #1877f2; }
-    .social-card.wa-theme .social-icon-wrap { background: #25d366; }
-    .social-card.yt-theme .social-icon-wrap { background: #ff0000; }
-
-    .social-visit-btn {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      padding: 0.5rem 1.1rem;
-      border-radius: 9999px; font-size: 0.8rem; font-weight: 700;
-      border: 1px solid; transition: all 0.25s; text-decoration: none;
-      cursor: pointer; background: transparent;
-    }
-    .social-card.ig-theme .social-visit-btn { border-color: rgba(131,58,180,0.5); color: #c084fc; }
-    .social-card.ig-theme .social-visit-btn:hover { background: rgba(131,58,180,0.15); }
-    .social-card.fb-theme .social-visit-btn { border-color: rgba(24,119,242,0.5); color: #60a5fa; }
-    .social-card.fb-theme .social-visit-btn:hover { background: rgba(24,119,242,0.15); }
-    .social-card.wa-theme .social-visit-btn { border-color: rgba(37,211,102,0.5); color: #4ade80; }
-    .social-card.wa-theme .social-visit-btn:hover { background: rgba(37,211,102,0.15); }
-    .social-card.yt-theme .social-visit-btn { border-color: rgba(255,0,0,0.5); color: #f87171; }
-    .social-card.yt-theme .social-visit-btn:hover { background: rgba(255,0,0,0.15); }
-
-    /*  Feed Timeline  */
-    .feed-card {
-      background: #0d0d0d;
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 1.25rem;
-      padding: 1.5rem;
-      transition: border-color 0.3s, transform 0.3s;
-    }
-    .feed-card:hover { border-color: rgba(131,58,180,0.35); transform: translateY(-3px); }
-    .feed-avatar {
-      width: 44px; height: 44px; border-radius: 50%;
-      background: var(--ig-grad);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.1rem; color: #fff; flex-shrink: 0;
-      box-shadow: 0 0 0 2px rgba(131,58,180,0.4);
-    }
-    .feed-like-btn {
-      display: inline-flex; align-items: center; gap: 0.35rem;
-      font-size: 0.8rem; color: #9ca3af;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 9999px; padding: 0.3rem 0.7rem;
-      cursor: default;
-    }
-
-    /*  Newsletter  */
-    .newsletter-wrap {
-      background: linear-gradient(135deg, rgba(27,42,94,0.3), rgba(139,77,184,0.2));
-      border: 1px solid rgba(139,77,184,0.25);
-      border-radius: 1.5rem;
-      padding: 3rem 2rem;
-    }
-    .newsletter-input {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 9999px;
-      color: #fff; font-size: 0.95rem;
-      padding: 0.75rem 1.4rem; width: 100%;
-      outline: none; transition: border-color 0.25s;
-      font-family: 'Inter', sans-serif;
-    }
-    .newsletter-input:focus { border-color: var(--orange); }
-    .newsletter-input::placeholder { color: #6b7280; }
-    .subscribe-btn {
-      background: linear-gradient(135deg, #F26A22, #e05a15);
-      color: #fff; font-weight: 700;
-      padding: 0.75rem 1.75rem; border-radius: 9999px;
-      font-size: 0.92rem; border: none; cursor: pointer;
-      transition: opacity 0.25s, transform 0.2s;
-      white-space: nowrap; font-family: 'Inter', sans-serif;
-    }
-    .subscribe-btn:hover { opacity: 0.9; transform: translateY(-2px); }
-
-    /*  Share Section  */
-    .share-card {
-      background: #0d0d0d;
-      border: 1px solid rgba(255,255,255,0.07);
-      border-radius: 1.25rem;
-      padding: 1.5rem;
-    }
-    .share-text-box {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 0.75rem;
-      padding: 1rem 1.2rem;
-      font-size: 0.9rem; color: #d1d5db;
-      line-height: 1.65; font-style: italic;
-      margin-bottom: 1.25rem;
-    }
-    .share-btn {
-      display: inline-flex; align-items: center; gap: 0.45rem;
-      padding: 0.55rem 1.15rem; border-radius: 9999px;
-      font-size: 0.82rem; font-weight: 700;
-      border: none; cursor: pointer; color: #fff;
-      transition: opacity 0.2s, transform 0.2s;
-      text-decoration: none;
-    }
-    .share-btn:hover { opacity: 0.88; transform: translateY(-2px); }
-    .share-btn.wa  { background: #25d366; }
-    .share-btn.fb  { background: #1877f2; }
-    .share-btn.tw  { background: #1da1f2; }
-    .share-btn.cp  { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); }
-    #copyToast {
-      position: fixed; bottom: 90px; left: 50%; transform: translateX(-50%) translateY(20px);
-      background: #1a1a1a; border: 1px solid rgba(242,106,34,0.4);
-      color: var(--orange); padding: 0.55rem 1.4rem; border-radius: 9999px;
-      font-size: 0.85rem; font-weight: 600; opacity: 0;
-      transition: opacity 0.3s, transform 0.3s; pointer-events: none; z-index: 999;
-    }
-    #copyToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
-
-    /*  WhatsApp FAB  */
-    .whatsapp-fab {
-      position: fixed; bottom: 86px; right: 20px; z-index: 990;
-      width: 54px; height: 54px; border-radius: 50%;
-      background: #25d366;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.55rem; color: #fff;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
-      text-decoration: none;
-      transition: transform 0.25s, box-shadow 0.25s;
-      animation: fabPulse 3s ease-in-out infinite;
-    }
-    .whatsapp-fab:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
-    @keyframes fabPulse {
-      0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,0.45); }
-      50%      { box-shadow: 0 4px 32px rgba(37,211,102,0.7); }
-    }
-
-    /*  Mobile Bottom Nav  */
-    .mobile-bottom-nav {
-      position: fixed; bottom: 0; left: 0; right: 0; z-index: 980;
-      background: rgba(10,10,10,0.95);
-      backdrop-filter: blur(16px);
-      border-top: 1px solid rgba(255,255,255,0.07);
-      display: flex; align-items: center; justify-content: space-around;
-      padding: 0.5rem 0.5rem 0.65rem;
-    }
-    .mob-nav-item {
-      display: flex; flex-direction: column; align-items: center; gap: 3px;
-      font-size: 0.6rem; font-weight: 600;
-      color: #6b7280; text-decoration: none;
-      padding: 0.35rem 0.6rem; border-radius: 9999px;
-      transition: color 0.2s;
-    }
-    .mob-nav-item i { font-size: 1.1rem; }
-    .mob-nav-item:hover { color: #d1d5db; }
-    .mob-nav-center {
-      background: var(--orange);
-      color: #fff !important;
-      padding: 0.55rem 1.1rem;
-      border-radius: 9999px;
-      box-shadow: 0 4px 18px rgba(242,106,34,0.5);
-      margin-top: -16px;
-      border: 3px solid #000;
-    }
-    .mob-nav-center i { font-size: 1.15rem; }
-
-    /*  Scroll Reveal  */
-    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /*  Footer  */
-    .footer-divider { border-color: rgba(255,255,255,0.07); }
-
-    /*  Utility  */
-    .orange-text { color: var(--orange); }
-    .purple-text { color: var(--purple); }
-    .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
-
-    /*  Responsive helpers  */
-    @media (max-width: 640px) {
-      .section-pad { padding-top: 3.5rem; padding-bottom: 3.5rem; }
-    }
-  </style>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            orange: '#F26A22',
-            navy:   '#1B2A5E',
-            purple: '#8B4DB8',
-          }
-        }
-      }
-    }
-  </script>
+        /* Share quote box */
+        .share-quote { background: rgba(255,255,255,0.04); border-left: 4px solid #F26A22; border-radius: 0 12px 12px 0; }
+    </style>
 </head>
-<body class="pb-20 md:pb-0">
+<body>
 
-<!-- 
-     TOP NAV (Pill / Glassmorphism)
- -->
-<header class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
-  <nav class="glass-nav flex items-center gap-1 px-3 py-2 w-full max-w-2xl">
-    <!-- Logo -->
-    <a href="evanex-foundation.html" class="flex items-center gap-2 mr-2 flex-shrink-0">
-      <div class="w-8 h-8 rounded-full flex items-center justify-center text-white font-black text-sm" style="background: linear-gradient(135deg,#F26A22,#8B4DB8);">E</div>
-      <span class="text-white font-bold text-sm hidden sm:inline" style="font-family:'Sora',sans-serif;">Evanex</span>
+<!-- DESKTOP NAV -->
+<nav class="hidden md:flex fixed top-8 left-1/2 -translate-x-1/2 z-50 items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
+    <a href="evanex-foundation.html" class="nav-item text-white/70 flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
+        <i class="fas fa-hands-helping"></i> Overview
     </a>
-    <!-- Nav Links -->
-    <div class="flex items-center gap-0.5 overflow-x-auto flex-1">
-      <a href="evanex-foundation.html" class="nav-link">Overview</a>
-      <a href="evanex-about.html"      class="nav-link">About</a>
-      <a href="evanex-projects.html"   class="nav-link">Projects</a>
-      <a href="evanex-gallery.html"    class="nav-link">Gallery</a>
-      <a href="evanex-socials.html"    class="nav-link active">Socials</a>
-    </div>
-    <!-- Parent site link -->
-    <a href="evanex-foundation.html" class="flex-shrink-0 text-gray-500 hover:text-gray-300 transition text-xs font-semibold px-2" title="Back to Cornel Media">
-      <i class="fa-solid fa-arrow-left"></i>
+    <a href="evanex-about.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+        <i class="fas fa-info-circle"></i> About
     </a>
-  </nav>
-</header>
-
-
-<!-- 
-     HERO
- -->
-<section class="hero-wrap relative min-h-screen flex items-center justify-center pt-24 pb-16" style="background: radial-gradient(ellipse at 20% 40%, rgba(139,77,184,0.15) 0%, transparent 55%), radial-gradient(ellipse at 80% 60%, rgba(242,106,34,0.1) 0%, transparent 55%), #000;">
-
-  <!-- Floating Social Icons -->
-  <i class="floating-icon fa-brands fa-instagram"></i>
-  <i class="floating-icon fa-brands fa-facebook"></i>
-  <i class="floating-icon fa-brands fa-whatsapp"></i>
-  <i class="floating-icon fa-brands fa-youtube"></i>
-  <i class="floating-icon fa-brands fa-twitter"></i>
-  <i class="floating-icon fa-brands fa-tiktok"></i>
-  <i class="floating-icon fa-solid fa-heart"></i>
-  <i class="floating-icon fa-solid fa-share-nodes"></i>
-
-  <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-    <div class="section-badge mb-4"><i class="fa-solid fa-hashtag mr-1"></i> Social Media</div>
-
-    <h1 class="text-5xl sm:text-6xl md:text-7xl font-black leading-tight mb-6 text-white" style="font-family:'Sora',sans-serif;">
-      Follow Our
-      <span style="background:var(--ig-grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Journey</span>
-    </h1>
-
-    <p class="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto leading-relaxed mb-10">
-      Stay connected with Evanex Foundation across social media as we document every step of our work  from hospital renovations to community health camps.
-    </p>
-
-    <!-- Quick Social Pills -->
-    <div class="flex flex-wrap justify-center gap-3">
-      <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener"
-         class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white transition hover:opacity-85 hover:-translate-y-1"
-         style="background:var(--ig-grad);">
-        <i class="fa-brands fa-instagram"></i> Instagram
-      </a>
-      <a href="https://www.facebook.com/EvanexFoundation" target="_blank" rel="noopener"
-         class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white transition hover:opacity-85 hover:-translate-y-1"
-         style="background:#1877f2;">
-        <i class="fa-brands fa-facebook"></i> Facebook
-      </a>
-      <a href="https://wa.me/233548932274" target="_blank" rel="noopener"
-         class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white transition hover:opacity-85 hover:-translate-y-1"
-         style="background:#25d366;">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-      <a href="https://www.youtube.com/@EvanexFoundation" target="_blank" rel="noopener"
-         class="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-bold text-white transition hover:opacity-85 hover:-translate-y-1"
-         style="background:#ff0000;">
-        <i class="fa-brands fa-youtube"></i> YouTube
-      </a>
-    </div>
-
-    <!-- Scroll hint -->
-    <div class="mt-14 flex flex-col items-center gap-2 text-gray-600">
-      <span class="text-xs font-semibold tracking-widest uppercase">Scroll to explore</span>
-      <div class="w-px h-10 bg-gradient-to-b from-gray-600 to-transparent animate-pulse"></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 
-     INSTAGRAM EMBED SECTION
- -->
-<section class="section-pad px-4 max-w-5xl mx-auto">
-  <div class="text-center mb-10 reveal">
-    <div class="section-badge"><i class="fa-brands fa-instagram mr-1"></i> Instagram</div>
-    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Our Instagram</h2>
-    <p class="text-gray-400 mt-3 max-w-lg mx-auto">Behind-the-scenes moments, project milestones, and community stories  all in one place.</p>
-  </div>
-
-  <div class="ig-card reveal">
-    <!-- IG Gradient top bar -->
-    <div class="ig-header-bar">
-      <div class="bg-black" style="border-radius:0.9rem 0.9rem 0 0; padding: 1.5rem 1.5rem 0;">
-        <!-- Profile Row -->
-        <div class="flex items-center gap-4 pb-4">
-          <div class="ig-avatar">
-            <i class="fa-brands fa-instagram"></i>
-          </div>
-          <div class="flex-1 min-w-0">
-            <div class="flex items-center gap-2 flex-wrap">
-              <span class="text-white font-bold text-lg" style="font-family:'Sora',sans-serif;">@EvanexFoundation</span>
-              <span class="text-xs px-2 py-0.5 rounded-full font-semibold text-white" style="background:var(--ig-grad);">Official</span>
-            </div>
-            <p class="text-gray-400 text-sm mt-0.5">Evanex Foundation</p>
-          </div>
-          <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener" class="ig-cta-btn">
-            <i class="fa-brands fa-instagram"></i>
-            <span class="hidden sm:inline">Follow on Instagram</span>
-            <span class="sm:hidden">Follow</span>
-          </a>
-        </div>
-
-        <!-- Stats Row -->
-        <div class="flex gap-6 pb-4 border-b border-gray-800">
-          <div class="text-center">
-            <div class="text-white font-black text-xl">48</div>
-            <div class="text-gray-500 text-xs font-semibold">Posts</div>
-          </div>
-          <div class="text-center">
-            <div class="text-white font-black text-xl">2.4K</div>
-            <div class="text-gray-500 text-xs font-semibold">Followers</div>
-          </div>
-          <div class="text-center">
-            <div class="text-white font-black text-xl">186</div>
-            <div class="text-gray-500 text-xs font-semibold">Following</div>
-          </div>
-        </div>
-
-        <!-- Bio -->
-        <div class="py-4 border-b border-gray-800">
-          <p class="text-gray-300 text-sm leading-relaxed">
-            Empowering communities in Ghana's Western Region <br/>
-            Healthcare &middot; Education &middot; Welfare<br/>
-            <span class="text-gray-500"> Western Region, Ghana</span>
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Grid -->
-    <div class="ig-inner pt-4 pb-2">
-      <p class="text-gray-500 text-xs font-semibold uppercase tracking-widest mb-3">Recent Posts</p>
-      <div class="ig-grid">
-        <div class="ig-cell"><i class="fa-solid fa-hospital-user relative z-10"></i></div>
-        <div class="ig-cell"><i class="fa-solid fa-hand-holding-heart relative z-10"></i></div>
-        <div class="ig-cell"><i class="fa-solid fa-people-group relative z-10"></i></div>
-        <div class="ig-cell"><i class="fa-solid fa-kit-medical relative z-10"></i></div>
-        <div class="ig-cell"><i class="fa-solid fa-graduation-cap relative z-10"></i></div>
-        <div class="ig-cell"><i class="fa-solid fa-house-medical relative z-10"></i></div>
-        <div class="ig-cell"><i class="fa-solid fa-stethoscope relative z-10"></i></div>
-        <div class="ig-cell"><i class="fa-solid fa-children relative z-10"></i></div>
-        <div class="ig-cell"><i class="fa-solid fa-ribbon relative z-10"></i></div>
-      </div>
-
-      <div class="mt-5 flex items-center justify-center">
-        <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener" class="ig-cta-btn text-base px-8 py-3">
-          <i class="fa-brands fa-instagram text-lg"></i>
-          Follow on Instagram
-        </a>
-      </div>
-      <p class="text-center text-gray-600 text-xs mt-3">@EvanexFoundation &bull; 2.4K Followers &bull; 48 Posts</p>
-    </div>
-  </div>
-</section>
-
-
-<!-- 
-     SOCIAL CHANNELS GRID
- -->
-<section class="section-pad px-4 max-w-5xl mx-auto">
-  <div class="text-center mb-10 reveal">
-    <div class="section-badge"><i class="fa-solid fa-share-nodes mr-1"></i> All Platforms</div>
-    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Find Us Everywhere</h2>
-    <p class="text-gray-400 mt-3 max-w-lg mx-auto">Connect with Evanex Foundation on your preferred platform and stay part of our growing community.</p>
-  </div>
-
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-
-    <!-- Instagram -->
-    <div class="social-card ig-theme reveal">
-      <div class="flex items-start gap-4 mb-4">
-        <div class="social-icon-wrap">
-          <i class="fa-brands fa-instagram"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <h3 class="text-white font-bold text-lg">Instagram</h3>
-          <p class="text-gray-500 text-sm">@EvanexFoundation</p>
-        </div>
-      </div>
-      <p class="text-gray-400 text-sm leading-relaxed mb-4">
-        Behind-the-scenes moments, project updates, and community stories that bring our mission to life.
-      </p>
-      <div class="flex items-center justify-between flex-wrap gap-3">
-        <div class="flex gap-4 text-sm">
-          <span class="text-gray-400"><span class="text-white font-bold">2.4K</span> followers</span>
-          <span class="text-gray-400"><span class="text-white font-bold">48</span> posts</span>
-        </div>
-        <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener" class="social-visit-btn">
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Visit
-        </a>
-      </div>
-    </div>
-
-    <!-- Facebook -->
-    <div class="social-card fb-theme reveal">
-      <div class="flex items-start gap-4 mb-4">
-        <div class="social-icon-wrap">
-          <i class="fa-brands fa-facebook-f"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <h3 class="text-white font-bold text-lg">Facebook</h3>
-          <p class="text-gray-500 text-sm">Evanex Foundation</p>
-        </div>
-      </div>
-      <p class="text-gray-400 text-sm leading-relaxed mb-4">
-        Official news, event announcements, and donor recognition. Join our growing Facebook community.
-      </p>
-      <div class="flex items-center justify-between flex-wrap gap-3">
-        <div class="flex gap-4 text-sm">
-          <span class="text-gray-400"><span class="text-white font-bold">1.8K</span> likes</span>
-        </div>
-        <a href="https://www.facebook.com/EvanexFoundation" target="_blank" rel="noopener" class="social-visit-btn">
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Visit
-        </a>
-      </div>
-    </div>
-
-    <!-- WhatsApp -->
-    <div class="social-card wa-theme reveal">
-      <div class="flex items-start gap-4 mb-4">
-        <div class="social-icon-wrap">
-          <i class="fa-brands fa-whatsapp"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <h3 class="text-white font-bold text-lg">WhatsApp Community</h3>
-          <p class="text-gray-500 text-sm">Evanex Foundation Community</p>
-        </div>
-      </div>
-      <p class="text-gray-400 text-sm leading-relaxed mb-4">
-        Direct updates and community discussions. Message us to join our WhatsApp community for real-time news.
-      </p>
-      <div class="flex items-center justify-between flex-wrap gap-3">
-        <div class="flex gap-4 text-sm">
-          <span class="text-gray-400 flex items-center gap-1">
-            <i class="fa-solid fa-circle text-green-400" style="font-size:0.45rem;"></i> Active community
-          </span>
-        </div>
-        <a href="https://wa.me/233548932274" target="_blank" rel="noopener" class="social-visit-btn">
-          <i class="fa-brands fa-whatsapp text-xs"></i> Join
-        </a>
-      </div>
-    </div>
-
-    <!-- YouTube -->
-    <div class="social-card yt-theme reveal">
-      <div class="flex items-start gap-4 mb-4">
-        <div class="social-icon-wrap">
-          <i class="fa-brands fa-youtube"></i>
-        </div>
-        <div class="flex-1 min-w-0">
-          <h3 class="text-white font-bold text-lg">YouTube</h3>
-          <p class="text-gray-500 text-sm">@EvanexFoundation</p>
-        </div>
-      </div>
-      <p class="text-gray-400 text-sm leading-relaxed mb-4">
-        Documentary-style videos of our projects and impact stories  giving you a front-row seat to our work.
-      </p>
-      <div class="flex items-center justify-between flex-wrap gap-3">
-        <div class="flex gap-4 text-sm">
-          <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-bold" style="background:rgba(255,0,0,0.12); color:#f87171; border:1px solid rgba(255,0,0,0.25);">
-            <i class="fa-solid fa-clock-rotate-left"></i> Coming Soon
-          </span>
-        </div>
-        <a href="https://www.youtube.com/@EvanexFoundation" target="_blank" rel="noopener" class="social-visit-btn">
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i> Visit
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- 
-     LATEST UPDATES FEED
- -->
-<section class="section-pad px-4 max-w-3xl mx-auto">
-  <div class="text-center mb-10 reveal">
-    <div class="section-badge"><i class="fa-solid fa-rss mr-1"></i> Recent Posts</div>
-    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Latest Updates</h2>
-    <p class="text-gray-400 mt-3 max-w-lg mx-auto">Fresh from our Instagram  the most recent stories from our work in the field.</p>
-  </div>
-
-  <div class="flex flex-col gap-5">
-
-    <!-- Post 1 -->
-    <div class="feed-card reveal">
-      <div class="flex items-center gap-3 mb-3">
-        <div class="feed-avatar"><i class="fa-brands fa-instagram"></i></div>
-        <div>
-          <div class="text-white font-bold text-sm">evanexfoundation</div>
-          <div class="text-gray-600 text-xs">2 days ago</div>
-        </div>
-        <div class="ml-auto">
-          <span class="text-xs text-gray-600 bg-gray-900 px-2 py-1 rounded-full border border-gray-800">
-            <i class="fa-brands fa-instagram mr-1"></i>Instagram
-          </span>
-        </div>
-      </div>
-      <!-- Mock image block -->
-      <div class="rounded-xl overflow-hidden mb-3 h-40 flex items-center justify-center" style="background:linear-gradient(135deg,#2d1b69,#7c3aed);">
-        <i class="fa-solid fa-hospital-user text-4xl text-white opacity-40"></i>
-      </div>
-      <p class="text-gray-300 text-sm leading-relaxed mb-3">
-        Apinto Hospital renovation milestone reached!  The children's ward is now fully equipped with new beds, monitors, and medical supplies. This is what your support makes possible  every donation counted. Thank you! <span class="text-purple-400">#EvanexFoundation #Ghana #HealthcareForAll</span>
-      </p>
-      <div class="flex items-center justify-between">
-        <div class="feed-like-btn">
-          <i class="fa-solid fa-heart text-purple-400"></i>
-          <span class="font-bold text-gray-200">148</span> likes
-        </div>
-        <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener"
-           class="text-xs font-semibold text-purple-400 hover:text-purple-300 transition flex items-center gap-1">
-          View on Instagram <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Post 2 -->
-    <div class="feed-card reveal">
-      <div class="flex items-center gap-3 mb-3">
-        <div class="feed-avatar"><i class="fa-brands fa-instagram"></i></div>
-        <div>
-          <div class="text-white font-bold text-sm">evanexfoundation</div>
-          <div class="text-gray-600 text-xs">1 week ago</div>
-        </div>
-        <div class="ml-auto">
-          <span class="text-xs text-gray-600 bg-gray-900 px-2 py-1 rounded-full border border-gray-800">
-            <i class="fa-brands fa-instagram mr-1"></i>Instagram
-          </span>
-        </div>
-      </div>
-      <div class="rounded-xl overflow-hidden mb-3 h-40 flex items-center justify-center" style="background:linear-gradient(135deg,#064e3b,#059669);">
-        <i class="fa-solid fa-hand-holding-heart text-4xl text-white opacity-40"></i>
-      </div>
-      <p class="text-gray-300 text-sm leading-relaxed mb-3">
-        Thank you to all our donors for making the Tarkwa Medical Drive possible!  We distributed over 500 medical supply items to families in need across 3 communities. Every item matters, every donor matters. <span class="text-purple-400">#TarkwaMedicalDrive #WesternRegion</span>
-      </p>
-      <div class="flex items-center justify-between">
-        <div class="feed-like-btn">
-          <i class="fa-solid fa-heart text-purple-400"></i>
-          <span class="font-bold text-gray-200">92</span> likes
-        </div>
-        <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener"
-           class="text-xs font-semibold text-purple-400 hover:text-purple-300 transition flex items-center gap-1">
-          View on Instagram <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Post 3 -->
-    <div class="feed-card reveal">
-      <div class="flex items-center gap-3 mb-3">
-        <div class="feed-avatar"><i class="fa-brands fa-instagram"></i></div>
-        <div>
-          <div class="text-white font-bold text-sm">evanexfoundation</div>
-          <div class="text-gray-600 text-xs">2 weeks ago</div>
-        </div>
-        <div class="ml-auto">
-          <span class="text-xs text-gray-600 bg-gray-900 px-2 py-1 rounded-full border border-gray-800">
-            <i class="fa-brands fa-instagram mr-1"></i>Instagram
-          </span>
-        </div>
-      </div>
-      <div class="rounded-xl overflow-hidden mb-3 h-40 flex items-center justify-center" style="background:linear-gradient(135deg,#1e3a5f,#1d4ed8);">
-        <i class="fa-solid fa-truck-medical text-4xl text-white opacity-40"></i>
-      </div>
-      <p class="text-gray-300 text-sm leading-relaxed mb-3">
-         New project announcement: Mobile Health Clinic coming to 6 more communities in Q3 2026! We're expanding our reach to ensure no community is left behind. Stay tuned for location reveals. <span class="text-purple-400">#MobileClinic #HealthcareAccess #Ghana2026</span>
-      </p>
-      <div class="flex items-center justify-between">
-        <div class="feed-like-btn">
-          <i class="fa-solid fa-heart text-purple-400"></i>
-          <span class="font-bold text-gray-200">203</span> likes
-        </div>
-        <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener"
-           class="text-xs font-semibold text-purple-400 hover:text-purple-300 transition flex items-center gap-1">
-          View on Instagram <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-        </a>
-      </div>
-    </div>
-
-    <!-- Post 4 -->
-    <div class="feed-card reveal">
-      <div class="flex items-center gap-3 mb-3">
-        <div class="feed-avatar"><i class="fa-brands fa-instagram"></i></div>
-        <div>
-          <div class="text-white font-bold text-sm">evanexfoundation</div>
-          <div class="text-gray-600 text-xs">3 weeks ago</div>
-        </div>
-        <div class="ml-auto">
-          <span class="text-xs text-gray-600 bg-gray-900 px-2 py-1 rounded-full border border-gray-800">
-            <i class="fa-brands fa-instagram mr-1"></i>Instagram
-          </span>
-        </div>
-      </div>
-      <div class="rounded-xl overflow-hidden mb-3 h-40 flex items-center justify-center" style="background:linear-gradient(135deg,#78350f,#d97706);">
-        <i class="fa-solid fa-stethoscope text-4xl text-white opacity-40"></i>
-      </div>
-      <p class="text-gray-300 text-sm leading-relaxed mb-3">
-        Our free health screening camp at Huni Valley served 1,000+ residents this weekend.  Blood pressure, blood sugar, malaria screening, and consultations  all free of charge. This is why we do what we do. <span class="text-purple-400">#HuniValley #FreeHealthcare #CommunityFirst</span>
-      </p>
-      <div class="flex items-center justify-between">
-        <div class="feed-like-btn">
-          <i class="fa-solid fa-heart text-purple-400"></i>
-          <span class="font-bold text-gray-200">176</span> likes
-        </div>
-        <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener"
-           class="text-xs font-semibold text-purple-400 hover:text-purple-300 transition flex items-center gap-1">
-          View on Instagram <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
-        </a>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- View More CTA -->
-  <div class="text-center mt-8 reveal">
-    <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener"
-       class="inline-flex items-center gap-2 px-8 py-3 rounded-full font-bold text-white transition hover:opacity-85 hover:-translate-y-1"
-       style="background:var(--ig-grad);">
-      <i class="fa-brands fa-instagram"></i> View All on Instagram
+    <a href="evanex-projects.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+        <i class="fas fa-project-diagram"></i> Projects
     </a>
-  </div>
-</section>
-
-
-<!-- 
-     NEWSLETTER SIGNUP
- -->
-<section class="section-pad px-4 max-w-3xl mx-auto">
-  <div class="newsletter-wrap reveal">
-    <div class="text-center mb-8">
-      <div class="section-badge mb-3"><i class="fa-solid fa-envelope-open-text mr-1"></i> Newsletter</div>
-      <h2 class="text-3xl sm:text-4xl font-black text-white">Stay in the Loop</h2>
-      <p class="text-gray-400 mt-3 max-w-md mx-auto">Get monthly updates on our projects, impact stories, and ways to help  straight to your inbox.</p>
-    </div>
-
-    <form id="newsletterForm" class="max-w-md mx-auto">
-      <div class="flex flex-col sm:flex-row gap-3 mb-3">
-        <input
-          id="emailInput"
-          type="email"
-          placeholder="Enter your email address..."
-          class="newsletter-input"
-          required
-        />
-        <button type="submit" class="subscribe-btn flex items-center justify-center gap-2">
-          <i class="fa-solid fa-paper-plane"></i>
-          Subscribe
-        </button>
-      </div>
-      <p class="text-center text-gray-600 text-xs">
-        <i class="fa-solid fa-shield-halved mr-1"></i>No spam. Unsubscribe anytime.
-      </p>
-    </form>
-
-    <!-- Success State (hidden) -->
-    <div id="newsletterSuccess" class="hidden text-center py-6">
-      <div class="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4" style="background:rgba(242,106,34,0.15); border:2px solid rgba(242,106,34,0.4);">
-        <i class="fa-solid fa-check text-2xl orange-text"></i>
-      </div>
-      <h3 class="text-white font-bold text-lg mb-2">You're subscribed!</h3>
-      <p class="text-gray-400 text-sm">Thank you for joining our community. Expect your first update soon.</p>
-    </div>
-
-    <!-- Stats Row -->
-    <div class="flex flex-wrap justify-center gap-8 mt-10 pt-8 border-t border-white border-opacity-10">
-      <div class="text-center">
-        <div class="text-2xl font-black orange-text">840+</div>
-        <div class="text-gray-500 text-xs mt-1">Subscribers</div>
-      </div>
-      <div class="text-center">
-        <div class="text-2xl font-black orange-text">Monthly</div>
-        <div class="text-gray-500 text-xs mt-1">Digest frequency</div>
-      </div>
-      <div class="text-center">
-        <div class="text-2xl font-black orange-text">0</div>
-        <div class="text-gray-500 text-xs mt-1">Spam emails sent</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- 
-     SHARE SECTION
- -->
-<section class="section-pad px-4 max-w-4xl mx-auto">
-  <div class="text-center mb-10 reveal">
-    <div class="section-badge"><i class="fa-solid fa-bullhorn mr-1"></i> Spread the Word</div>
-    <h2 class="text-3xl sm:text-4xl font-black text-white mt-2">Help Spread the Word</h2>
-    <p class="text-gray-400 mt-3 max-w-lg mx-auto">Every share helps us reach more donors, volunteers, and communities in need. Share Evanex Foundation today.</p>
-  </div>
-
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-
-    <!-- Share Card 1  Short Message -->
-    <div class="share-card reveal">
-      <div class="flex items-center gap-2 mb-3">
-        <i class="fa-solid fa-quote-left text-orange-500 text-sm"></i>
-        <span class="text-gray-400 text-xs font-semibold uppercase tracking-wider">General Awareness</span>
-      </div>
-      <div class="share-text-box" id="shareText1">
-        "Evanex Foundation is transforming communities in Ghana's Western Region through healthcare, education, and welfare initiatives. Follow their journey and support their mission!  #EvanexFoundation"
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <a href="https://wa.me/?text=Evanex%20Foundation%20is%20transforming%20communities%20in%20Ghana's%20Western%20Region%20through%20healthcare%2C%20education%2C%20and%20welfare%20initiatives.%20Follow%20their%20journey!%20%F0%9F%A7%A1%20https%3A%2F%2Fwww.instagram.com%2FEvanexFoundation"
-           target="_blank" rel="noopener" class="share-btn wa">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.instagram.com/EvanexFoundation"
-           target="_blank" rel="noopener" class="share-btn fb">
-          <i class="fa-brands fa-facebook-f"></i> Facebook
-        </a>
-        <a href="https://twitter.com/intent/tweet?text=Evanex%20Foundation%20is%20transforming%20communities%20in%20Ghana's%20Western%20Region%20%F0%9F%A7%A1%20%23EvanexFoundation&url=https://www.instagram.com/EvanexFoundation"
-           target="_blank" rel="noopener" class="share-btn tw">
-          <i class="fa-brands fa-x-twitter"></i> Twitter/X
-        </a>
-        <button onclick="copyLink('https://www.instagram.com/EvanexFoundation', this)" class="share-btn cp">
-          <i class="fa-solid fa-link"></i> Copy Link
-        </button>
-      </div>
-    </div>
-
-    <!-- Share Card 2  Volunteer Recruitment -->
-    <div class="share-card reveal">
-      <div class="flex items-center gap-2 mb-3">
-        <i class="fa-solid fa-quote-left text-purple-400 text-sm"></i>
-        <span class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Volunteer Outreach</span>
-      </div>
-      <div class="share-text-box" id="shareText2">
-        "Want to make a difference in Ghana? Evanex Foundation is looking for volunteers, donors, and partners to help bring healthcare and education to underserved communities. Join us!  #VolunteerGhana"
-      </div>
-      <div class="flex flex-wrap gap-2">
-        <a href="https://wa.me/?text=Want%20to%20make%20a%20difference%20in%20Ghana%3F%20Evanex%20Foundation%20is%20looking%20for%20volunteers%2C%20donors%20and%20partners!%20%F0%9F%92%9C%20https%3A%2F%2Fwww.instagram.com%2FEvanexFoundation"
-           target="_blank" rel="noopener" class="share-btn wa">
-          <i class="fa-brands fa-whatsapp"></i> WhatsApp
-        </a>
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.facebook.com/EvanexFoundation"
-           target="_blank" rel="noopener" class="share-btn fb">
-          <i class="fa-brands fa-facebook-f"></i> Facebook
-        </a>
-        <a href="https://twitter.com/intent/tweet?text=Want%20to%20make%20a%20difference%20in%20Ghana%3F%20%40EvanexFoundation%20needs%20volunteers%2C%20donors%20and%20partners!%20%F0%9F%92%9C%20%23VolunteerGhana&url=https://www.facebook.com/EvanexFoundation"
-           target="_blank" rel="noopener" class="share-btn tw">
-          <i class="fa-brands fa-x-twitter"></i> Twitter/X
-        </a>
-        <button onclick="copyLink('https://www.facebook.com/EvanexFoundation', this)" class="share-btn cp">
-          <i class="fa-solid fa-link"></i> Copy Link
-        </button>
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Copy Toast -->
-  <div id="copyToast">
-    <i class="fa-solid fa-check mr-1"></i> Link copied to clipboard!
-  </div>
-</section>
-
-
-<!-- 
-     FOOTER
- -->
-<footer class="border-t footer-divider mt-12 px-6 py-12 max-w-5xl mx-auto">
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-    <!-- Brand -->
-    <div>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="w-10 h-10 rounded-xl flex items-center justify-center text-white font-black text-lg" style="background:linear-gradient(135deg,#F26A22,#8B4DB8);">E</div>
-        <div>
-          <div class="text-white font-bold text-sm" style="font-family:'Sora',sans-serif;">Evanex Foundation</div>
-          <div class="text-gray-600 text-xs">Western Region, Ghana</div>
-        </div>
-      </div>
-      <p class="text-gray-500 text-sm leading-relaxed">Empowering communities through healthcare, education, and welfare since 2022.</p>
-    </div>
-
-    <!-- Quick Links -->
-    <div>
-      <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Quick Links</h4>
-      <ul class="space-y-2 text-sm text-gray-500">
-        <li><a href="evanex-foundation.html" class="hover:text-orange-400 transition">Overview</a></li>
-        <li><a href="evanex-about.html"      class="hover:text-orange-400 transition">About Us</a></li>
-        <li><a href="evanex-projects.html"   class="hover:text-orange-400 transition">Projects</a></li>
-        <li><a href="evanex-gallery.html"    class="hover:text-orange-400 transition">Gallery</a></li>
-        <li><a href="evanex-socials.html"    class="hover:text-orange-400 transition">Socials</a></li>
-      </ul>
-    </div>
-
-    <!-- Social Links -->
-    <div>
-      <h4 class="text-white font-bold text-sm mb-4 uppercase tracking-wider">Follow Us</h4>
-      <div class="flex flex-col gap-2 text-sm text-gray-500">
-        <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-purple-400 transition">
-          <i class="fa-brands fa-instagram w-4 text-center"></i> @EvanexFoundation
-        </a>
-        <a href="https://www.facebook.com/EvanexFoundation" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-blue-400 transition">
-          <i class="fa-brands fa-facebook-f w-4 text-center"></i> Evanex Foundation
-        </a>
-        <a href="https://wa.me/233548932274" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-green-400 transition">
-          <i class="fa-brands fa-whatsapp w-4 text-center"></i> +233 548 932 274
-        </a>
-        <a href="https://www.youtube.com/@EvanexFoundation" target="_blank" rel="noopener" class="flex items-center gap-2 hover:text-red-400 transition">
-          <i class="fa-brands fa-youtube w-4 text-center"></i> @EvanexFoundation
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="border-t footer-divider pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-    <p class="text-gray-600 text-xs"> 2026 Evanex Foundation. All rights reserved.</p>
-    <p class="text-gray-600 text-xs">
-      A <a href="evanex-foundation.html" class="text-gray-500 hover:text-orange-400 transition font-semibold">Evanex Foundation</a> initiative
-    </p>
-  </div>
-</footer>
-
-
-<!-- 
-     WHATSAPP FAB
- -->
-<a href="https://wa.me/233548932274" target="_blank" rel="noopener" class="whatsapp-fab" title="Chat on WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-
-<!-- 
-     MOBILE BOTTOM NAV
- -->
-<nav class="mobile-bottom-nav md:hidden">
-  <a href="evanex-foundation.html" class="mob-nav-item">
-    <i class="fa-solid fa-house"></i>
-    <span>Home</span>
-  </a>
-  <a href="evanex-about.html" class="mob-nav-item">
-    <i class="fa-solid fa-circle-info"></i>
-    <span>About</span>
-  </a>
-  <!-- CENTER ELEVATED  Socials (active) -->
-  <a href="evanex-socials.html" class="mob-nav-item mob-nav-center">
-    <i class="fa-solid fa-share-nodes"></i>
-    <span>Socials</span>
-  </a>
-  <a href="evanex-projects.html" class="mob-nav-item">
-    <i class="fa-solid fa-diagram-project"></i>
-    <span>Projects</span>
-  </a>
-  <a href="evanex-gallery.html" class="mob-nav-item">
-    <i class="fa-solid fa-images"></i>
-    <span>Gallery</span>
-  </a>
+    <a href="evanex-gallery.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+        <i class="fas fa-images"></i> Gallery
+    </a>
+    <a href="evanex-socials.html" class="nav-active flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+        <i class="fas fa-share-alt"></i> Socials
+    </a>
 </nav>
 
+<!-- MOBILE BOTTOM NAV -->
+<nav class="md:hidden fixed bottom-0 inset-x-0 z-50 flex justify-around items-center px-2 py-2 bg-black/90 backdrop-blur-xl border-t border-white/10">
+    <a href="evanex-about.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
+        <i class="fas fa-info-circle text-xl"></i>
+        <span class="text-[9px] font-bold uppercase tracking-widest">About</span>
+    </a>
+    <a href="evanex-projects.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
+        <i class="fas fa-project-diagram text-xl"></i>
+        <span class="text-[9px] font-bold uppercase tracking-widest">Projects</span>
+    </a>
+    <a href="evanex-foundation.html" class="text-white flex flex-col items-center gap-[3px] px-3 py-1 rounded-2xl -mt-5 shadow-xl" style="background:#F26A22">
+        <i class="fas fa-hands-helping text-xl"></i>
+        <span class="text-[9px] font-bold uppercase tracking-widest">Home</span>
+    </a>
+    <a href="evanex-gallery.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
+        <i class="fas fa-images text-xl"></i>
+        <span class="text-[9px] font-bold uppercase tracking-widest">Gallery</span>
+    </a>
+    <a href="evanex-socials.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:#F26A22">
+        <i class="fas fa-share-alt text-xl"></i>
+        <span class="text-[9px] font-bold uppercase tracking-widest">Socials</span>
+    </a>
+</nav>
 
-<!-- 
-     JAVASCRIPT
- -->
+<!-- WHATSAPP FAB -->
+<a href="https://wa.me/233548932274" target="_blank" rel="noopener noreferrer"
+   class="fixed bottom-24 md:bottom-8 right-6 z-50 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-[0_0_25px_rgba(34,197,94,0.4)] hover:scale-110 transition hover:bg-green-400 border border-white/20"
+   aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- ===================================================
+     SECTION 1: HERO
+=================================================== -->
+<section class="relative pt-40 pb-28 px-6 md:px-20 xl:px-32 text-center overflow-hidden bg-black">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div style="position:absolute;top:10%;left:50%;transform:translateX(-50%);width:700px;height:700px;background:radial-gradient(circle,rgba(131,58,180,.18) 0%,transparent 70%);border-radius:9999px;"></div>
+        <div style="position:absolute;top:20%;left:20%;width:300px;height:300px;background:radial-gradient(circle,rgba(242,106,34,.10) 0%,transparent 70%);border-radius:9999px;"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto">
+        <p class="ef-label mb-4" style="animation:fadeUp .6s ease both;">
+            <i class="fas fa-share-alt mr-2"></i>STAY CONNECTED
+        </p>
+        <h1 class="ef-title text-5xl md:text-7xl tracking-tight mb-6" style="animation:fadeUp .7s ease .1s both;">
+            Follow Our <span class="grad-text">Journey</span>
+        </h1>
+        <p class="text-white/55 text-lg md:text-xl leading-relaxed mb-10 max-w-2xl mx-auto" style="animation:fadeUp .7s ease .2s both;">
+            Stay connected with Evanex Foundation across social media as we document every step of our community work.
+        </p>
+        <div class="flex flex-wrap gap-3 justify-center" style="animation:fadeUp .7s ease .3s both;">
+            <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+               class="glass-btn text-white font-bold px-4 py-2 rounded-full text-sm inline-flex items-center gap-2" style="border-color:rgba(131,58,180,0.4)">
+                <i class="fab fa-instagram" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"></i>
+                Instagram
+            </a>
+            <a href="https://www.facebook.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+               class="glass-btn text-white font-bold px-4 py-2 rounded-full text-sm inline-flex items-center gap-2" style="border-color:rgba(24,119,242,0.4)">
+                <i class="fab fa-facebook" style="color:#1877f2"></i>
+                Facebook
+            </a>
+            <a href="https://wa.me/233548932274" target="_blank" rel="noopener noreferrer"
+               class="glass-btn text-white font-bold px-4 py-2 rounded-full text-sm inline-flex items-center gap-2" style="border-color:rgba(37,211,102,0.4)">
+                <i class="fab fa-whatsapp" style="color:#25d366"></i>
+                WhatsApp
+            </a>
+            <a href="https://www.youtube.com/@EvanexFoundation" target="_blank" rel="noopener noreferrer"
+               class="glass-btn text-white font-bold px-4 py-2 rounded-full text-sm inline-flex items-center gap-2" style="border-color:rgba(255,0,0,0.4)">
+                <i class="fab fa-youtube" style="color:#ff0000"></i>
+                YouTube
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================
+     SECTION 2: INSTAGRAM PROFILE CARD
+=================================================== -->
+<section class="py-16 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
+    <div class="max-w-2xl mx-auto reveal">
+        <div class="ef-card rounded-3xl p-0 overflow-hidden bg-zinc-950">
+            <!-- Top gradient bar -->
+            <div style="height:6px;background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);"></div>
+            <div class="p-8">
+                <!-- Profile row -->
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-20 h-20 rounded-full flex items-center justify-center flex-shrink-0 text-3xl text-white" style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);box-shadow:0 0 24px rgba(131,58,180,0.4);">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <span class="ef-title text-lg">@EvanexFoundation</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase" style="background:rgba(242,106,34,.2);color:#F26A22;border:1px solid rgba(242,106,34,.3);">NGO</span>
+                        </div>
+                        <div class="text-white/50 text-sm mt-0.5">Evanex Foundation</div>
+                    </div>
+                </div>
+                <!-- Stats row -->
+                <div class="grid grid-cols-3 gap-2 mb-6 text-center">
+                    <div class="bg-white/[0.04] rounded-xl py-3 px-2">
+                        <div class="ef-title text-xl">48</div>
+                        <div class="text-white/40 text-[11px] font-semibold mt-0.5 uppercase tracking-wider">Posts</div>
+                    </div>
+                    <div class="bg-white/[0.04] rounded-xl py-3 px-2">
+                        <div class="ef-title text-xl">2.4K</div>
+                        <div class="text-white/40 text-[11px] font-semibold mt-0.5 uppercase tracking-wider">Followers</div>
+                    </div>
+                    <div class="bg-white/[0.04] rounded-xl py-3 px-2">
+                        <div class="ef-title text-xl">186</div>
+                        <div class="text-white/40 text-[11px] font-semibold mt-0.5 uppercase tracking-wider">Following</div>
+                    </div>
+                </div>
+                <!-- Bio -->
+                <p class="text-white/60 text-sm leading-relaxed mb-6">
+                    Empowering communities in Ghana&rsquo;s Western Region <i class="fas fa-heart" style="color:#F26A22"></i> | Healthcare &middot; Education &middot; Welfare | Tarkwa-Nsuaem, Western Region
+                </p>
+                <!-- 3x3 Post grid -->
+                <div class="ig-grid mb-6">
+                    <div class="ig-cell" style="background:linear-gradient(135deg,#1B2A5E,#2d4a8e)"><i class="fas fa-hospital-alt"></i></div>
+                    <div class="ig-cell" style="background:linear-gradient(135deg,#3a0d4e,#6b2196)"><i class="fas fa-hands-helping"></i></div>
+                    <div class="ig-cell" style="background:linear-gradient(135deg,#7a1a1a,#c0392b)"><i class="fas fa-heart"></i></div>
+                    <div class="ig-cell" style="background:linear-gradient(135deg,#0d3d2e,#1a6b4f)"><i class="fas fa-pills"></i></div>
+                    <div class="ig-cell" style="background:linear-gradient(135deg,#2d1a00,#7a4a00)"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="ig-cell" style="background:linear-gradient(135deg,#0a2e0a,#1a6b1a)"><i class="fas fa-seedling"></i></div>
+                    <div class="ig-cell" style="background:linear-gradient(135deg,#1a0033,#4a0080)"><i class="fas fa-users"></i></div>
+                    <div class="ig-cell" style="background:linear-gradient(135deg,#001a3d,#003d80)"><i class="fas fa-tint"></i></div>
+                    <div class="ig-cell" style="background:linear-gradient(135deg,#3d2000,#804200)"><i class="fas fa-star"></i></div>
+                </div>
+                <!-- Follow button -->
+                <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+                   class="block w-full text-center text-white font-bold py-3.5 rounded-xl text-[14px] transition hover:opacity-90 hover:scale-[1.01]"
+                   style="background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);box-shadow:0 8px 24px rgba(131,58,180,0.35);">
+                    <i class="fab fa-instagram mr-2"></i>Follow on Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================
+     SECTION 3: SOCIAL CHANNELS GRID
+=================================================== -->
+<section class="py-24 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <p class="ef-label mb-3"><i class="fas fa-share-alt mr-2"></i>OUR PLATFORMS</p>
+            <h2 class="ef-title text-3xl md:text-5xl tracking-tight">Find Us Everywhere</h2>
+            <div class="w-16 h-px bg-white/20 mx-auto mt-5"></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+            <!-- Instagram -->
+            <div class="ef-card rounded-2xl p-6 bg-zinc-950 reveal d1" style="border-top: 3px solid #833ab4;">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl text-white flex-shrink-0" style="background:linear-gradient(135deg,#833ab4,#fcb045);">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white text-sm">@EvanexFoundation</div>
+                        <div class="text-white/40 text-xs mt-0.5">2.4K followers &middot; 48 posts</div>
+                    </div>
+                </div>
+                <p class="text-white/50 text-sm leading-relaxed mb-5">Behind-the-scenes moments, project updates, and community stories.</p>
+                <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 text-white font-bold px-5 py-2.5 rounded-full text-[13px] transition hover:opacity-90"
+                   style="background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);">
+                    <i class="fab fa-instagram"></i> Follow on Instagram
+                </a>
+            </div>
+
+            <!-- Facebook -->
+            <div class="ef-card rounded-2xl p-6 bg-zinc-950 reveal d2" style="border-top: 3px solid #1877f2;">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl text-white flex-shrink-0" style="background:#1877f2;">
+                        <i class="fab fa-facebook"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white text-sm">Evanex Foundation</div>
+                        <div class="text-white/40 text-xs mt-0.5">1.8K likes</div>
+                    </div>
+                </div>
+                <p class="text-white/50 text-sm leading-relaxed mb-5">Official news, event announcements, and donor recognition.</p>
+                <a href="https://www.facebook.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 text-white font-bold px-5 py-2.5 rounded-full text-[13px] transition hover:opacity-90"
+                   style="background:#1877f2;box-shadow:0 6px 20px rgba(24,119,242,0.35);">
+                    <i class="fab fa-facebook"></i> Follow on Facebook
+                </a>
+            </div>
+
+            <!-- WhatsApp -->
+            <div class="ef-card rounded-2xl p-6 bg-zinc-950 reveal d3" style="border-top: 3px solid #25d366;">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl text-white flex-shrink-0" style="background:#25d366;">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-white text-sm">Evanex Foundation Community</div>
+                        <div class="text-white/40 text-xs mt-0.5">Live community updates</div>
+                    </div>
+                </div>
+                <p class="text-white/50 text-sm leading-relaxed mb-5">Direct updates and community discussions. Message us to join.</p>
+                <a href="https://wa.me/233548932274" target="_blank" rel="noopener noreferrer"
+                   class="btn-orange text-white font-bold px-5 py-2.5 rounded-full text-[13px] inline-flex items-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+
+            <!-- YouTube -->
+            <div class="ef-card rounded-2xl p-6 bg-zinc-950 reveal d4" style="border-top: 3px solid #ff0000;">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 rounded-xl flex items-center justify-center text-xl text-white flex-shrink-0" style="background:#ff0000;">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <div class="font-bold text-white text-sm">@EvanexFoundation</div>
+                            <span class="px-2 py-0.5 rounded-full text-[10px] font-black uppercase text-white" style="background:#8B4DB8;">Coming Soon</span>
+                        </div>
+                        <div class="text-white/40 text-xs mt-0.5">YouTube Channel</div>
+                    </div>
+                </div>
+                <p class="text-white/50 text-sm leading-relaxed mb-5">Documentary-style videos of our projects and impact stories.</p>
+                <a href="https://www.youtube.com/@EvanexFoundation" target="_blank" rel="noopener noreferrer"
+                   class="glass-btn text-white font-bold px-5 py-2.5 rounded-full text-[13px] inline-flex items-center gap-2">
+                    <i class="fab fa-youtube"></i> Subscribe
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================
+     SECTION 4: LATEST POSTS FEED
+=================================================== -->
+<section class="py-24 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16 reveal">
+            <p class="ef-label mb-3"><i class="fab fa-instagram mr-2"></i>LATEST FROM INSTAGRAM</p>
+            <h2 class="ef-title text-3xl md:text-5xl tracking-tight">Recent Posts</h2>
+            <div class="w-16 h-px bg-white/20 mx-auto mt-5"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+            <!-- Post 1 -->
+            <div class="ef-card rounded-2xl p-5 bg-zinc-950 reveal d1">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="ig-avatar">
+                        <i class="fab fa-instagram text-white text-base"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="font-bold text-white text-sm">@EvanexFoundation</div>
+                        <div class="text-white/35 text-xs mt-0.5">2 days ago</div>
+                    </div>
+                </div>
+                <p class="text-white/70 text-sm leading-relaxed mb-4">
+                    Apinto Hospital renovation milestone reached! The children&rsquo;s ward is now fully equipped with over 200 medical devices &mdash; a historic day for our community. <i class="fas fa-hospital-alt" style="color:#F26A22"></i>
+                </p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1.5 text-sm">
+                        <i class="fas fa-heart" style="color:#fd1d1d"></i>
+                        <span class="font-semibold text-white/60">148</span>
+                        <span class="text-white/35 text-xs">likes</span>
+                    </div>
+                    <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+                       class="text-xs font-bold px-3 py-1.5 rounded-full transition hover:opacity-80"
+                       style="background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);color:#fff;">
+                        View on Instagram <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Post 2 -->
+            <div class="ef-card rounded-2xl p-5 bg-zinc-950 reveal d2">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="ig-avatar">
+                        <i class="fab fa-instagram text-white text-base"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="font-bold text-white text-sm">@EvanexFoundation</div>
+                        <div class="text-white/35 text-xs mt-0.5">1 week ago</div>
+                    </div>
+                </div>
+                <p class="text-white/70 text-sm leading-relaxed mb-4">
+                    Thank you to all our donors who made the Tarkwa Medical Drive possible! We distributed over 500 items to Tarkwa Municipal Hospital this week.
+                </p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1.5 text-sm">
+                        <i class="fas fa-heart" style="color:#fd1d1d"></i>
+                        <span class="font-semibold text-white/60">92</span>
+                        <span class="text-white/35 text-xs">likes</span>
+                    </div>
+                    <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+                       class="text-xs font-bold px-3 py-1.5 rounded-full transition hover:opacity-80"
+                       style="background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);color:#fff;">
+                        View on Instagram <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Post 3 -->
+            <div class="ef-card rounded-2xl p-5 bg-zinc-950 reveal d3">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="ig-avatar">
+                        <i class="fab fa-instagram text-white text-base"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="font-bold text-white text-sm">@EvanexFoundation</div>
+                        <div class="text-white/35 text-xs mt-0.5">2 weeks ago</div>
+                    </div>
+                </div>
+                <p class="text-white/70 text-sm leading-relaxed mb-4">
+                    New project announcement: Mobile Health Clinic coming to 6 more communities in Q3 2026! Stay tuned for details.
+                </p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1.5 text-sm">
+                        <i class="fas fa-heart" style="color:#fd1d1d"></i>
+                        <span class="font-semibold text-white/60">203</span>
+                        <span class="text-white/35 text-xs">likes</span>
+                    </div>
+                    <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+                       class="text-xs font-bold px-3 py-1.5 rounded-full transition hover:opacity-80"
+                       style="background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);color:#fff;">
+                        View on Instagram <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Post 4 -->
+            <div class="ef-card rounded-2xl p-5 bg-zinc-950 reveal d4">
+                <div class="flex items-center gap-3 mb-4">
+                    <div class="ig-avatar">
+                        <i class="fab fa-instagram text-white text-base"></i>
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="font-bold text-white text-sm">@EvanexFoundation</div>
+                        <div class="text-white/35 text-xs mt-0.5">3 weeks ago</div>
+                    </div>
+                </div>
+                <p class="text-white/70 text-sm leading-relaxed mb-4">
+                    Our free health screening camp at Huni Valley served 1,000+ residents this weekend. Grateful for every volunteer and donor.
+                </p>
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-1.5 text-sm">
+                        <i class="fas fa-heart" style="color:#fd1d1d"></i>
+                        <span class="font-semibold text-white/60">176</span>
+                        <span class="text-white/35 text-xs">likes</span>
+                    </div>
+                    <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+                       class="text-xs font-bold px-3 py-1.5 rounded-full transition hover:opacity-80"
+                       style="background:linear-gradient(90deg,#833ab4,#fd1d1d,#fcb045);color:#fff;">
+                        View on Instagram <i class="fas fa-arrow-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================
+     SECTION 5: NEWSLETTER SIGNUP
+=================================================== -->
+<section class="py-24 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
+    <div class="max-w-2xl mx-auto reveal">
+        <div class="ef-card rounded-3xl p-10 text-center bg-zinc-950">
+            <div class="w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6 text-2xl" style="background:rgba(242,106,34,.15);color:#F26A22;">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h2 class="ef-title text-3xl md:text-4xl mb-4">Stay in the Loop</h2>
+            <p class="text-white/50 text-base leading-relaxed mb-8 max-w-md mx-auto">
+                Get monthly updates on our projects, impact stories, and ways to help.
+            </p>
+            <form id="nl-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto mb-4">
+                <input type="email" required placeholder="Your email address"
+                       class="ef-input flex-1 px-4 py-3 text-sm">
+                <button type="submit"
+                        class="btn-orange text-white font-bold px-6 py-3 rounded-xl text-[14px] inline-flex items-center justify-center gap-2 whitespace-nowrap">
+                    <i class="fas fa-paper-plane"></i> Subscribe
+                </button>
+            </form>
+            <p class="text-white/25 text-xs">
+                <i class="fas fa-lock mr-1"></i> No spam. Unsubscribe anytime.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ===================================================
+     SECTION 6: SHARE SECTION
+=================================================== -->
+<section class="py-24 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
+    <div class="max-w-3xl mx-auto">
+        <div class="ef-card rounded-2xl p-8 bg-zinc-950 reveal">
+            <div class="text-center mb-8">
+                <p class="ef-label mb-3"><i class="fas fa-bullhorn mr-2"></i>SPREAD THE WORD</p>
+                <h2 class="ef-title text-3xl md:text-4xl">Help Spread the Word</h2>
+            </div>
+            <div class="share-quote p-5 mb-8">
+                <p class="text-white/70 text-base leading-relaxed italic">
+                    &ldquo;The Evanex Foundation is transforming lives in Ghana&rsquo;s Western Region through healthcare, education, and community welfare. Join their mission.&rdquo;
+                </p>
+            </div>
+            <div class="flex flex-wrap gap-3 justify-center">
+                <button onclick="window.open('https://wa.me/?text=The%20Evanex%20Foundation%20is%20transforming%20lives%20in%20Ghana%27s%20Western%20Region%20through%20healthcare%2C%20education%2C%20and%20community%20welfare.%20Join%20their%20mission.%20https%3A%2F%2Fwww.instagram.com%2FEvanexFoundation','_blank')"
+                        class="inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-full text-[13px] text-white transition hover:opacity-90"
+                        style="background:#25d366;box-shadow:0 6px 20px rgba(37,211,102,0.3);">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </button>
+                <button onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2FEvanexFoundation&quote=The%20Evanex%20Foundation%20is%20transforming%20lives%20in%20Ghana%27s%20Western%20Region.','_blank')"
+                        class="inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-full text-[13px] text-white transition hover:opacity-90"
+                        style="background:#1877f2;box-shadow:0 6px 20px rgba(24,119,242,0.3);">
+                    <i class="fab fa-facebook"></i> Facebook
+                </button>
+                <button onclick="window.open('https://twitter.com/intent/tweet?text=The%20Evanex%20Foundation%20is%20transforming%20lives%20in%20Ghana%27s%20Western%20Region%20through%20healthcare%2C%20education%2C%20and%20community%20welfare.%20Join%20their%20mission.%20https%3A%2F%2Fwww.instagram.com%2FEvanexFoundation','_blank')"
+                        class="inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-full text-[13px] text-white transition hover:opacity-90"
+                        style="background:#000;border:1px solid rgba(255,255,255,0.2);box-shadow:0 6px 20px rgba(0,0,0,0.4);">
+                    <i class="fab fa-x-twitter"></i> Twitter / X
+                </button>
+                <button onclick="copyLink()"
+                        class="glass-btn inline-flex items-center gap-2 font-bold px-5 py-2.5 rounded-full text-[13px] text-white">
+                    <i class="fas fa-copy"></i> Copy Link
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-white/[0.07] py-10 px-6 md:px-20 bg-black">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-3">
+            <img src="evanex-logo.jpg" alt="Evanex Foundation" class="h-10 w-10 rounded-full object-cover">
+            <div>
+                <div class="font-bold text-sm text-white" style="font-family:'Sora',sans-serif;"><span style="color:#F26A22">Evanex</span> Foundation</div>
+                <div class="text-[11px] text-white/35">Western Region, Ghana</div>
+            </div>
+        </div>
+        <div class="flex flex-wrap gap-5 text-[13px] text-white/35 justify-center">
+            <a href="evanex-foundation.html" class="hover:text-white transition">Overview</a>
+            <a href="evanex-about.html" class="hover:text-white transition">About</a>
+            <a href="evanex-projects.html" class="hover:text-white transition">Projects</a>
+            <a href="evanex-gallery.html" class="hover:text-white transition">Gallery</a>
+            <a href="evanex-socials.html" class="hover:text-white transition">Socials</a>
+        </div>
+        <div class="text-[12px] text-white/25">&copy; <span id="ef-yr"></span> Evanex Foundation &middot; Ghana</div>
+    </div>
+</footer>
+
+<!-- COPY TOAST -->
+<div id="copy-toast" style="position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:#F26A22;color:#fff;padding:.6rem 1.5rem;border-radius:9999px;font-weight:700;font-size:.85rem;transition:opacity .4s;opacity:0;z-index:9999">Link copied!</div>
+
+<!-- SHARED JS -->
 <script>
-  /*  Scroll Reveal  */
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
+'use strict';
+// Year
+document.getElementById('ef-yr').textContent = new Date().getFullYear();
+// Scroll reveal
+const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('shown'); ro.unobserve(e.target); }});
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+// Counters
+const ease = t => t===1?1:1-Math.pow(2,-10*t);
+function runCounter(el) {
+    if (el.dataset.done) return; el.dataset.done='1';
+    const target = +el.dataset.target, dur = target>100?2200:1200, t0 = performance.now();
+    const tick = now => {
+        const p = Math.min((now-t0)/dur,1);
+        el.textContent = Math.round(ease(p)*target).toLocaleString();
+        if (p<1) requestAnimationFrame(tick);
+        else el.textContent = target.toLocaleString()+(target>=1000||target>10?'+':'');
+    };
+    requestAnimationFrame(tick);
+}
+const co = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { runCounter(e.target); co.unobserve(e.target); }});
+}, { threshold: 0.4 });
+document.querySelectorAll('.counter-num').forEach(el => co.observe(el));
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const t = document.querySelector(a.getAttribute('href')); if (!t) return;
+        e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' });
     });
-  }, { threshold: 0.12 });
-
-  document.querySelectorAll('.reveal').forEach((el, i) => {
-    el.style.transitionDelay = `${(i % 4) * 0.07}s`;
-    revealObserver.observe(el);
-  });
-
-  /*  Newsletter Form  */
-  const newsletterForm    = document.getElementById('newsletterForm');
-  const newsletterSuccess = document.getElementById('newsletterSuccess');
-
-  newsletterForm.addEventListener('submit', function(e) {
+});
+// Newsletter
+const nlForm = document.getElementById('nl-form');
+if(nlForm) nlForm.addEventListener('submit', e => {
     e.preventDefault();
-    const email = document.getElementById('emailInput').value.trim();
-    if (!email) return;
-
-    // Simulate async submission
-    const btn = this.querySelector('button[type="submit"]');
-    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Subscribing...';
-    btn.disabled = true;
-
-    setTimeout(() => {
-      newsletterForm.classList.add('hidden');
-      newsletterSuccess.classList.remove('hidden');
-    }, 1400);
-  });
-
-  /*  Copy Link  */
-  function copyLink(url, btn) {
-    navigator.clipboard.writeText(url).then(() => {
-      const original = btn.innerHTML;
-      btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
-
-      const toast = document.getElementById('copyToast');
-      toast.classList.add('show');
-
-      setTimeout(() => {
-        btn.innerHTML = original;
-        toast.classList.remove('show');
-      }, 2500);
-    }).catch(() => {
-      // Fallback for older browsers
-      const ta = document.createElement('textarea');
-      ta.value = url;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-
-      const toast = document.getElementById('copyToast');
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2500);
+    nlForm.innerHTML = '<p class="text-green-400 font-bold text-lg"><i class="fas fa-check-circle mr-2"></i>Thank you for subscribing!</p>';
+});
+// Copy link
+function copyLink() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+        const t=document.getElementById('copy-toast');
+        t.style.opacity='1'; setTimeout(()=>t.style.opacity='0',2000);
     });
-  }
-
-  /*  Nav active class protection  */
-  // Ensure nav stays styled correctly
-  document.querySelectorAll('.nav-link').forEach(link => {
-    if (link.href === window.location.href) {
-      link.classList.add('active');
-    }
-  });
+}
 </script>
-
 </body>
 </html>
-
-
-
