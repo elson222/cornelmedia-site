@@ -614,10 +614,9 @@ function runCounter(el) {
   el.dataset.done = '1';
   const target = +el.dataset.target;
   const dur = target > 100 ? 2200 : 1200;
-  let start = null;
+  const t0 = performance.now();
   const tick = now => {
-    if (!start) start = now;
-    const p = Math.min((now - start) / dur, 1);
+    const p = Math.min((now - t0) / dur, 1);
     el.textContent = Math.round(ease(p) * target).toLocaleString();
     if (p < 1) requestAnimationFrame(tick);
     else el.textContent = target.toLocaleString() + (target >= 1000 ? '+' : target === 12 ? '' : '+');
@@ -626,7 +625,7 @@ function runCounter(el) {
 }
 const cntObs = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) { runCounter(e.target); cntObs.unobserve(e.target); } });
-}, { threshold: 0.1 });
+}, { threshold: 0.4 });
 document.querySelectorAll('.counter-num').forEach(el => cntObs.observe(el));
 
 /*  Smooth scroll for anchor links  */
