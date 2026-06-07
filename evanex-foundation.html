@@ -208,7 +208,7 @@
     </div>
 
     <!-- Scroll cue -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:block">
+    <div class="mt-12 mb-6 hidden md:flex justify-center w-full">
         <button onclick="document.getElementById('impact').scrollIntoView({behavior:'smooth'})"
                 class="glass-btn w-10 h-10 rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition">
             <i class="fas fa-chevron-down text-white text-sm"></i>
@@ -217,25 +217,27 @@
 
     <!-- Stats bar -->
     <div class="relative z-10 w-full mt-auto border-t border-white/10 bg-white/[0.06] backdrop-blur-xl">
-        <div class="max-w-3xl mx-auto px-6 py-5 flex flex-wrap justify-center gap-8 md:gap-16">
-            <div class="text-center">
-                <div class="text-3xl font-black counter-num" data-target="12">0</div>
-                <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Projects</div>
-            </div>
-            <div class="hidden md:block w-px bg-white/15 self-stretch"></div>
-            <div class="text-center">
-                <div class="text-3xl font-black counter-num" data-target="5000">0</div>
-                <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Lives Impacted</div>
-            </div>
-            <div class="hidden md:block w-px bg-white/15 self-stretch"></div>
-            <div class="text-center">
-                <div class="text-3xl font-black counter-num" data-target="8">0</div>
-                <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Communities</div>
-            </div>
-            <div class="hidden md:block w-px bg-white/15 self-stretch"></div>
-            <div class="text-center">
-                <div class="text-3xl font-black counter-num" data-target="3">0</div>
-                <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Hospitals Supported</div>
+        <div class="max-w-5xl mx-auto px-6 py-5">
+            <div class="grid grid-cols-2 md:flex md:flex-row md:flex-nowrap items-center justify-center gap-y-6 md:gap-8 lg:gap-16">
+                <div class="text-center w-full">
+                    <div class="text-3xl font-black counter-num" data-target="12">0</div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Projects</div>
+                </div>
+                <div class="hidden md:block w-px h-10 bg-white/15"></div>
+                <div class="text-center w-full">
+                    <div class="text-3xl font-black counter-num" data-target="5000">0</div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Lives Impacted</div>
+                </div>
+                <div class="hidden md:block w-px h-10 bg-white/15"></div>
+                <div class="text-center w-full">
+                    <div class="text-3xl font-black counter-num" data-target="8">0</div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Communities</div>
+                </div>
+                <div class="hidden md:block w-px h-10 bg-white/15"></div>
+                <div class="text-center w-full">
+                    <div class="text-3xl font-black counter-num" data-target="3">0</div>
+                    <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Hospitals</div>
+                </div>
             </div>
         </div>
     </div>
