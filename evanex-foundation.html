@@ -75,18 +75,7 @@
             --purple: #8B4DB8;
         }
 
-        /*  Hero  */
-        .hero-overlay {
-            background: linear-gradient(
-                160deg,
-                rgba(11,17,38,.92) 0%,
-                rgba(27,42,94,.65) 35%,
-                rgba(139,77,184,.35) 65%,
-                rgba(242,106,34,.25) 100%
-            );
-        }
-        .bottom-fade { background: linear-gradient(to top, #000 0%, transparent 100%); }
-        .top-fade    { background: linear-gradient(to bottom, rgba(0,0,0,.6) 0%, transparent 100%); }
+        
 
         /*  Animated counter  */
         .counter-num {
@@ -105,11 +94,7 @@
         }
         .btn-orange:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(242,106,34,.55); filter: brightness(1.07); }
 
-        /*  Project / Impact cards  */
-        .proj-card { border: 1px solid rgba(255,255,255,.07); transition: all .25s ease; }
-        .proj-card:hover { border-color: rgba(242,106,34,.35); transform: translateY(-6px); box-shadow: 0 24px 56px rgba(0,0,0,.5); }
-        .proj-img { transition: transform .55s ease; }
-        .proj-card:hover .proj-img { transform: scale(1.06); }
+        
 
         /*  Scroll animation  */
         .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
@@ -175,19 +160,12 @@
 <!-- 
      HERO SECTION
  -->
-<section class="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden bg-black">
+<section class="relative w-full min-h-[70vh] flex flex-col items-center justify-center overflow-hidden bg-black pt-28 pb-20">
 
-    <!-- BG image -->
-    <div class="absolute inset-0 z-0">
-        <img id="hero-img"
-             src="ef-hero.png"
-             alt="Evanex Foundation - Ghana Western Region"
-             class="w-full h-full object-cover opacity-50"
-             onerror="this.src='https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=1600&q=80'; this.style.opacity='0.35'">
-        <div class="absolute inset-0 hero-overlay"></div>
-        <div class="absolute inset-x-0 bottom-0 h-60 bottom-fade"></div>
-        <div class="absolute inset-x-0 top-0 h-36 top-fade"></div>
-    </div>
+    <!-- Background glow -->
+    <div class="absolute inset-0 z-0" style="background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(242,106,34,.12) 0%, rgba(139,77,184,.08) 50%, transparent 100%)"></div>
+    <!-- Grid overlay -->
+    <div class="absolute inset-0 z-0 opacity-[0.03]" style="background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:40px 40px"></div>
 
     <!-- Content -->
     <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20 md:mt-28">
@@ -277,25 +255,25 @@
 
         <!-- Metric cards -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="reveal delay-1 proj-card rounded-2xl p-6 text-center bg-white/[0.03]">
+            <div class="reveal delay-1 ef-card rounded-2xl p-6 text-center bg-zinc-950">
                 <div class="text-4xl mb-3" style="color:#F26A22"><i class="fas fa-hospital-alt"></i></div>
                 <div class="text-3xl md:text-4xl font-black counter-num" data-target="3">0</div>
                 <div class="text-white font-bold mt-2 text-sm">Hospitals Upgraded</div>
                 <p class="text-white/35 text-[11px] mt-1 leading-snug">Apinto, Tarkwa Municipal, Mile 8 Clinic</p>
             </div>
-            <div class="reveal delay-2 proj-card rounded-2xl p-6 text-center bg-white/[0.03]">
+            <div class="reveal delay-2 ef-card rounded-2xl p-6 text-center bg-zinc-950">
                 <div class="text-4xl mb-3" style="color:#8B4DB8"><i class="fas fa-pills"></i></div>
                 <div class="text-3xl md:text-4xl font-black counter-num" data-target="500">0</div>
                 <div class="text-white font-bold mt-2 text-sm">Equipment Donated</div>
                 <p class="text-white/35 text-[11px] mt-1 leading-snug">Medical devices & supplies distributed</p>
             </div>
-            <div class="reveal delay-3 proj-card rounded-2xl p-6 text-center bg-white/[0.03]">
+            <div class="reveal delay-3 ef-card rounded-2xl p-6 text-center bg-zinc-950">
                 <div class="text-4xl mb-3" style="color:#F26A22"><i class="fas fa-users"></i></div>
                 <div class="text-3xl md:text-4xl font-black counter-num" data-target="5000">0</div>
                 <div class="text-white font-bold mt-2 text-sm">Lives Touched</div>
                 <p class="text-white/35 text-[11px] mt-1 leading-snug">Across Tarkwa-Nsuaem & Agona Nkwanta</p>
             </div>
-            <div class="reveal delay-3 proj-card rounded-2xl p-6 text-center bg-white/[0.03]" style="transition-delay:.48s">
+            <div class="reveal delay-3 ef-card rounded-2xl p-6 text-center bg-zinc-950" style="transition-delay:.48s">
                 <div class="text-4xl mb-3" style="color:#8B4DB8"><i class="fas fa-map-marked-alt"></i></div>
                 <div class="text-3xl md:text-4xl font-black counter-num" data-target="8">0</div>
                 <div class="text-white font-bold mt-2 text-sm">Communities Served</div>
@@ -320,10 +298,10 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             <!-- Project 1 -->
-            <div class="reveal delay-1 proj-card rounded-2xl overflow-hidden bg-zinc-950 tilt">
+            <div class="reveal delay-1 ef-card rounded-2xl overflow-hidden bg-zinc-950 tilt">
                 <div class="relative h-52 overflow-hidden">
                     <img src="ef-hospital.png" alt="Apinto Government Hospital  Children's Ward"
-                         class="proj-img w-full h-full object-cover"
+                         class="ef-img w-full h-full object-cover"
                          onerror="this.src='https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=70'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide text-white" style="background:#F26A22">Healthcare</span>
@@ -343,10 +321,10 @@
             </div>
 
             <!-- Project 2 -->
-            <div class="reveal delay-2 proj-card rounded-2xl overflow-hidden bg-zinc-950 tilt">
+            <div class="reveal delay-2 ef-card rounded-2xl overflow-hidden bg-zinc-950 tilt">
                 <div class="relative h-52 overflow-hidden">
                     <img src="ef-donations.png" alt="Tarkwa Municipal Hospital  Medical Donations"
-                         class="proj-img w-full h-full object-cover"
+                         class="ef-img w-full h-full object-cover"
                          onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=70'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide text-white" style="background:#8B4DB8">Donations</span>
@@ -366,10 +344,10 @@
             </div>
 
             <!-- Project 3 -->
-            <div class="reveal delay-3 proj-card rounded-2xl overflow-hidden bg-zinc-950 tilt">
+            <div class="reveal delay-3 ef-card rounded-2xl overflow-hidden bg-zinc-950 tilt">
                 <div class="relative h-52 overflow-hidden">
                     <img src="ef-outreach.png" alt="Mile 8 Rural Clinic  Community Health"
-                         class="proj-img w-full h-full object-cover"
+                         class="ef-img w-full h-full object-cover"
                          onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=70'">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
                     <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide text-white" style="background:#1B2A5E">Community</span>
@@ -395,7 +373,7 @@
 <!-- 
      ABOUT
  -->
-<section id="about" class="py-24 px-6 md:px-20 xl:px-32 bg-zinc-950 border-t border-white/[0.06]">
+<section id="about" class="py-24 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
     <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
         <!-- Text side -->
@@ -412,21 +390,21 @@
             </p>
             <!-- Pillars -->
             <div class="space-y-3">
-                <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-white/[0.03] hover:border-[#F26A22]/30 transition">
+                <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/30 transition">
                     <span class="text-2xl w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(242,106,34,.15);color:#F26A22"><i class="fas fa-hospital-alt text-lg"></i></span>
                     <div>
                         <div class="font-bold text-sm text-white">Healthcare Infrastructure</div>
                         <div class="text-[12px] text-white/40">Hospital renovations & equipment donations</div>
                     </div>
                 </div>
-                <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-white/[0.03] hover:border-[#F26A22]/30 transition">
+                <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/30 transition">
                     <span class="text-2xl w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(139,77,184,.15);color:#8B4DB8"><i class="fas fa-book-open text-lg"></i></span>
                     <div>
                         <div class="font-bold text-sm text-white">Education & Skills</div>
                         <div class="text-[12px] text-white/40">Scholarships, training & community learning</div>
                     </div>
                 </div>
-                <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-white/[0.03] hover:border-[#F26A22]/30 transition">
+                <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/30 transition">
                     <span class="text-2xl w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(27,42,94,.4);color:#a78bfa"><i class="fas fa-hands-helping text-lg"></i></span>
                     <div>
                         <div class="font-bold text-sm text-white">Community Welfare</div>
@@ -472,7 +450,7 @@
             </p>
             <!-- Contact cards -->
             <div class="space-y-3">
-                <a href="tel:+233548932274" class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-white/[0.03] hover:border-[#F26A22]/40 hover:bg-white/[0.06] transition group">
+                <a href="tel:+233548932274" class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/40 hover:bg-white/[0.06] transition group">
                     <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:rgba(242,106,34,.15)">
                         <i class="fas fa-phone" style="color:#F26A22"></i>
                     </div>
@@ -483,7 +461,7 @@
                     <i class="fas fa-arrow-right ml-auto text-white/20 group-hover:text-[#F26A22] transition text-xs"></i>
                 </a>
                 <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
-                   class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-white/[0.03] hover:border-pink-500/40 hover:bg-white/[0.06] transition group">
+                   class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-zinc-950 hover:border-pink-500/40 hover:bg-white/[0.06] transition group">
                     <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:linear-gradient(135deg,rgba(131,58,180,.3),rgba(241,28,28,.2))">
                         <i class="fab fa-instagram text-pink-400"></i>
                     </div>
@@ -493,7 +471,7 @@
                     </div>
                     <i class="fas fa-arrow-right ml-auto text-white/20 group-hover:text-pink-400 transition text-xs"></i>
                 </a>
-                <div class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-white/[0.03]">
+                <div class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-zinc-950">
                     <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:rgba(27,42,94,.4)">
                         <i class="fas fa-map-marker-alt" style="color:#8B4DB8"></i>
                     </div>
@@ -514,7 +492,7 @@
 
         <!-- Form side -->
         <div class="reveal delay-2">
-            <div class="rounded-3xl border border-white/[0.08] bg-white/[0.03] p-7 backdrop-blur-sm">
+            <div class="rounded-3xl border border-white/[0.08] bg-zinc-950 p-7 backdrop-blur-sm">
                 <h3 class="font-['Sora',sans-serif] font-black text-xl text-white mb-6">Send Us a Message</h3>
                 <form id="ef-form" novalidate>
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
