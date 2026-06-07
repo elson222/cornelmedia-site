@@ -589,19 +589,21 @@ document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
 // Counters
 const ease = t => t===1?1:1-Math.pow(2,-10*t);
 function runCounter(el) {
-    if (el.dataset.done) return; el.dataset.done='1';
-    const target = +el.dataset.target, dur = target>100?2200:1200, t0 = performance.now();
+    if (el.dataset.done) return; el.dataset.done="1";
+    const target = +el.dataset.target, dur = target>100?2200:1200;
+    let start = null;
     const tick = now => {
-        const p = Math.min((now-t0)/dur,1);
-        el.textContent = Math.round(ease(p)*target).toLocaleString();
-        if (p<1) requestAnimationFrame(tick);
-        else el.textContent = target.toLocaleString()+(target>=1000||target>10?'+':'');
+        if (!start) start = now;
+        const p = Math.min((now - start) / dur, 1);
+        el.textContent = Math.round(ease(p) * target).toLocaleString();
+        if (p < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toLocaleString() + (target >= 1000 || target > 10 ? "+" : "");
     };
     requestAnimationFrame(tick);
 }
 const co = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { runCounter(e.target); co.unobserve(e.target); }});
-}, { threshold: 0.4 });
+}, { threshold: 0.1 });
 document.querySelectorAll('.counter-num').forEach(el => co.observe(el));
 // Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(a => {
