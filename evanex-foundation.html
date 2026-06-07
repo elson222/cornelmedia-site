@@ -107,16 +107,16 @@
   <!-- Slideshow background -->
   <div class="absolute inset-0 z-0">
     <div class="hero-slide active" id="slide-0">
-      <img src="assets/images/ef-ig-05.jpg" alt="Evanex Foundation community work" loading="eager">
+      <img src="assets/images/ef-ig-06.jpg" alt="Evanex Foundation outreach" loading="eager">
     </div>
     <div class="hero-slide" id="slide-1">
-      <img src="assets/images/ef-ig-16.jpg" alt="Evanex Foundation healthcare" loading="lazy">
+      <img src="assets/images/ef-ig-19.jpg" alt="Evanex Foundation hospital renovation" loading="lazy">
     </div>
     <div class="hero-slide" id="slide-2">
-      <img src="assets/images/ef-ig-06.jpg" alt="Evanex Foundation outreach" loading="lazy">
+      <img src="assets/images/ef-ig-21.jpg" alt="Evanex Foundation health screening" loading="lazy">
     </div>
     <div class="hero-slide" id="slide-3">
-      <img src="assets/images/ef-ig-15.jpg" alt="Evanex Foundation donation" loading="lazy">
+      <img src="assets/images/ef-ig-09.jpg" alt="Evanex Foundation medical donations" loading="lazy">
     </div>
     
     <!-- Base darkening overlay -->
@@ -550,11 +550,11 @@ function goToSlide(idx) {
 
 function nextSlide() { goToSlide(current + 1); }
 
-slideTimer = setInterval(nextSlide, 5000);
+slideTimer = setInterval(nextSlide, 3500);
 dots.forEach(d => d.addEventListener('click', () => {
   clearInterval(slideTimer);
   goToSlide(+d.dataset.idx);
-  slideTimer = setInterval(nextSlide, 5000);
+  slideTimer = setInterval(nextSlide, 3500);
 }));
 
 /* ---- COUNTER ANIMATION ---- */
