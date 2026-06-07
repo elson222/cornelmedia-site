@@ -1,637 +1,628 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-PLACEHOLDER');
-    </script>
-    <!-- JSON-LD Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "NGO",
-      "name": "Evanex Foundation",
-      "url": "https://evanexfoundation.com/evanex-foundation.html",
-      "description": "Empowering communities and transforming lives in Ghana's Western Region through healthcare, education, and welfare.",
-      "address": {
-        "@type": "PostalAddress",
-        "addressRegion": "Western Region",
-        "addressCountry": "GH"
-      }
-    }
-    </script>
-    <!-- Open Graph -->
-    <meta property="og:title" content="Evanex Foundation | Empowering Communities in Ghana" />
-    <meta property="og:description" content="Dedicated to enhancing healthcare infrastructure, education, and welfare across Ghana's Western Region." />
-    <meta property="og:image" content="https://evanexfoundation.com/evanex-logo.jpg" />
-    <meta property="og:url" content="https://evanexfoundation.com/evanex-foundation.html" />
-    <meta property="og:type" content="website" />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Evanex Foundation | Empowering Communities in Ghana" />
-    <meta name="twitter:description" content="Dedicated to enhancing healthcare infrastructure, education, and welfare across Ghana's Western Region." />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Evanex Foundation  Empowering communities and transforming lives in Ghana's Western Region through healthcare, education, and community welfare programs.">
-    <title>Evanex Foundation | Empowering Communities in Ghana</title>
-    <link rel="icon" type="image/png" href="evanex-logo.jpg">
-    <!-- Same stack as parent site -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; overflow-x: hidden; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Evanex Foundation — Empowering communities and transforming lives in Ghana's Western Region through healthcare, education, and community welfare programs.">
+  <title>Evanex Foundation | Empowering Communities in Ghana</title>
+  <link rel="icon" type="image/jpeg" href="evanex-logo.jpg">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Evanex Foundation | Empowering Communities in Ghana">
+  <meta property="og:description" content="Dedicated to enhancing healthcare infrastructure, education, and welfare across Ghana's Western Region.">
+  <meta property="og:image" content="assets/images/ef-ig-05.jpg">
+  <meta property="og:type" content="website">
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"NGO","name":"Evanex Foundation","description":"Empowering communities and transforming lives in Ghana's Western Region.","address":{"@type":"PostalAddress","addressRegion":"Western Region","addressCountry":"GH"}}
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root { --orange:#F26A22; --navy:#1B2A5E; --purple:#8B4DB8; }
+    body { font-family:'Inter',sans-serif; background:#000; color:#fff; overflow-x:hidden; padding-bottom:72px; }
+    @media(min-width:768px){ body{ padding-bottom:0; } }
 
-        /*  Nav (inherited from parent)  */
-        .pill-nav {
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-        }
-        .nav-item { transition: all 0.2s ease; }
-        .nav-item:hover { color: #fff !important; }
-        .nav-active { background: #fff; color: #000 !important; box-shadow: 0 2px 10px rgba(255,255,255,0.2); border-radius: 9999px; }
-        .glass-btn { background: rgba(255,255,255,0.10); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); transition: all .2s ease; }
-        .glass-btn:hover { background: rgba(255,255,255,0.18); }
+    /* NAV */
+    .pill-nav { background:rgba(255,255,255,.08); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); box-shadow:0 10px 30px -10px rgba(0,0,0,.5); }
+    .nav-item { transition:all .2s; }
+    .nav-item:hover { color:#fff !important; }
+    .nav-active { background:#fff; color:#000 !important; box-shadow:0 2px 10px rgba(255,255,255,.2); border-radius:9999px; }
 
-        /* Shared design tokens */
-        .ef-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); transition: all .25s ease; }
-        .ef-card:hover { border-color: rgba(242,106,34,.35); transform: translateY(-6px); box-shadow: 0 24px 56px rgba(0,0,0,.5); }
-        .ef-img { transition: transform .55s ease; }
-        .ef-card:hover .ef-img { transform: scale(1.06); }
-        .ef-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: #F26A22; }
-        .ef-title { font-family: 'Sora', sans-serif; font-weight: 900; color: #fff; }
-        .grad-text { background: linear-gradient(120deg, #F26A22, #c084fc); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    /* BUTTONS */
+    .btn-orange { background:linear-gradient(135deg,#F26A22,#d4561a); box-shadow:0 8px 28px rgba(242,106,34,.4); transition:all .22s; }
+    .btn-orange:hover { transform:translateY(-2px); box-shadow:0 14px 40px rgba(242,106,34,.55); filter:brightness(1.07); }
+    .glass-btn { background:rgba(255,255,255,.10); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.15); transition:all .2s; }
+    .glass-btn:hover { background:rgba(255,255,255,.18); }
 
-        /*  Brand tokens  */
-        :root {
-            --orange: #F26A22;
-            --navy:   #1B2A5E;
-            --purple: #8B4DB8;
-        }
+    /* CARDS */
+    .ef-card { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.07); transition:all .25s; }
+    .ef-card:hover { border-color:rgba(242,106,34,.35); transform:translateY(-6px); box-shadow:0 24px 56px rgba(0,0,0,.5); }
+    .ef-img { transition:transform .55s ease; }
+    .ef-card:hover .ef-img { transform:scale(1.06); }
 
-        
+    /* TYPOGRAPHY */
+    .ef-label { font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#F26A22; }
+    .ef-title { font-family:'Sora',sans-serif; font-weight:900; color:#fff; }
+    .grad-text { background:linear-gradient(120deg,#F26A22,#c084fc); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
-        /*  Animated counter  */
-        .counter-num {
-            font-family: 'Sora', sans-serif;
-            background: linear-gradient(120deg, #F26A22, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+    /* COUNTER */
+    .counter-num { font-family:'Sora',sans-serif; background:linear-gradient(120deg,#F26A22,#c084fc); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 
-        /*  Glowing orange CTA  */
-        .btn-orange {
-            background: linear-gradient(135deg, #F26A22, #d4561a);
-            box-shadow: 0 8px 28px rgba(242,106,34,.4);
-            transition: all .22s ease;
-        }
-        .btn-orange:hover { transform: translateY(-2px); box-shadow: 0 14px 40px rgba(242,106,34,.55); filter: brightness(1.07); }
+    /* REVEAL ANIMATIONS */
+    .reveal { opacity:0; transform:translateY(28px); transition:opacity .65s ease, transform .65s ease; }
+    .reveal.shown { opacity:1; transform:translateY(0); }
+    .reveal.d1 { transition-delay:.12s; }
+    .reveal.d2 { transition-delay:.24s; }
+    .reveal.d3 { transition-delay:.36s; }
+    .reveal.d4 { transition-delay:.48s; }
 
-        
+    /* HERO SLIDESHOW */
+    .hero-slide { position:absolute; inset:0; opacity:0; transition:opacity 1.2s ease; }
+    .hero-slide.active { opacity:1; }
+    .hero-slide img { width:100%; height:100%; object-fit:cover; object-position:center; }
 
-        /*  Scroll animation  */
-        .reveal { opacity: 0; transform: translateY(28px); transition: opacity .65s ease, transform .65s ease; }
-        .reveal.shown { opacity: 1; transform: translateY(0); }
-        .reveal.delay-1 { transition-delay: .12s; }
-        .reveal.delay-2 { transition-delay: .24s; }
-        .reveal.delay-3 { transition-delay: .36s; }
+    /* PULSE DOT */
+    @keyframes pulse-ring { 0%{transform:scale(1);opacity:1} 100%{transform:scale(2.4);opacity:0} }
+    .pulse { animation:pulse-ring 2s ease infinite; }
 
-        /*  Pulse dot  */
-        @keyframes pulse-ring {
-            0%   { transform: scale(1);   opacity: 1; }
-            100% { transform: scale(2.4); opacity: 0; }
-        }
-        .pulse { animation: pulse-ring 2s ease infinite; }
+    /* FADE UP KEYFRAME */
+    @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
 
-        /*  Tilt on hover (desktop)  */
-        .tilt { transform-style: preserve-3d; }
+    /* FORM */
+    .ef-input { background:rgba(255,255,255,.06); border:1.5px solid rgba(255,255,255,.10); border-radius:.75rem; color:#fff; font-family:'Inter',sans-serif; transition:border-color .2s, box-shadow .2s; }
+    .ef-input::placeholder { color:rgba(255,255,255,.28); }
+    .ef-input:focus { outline:none; border-color:#F26A22; box-shadow:0 0 0 3px rgba(242,106,34,.2); }
 
-        /*  Form inputs  */
-        .ef-input {
-            background: rgba(255,255,255,.06);
-            border: 1.5px solid rgba(255,255,255,.1);
-            border-radius: .75rem;
-            color: #fff;
-            font-family: 'Inter', sans-serif;
-            transition: border-color .2s, box-shadow .2s;
-        }
-        .ef-input::placeholder { color: rgba(255,255,255,.28); }
-        .ef-input:focus { outline: none; border-color: #F26A22; box-shadow: 0 0 0 3px rgba(242,106,34,.2); }
-
-        /*  Back link  */
-        .back-link { transition: all .2s; }
-        .back-link:hover { gap: .65rem; }
-
-        /* Mobile nav padding */
-        body { padding-bottom: 72px; }
-        @media(min-width:768px) { body { padding-bottom: 0; } }
-    </style>
+    /* SCROLLBAR */
+    ::-webkit-scrollbar { width:5px; }
+    ::-webkit-scrollbar-track { background:#000; }
+    ::-webkit-scrollbar-thumb { background:#F26A22; border-radius:9999px; }
+  </style>
 </head>
-<body class="bg-black antialiased min-h-screen overflow-x-hidden">
+<body class="bg-black antialiased">
 
-<!-- 
-     FLOATING PILL NAV (desktop)
- -->
-<nav class="hidden md:flex fixed top-8 left-1/2 -translate-x-1/2 z-50 items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
-    <a href="evanex-foundation.html" class="nav-active flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
-        <i class="fas fa-hands-helping"></i> Overview
-    </a>
-    <a href="evanex-about.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-        <i class="fas fa-info-circle"></i> About
-    </a>
-    <a href="evanex-projects.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-        <i class="fas fa-project-diagram"></i> Projects
-    </a>
-    <a href="evanex-gallery.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-        <i class="fas fa-images"></i> Gallery
-    </a>
-    <a href="evanex-socials.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-        <i class="fas fa-share-alt"></i> Socials
-    </a>
+<!-- ===================== DESKTOP NAV ===================== -->
+<nav class="hidden md:flex mx-auto mt-8 w-fit items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
+  <a href="evanex-foundation.html" class="nav-active flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
+    <i class="fas fa-hands-helping"></i> Overview
+  </a>
+  <a href="evanex-about.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+    <i class="fas fa-info-circle"></i> About
+  </a>
+  <a href="evanex-projects.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+    <i class="fas fa-project-diagram"></i> Projects
+  </a>
+  <a href="evanex-gallery.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+    <i class="fas fa-images"></i> Gallery
+  </a>
+  <a href="evanex-socials.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
+    <i class="fas fa-share-alt"></i> Socials
+  </a>
 </nav>
 
-<!-- 
-     HERO SECTION
- -->
-<section class="relative w-full min-h-[70vh] flex flex-col items-center justify-center overflow-hidden bg-black pt-28 pb-20">
+<!-- ===================== HERO ===================== -->
+<section class="relative w-full min-h-screen flex flex-col overflow-hidden bg-black -mt-1">
 
-    <!-- Background glow -->
-    <div class="absolute inset-0 z-0" style="background:radial-gradient(ellipse 80% 60% at 50% 0%, rgba(242,106,34,.12) 0%, rgba(139,77,184,.08) 50%, transparent 100%)"></div>
-    <!-- Grid overlay -->
-    <div class="absolute inset-0 z-0 opacity-[0.03]" style="background-image:linear-gradient(rgba(255,255,255,.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.5) 1px,transparent 1px);background-size:40px 40px"></div>
+  <!-- Slideshow background -->
+  <div class="absolute inset-0 z-0">
+    <div class="hero-slide active" id="slide-0">
+      <img src="assets/images/ef-ig-05.jpg" alt="Evanex Foundation community work" loading="eager">
+    </div>
+    <div class="hero-slide" id="slide-1">
+      <img src="assets/images/ef-ig-16.jpg" alt="Evanex Foundation healthcare" loading="lazy">
+    </div>
+    <div class="hero-slide" id="slide-2">
+      <img src="assets/images/ef-ig-06.jpg" alt="Evanex Foundation outreach" loading="lazy">
+    </div>
+    <div class="hero-slide" id="slide-3">
+      <img src="assets/images/ef-ig-15.jpg" alt="Evanex Foundation donation" loading="lazy">
+    </div>
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-black/60"></div>
+    <!-- Orange gradient at bottom -->
+    <div class="absolute inset-0" style="background:linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 40%, rgba(0,0,0,0.85) 100%)"></div>
+  </div>
 
-    <!-- Content -->
-    <div class="relative z-10 text-center px-6 max-w-4xl mx-auto mt-20 md:mt-28">
+  <!-- Hero content -->
+  <div class="relative z-10 flex flex-col items-center justify-center flex-1 text-center px-6 pt-16 pb-8 max-w-5xl mx-auto w-full">
 
-        <!-- Live badge -->
-        <div class="inline-flex items-center gap-2.5 mb-6 px-4 py-2 rounded-full border border-white/15 bg-white/[0.07] backdrop-blur-md text-[11px] font-bold tracking-[.1em] uppercase text-white/80">
-            <span class="relative w-2 h-2 flex-shrink-0">
-                <span class="absolute inset-0 rounded-full bg-[#F26A22] pulse"></span>
-                <span class="absolute inset-0 rounded-full bg-[#F26A22]"></span>
-            </span>
-            NGO  Western Region, Ghana
-        </div>
-
-        <!-- Headline -->
-        <h1 class="font-['Sora',sans-serif] font-black text-4xl md:text-6xl lg:text-7xl text-white leading-[1.06] tracking-tight mb-6 drop-shadow-2xl animate-in"
-            style="animation: fadeUp .8s ease both">
-            Empowering<br>
-            <span style="background:linear-gradient(120deg,#F26A22,#c084fc);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">
-                Communities,
-            </span><br>
-            Transforming Lives.
-        </h1>
-
-        <p class="text-white/65 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-10"
-           style="animation:fadeUp .8s .15s ease both;opacity:0;animation-fill-mode:both">
-            Dedicated to enhancing healthcare infrastructure, education, and welfare
-            across Ghana's Western Region  one community at a time.
-        </p>
-
-        <!-- CTAs -->
-        <div class="flex flex-wrap items-center justify-center gap-4"
-             style="animation:fadeUp .8s .28s ease both;opacity:0;animation-fill-mode:both">
-            <a href="#projects" class="btn-orange text-white font-bold px-8 py-3.5 rounded-full text-[14px] flex items-center gap-2.5">
-                <i class="fas fa-project-diagram"></i> Our Projects
-            </a>
-            <a href="#contact" class="glass-btn text-white font-bold px-8 py-3.5 rounded-full text-[14px] border border-white/25 flex items-center gap-2.5 transition">
-                <i class="fas fa-hands-helping"></i> Get Involved
-            </a>
-        </div>
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2.5 mb-6 px-4 py-2 rounded-full border border-white/20 bg-black/40 backdrop-blur-md text-[11px] font-bold tracking-[.1em] uppercase text-white/80"
+         style="animation:fadeUp .7s ease both">
+      <span class="relative w-2 h-2 flex-shrink-0">
+        <span class="absolute inset-0 rounded-full bg-[#F26A22] pulse"></span>
+        <span class="absolute inset-0 rounded-full bg-[#F26A22]"></span>
+      </span>
+      NGO &bull; Western Region, Ghana
     </div>
 
-    <!-- Scroll cue -->
-    <div class="mt-12 mb-6 hidden md:flex justify-center w-full">
-        <button onclick="document.getElementById('impact').scrollIntoView({behavior:'smooth'})"
-                class="glass-btn w-10 h-10 rounded-full flex items-center justify-center border border-white/20 hover:bg-white/20 transition">
-            <i class="fas fa-chevron-down text-white text-sm"></i>
-        </button>
+    <!-- Headline -->
+    <h1 class="font-['Sora',sans-serif] font-black text-5xl md:text-7xl lg:text-8xl text-white leading-[1.04] tracking-tight mb-6 drop-shadow-2xl"
+        style="animation:fadeUp .8s .1s ease both;opacity:0;animation-fill-mode:both">
+      Empowering<br>
+      <span class="grad-text">Communities,</span><br>
+      Transforming Lives.
+    </h1>
+
+    <p class="text-white/70 text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-10"
+       style="animation:fadeUp .8s .22s ease both;opacity:0;animation-fill-mode:both">
+      Dedicated to enhancing healthcare infrastructure, education, and welfare
+      across Ghana's Western Region &mdash; one community at a time.
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-wrap items-center justify-center gap-4"
+         style="animation:fadeUp .8s .34s ease both;opacity:0;animation-fill-mode:both">
+      <a href="evanex-projects.html" class="btn-orange text-white font-bold px-9 py-4 rounded-full text-[15px] flex items-center gap-2.5">
+        <i class="fas fa-project-diagram"></i> Our Projects
+      </a>
+      <a href="#contact" class="glass-btn text-white font-bold px-9 py-4 rounded-full text-[15px] border border-white/25 flex items-center gap-2.5 transition">
+        <i class="fas fa-hands-helping"></i> Get Involved
+      </a>
     </div>
 
-    <!-- Stats bar -->
-    <div class="relative z-10 w-full mt-auto border-t border-white/10 bg-white/[0.06] backdrop-blur-xl">
-        <div class="max-w-5xl mx-auto px-6 py-5">
-            <div class="grid grid-cols-2 md:flex md:flex-row md:flex-nowrap items-center justify-center gap-y-6 md:gap-8 lg:gap-16">
-                <div class="text-center w-full">
-                    <div class="text-3xl font-black counter-num" data-target="12">0</div>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Projects</div>
-                </div>
-                <div class="hidden md:block w-px h-10 bg-white/15"></div>
-                <div class="text-center w-full">
-                    <div class="text-3xl font-black counter-num" data-target="5000">0</div>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Lives Impacted</div>
-                </div>
-                <div class="hidden md:block w-px h-10 bg-white/15"></div>
-                <div class="text-center w-full">
-                    <div class="text-3xl font-black counter-num" data-target="8">0</div>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Communities</div>
-                </div>
-                <div class="hidden md:block w-px h-10 bg-white/15"></div>
-                <div class="text-center w-full">
-                    <div class="text-3xl font-black counter-num" data-target="3">0</div>
-                    <div class="text-[10px] font-bold uppercase tracking-widest text-white/45 mt-1">Hospitals</div>
-                </div>
-            </div>
-        </div>
+    <!-- Slideshow dots -->
+    <div class="flex gap-2 mt-10" id="slide-dots" style="animation:fadeUp .8s .5s ease both;opacity:0;animation-fill-mode:both">
+      <button class="slide-dot w-6 h-1.5 rounded-full bg-white transition-all" data-idx="0"></button>
+      <button class="slide-dot w-1.5 h-1.5 rounded-full bg-white/35 transition-all" data-idx="1"></button>
+      <button class="slide-dot w-1.5 h-1.5 rounded-full bg-white/35 transition-all" data-idx="2"></button>
+      <button class="slide-dot w-1.5 h-1.5 rounded-full bg-white/35 transition-all" data-idx="3"></button>
     </div>
+  </div>
+
+  <!-- Stats bar -->
+  <div class="relative z-10 w-full border-t border-white/15 bg-black/70 backdrop-blur-xl">
+    <div class="max-w-4xl mx-auto px-6 py-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-0">
+
+        <div class="text-center md:border-r md:border-white/15 md:px-6">
+          <div class="text-4xl md:text-5xl font-black counter-num" id="cnt-projects" data-target="12">0</div>
+          <div class="text-[11px] font-bold uppercase tracking-widest text-white/50 mt-1.5">Projects</div>
+        </div>
+
+        <div class="text-center md:border-r md:border-white/15 md:px-6">
+          <div class="text-4xl md:text-5xl font-black counter-num" id="cnt-lives" data-target="5000">0</div>
+          <div class="text-[11px] font-bold uppercase tracking-widest text-white/50 mt-1.5">Lives Impacted</div>
+        </div>
+
+        <div class="text-center md:border-r md:border-white/15 md:px-6">
+          <div class="text-4xl md:text-5xl font-black counter-num" id="cnt-communities" data-target="8">0</div>
+          <div class="text-[11px] font-bold uppercase tracking-widest text-white/50 mt-1.5">Communities</div>
+        </div>
+
+        <div class="text-center md:px-6">
+          <div class="text-4xl md:text-5xl font-black counter-num" id="cnt-hospitals" data-target="3">0</div>
+          <div class="text-[11px] font-bold uppercase tracking-widest text-white/50 mt-1.5">Hospitals Supported</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 
-     IMPACT METRICS
- -->
+<!-- ===================== IMPACT METRICS ===================== -->
 <section id="impact" class="py-24 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
-    <div class="max-w-6xl mx-auto">
-        <!-- Section header -->
-        <div class="text-center mb-16 reveal">
-            <p class="text-[11px] font-bold uppercase tracking-[.25em] text-[#F26A22] mb-3">Making a Difference</p>
-            <h2 class="font-['Sora',sans-serif] font-black text-3xl md:text-5xl text-white tracking-tight">Measurable Impact</h2>
-            <div class="w-16 h-px bg-white/20 mx-auto mt-5"></div>
-        </div>
-
-        <!-- Metric cards -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="reveal delay-1 ef-card rounded-2xl p-6 text-center bg-zinc-950">
-                <div class="text-4xl mb-3" style="color:#F26A22"><i class="fas fa-hospital-alt"></i></div>
-                <div class="text-3xl md:text-4xl font-black counter-num" data-target="3">0</div>
-                <div class="text-white font-bold mt-2 text-sm">Hospitals Upgraded</div>
-                <p class="text-white/35 text-[11px] mt-1 leading-snug">Apinto, Tarkwa Municipal, Mile 8 Clinic</p>
-            </div>
-            <div class="reveal delay-2 ef-card rounded-2xl p-6 text-center bg-zinc-950">
-                <div class="text-4xl mb-3" style="color:#8B4DB8"><i class="fas fa-pills"></i></div>
-                <div class="text-3xl md:text-4xl font-black counter-num" data-target="500">0</div>
-                <div class="text-white font-bold mt-2 text-sm">Equipment Donated</div>
-                <p class="text-white/35 text-[11px] mt-1 leading-snug">Medical devices & supplies distributed</p>
-            </div>
-            <div class="reveal delay-3 ef-card rounded-2xl p-6 text-center bg-zinc-950">
-                <div class="text-4xl mb-3" style="color:#F26A22"><i class="fas fa-users"></i></div>
-                <div class="text-3xl md:text-4xl font-black counter-num" data-target="5000">0</div>
-                <div class="text-white font-bold mt-2 text-sm">Lives Touched</div>
-                <p class="text-white/35 text-[11px] mt-1 leading-snug">Across Tarkwa-Nsuaem & Agona Nkwanta</p>
-            </div>
-            <div class="reveal delay-3 ef-card rounded-2xl p-6 text-center bg-zinc-950" style="transition-delay:.48s">
-                <div class="text-4xl mb-3" style="color:#8B4DB8"><i class="fas fa-map-marked-alt"></i></div>
-                <div class="text-3xl md:text-4xl font-black counter-num" data-target="8">0</div>
-                <div class="text-white font-bold mt-2 text-sm">Communities Served</div>
-                <p class="text-white/35 text-[11px] mt-1 leading-snug">Rural & peri-urban reach across the region</p>
-            </div>
-        </div>
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="ef-label mb-3"><i class="fas fa-chart-line mr-2"></i>Making a Difference</p>
+      <h2 class="ef-title text-3xl md:text-5xl tracking-tight">Measurable <span class="grad-text">Impact</span></h2>
+      <div class="w-16 h-px bg-white/20 mx-auto mt-5"></div>
     </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="reveal d1 ef-card rounded-3xl overflow-hidden bg-zinc-950">
+        <div class="relative h-56 overflow-hidden">
+          <img src="assets/images/ef-ig-01.jpg" alt="Hospital support"
+               class="ef-img w-full h-full object-cover"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,#1B2A5E,#8B4DB8)';this.style.display='none'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide text-white" style="background:#F26A22">Healthcare</span>
+        </div>
+        <div class="p-6">
+          <p class="text-[#F26A22] text-[11px] font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5">
+            <i class="fas fa-map-marker-alt text-[9px]"></i> Tarkwa-Nsuaem
+          </p>
+          <h3 class="ef-title text-lg leading-snug mb-3">Apinto Government Hospital &mdash; Children's Ward</h3>
+          <p class="text-white/45 text-[13px] leading-relaxed mb-4">Renovation and complete medical equipment supply for the paediatric unit serving thousands of children across the municipality.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-[#F26A22] border border-[#F26A22]/30">Infrastructure</span>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-[#F26A22] border border-[#F26A22]/30">Paediatrics</span>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-white/50 border border-white/20">Ongoing</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="reveal d2 ef-card rounded-3xl overflow-hidden bg-zinc-950">
+        <div class="relative h-56 overflow-hidden">
+          <img src="assets/images/ef-ig-09.jpg" alt="Medical donations"
+               class="ef-img w-full h-full object-cover"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,#8B4DB8,#1B2A5E)';this.style.display='none'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide text-white" style="background:#8B4DB8">Donations</span>
+        </div>
+        <div class="p-6">
+          <p class="text-[#F26A22] text-[11px] font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5">
+            <i class="fas fa-map-marker-alt text-[9px]"></i> Tarkwa Municipal
+          </p>
+          <h3 class="ef-title text-lg leading-snug mb-3">Tarkwa Municipal Hospital &mdash; Medical Supplies</h3>
+          <p class="text-white/45 text-[13px] leading-relaxed mb-4">Mass donation of pharmaceuticals, surgical instruments, and diagnostic equipment to improve patient care and reduce costs.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-[#8B4DB8] border border-[#8B4DB8]/30">Medical Supply</span>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-white/50 border border-white/20">Completed</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="reveal d3 ef-card rounded-3xl overflow-hidden bg-zinc-950">
+        <div class="relative h-56 overflow-hidden">
+          <img src="assets/images/ef-ig-14.jpg" alt="Community health outreach"
+               class="ef-img w-full h-full object-cover"
+               onerror="this.parentElement.style.background='linear-gradient(135deg,#1B2A5E,#F26A22)';this.style.display='none'">
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide text-white" style="background:#1B2A5E">Community</span>
+        </div>
+        <div class="p-6">
+          <p class="text-[#F26A22] text-[11px] font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5">
+            <i class="fas fa-map-marker-alt text-[9px]"></i> Agona Nkwanta
+          </p>
+          <h3 class="ef-title text-lg leading-snug mb-3">Mile 8 Rural Clinic &mdash; Community Health Outreach</h3>
+          <p class="text-white/45 text-[13px] leading-relaxed mb-4">Free health screenings, maternal care support, and basic clinic upgrades for underserved rural households along the Mile 8 corridor.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-white/50 border border-white/20">Rural Health</span>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-white/50 border border-white/20">Maternal Care</span>
+            <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-white/50 border border-white/20">Active</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center mt-10 reveal d4">
+      <a href="evanex-projects.html" class="btn-orange text-white font-bold px-8 py-3.5 rounded-full text-[14px] inline-flex items-center gap-2.5">
+        <i class="fas fa-project-diagram"></i> View All Projects
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- 
-     PROJECTS
- -->
-<section id="projects" class="py-24 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
-    <div class="max-w-6xl mx-auto">
-        <div class="flex justify-between items-end mb-12 reveal">
-            <div>
-                <p class="text-[11px] font-bold uppercase tracking-[.25em] text-[#F26A22] mb-2">On the Ground</p>
-                <h2 class="font-['Sora',sans-serif] font-black text-3xl md:text-5xl text-white tracking-tight">Active Projects</h2>
-            </div>
-        </div>
-
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-
-            <!-- Project 1 -->
-            <div class="reveal delay-1 ef-card rounded-2xl overflow-hidden bg-zinc-950 tilt">
-                <div class="relative h-52 overflow-hidden">
-                    <img src="ef-hospital.png" alt="Apinto Government Hospital  Children's Ward"
-                         class="ef-img w-full h-full object-cover"
-                         onerror="this.src='https://images.unsplash.com/photo-1551076805-e1869033e561?w=800&q=70'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide text-white" style="background:#F26A22">Healthcare</span>
-                </div>
-                <div class="p-5">
-                    <p class="text-[#F26A22] text-[11px] font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5">
-                        <i class="fas fa-map-marker-alt text-[9px]"></i> Tarkwa-Nsuaem
-                    </p>
-                    <h3 class="font-['Sora',sans-serif] font-black text-white text-lg leading-snug mb-3">Apinto Government Hospital  Children's Ward</h3>
-                    <p class="text-white/45 text-[13px] leading-relaxed mb-4">Renovation and complete medical equipment supply for the paediatric unit serving thousands of children across the municipality.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-[#F26A22] border border-[#F26A22]/30 bg-[#F26A22]/08">Infrastructure</span>
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-[#F26A22] border border-[#F26A22]/30 bg-[#F26A22]/08">Paediatrics</span>
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-[#F26A22] border border-[#F26A22]/30 bg-[#F26A22]/08">Ongoing</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="reveal delay-2 ef-card rounded-2xl overflow-hidden bg-zinc-950 tilt">
-                <div class="relative h-52 overflow-hidden">
-                    <img src="ef-donations.png" alt="Tarkwa Municipal Hospital  Medical Donations"
-                         class="ef-img w-full h-full object-cover"
-                         onerror="this.src='https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&q=70'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide text-white" style="background:#8B4DB8">Donations</span>
-                </div>
-                <div class="p-5">
-                    <p class="text-[#F26A22] text-[11px] font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5">
-                        <i class="fas fa-map-marker-alt text-[9px]"></i> Tarkwa Municipal
-                    </p>
-                    <h3 class="font-['Sora',sans-serif] font-black text-white text-lg leading-snug mb-3">Tarkwa Municipal Hospital  Medical Supplies Drive</h3>
-                    <p class="text-white/45 text-[13px] leading-relaxed mb-4">Mass donation of pharmaceuticals, surgical instruments, and diagnostic equipment to improve patient care and reduce out-of-pocket costs.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-[#8B4DB8] border border-[#8B4DB8]/30">Medical Supply</span>
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-[#8B4DB8] border border-[#8B4DB8]/30">Pharmaceuticals</span>
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold text-[#8B4DB8] border border-[#8B4DB8]/30">Completed</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="reveal delay-3 ef-card rounded-2xl overflow-hidden bg-zinc-950 tilt">
-                <div class="relative h-52 overflow-hidden">
-                    <img src="ef-outreach.png" alt="Mile 8 Rural Clinic  Community Health"
-                         class="ef-img w-full h-full object-cover"
-                         onerror="this.src='https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=70'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
-                    <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wide text-white" style="background:#1B2A5E">Community</span>
-                </div>
-                <div class="p-5">
-                    <p class="text-[#F26A22] text-[11px] font-bold uppercase tracking-widest mb-2 flex items-center gap-1.5">
-                        <i class="fas fa-map-marker-alt text-[9px]"></i> Agona Nkwanta
-                    </p>
-                    <h3 class="font-['Sora',sans-serif] font-black text-white text-lg leading-snug mb-3">Mile 8 Rural Clinic  Community Health Outreach</h3>
-                    <p class="text-white/45 text-[13px] leading-relaxed mb-4">Free health screenings, maternal care support, and basic clinic upgrades for underserved rural households along the Mile 8 corridor.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border border-white/20 text-white/60">Rural Health</span>
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border border-white/20 text-white/60">Maternal Care</span>
-                        <span class="px-2.5 py-1 rounded-full text-[10px] font-bold border border-white/20 text-white/60">Active</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+<!-- ===================== PHOTO STRIP ===================== -->
+<section class="py-20 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <p class="ef-label mb-3"><i class="fas fa-images mr-2"></i>On The Ground</p>
+      <h2 class="ef-title text-3xl md:text-5xl tracking-tight">Our Work in <span class="grad-text">Pictures</span></h2>
     </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="reveal d1 rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-10.jpg" alt="Foundation work" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-pointer" onclick="window.location='evanex-gallery.html'">
+      </div>
+      <div class="reveal d2 rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-11.jpg" alt="Foundation work" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-pointer" onclick="window.location='evanex-gallery.html'">
+      </div>
+      <div class="reveal d3 rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-17.jpg" alt="Foundation work" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-pointer" onclick="window.location='evanex-gallery.html'">
+      </div>
+      <div class="reveal d4 rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-18.jpg" alt="Foundation work" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-pointer" onclick="window.location='evanex-gallery.html'">
+      </div>
+      <div class="reveal d1 rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-02.jpg" alt="Foundation work" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-pointer" onclick="window.location='evanex-gallery.html'">
+      </div>
+      <div class="reveal d2 rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-04.jpg" alt="Foundation work" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-pointer" onclick="window.location='evanex-gallery.html'">
+      </div>
+      <div class="reveal d3 rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-07.jpg" alt="Foundation work" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-pointer" onclick="window.location='evanex-gallery.html'">
+      </div>
+      <div class="reveal d4 rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-08.jpg" alt="Foundation work" class="w-full h-full object-cover hover:scale-105 transition duration-500 cursor-pointer" onclick="window.location='evanex-gallery.html'">
+      </div>
+    </div>
+    <div class="text-center mt-8 reveal">
+      <a href="evanex-gallery.html" class="glass-btn text-white font-bold px-8 py-3.5 rounded-full text-[14px] inline-flex items-center gap-2.5 border border-white/20 hover:bg-white/15 transition">
+        <i class="fas fa-images"></i> View Full Gallery
+      </a>
+    </div>
+  </div>
 </section>
 
-<!-- 
-     ABOUT
- -->
+<!-- ===================== ABOUT ===================== -->
 <section id="about" class="py-24 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 
-        <!-- Text side -->
-        <div class="reveal">
-            <p class="text-[11px] font-bold uppercase tracking-[.25em] text-[#F26A22] mb-3">Who We Are</p>
-            <h2 class="font-['Sora',sans-serif] font-black text-3xl md:text-4xl text-white tracking-tight leading-tight mb-6">
-                A Grassroots Force<br>for Change in Ghana
-            </h2>
-            <p class="text-white/50 leading-relaxed mb-4">
-                The <strong class="text-white font-semibold">Evanex Foundation</strong> is a registered non-governmental organization operating in Ghana's Western Region. We believe that access to quality healthcare, education, and economic opportunity is a fundamental right  not a privilege.
-            </p>
-            <p class="text-white/50 leading-relaxed mb-8">
-                Through strategic partnerships with hospitals, local government units, and community leaders, we mobilize resources and expertise to deliver lasting change where it matters most.
-            </p>
-            <!-- Pillars -->
-            <div class="space-y-3">
-                <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/30 transition">
-                    <span class="text-2xl w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(242,106,34,.15);color:#F26A22"><i class="fas fa-hospital-alt text-lg"></i></span>
-                    <div>
-                        <div class="font-bold text-sm text-white">Healthcare Infrastructure</div>
-                        <div class="text-[12px] text-white/40">Hospital renovations & equipment donations</div>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/30 transition">
-                    <span class="text-2xl w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(139,77,184,.15);color:#8B4DB8"><i class="fas fa-book-open text-lg"></i></span>
-                    <div>
-                        <div class="font-bold text-sm text-white">Education & Skills</div>
-                        <div class="text-[12px] text-white/40">Scholarships, training & community learning</div>
-                    </div>
-                </div>
-                <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/30 transition">
-                    <span class="text-2xl w-10 h-10 rounded-xl flex items-center justify-center" style="background:rgba(27,42,94,.4);color:#a78bfa"><i class="fas fa-hands-helping text-lg"></i></span>
-                    <div>
-                        <div class="font-bold text-sm text-white">Community Welfare</div>
-                        <div class="text-[12px] text-white/40">Food relief, maternal care & social support</div>
-                    </div>
-                </div>
-            </div>
+    <div class="reveal">
+      <p class="ef-label mb-3">Who We Are</p>
+      <h2 class="ef-title text-3xl md:text-4xl tracking-tight leading-tight mb-6">
+        A Grassroots Force<br>for Change in Ghana
+      </h2>
+      <p class="text-white/50 leading-relaxed mb-4">
+        The <strong class="text-white font-semibold">Evanex Foundation</strong> is a registered non-governmental organization operating in Ghana's Western Region. We believe that access to quality healthcare, education, and economic opportunity is a fundamental right &mdash; not a privilege.
+      </p>
+      <p class="text-white/50 leading-relaxed mb-8">
+        Through strategic partnerships with hospitals, local government units, and community leaders, we mobilize resources and expertise to deliver lasting change where it matters most.
+      </p>
+      <div class="space-y-3">
+        <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/30 transition">
+          <span class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(242,106,34,.15);color:#F26A22"><i class="fas fa-hospital-alt text-lg"></i></span>
+          <div>
+            <div class="font-bold text-sm text-white">Healthcare Infrastructure</div>
+            <div class="text-[12px] text-white/40">Hospital renovations &amp; equipment donations</div>
+          </div>
         </div>
-
-        <!-- Logo / visual side -->
-        <div class="reveal delay-2 flex flex-col items-center gap-8">
-            <div class="w-full max-w-sm rounded-3xl border border-white/[0.08] bg-white/[0.04] p-10 flex items-center justify-center aspect-square relative overflow-hidden">
-                <!-- Glow -->
-                <div class="absolute inset-0 rounded-3xl" style="background:radial-gradient(circle at 50% 50%, rgba(242,106,34,.1) 0%, transparent 70%)"></div>
-                <img src="evanex-logo.jpg"
-                     alt="Evanex Foundation Logo"
-                     class="relative z-10 max-h-64 max-w-full object-contain"
-                     onerror="this.outerHTML='<div class=\'text-center\'><span class=\'text-6xl font-black\' style=\'color:#F26A22\'>E</span><div class=\'font-black text-white text-xl tracking-widest mt-2\'>EVANEX</div><div class=\'text-white/40 text-[11px] tracking-[.2em] mt-1\'>FOUNDATION</div></div>'">
-            </div>
-            <!-- Location badge -->
-            <div class="flex items-center gap-3 px-5 py-3 rounded-2xl border border-white/10 bg-white/[0.04] text-sm text-white/60 font-medium">
-                <i class="fas fa-map-marker-alt text-[#F26A22]"></i>
-                Western Region, Ghana &nbsp;p; Est. 2019
-            </div>
+        <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/30 transition">
+          <span class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(139,77,184,.15);color:#8B4DB8"><i class="fas fa-book-open text-lg"></i></span>
+          <div>
+            <div class="font-bold text-sm text-white">Education &amp; Skills</div>
+            <div class="text-[12px] text-white/40">Scholarships, training &amp; community learning</div>
+          </div>
         </div>
+        <div class="flex items-center gap-4 p-3.5 rounded-xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/30 transition">
+          <span class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style="background:rgba(27,42,94,.4);color:#a78bfa"><i class="fas fa-hands-helping text-lg"></i></span>
+          <div>
+            <div class="font-bold text-sm text-white">Community Welfare</div>
+            <div class="text-[12px] text-white/40">Food relief, maternal care &amp; social support</div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex gap-4">
+        <a href="evanex-about.html" class="btn-orange text-white font-bold px-6 py-3 rounded-full text-[13px] inline-flex items-center gap-2">
+          <i class="fas fa-info-circle"></i> Our Story
+        </a>
+        <a href="evanex-projects.html" class="glass-btn text-white font-bold px-6 py-3 rounded-full text-[13px] inline-flex items-center gap-2 border border-white/20">
+          <i class="fas fa-project-diagram"></i> All Projects
+        </a>
+      </div>
     </div>
+
+    <div class="reveal d2 grid grid-cols-2 gap-3">
+      <div class="rounded-2xl overflow-hidden aspect-square col-span-2 h-64">
+        <img src="assets/images/ef-ig-05.jpg" alt="Evanex Foundation team" class="w-full h-full object-cover">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-12.jpg" alt="Foundation work" class="w-full h-full object-cover">
+      </div>
+      <div class="rounded-2xl overflow-hidden aspect-square">
+        <img src="assets/images/ef-ig-13.jpg" alt="Foundation work" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 
-     CONTACT / GET INVOLVED
- -->
+<!-- ===================== CONTACT ===================== -->
 <section id="contact" class="py-24 px-6 md:px-20 xl:px-32 bg-black border-t border-white/[0.06]">
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
+  <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
 
-        <!-- Info side -->
-        <div class="reveal">
-            <p class="text-[11px] font-bold uppercase tracking-[.25em] text-[#F26A22] mb-3">Partner With Us</p>
-            <h2 class="font-['Sora',sans-serif] font-black text-3xl md:text-4xl text-white tracking-tight leading-tight mb-6">
-                Let's Build<br>Something Meaningful.
-            </h2>
-            <p class="text-white/45 leading-relaxed mb-8">
-                Whether you're a corporation, individual donor, or community volunteer  there's a place for you in our mission. Reach out and let's discuss how we can work together.
-            </p>
-            <!-- Contact cards -->
-            <div class="space-y-3">
-                <a href="tel:+233548932274" class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/40 hover:bg-white/[0.06] transition group">
-                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:rgba(242,106,34,.15)">
-                        <i class="fas fa-phone" style="color:#F26A22"></i>
-                    </div>
-                    <div>
-                        <div class="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-0.5">Phone</div>
-                        <div class="font-bold text-sm text-white group-hover:text-[#F26A22] transition">+233 54 893 2274</div>
-                    </div>
-                    <i class="fas fa-arrow-right ml-auto text-white/20 group-hover:text-[#F26A22] transition text-xs"></i>
-                </a>
-                <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
-                   class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-zinc-950 hover:border-pink-500/40 hover:bg-white/[0.06] transition group">
-                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:linear-gradient(135deg,rgba(131,58,180,.3),rgba(241,28,28,.2))">
-                        <i class="fab fa-instagram text-pink-400"></i>
-                    </div>
-                    <div>
-                        <div class="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-0.5">Instagram</div>
-                        <div class="font-bold text-sm text-white group-hover:text-pink-400 transition">@EvanexFoundation</div>
-                    </div>
-                    <i class="fas fa-arrow-right ml-auto text-white/20 group-hover:text-pink-400 transition text-xs"></i>
-                </a>
-                <div class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-zinc-950">
-                    <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:rgba(27,42,94,.4)">
-                        <i class="fas fa-map-marker-alt" style="color:#8B4DB8"></i>
-                    </div>
-                    <div>
-                        <div class="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-0.5">Location</div>
-                        <div class="font-bold text-sm text-white">Western Region, Ghana</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Instagram CTA -->
-            <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
-               class="mt-6 flex items-center justify-center gap-3 px-6 py-3.5 rounded-full font-bold text-sm text-white transition hover:opacity-90 hover:-translate-y-1"
-               style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);box-shadow:0 8px 24px rgba(131,58,180,.4)">
-                <i class="fab fa-instagram text-lg"></i> Follow @EvanexFoundation on Instagram
-            </a>
+    <div class="reveal">
+      <p class="ef-label mb-3">Partner With Us</p>
+      <h2 class="ef-title text-3xl md:text-4xl tracking-tight leading-tight mb-6">
+        Let's Build<br>Something Meaningful.
+      </h2>
+      <p class="text-white/45 leading-relaxed mb-8">
+        Whether you're a corporation, individual donor, or community volunteer &mdash; there's a place for you in our mission. Reach out and let's discuss how we can work together.
+      </p>
+      <div class="space-y-3">
+        <a href="tel:+233548932274" class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-zinc-950 hover:border-[#F26A22]/40 transition group">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:rgba(242,106,34,.15)">
+            <i class="fas fa-phone" style="color:#F26A22"></i>
+          </div>
+          <div>
+            <div class="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-0.5">Phone</div>
+            <div class="font-bold text-sm text-white group-hover:text-[#F26A22] transition">+233 54 893 2274</div>
+          </div>
+          <i class="fas fa-arrow-right ml-auto text-white/20 group-hover:text-[#F26A22] transition text-xs"></i>
+        </a>
+        <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+           class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-zinc-950 hover:border-pink-500/40 transition group">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:linear-gradient(135deg,rgba(131,58,180,.3),rgba(241,28,28,.2))">
+            <i class="fab fa-instagram text-pink-400"></i>
+          </div>
+          <div>
+            <div class="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-0.5">Instagram</div>
+            <div class="font-bold text-sm text-white group-hover:text-pink-400 transition">@EvanexFoundation</div>
+          </div>
+          <i class="fas fa-arrow-right ml-auto text-white/20 group-hover:text-pink-400 transition text-xs"></i>
+        </a>
+        <div class="flex items-center gap-4 p-4 rounded-2xl border border-white/[0.07] bg-zinc-950">
+          <div class="w-10 h-10 rounded-xl flex items-center justify-center text-lg shrink-0" style="background:rgba(27,42,94,.4)">
+            <i class="fas fa-map-marker-alt" style="color:#8B4DB8"></i>
+          </div>
+          <div>
+            <div class="text-[10px] font-bold uppercase tracking-widest text-white/35 mb-0.5">Location</div>
+            <div class="font-bold text-sm text-white">Western Region, Ghana</div>
+          </div>
         </div>
-
-        <!-- Form side -->
-        <div class="reveal delay-2">
-            <div class="rounded-3xl border border-white/[0.08] bg-zinc-950 p-7 backdrop-blur-sm">
-                <h3 class="font-['Sora',sans-serif] font-black text-xl text-white mb-6">Send Us a Message</h3>
-                <form id="ef-form" novalidate>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                        <div>
-                            <label class="block text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2">Name <span class="text-[#F26A22]">*</span></label>
-                            <input id="ef-name" type="text" placeholder="Your name" class="ef-input w-full px-4 py-3 text-sm">
-                        </div>
-                        <div>
-                            <label class="block text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2">Email <span class="text-[#F26A22]">*</span></label>
-                            <input id="ef-email" type="email" placeholder="your@email.com" class="ef-input w-full px-4 py-3 text-sm">
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <label class="block text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2">How Can You Help?</label>
-                        <select id="ef-type" class="ef-input w-full px-4 py-3 text-sm" style="background:rgba(255,255,255,.06)">
-                            <option value="" style="background:#111">Select an option</option>
-                            <option value="donation" style="background:#111">Financial Donation</option>
-                            <option value="equipment" style="background:#111">Equipment / Supplies</option>
-                            <option value="volunteer" style="background:#111">Volunteer</option>
-                            <option value="partnership" style="background:#111">Corporate Partnership</option>
-                            <option value="other" style="background:#111">Other</option>
-                        </select>
-                    </div>
-                    <div class="mb-6">
-                        <label class="block text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2">Message <span class="text-[#F26A22]">*</span></label>
-                        <textarea id="ef-message" rows="4" placeholder="Tell us about yourself and how you'd like to get involved" class="ef-input w-full px-4 py-3 text-sm resize-none"></textarea>
-                    </div>
-                    <button id="ef-submit" type="submit"
-                            class="btn-orange w-full text-white font-bold py-4 rounded-2xl text-[14px] flex items-center justify-center gap-3">
-                        <span id="ef-btn-txt">Send Message</span>
-                        <i id="ef-btn-ico" class="fas fa-paper-plane"></i>
-                    </button>
-                    <div id="ef-ok" class="hidden mt-4 flex items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-semibold text-emerald-300 border border-emerald-500/30 bg-emerald-500/10">
-                        <i class="fas fa-check-circle text-emerald-400"></i>
-                        Thank you! We'll be in touch with you soon.
-                    </div>
-                </form>
-            </div>
-        </div>
+      </div>
+      <a href="https://www.instagram.com/EvanexFoundation" target="_blank" rel="noopener noreferrer"
+         class="mt-6 flex items-center justify-center gap-3 px-6 py-3.5 rounded-full font-bold text-sm text-white transition hover:opacity-90 hover:-translate-y-1"
+         style="background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);box-shadow:0 8px 24px rgba(131,58,180,.4)">
+        <i class="fab fa-instagram text-lg"></i> Follow @EvanexFoundation
+      </a>
     </div>
+
+    <div class="reveal d2">
+      <div class="rounded-3xl border border-white/[0.08] bg-zinc-950 p-7">
+        <h3 class="ef-title text-xl mb-6">Send Us a Message</h3>
+        <form id="ef-form" novalidate>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+            <div>
+              <label class="block text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2">Name <span style="color:#F26A22">*</span></label>
+              <input id="ef-name" type="text" placeholder="Your name" class="ef-input w-full px-4 py-3 text-sm">
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2">Email <span style="color:#F26A22">*</span></label>
+              <input id="ef-email" type="email" placeholder="your@email.com" class="ef-input w-full px-4 py-3 text-sm">
+            </div>
+          </div>
+          <div class="mb-4">
+            <label class="block text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2">How Can You Help?</label>
+            <select id="ef-type" class="ef-input w-full px-4 py-3 text-sm" style="background:rgba(255,255,255,.06)">
+              <option value="" style="background:#111">Select an option</option>
+              <option value="donation" style="background:#111">Financial Donation</option>
+              <option value="equipment" style="background:#111">Equipment / Supplies</option>
+              <option value="volunteer" style="background:#111">Volunteer</option>
+              <option value="partnership" style="background:#111">Corporate Partnership</option>
+              <option value="other" style="background:#111">Other</option>
+            </select>
+          </div>
+          <div class="mb-6">
+            <label class="block text-[11px] font-bold text-white/40 uppercase tracking-widest mb-2">Message <span style="color:#F26A22">*</span></label>
+            <textarea id="ef-message" rows="4" placeholder="Tell us about yourself and how you'd like to get involved" class="ef-input w-full px-4 py-3 text-sm resize-none"></textarea>
+          </div>
+          <button id="ef-submit" type="submit" class="btn-orange w-full text-white font-bold py-4 rounded-2xl text-[14px] flex items-center justify-center gap-3">
+            <span id="ef-btn-txt">Send Message</span>
+            <i id="ef-btn-ico" class="fas fa-paper-plane"></i>
+          </button>
+          <div id="ef-ok" class="hidden mt-4 items-center gap-3 px-4 py-3.5 rounded-xl text-sm font-semibold text-emerald-300 border border-emerald-500/30 bg-emerald-500/10">
+            <i class="fas fa-check-circle text-emerald-400"></i>
+            Thank you! We'll be in touch with you soon.
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
-<!-- 
-     FOOTER (matches parent site style)
- -->
+<!-- ===================== FOOTER ===================== -->
 <footer class="border-t border-white/[0.07] py-10 px-6 md:px-20 bg-black">
-    <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <div class="flex items-center gap-3">
-            <img src="evanex-logo.jpg" alt="Evanex Foundation" class="h-10 w-10 rounded-full object-cover">
-            <div>
-                <div class="font-bold text-sm text-white" style="font-family:'Sora',sans-serif;"><span style="color:#F26A22">Evanex</span> Foundation</div>
-                <div class="text-[11px] text-white/35">Western Region, Ghana</div>
-            </div>
-        </div>
-        <div class="flex flex-wrap gap-5 text-[13px] text-white/35 justify-center">
-            <a href="evanex-foundation.html" class="hover:text-white transition" style="color:#F26A22">Overview</a>
-            <a href="evanex-about.html" class="hover:text-white transition">About</a>
-            <a href="evanex-projects.html" class="hover:text-white transition">Projects</a>
-            <a href="evanex-gallery.html" class="hover:text-white transition">Gallery</a>
-            <a href="evanex-socials.html" class="hover:text-white transition">Socials</a>
-        </div>
-        <div class="text-[12px] text-white/25">&copy; <span id="ef-yr"></span> Evanex Foundation &middot; Ghana</div>
+  <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <div class="flex items-center gap-3">
+      <img src="evanex-logo.jpg" alt="Evanex Foundation" class="h-10 w-10 rounded-full object-cover">
+      <div>
+        <div class="font-bold text-sm text-white" style="font-family:'Sora',sans-serif;"><span style="color:#F26A22">Evanex</span> Foundation</div>
+        <div class="text-[11px] text-white/35">Western Region, Ghana</div>
+      </div>
     </div>
+    <div class="flex flex-wrap gap-5 text-[13px] text-white/35 justify-center">
+      <a href="evanex-foundation.html" class="hover:text-white transition" style="color:#F26A22">Overview</a>
+      <a href="evanex-about.html" class="hover:text-white transition">About</a>
+      <a href="evanex-projects.html" class="hover:text-white transition">Projects</a>
+      <a href="evanex-gallery.html" class="hover:text-white transition">Gallery</a>
+      <a href="evanex-socials.html" class="hover:text-white transition">Socials</a>
+    </div>
+    <div class="text-[12px] text-white/25">&copy; <span id="ef-yr"></span> Evanex Foundation &middot; Ghana</div>
+  </div>
 </footer>
 
-<!-- Mobile bottom nav -->
+<!-- MOBILE BOTTOM NAV -->
 <nav class="md:hidden fixed bottom-0 inset-x-0 z-50 flex justify-around items-center px-2 py-2 bg-black/90 backdrop-blur-xl border-t border-white/10">
-    <a href="evanex-about.html" class="text-white/50 flex flex-col items-center gap-[3px] px-2 py-1">
-        <i class="fas fa-info-circle text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">About</span>
-    </a>
-    <a href="evanex-projects.html" class="text-white/50 flex flex-col items-center gap-[3px] px-2 py-1">
-        <i class="fas fa-project-diagram text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">Projects</span>
-    </a>
-    <a href="evanex-foundation.html" class="text-white flex flex-col items-center gap-[3px] px-3 py-1 rounded-2xl -mt-5 shadow-lg" style="background:#F26A22">
-        <i class="fas fa-hands-helping text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">Home</span>
-    </a>
-    <a href="evanex-gallery.html" class="text-white/50 flex flex-col items-center gap-[3px] px-2 py-1">
-        <i class="fas fa-images text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">Gallery</span>
-    </a>
-    <a href="evanex-socials.html" class="text-white/50 flex flex-col items-center gap-[3px] px-2 py-1">
-        <i class="fas fa-share-alt text-xl"></i>
-        <span class="text-[9px] font-bold uppercase tracking-widest">Socials</span>
-    </a>
+  <a href="evanex-about.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
+    <i class="fas fa-info-circle text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">About</span>
+  </a>
+  <a href="evanex-projects.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
+    <i class="fas fa-project-diagram text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">Projects</span>
+  </a>
+  <a href="evanex-foundation.html" class="text-white flex flex-col items-center gap-[3px] px-3 py-1 rounded-2xl -mt-5 shadow-lg" style="background:#F26A22">
+    <i class="fas fa-hands-helping text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">Home</span>
+  </a>
+  <a href="evanex-gallery.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
+    <i class="fas fa-images text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">Gallery</span>
+  </a>
+  <a href="evanex-socials.html" class="flex flex-col items-center gap-[3px] px-2 py-1" style="color:rgba(255,255,255,0.5)">
+    <i class="fas fa-share-alt text-xl"></i>
+    <span class="text-[9px] font-bold uppercase tracking-widest">Socials</span>
+  </a>
 </nav>
 
-<!-- WhatsApp FAB -->
+<!-- WHATSAPP FAB -->
 <a href="https://wa.me/233548932274" target="_blank" rel="noopener noreferrer"
    class="fixed bottom-24 md:bottom-8 right-6 z-50 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-[0_0_25px_rgba(34,197,94,0.4)] hover:scale-110 transition hover:bg-green-400 border border-white/20">
-    <i class="fab fa-whatsapp"></i>
+  <i class="fab fa-whatsapp"></i>
 </a>
 
-<!--  SCRIPTS  -->
-<style>
-@keyframes fadeUp {
-  from { opacity:0; transform:translateY(22px); }
-  to   { opacity:1; transform:translateY(0); }
-}
-</style>
+<!-- ===================== SCRIPTS ===================== -->
 <script>
 'use strict';
 
 /* Year */
 document.getElementById('ef-yr').textContent = new Date().getFullYear();
 
-/*  Scroll-reveal  */
-const revealObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('shown'); revealObs.unobserve(e.target); } });
-}, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
-document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+/* ---- HERO SLIDESHOW ---- */
+const slides = document.querySelectorAll('.hero-slide');
+const dots   = document.querySelectorAll('.slide-dot');
+let current  = 0;
+let slideTimer = null;
 
-/*  Counters  */
+function goToSlide(idx) {
+  slides[current].classList.remove('active');
+  dots[current].style.width   = '6px';
+  dots[current].style.opacity = '0.35';
+  current = (idx + slides.length) % slides.length;
+  slides[current].classList.add('active');
+  dots[current].style.width   = '24px';
+  dots[current].style.opacity = '1';
+}
+
+function nextSlide() { goToSlide(current + 1); }
+
+slideTimer = setInterval(nextSlide, 5000);
+dots.forEach(d => d.addEventListener('click', () => {
+  clearInterval(slideTimer);
+  goToSlide(+d.dataset.idx);
+  slideTimer = setInterval(nextSlide, 5000);
+}));
+
+/* ---- COUNTER ANIMATION ---- */
 const ease = t => t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
-function runCounter(el) {
+
+function animateCounter(el) {
   if (el.dataset.done) return;
   el.dataset.done = '1';
   const target = +el.dataset.target;
-  const dur = target > 100 ? 2200 : 1200;
-  let start = null;
-  const tick = now => {
-    if (!start) start = now;
-    const p = Math.min((now - start) / dur, 1);
-    el.textContent = Math.round(ease(p) * target).toLocaleString();
-    if (p < 1) requestAnimationFrame(tick);
-    else el.textContent = target.toLocaleString() + (target >= 1000 ? '+' : target === 12 ? '' : '+');
-  };
+  const dur = target > 100 ? 2500 : 1400;
+  const startTime = performance.now();
+  function tick(now) {
+    const elapsed = now - startTime;
+    const p = Math.min(elapsed / dur, 1);
+    const val = Math.round(ease(p) * target);
+    el.textContent = val.toLocaleString();
+    if (p < 1) {
+      requestAnimationFrame(tick);
+    } else {
+      el.textContent = target.toLocaleString() + (target >= 1000 || target > 3 ? '+' : '');
+    }
+  }
   requestAnimationFrame(tick);
 }
-const cntObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { runCounter(e.target); cntObs.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.counter-num').forEach(el => cntObs.observe(el));
 
-/*  Smooth scroll for anchor links  */
+/* Hero stats — always visible on load, fire after 800ms delay for effect */
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => {
+    document.querySelectorAll('#cnt-projects, #cnt-lives, #cnt-communities, #cnt-hospitals')
+      .forEach(el => animateCounter(el));
+  }, 800);
+});
+
+/* Other section counters — fire when scrolled into view */
+const cntObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target);
+      cntObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.counter-num:not(#cnt-projects):not(#cnt-lives):not(#cnt-communities):not(#cnt-hospitals)')
+  .forEach(el => cntObs.observe(el));
+
+/* ---- SCROLL REVEAL ---- */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) { e.target.classList.add('shown'); revealObs.unobserve(e.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+/* ---- SMOOTH SCROLL ---- */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const t = document.querySelector(a.getAttribute('href'));
@@ -641,16 +632,16 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
   });
 });
 
-/*  Contact form  */
-const form    = document.getElementById('ef-form');
-const btnTxt  = document.getElementById('ef-btn-txt');
-const btnIco  = document.getElementById('ef-btn-ico');
-const submit  = document.getElementById('ef-submit');
-const ok      = document.getElementById('ef-ok');
+/* ---- CONTACT FORM ---- */
+const form   = document.getElementById('ef-form');
+const btnTxt = document.getElementById('ef-btn-txt');
+const btnIco = document.getElementById('ef-btn-ico');
+const submit = document.getElementById('ef-submit');
+const ok     = document.getElementById('ef-ok');
 
 function markErr(el, msg) {
   el.style.borderColor = '#f87171';
-  el.style.boxShadow = '0 0 0 3px rgba(248,113,113,.18)';
+  el.style.boxShadow   = '0 0 0 3px rgba(248,113,113,.18)';
   let e = el.nextElementSibling;
   if (!e || !e.classList.contains('ferr')) {
     e = document.createElement('span');
@@ -662,60 +653,38 @@ function markErr(el, msg) {
 }
 function clearErr(el) {
   el.style.borderColor = '';
-  el.style.boxShadow = '';
-  el.nextElementSibling?.classList.contains('ferr') && el.nextElementSibling.remove();
+  el.style.boxShadow   = '';
+  if (el.nextElementSibling?.classList.contains('ferr')) el.nextElementSibling.remove();
 }
-
 ['ef-name','ef-email','ef-message'].forEach(id => {
   document.getElementById(id)?.addEventListener('input', e => clearErr(e.target));
 });
 
 form.addEventListener('submit', async e => {
   e.preventDefault();
-  const name = document.getElementById('ef-name');
+  const name  = document.getElementById('ef-name');
   const email = document.getElementById('ef-email');
-  const msg = document.getElementById('ef-message');
+  const msg   = document.getElementById('ef-message');
   [name, email, msg].forEach(clearErr);
   let valid = true;
-  if (!name.value.trim()) { markErr(name, 'Please enter your name.'); valid = false; }
-  if (!email.value.trim()) { markErr(email, 'Please enter your email.'); valid = false; }
+  if (!name.value.trim())  { markErr(name,  'Please enter your name.');   valid = false; }
+  if (!email.value.trim()) { markErr(email, 'Please enter your email.');   valid = false; }
   else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) { markErr(email, 'Invalid email address.'); valid = false; }
-  if (!msg.value.trim()) { markErr(msg, 'Please write a message.'); valid = false; }
+  if (!msg.value.trim())   { markErr(msg,   'Please write a message.');    valid = false; }
   if (!valid) return;
-
-  submit.disabled = true;
-  btnTxt.textContent = 'Sending
-  btnIco.className = 'fas fa-spinner fa-spin';
+  submit.disabled    = true;
+  btnTxt.textContent = 'Sending...';
+  btnIco.className   = 'fas fa-spinner fa-spin';
   await new Promise(r => setTimeout(r, 1600));
-  submit.disabled = false;
+  submit.disabled    = false;
   btnTxt.textContent = 'Send Message';
-  btnIco.className = 'fas fa-paper-plane';
+  btnIco.className   = 'fas fa-paper-plane';
   form.reset();
   ok.classList.remove('hidden');
   ok.classList.add('flex');
-  ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  ok.scrollIntoView({ behavior:'smooth', block:'nearest' });
   setTimeout(() => { ok.classList.add('hidden'); ok.classList.remove('flex'); }, 7000);
 });
-
-/*  Card tilt (desktop fine pointer only)  */
-if (window.matchMedia('(pointer:fine)').matches) {
-  document.querySelectorAll('.tilt').forEach(card => {
-    card.addEventListener('mousemove', e => {
-      const r = card.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width  - .5;
-      const y = (e.clientY - r.top)  / r.height - .5;
-      card.style.transform = `perspective(700px) rotateY(${x*5}deg) rotateX(${-y*5}deg) translateY(-6px)`;
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-  });
-}
-
-console.log('%c Evanex Foundation  Empowering Communities, Transforming Lives.', 'color:#F26A22;font-weight:800;font-size:13px');
 </script>
 </body>
 </html>
-
-
-
