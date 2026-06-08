@@ -1,0 +1,60 @@
+{
+  "hero": {
+    "badge": "Digital Check-in Active",
+    "title": "Evanex Pharmacy, Laboratory & Scan Center",
+    "description": "Your trusted medical hub in Agona Nkwanta. We provide expert pharmaceutical consultation, high-accuracy diagnostic laboratory profiles, and professional ultrasound scans under one roof. Conveniently located opposite Ahantaman Rural Bank.",
+    "bgImage": "/images/hero/hero-image.jpg"
+  },
+  "ceo": {
+    "name": "Mr. Evans Ghartey",
+    "role": "CEO, Evanex Pharmacy & Foundation",
+    "quote": "At Evanex Pharmacy, Laboratory & Scan Center, our vision is built on trust and accessibility. We believe that residents of the Western Region deserve premium, reliable diagnostic assessments and pharmaceutical care without traveling long distances. Beyond providing top-tier clinical services, we are committed to making a tangible social impact—assisting local municipal hospitals, offering medical outreach, and supporting the health of our community. Thank you for making us your primary health choice.",
+    "image": "/images/team/ceo-evans-ghartey.jpg"
+  },
+  "services": {
+    "pharmacy": {
+      "title": "Community Pharmacy Wing",
+      "description": "Providing certified medications, professional counseling, and prescription updates. Located opposite Ahantaman Bank.",
+      "image": "/images/pharmacy/pharmacy-02.jpg"
+    },
+    "laboratory": {
+      "title": "Clinical Laboratory Wing",
+      "description": "Running standard diagnostic screens, biochemistry panels, hematology, and malaria profiling with fast turnaround times.",
+      "image": "/images/laboratory/lab-01.jpg"
+    },
+    "scanCentre": {
+      "title": "Ultrasound Scan Wing",
+      "description": "Advanced imaging capabilities including prenatal scans, pelvic scans, abdominal profiles, and obstetric screenings.",
+      "image": "/images/scan-centre/scan-01.jpg"
+    }
+  },
+  "contact": {
+    "address": "Agona Nkwanta, opposite Ahantaman Rural Bank, Western Region, Ghana",
+    "phones": "053 142 3368 / 024 533 4506",
+    "email": "evanexpharmacyhealthcare@gmail.com",
+    "hours": "Open Daily: 7:00 AM - 11:00 PM"
+  },
+  "news": [
+    {
+      "date": "June 2, 2026",
+      "tag": "Campaign",
+      "title": "Free Medical Screening Campaign in Tarkwa District Scheduled",
+      "desc": "Evanex Foundation is hosting a free medical testing event. Services include malaria screenings, fasting blood sugar evaluations, and pharmacist consultations.",
+      "icon": "🩺"
+    },
+    {
+      "date": "May 18, 2026",
+      "tag": "Facility Update",
+      "title": "New High-Resolution Ultrasound System Installed",
+      "desc": "Our Scan Center has upgraded to a premium diagnostic ultrasound machine, offering sharper 3D scans and faster calculation of gestational age metrics.",
+      "icon": "👶"
+    },
+    {
+      "date": "April 29, 2026",
+      "tag": "Outreach Result",
+      "title": "1,200+ Insecticide Treated Bed Nets Distributed to Local Schools",
+      "desc": "In support of World Malaria Month, CEO Mr. Evans Ghartey led our team to supply protective bed nets and malaria educational materials to schools in Tarkwa-Nsuaem.",
+      "icon": "🕸️"
+    }
+  ]
+}
