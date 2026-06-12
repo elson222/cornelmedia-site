@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full antialiased">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Evanex Pharmacy Online Store | Mobile-First Digital Dispensary</title>
+  <meta name="description" content="Order prescription and over-the-counter medications, maternal care items, and clinical wellness products directly from Evanex Pharmacy. Convenient delivery and pickup options.">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon"/>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./store.css">
+</head>
+<body class="min-h-full">
+
+  <div class="app-container">
+    
+    <!-- A. DESKTOP SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-logo">
+        <img src="/evanex-pharmacy/images/logos/logo.png" alt="Evanex Logo">
+        <div class="sidebar-logo-text">
+          <h2>Evanex Store</h2>
+          <span>DISPENSARY PORTAL</span>
+        </div>
+      </div>
+      
+      <ul class="sidebar-menu">
+        <li class="sidebar-item active" data-sidebar-target="catalog">
+          <span class="sidebar-item-icon">🛍️</span>
+          <span>Shop Catalog</span>
+        </li>
+        <li class="sidebar-item" data-sidebar-target="upload-rx">
+          <span class="sidebar-item-icon">📋</span>
+          <span>Upload Prescription</span>
+        </li>
+        <li class="sidebar-item" data-sidebar-target="cart">
+          <span class="sidebar-item-icon">🛒</span>
+          <span>My Cart</span>
+        </li>
+        <li class="sidebar-item" data-sidebar-target="orders">
+          <span class="sidebar-item-icon">📦</span>
+          <span>Order History</span>
+        </li>
+      </ul>
+      
+      <div class="sidebar-footer">
+        <button class="header-btn store-theme-btn" aria-label="Toggle Theme" style="align-self: flex-start;">🌙</button>
+        <p>📍 <span class="store-address">Agona Nkwanta, opposite Ahantaman Rural Bank</span></p>
+        <p>📞 <span class="store-phone">053 142 3368</span></p>
+        <a href="/evanex-pharmacy/" class="sidebar-footer-link">← Back to Main Website</a>
+      </div>
+    </aside>
+
+    <!-- B. MAIN CONTENT AREA -->
+    <div class="main-content">
+      
+      <!-- MOBILE HEADER -->
+      <header class="mobile-header lg:hidden">
+        <div class="logo-group">
+          <img class="logo-img" src="/evanex-pharmacy/images/logos/logo.png" alt="Evanex Logo">
+          <div style="display: flex; flex-direction: column;">
+            <span class="brand-title">Evanex Store</span>
+            <span class="brand-subtitle">Online Pharmacy</span>
+          </div>
+        </div>
+        
+        <div class="mobile-header-actions">
+          <a href="/evanex-pharmacy/" class="header-btn" title="Back to main website" style="font-size: 14px;">🏠</a>
+          <button class="header-btn store-theme-btn" aria-label="Toggle Theme">🌙</button>
+        </div>
+      </header>
+
+      <!-- SUCCESS SCREEN (Hidden by default, overlays when checkout completes) -->
+      <div id="success-screen" class="view-container" style="display: none;">
+        <div class="rx-upload-card" style="text-align: center; gap: 20px;">
+          <div style="font-size: 64px;">🎉</div>
+          <h2 class="section-title">Order Received!</h2>
+          <p class="section-subtitle">Your order has been registered in our local system. Please click the button below to **send it to our pharmacist on WhatsApp** to complete validation and dispatch.</p>
+          
+          <!-- Monospace Receipt Wrapper -->
+          <div id="success-receipt-wrapper"></div>
+          
+          <div style="display: flex; flex-direction: column; gap: 10px; width: 100%;">
+            <button id="success-whatsapp-btn" class="submit-btn" style="background-color: #25d366; width: 100%;">
+              💬 Send Order via WhatsApp
+            </button>
+            <div style="display: flex; gap: 10px;">
+              <button id="success-print-btn" class="submit-btn" style="flex: 1; background-color: #475569;">
+                🖨️ Print Receipt
+              </button>
+              <button id="success-done-btn" class="submit-btn" style="flex: 1; background-color: var(--primary);">
+                Shop More
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN APP SHELL CONTENT -->
+      <div id="store-content-shell" style="display: flex; flex-direction: column; width: 100%;">
+        
+        <!-- SEARCH BOX (Only displays for shop catalog) -->
+        <div id="store-search-container" class="search-container">
+          <div class="search-wrapper">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="store-search" class="search-input" placeholder="Search medications, baby care, wellness...">
+          </div>
+        </div>
+
+        <!-- CATEGORY CHIPS SCROLLER -->
+        <div id="store-category-scroller" class="category-scroller">
+          <div class="category-chip active" data-category="all">All Items</div>
+          <div class="category-chip" data-category="rx">Prescriptions (Rx)</div>
+          <div class="category-chip" data-category="otc">OTC Medicines</div>
+          <div class="category-chip" data-category="maternal">Maternal &amp; Baby</div>
+          <div class="category-chip" data-category="devices">Devices &amp; First Aid</div>
+          <div class="category-chip" data-category="wellness">Wellness</div>
+        </div>
+
+        <!-- TAB SCREENS -->
+        
+        <!-- SCREEN 1: CATALOG -->
+        <main id="screen-catalog" class="tab-screen store-view">
+          <div id="catalog-grid" class="product-grid">
+            <!-- Dynamic JavaScript injections go here -->
+          </div>
+        </main>
+
+        <!-- SCREEN 2: STANDALONE RX UPLOAD -->
+        <section id="screen-upload-rx" class="tab-screen view-container" style="display: none;">
+          <div class="rx-upload-card">
+            <h2 class="section-title">Direct Prescription Upload</h2>
+            <p class="section-subtitle">Have a doctor's prescription slip? Snap a clear photo and send it directly to our pharmacy team. We will check inventory, compile pricing, and contact you immediately.</p>
+            
+            <form id="rx-upload-form" style="display: flex; flex-direction: column; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label">Prescription Image</label>
+                <div id="rx-dropzone" class="upload-dropzone">
+                  <span class="upload-icon">📸</span>
+                  <span class="upload-label-main">Click or drag a photo here</span>
+                  <span class="upload-label-sub">JPEG, PNG, JPG accepted</span>
+                  <input type="file" id="rx-file-input" accept="image/*" style="display: none;">
+                </div>
+                
+                <!-- Preview Image Frame -->
+                <div id="rx-preview-container" class="image-preview-container">
+                  <img id="rx-preview-img" class="image-preview" src="#" alt="Prescription preview">
+                  <button type="button" id="rx-remove-preview" class="remove-preview-btn">✕</button>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="rx-name" class="form-label">Patient Full Name</label>
+                <input type="text" id="rx-name" class="form-input" required placeholder="e.g. Samuel Kojo Mensah">
+              </div>
+              
+              <div class="form-group">
+                <label for="rx-phone" class="form-label">Contact Phone Number</label>
+                <input type="tel" id="rx-phone" class="form-input" required placeholder="e.g. 024 533 4506">
+              </div>
+              
+              <div class="form-group">
+                <label for="rx-notes" class="form-label">Additional Instructions / Notes</label>
+                <textarea id="rx-notes" rows="3" class="form-textarea" placeholder="Describe symptoms, state generic preference, or request other items..."></textarea>
+              </div>
+              
+              <button type="submit" class="submit-btn">
+                📋 Submit Prescription to Pharmacy
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <!-- SCREEN 3: CART VIEW -->
+        <section id="screen-cart" class="tab-screen view-container" style="display: none;">
+          <!-- Empty Cart State -->
+          <div id="cart-empty-view" class="cart-empty">
+            <span class="cart-empty-icon">🛒</span>
+            <h3 class="section-title">Your Cart is Empty</h3>
+            <p class="section-subtitle">Browse our collection of medications, health diagnostics, and baby care essentials to start ordering.</p>
+            <button class="submit-btn" onclick="switchTab('catalog')" style="margin-top: 10px;">
+              Go Shopping
+            </button>
+          </div>
+
+          <!-- Active Cart State -->
+          <div id="cart-full-view" style="display: none;">
+            <h2 class="section-title" style="margin-bottom: 16px;">Shopping Cart</h2>
+            
+            <div id="cart-items-list" class="cart-list">
+              <!-- Dynamic JS items -->
+            </div>
+            
+            <!-- Coupon block -->
+            <div class="coupon-row" style="margin-bottom: 16px;">
+              <input type="text" id="coupon-input" class="form-input" style="flex: 1; text-transform: uppercase;" placeholder="Enter Promo Code">
+              <button id="coupon-btn" class="submit-btn" style="padding: 12px 20px;">Apply</button>
+            </div>
+            
+            <!-- Cart Totals Card -->
+            <div class="cart-summary">
+              <div class="summary-row">
+                <span>Items Subtotal</span>
+                <span id="summary-subtotal">GHS 0.00</span>
+              </div>
+              <div class="summary-row" style="display: none;">
+                <span>Discount</span>
+                <span id="summary-discount">- GHS 0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>Estimated Delivery</span>
+                <span id="summary-delivery">FREE (Store Pickup)</span>
+              </div>
+              <div class="summary-row total">
+                <span>Estimated Total</span>
+                <span id="summary-total">GHS 0.00</span>
+              </div>
+            </div>
+            
+            <button id="cart-checkout-btn" class="submit-btn" style="width: 100%;">
+              💳 Proceed to Checkout
+            </button>
+          </div>
+        </section>
+
+        <!-- SCREEN 4: MY ORDERS HISTORY -->
+        <section id="screen-orders" class="tab-screen view-container" style="display: none;">
+          <!-- Empty History -->
+          <div id="orders-empty-view" class="cart-empty" style="padding: 48px 16px;">
+            <span class="cart-empty-icon">📦</span>
+            <h3 class="section-title">No Orders Yet</h3>
+            <p class="section-subtitle">When you place orders, they will show up here so you can trace your health purchases and re-order easily.</p>
+          </div>
+          
+          <!-- Active History -->
+          <div id="orders-list" style="display: flex; flex-direction: column; width: 100%;">
+            <!-- Dynamic order history cards go here -->
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- C. MOBILE FLOATING CART BUTTON -->
+  <button id="float-cart-trigger" class="floating-cart-btn" aria-label="Open Cart">
+    🛒
+    <span id="float-badge-count" class="floating-cart-badge" style="display: none;">0</span>
+  </button>
+
+  <!-- D. MOBILE BOTTOM NAVIGATION TAB BAR -->
+  <nav class="bottom-nav">
+    <div class="nav-tab active" data-tab-target="catalog">
+      <span class="nav-tab-icon">🛍</span>
+      <span>Shop</span>
+    </div>
+    <div class="nav-tab" data-tab-target="upload-rx">
+      <span class="nav-tab-icon">📋</span>
+      <span>Upload Rx</span>
+    </div>
+    <div class="nav-tab" data-tab-target="cart">
+      <span class="nav-tab-icon">🛒</span>
+      <span>Cart</span>
+      <span id="cart-tab-badge" class="cart-badge" style="display: none;">0</span>
+    </div>
+    <div class="nav-tab" data-tab-target="orders">
+      <span class="nav-tab-icon">📦</span>
+      <span>My Orders</span>
+    </div>
+  </nav>
+
+  <!-- E. BACKDROP OVERLAY & CHECKOUT DRAWER -->
+  <div id="modal-overlay" class="modal-overlay"></div>
+  
+  <div id="drawer-checkout" class="drawer">
+    <div class="drawer-header">
+      <div class="drawer-drag-handle"></div>
+      <h3 class="drawer-title">Order Checkout</h3>
+      <button id="drawer-checkout-close" class="drawer-close">✕</button>
+    </div>
+    <div class="drawer-body">
+      <!-- Rx Warning alert inside drawer -->
+      <div id="checkout-rx-alert" style="background-color: #fef3c7; border: 1px solid #fcd34d; border-radius: var(--border-radius-md); padding: 12px; font-size: 11px; color: #92400e; display: none;">
+        ⚠️ <strong>Prescription Items in Cart!</strong> Please make sure you have a physical copy or photo of your doctor's prescription. You will be requested to send it to the pharmacist on WhatsApp.
+      </div>
+      
+      <form id="checkout-form" style="display: flex; flex-direction: column; gap: 14px;">
+        
+        <div class="form-group">
+          <label for="checkout-delivery-type" class="form-label">Order Option</label>
+          <select id="checkout-delivery-type" class="form-select">
+            <option value="pickup">Pharmacy Pickup (Agona Nkwanta)</option>
+            <option value="delivery">Home/Office Delivery</option>
+          </select>
+        </div>
+        
+        <!-- Conditional Delivery fields -->
+        <div id="checkout-delivery-fields" style="display: none; border-left: 2px solid var(--primary); padding-left: 10px; margin-bottom: 6px;">
+          <div class="form-group" style="margin-bottom: 10px;">
+            <label for="checkout-area" class="form-label">Delivery Region/Zone</label>
+            <select id="checkout-area" class="form-select">
+              <option value="agona-center">Agona Nkwanta Center (GHS 10.00)</option>
+              <option value="busua">Busua Beach area (GHS 20.00)</option>
+              <option value="dixcove">Dixcove (GHS 25.00)</option>
+              <option value="takoradi">Takoradi (GHS 40.00)</option>
+              <option value="tarkwa">Tarkwa (GHS 50.00)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="checkout-address" class="form-label">Delivery Street Address / Landmarks</label>
+            <input type="text" id="checkout-address" class="form-input" placeholder="e.g. Opposite High School, House No. 22">
+          </div>
+        </div>
+        
+        <!-- Conditional Pickup fields -->
+        <div id="checkout-pickup-fields" style="border-left: 2px solid var(--primary); padding-left: 10px; margin-bottom: 6px;">
+          <div class="form-group">
+            <label for="checkout-pickup-time" class="form-label">Estimated Pickup Time</label>
+            <select id="checkout-pickup-time" class="form-select">
+              <option value="As soon as possible (Within 1 hour)">As soon as possible (Within 1 hour)</option>
+              <option value="Later Today (Before 11:00 PM)">Later Today (Before 11:00 PM)</option>
+              <option value="Tomorrow Morning">Tomorrow Morning</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="checkout-name" class="form-label">Full Name</label>
+          <input type="text" id="checkout-name" class="form-input" required placeholder="e.g. Abena Serwaa">
+        </div>
+        
+        <div class="form-group">
+          <label for="checkout-phone" class="form-label">WhatsApp Contact Number</label>
+          <input type="tel" id="checkout-phone" class="form-input" required placeholder="e.g. 053 142 3368">
+        </div>
+        
+        <div class="form-group">
+          <label for="checkout-email" class="form-label">Email Address (Optional)</label>
+          <input type="email" id="checkout-email" class="form-input" placeholder="e.g. abena@gmail.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="checkout-payment" class="form-label">Payment Method</label>
+          <select id="checkout-payment" class="form-select">
+            <option value="momo">Mobile Money (MTN, Telecel, AT)</option>
+            <option value="cod">Cash on Delivery / Pickup Pay</option>
+          </select>
+        </div>
+
+        <!-- Checkout Summarized Totals -->
+        <div id="checkout-summary-text" style="font-size: 11px; background-color: var(--bg-app); border:1px solid var(--border-color); padding: 12px; border-radius: var(--border-radius-md); line-height: 1.5; margin: 4px 0;">
+          <!-- JS fills this -->
+        </div>
+        
+        <button type="submit" class="submit-btn" style="margin-top: 10px;">
+          ✅ Complete &amp; Verify Order
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="./products.js"></script>
+  <script src="./store.js"></script>
+</body>
+</html>
