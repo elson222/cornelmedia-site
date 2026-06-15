@@ -1,487 +1,320 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Analytics Integration -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-PLACEHOLDER');
-    </script>
-    <!-- SEO JSON-LD Architectural Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Cornel Media Productions",
-      "image": "https://cornel.media/assets/images/logo.png",
-      "url": "https://cornel.media",
-      "telephone": "+233500020168",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "East Legon, Accra",
-        "addressRegion": "Greater Accra",
-        "addressCountry": "GH"
-      },
-      "priceRange": "GH?3000+"
-    }
-    </script>
-    <!-- Open Graph Social Media Parsing -->
-    <meta property="og:title" content="Cornel Media Productions" />
-    <meta property="og:description" content="Cornel Media Productions is a full-service creative and digital agency in Accra, Ghana. We offer photography, videography, drone services, social media management, website development and live streaming." />
-    <meta property="og:image" content="https://cornel.media/assets/images/favicon.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="1200" />
-    <meta property="og:url" content="https://cornel.media" />
-    <meta property="og:type" content="website" />
-    
-    <!-- Twitter/X Card Parsing -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Cornel Media Productions | Creative & Digital Agency" />
-    <meta name="twitter:description" content="Cornel Media Productions is a premier creative and digital agency based in Accra, Ghana. Experts in high-end photography, cinematic videography, drone production, and digital strategy." />
-    <meta name="twitter:image" content="https://cornel.media/assets/images/favicon.png" />
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cornel Media Productions | Creative & Digital Agency</title>
-    <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    <!-- Tailwind CSS for rapid 1:1 structural replica -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #000000; color: #fff; overflow-x: hidden; }
-        .hero-bg-vignette {
-            background-image: linear-gradient(to right, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 40%, transparent 100%);
-        }
-        .bottom-vignette { background-image: linear-gradient(to top, #000000 0%, transparent 100%); }
-        .top-vignette { background-image: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 100%); }
-        
-        .pill-nav {
-            background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-        }
-        
-        .nav-item { transition: all 0.2s ease; }
-        .nav-item:hover { color: #fff; text-shadow: 0 0 10px rgba(255,255,255,0.3); }
-        .nav-active { background: #fff; color: #000; box-shadow: 0 2px 10px rgba(255,255,255,0.2); }
-        .nav-active:hover { color: #000; text-shadow: none; background: #f0f0f0; }
-        
-        .glass-btn { background: rgba(255, 255, 255, 0.15); backdrop-filter: blur(8px); }
-        .glass-btn:hover { background: rgba(255, 255, 255, 0.25); }
-        
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        .movie-card { transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .movie-card:hover { transform: scale(1.05); z-index: 10; border: 1px solid rgba(255,255,255,0.4); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
-    </style>
+  <!-- Preconnects for faster font & icon loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PLACEHOLDER"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-PLACEHOLDER');</script>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Cornel Media Productions","image":"https://cornel.media/assets/images/logo.png","url":"https://cornel.media","telephone":"+233500020168","address":{"@type":"PostalAddress","addressLocality":"East Legon, Accra","addressRegion":"Greater Accra","addressCountry":"GH"},"priceRange":"GH₵3000+"}</script>
+
+  <!-- OG / Twitter -->
+  <meta property="og:title" content="Cornel Media Productions | Creative & Digital Agency Ghana">
+  <meta property="og:description" content="Ghana's premier creative agency. Premium photography, videography, drone, social media, web dev and live streaming in Accra and Tarkwa.">
+  <meta property="og:image" content="https://cornel.media/assets/images/favicon.png">
+  <meta property="og:url" content="https://cornel.media">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cornel Media Productions | Creative & Digital Agency">
+  <meta name="twitter:description" content="Premium photography, videography, drone, social media, web dev and live streaming in Ghana.">
+  <meta name="twitter:image" content="https://cornel.media/assets/images/favicon.png">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cornel Media Productions — Ghana's premier creative agency. Photography, videography, drone, social media, web development and live streaming in Accra and Tarkwa.">
+  <meta name="theme-color" content="#000000">
+  <title>Cornel Media Productions | Creative & Digital Agency Ghana</title>
+  <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Site CSS (no Tailwind) -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-black antialiased selection:bg-white selection:text-black min-h-screen border-0 m-0">
-    
-    <!-- Floating Pill Navigation exactly like screenshot layout but with Cornel Media tabs -->
-        <!-- Floating Pill Navigation exactly like screenshot layout but with Cornel Media tabs -->
-    <nav class="hidden md:flex fixed top-8 left-1/2 -translate-x-1/2 z-50 items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
-        <a href="index.html" class="nav-active text-black bg-white flex items-center gap-2 px-5 py-2.5 rounded-full text-[13px] font-bold whitespace-nowrap">
-            <i class="fas fa-home"></i> Home
-        </a>
-        <a href="about.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-            <i class="fas fa-info-circle"></i> About
-        </a>
-        <a href="services.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-            <i class="fas fa-video"></i> Services
-        </a>
-        <a href="portfolio.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-            <i class="fas fa-image"></i> Portfolio
-        </a>
-        <a href="pricing.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-            <i class="fas fa-tag"></i> Pricing
-        </a>
-        
-        <div class="w-px h-5 bg-white/10 mx-2"></div>
-        
-        <a href="contact.html" class="nav-item text-white/70 flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] font-semibold whitespace-nowrap">
-            <i class="fas fa-envelope"></i> Contact
-        </a>
-    </nav>
+<body>
 
-    <!-- Full Screen Immersive App Hero -->
-    <section class="relative w-full h-screen overflow-hidden flex items-center bg-black">
-        <!-- Background Video/Cover -->
-        <div class="absolute inset-0 w-full h-full z-0">
-            <!-- Ensure video plays on all devices -->
-            <video id="heroVideo" autoplay muted loop playsinline preload="auto" class="w-full h-full object-cover opacity-80">
-                <source src="assets/images/cornelmediawebsiteshowreel.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <!-- Heavy Vignettes for typography readability using absolute black -->
-            <div class="absolute inset-0 hero-bg-vignette pointer-events-none"></div>
-            <div class="absolute inset-x-0 bottom-0 h-48 bottom-vignette pointer-events-none"></div>
-            <div class="absolute inset-x-0 top-0 h-40 top-vignette pointer-events-none"></div>
-        </div>
+<!-- ── DESKTOP PILL NAV ── -->
+<nav class="pill-nav" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-item nav-active" aria-current="page"><i class="fas fa-home"></i> Home</a>
+  <a href="about.html" class="nav-item"><i class="fas fa-info-circle"></i> About</a>
+  <a href="services.html" class="nav-item"><i class="fas fa-video"></i> Services</a>
+  <a href="portfolio.html" class="nav-item"><i class="fas fa-images"></i> Portfolio</a>
+  <a href="pricing.html" class="nav-item"><i class="fas fa-tag"></i> Pricing</a>
+  <div style="width:1px;height:16px;background:rgba(255,255,255,0.15);margin:0 4px"></div>
+  <a href="contact.html" class="nav-item" style="background:rgba(232,160,48,0.15);color:#E8A030"><i class="fas fa-envelope"></i> Book Now</a>
+</nav>
 
-        <!-- Left Aligned Typography & Controls -->
-        <div class="relative z-10 px-6 md:px-0 md:pl-20 xl:pl-32 w-full max-w-4xl mt-12">
-            <!-- Title Design: Mimicking the horizontal line and stacked text "___ WAR MACHINE" -->
-            <div class="flex items-center gap-4 mb-2">
-                
-                <h1 class="text-4xl md:text-[4rem] font-black tracking-widest text-white leading-[1] uppercase drop-shadow-2xl">
-                    Cornel Media Productions
-                </h1>
-                <p class="text-white/80 text-lg md:text-xl font-light tracking-[0.25em] uppercase mt-2 drop-shadow-lg">Media. Creative. Digital. Social.</p>
-            </div>
-            
-            <!-- Description / Overview text -->
-            <p class="text-zinc-300 text-lg font-medium mt-8 mb-8 max-w-lg drop-shadow-md leading-relaxed hidden md:block">
-                Trusted by leading corporations, institutions, and brands across Ghana.
-            </p>
-            
-            <!-- Exact Button Controls: Play (white pill), Info (glass pill), Mute (glass circle) -->
-            <div class="flex items-center gap-4 mt-6">
-                                                    <!-- Conversion Buttons -->
-                  <div class="flex flex-col sm:flex-row gap-4 mt-4 drop-shadow-2xl mix-blend-difference relative z-20">
-                      <a href="portfolio.html" class="glass-btn text-white hover:text-white px-7 py-2.5 rounded-full font-bold text-[13px] transition shadow-lg border border-white/20 text-center flex items-center justify-center">Our Work</a>
-                      <a href="contact.html" class="glass-btn text-white hover:text-white px-7 py-2.5 rounded-full font-bold text-[13px] transition shadow-lg border border-white/20 text-center flex items-center justify-center cursor-pointer" onclick="try{gtag('event', 'cta_click', { 'event_category': 'Lead Generation' });}catch(e){}">Book Now</a>
-                  </div>
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Hero">
+  <video id="heroVideo" autoplay muted loop playsinline preload="metadata"
+         poster="assets/images/hero-bg.jpg" class="hero-video">
+    <source src="assets/images/cornelmediawebsiteshowreel.mp4" type="video/mp4">
+  </video>
+  <div class="hero-vignette-left" aria-hidden="true"></div>
+  <div class="hero-vignette-bottom" aria-hidden="true"></div>
+  <div class="hero-vignette-top" aria-hidden="true"></div>
+  <div class="hero-grain" aria-hidden="true"></div>
 
-                  <!-- Volume / Mute Toggle -->
-                </div>
-        </div>
-
-        <!-- Bottom Controls exactly from screenshot -->
-        <!-- Expand Chevron -->
-        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block">
-            <button onclick="document.getElementById('content').scrollIntoView({behavior: 'smooth'})" class="glass-btn w-10 h-10 rounded-full flex items-center justify-center text-white transition hover:bg-white/30 border border-white/20">
-                <i class="fas fa-chevron-down text-sm"></i>
-            </button>
-        </div>
-        
-    </section>
-
-    <!-- Scrollable Content Interface Below -->
-    <main id="content" class="relative z-20 bg-black pt-12 pb-24 px-6 md:px-20 xl:px-32 border-t border-white/10">
-        
-        <!-- Vertical Poster Category List -->
-        <section class="mb-4 text-center pb-20 pt-10 max-w-2xl mx-auto">
-            <h2 class="text-3xl font-black text-white mb-6 uppercase tracking-widest drop-shadow-2xl">Visual Excellence</h2>
-            <p class="text-zinc-400 font-medium">From concept to final cut, our world-class production team brings stories to life exactly the way they were meant to be seen.</p>
-        </section>
-
-                <!-- Dynamic Layout Row -->
-        <section class="mb-16">
-            <div class="flex justify-between items-end mb-6">
-                <h2 class="text-xl font-bold text-white tracking-wide">Featured Work</h2>
-                <a href="portfolio.html" class="text-sm font-bold text-red-500 hover:text-white transition group flex items-center gap-2">Explore <i class="fas fa-arrow-right text-[10px] group-hover:translate-x-1 transition"></i></a>
-            </div>
-            
-            <!-- Auto-scrolling Carousel -->
-            <div id="featured-carousel" class="flex gap-4 overflow-x-auto hide-scrollbar pb-6 -mx-4 px-4 md:mx-0 md:px-0 cursor-grab relative scroll-smooth flex-nowrap">
-                <!-- Card 1 -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-40 md:w-52 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
-                    <img src="assets/images/AS8A3155.JPG" class="w-full h-full object-cover" alt="Cornel Media Premium Showcase">loading="lazy" 
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>
-                    <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-red-600 text-white text-[10px] font-bold rounded">COMMERCIAL</div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full"><h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Commercials</h3></div>
-                </a>
-
-                <!-- Card 2 -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-40 md:w-52 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
-                    <img src="assets/images/IMG_4341.JPG" class="w-full h-full object-cover" alt="Cornel Media Premium Showcase">loading="lazy" 
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full"><h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Portraits</h3></div>
-                </a>
-                
-                <!-- Card 3 -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-40 md:w-52 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
-                    <img src="assets/images/IMG_3256.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Wedding'" alt="Cornel Media Premium Showcase">loading="lazy" 
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full"><h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Weddings</h3></div>
-                </a>
-                
-                <!-- Card 4 -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-40 md:w-52 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
-                    <img src="assets/images/music-video-project.jpg" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Music'" alt="Cornel Media Premium Showcase">loading="lazy" 
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full"><h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Music Videos</h3></div>
-                </a>
-
-                <!-- Card 5 -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-40 md:w-52 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
-                    <img src="assets/images/IMG_1180.JPG" class="w-full h-full object-cover" alt="Cornel Media Premium Showcase">loading="lazy" 
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>
-                    <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-red-600 text-white text-[10px] font-bold rounded">AERIAL</div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full"><h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Aerials</h3></div>
-                </a>
-                
-                <!-- Card 6 -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-40 md:w-52 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
-                    <img src="assets/images/IMG_2701.JPG" class="w-full h-full object-cover" onerror="this.src='https://via.placeholder.com/400x600/111/fff?text=Event'" alt="Cornel Media Premium Showcase">loading="lazy" 
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full"><h3 class="font-bold text-sm md:text-base text-white line-clamp-1">Events</h3></div>
-                </a>
-                
-                <!-- Card 7: Gold Fields Ghana Documentary -->
-                <a href="portfolio.html" class="movie-card shrink-0 w-40 md:w-52 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 shadow-xl">
-                    <div class="w-full h-full bg-gradient-to-br from-zinc-800 via-zinc-900 to-black flex items-center justify-center">
-                        <i class="fas fa-film text-4xl text-white/20"></i>
-                    </div>
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/20 to-transparent"></div>
-                    <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-amber-600 text-white text-[10px] font-bold rounded">CORPORATE</div>
-                    <div class="absolute bottom-0 left-0 p-4 w-full">
-                        <h3 class="font-bold text-sm md:text-base text-white line-clamp-2">Gold Fields Ghana — Emergency Simulation</h3>
-                    </div>
-                </a>
-
-                <a href="portfolio.html" class="movie-card shrink-0 w-40 md:w-52 aspect-[2/3] rounded-xl relative overflow-hidden bg-zinc-900 border border-white/10 group flex items-center justify-center hover:bg-zinc-800">
-                    <div class="text-center p-4">
-                        <i class="fas fa-plus-circle text-3xl text-zinc-600 mb-2 group-hover:text-white transition"></i>
-                        <h3 class="font-bold text-sm text-zinc-500 group-hover:text-white transition uppercase tracking-widest text-[10px]">View More</h3>
-                    </div>
-                </a>
-            </div>
-            
-            <script>
-                // Professional smooth auto-scroll logic
-                document.addEventListener("DOMContentLoaded", function() {
-                    const carousel = document.getElementById("featured-carousel");
-                    if (!carousel) return;
-                    
-                    let isHovering = false;
-                    let scrollStep = 1;
-                    
-                    // Pause on interact
-                    carousel.addEventListener('mouseenter', () => isHovering = true);
-                    carousel.addEventListener('mouseleave', () => isHovering = false);
-                    carousel.addEventListener('touchstart', () => isHovering = true);
-                    carousel.addEventListener('touchend', () => { setTimeout(() => isHovering = false, 1000); });
-                    
-                    setInterval(() => {
-                        if (!isHovering) {
-                            carousel.scrollLeft += scrollStep;
-                            
-                            // Reverse direction seamlessly when hitting bounds
-                            if (carousel.scrollLeft >= (carousel.scrollWidth - carousel.clientWidth - 2)) {
-                                scrollStep = -1;
-                            } else if (carousel.scrollLeft <= 0) {
-                                scrollStep = 1;
-                            }
-                        }
-                    }, 25);
-                });
-            </script>
-        </section>
-
-        <!-- ── TRUSTED BY / CLIENTS SECTION ── -->
-        <section class="mb-20 mt-4">
-            <div class="text-center mb-10">
-                <p class="text-[11px] font-bold text-zinc-500 uppercase tracking-[0.3em] mb-3">Our Clients</p>
-                <h2 class="text-2xl font-black text-white uppercase tracking-widest">Trusted By</h2>
-                <div class="w-16 h-px bg-white/20 mx-auto mt-4"></div>
-            </div>
-            <div class="flex flex-wrap justify-center items-center gap-6 md:gap-10">
-
-                <!-- Client 1: Gold Fields Ghana — logo: assets/images/client-goldfields.svg -->
-                <div class="group flex flex-col items-center justify-center gap-3 px-6 py-4 rounded-xl border border-white/10 bg-white hover:bg-white transition duration-300 min-w-[160px] min-h-[80px] shadow-lg">
-                    <img src="assets/images/client-goldfields.svg"
-                         alt="Gold Fields Ghana"
-                         class="max-h-10 max-w-[140px] object-contain transition duration-300 group-hover:scale-105"
-                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                    <div style="display:none" class="flex-col items-center gap-1">
-                        <i class="fas fa-industry text-2xl text-amber-400/70 group-hover:text-amber-400 transition"></i>
-                        <span class="text-white/70 group-hover:text-white text-[13px] font-semibold text-center tracking-wide transition">Gold Fields Ghana</span>
-                    </div>
-                </div>
-
-                <!-- Client 2: Caldor Africa Ltd — drop file: assets/images/client-caldor.png -->
-                <div class="group flex flex-col items-center justify-center gap-3 px-6 py-4 rounded-xl border border-white/10 bg-white hover:bg-white transition duration-300 min-w-[160px] min-h-[80px] shadow-lg">
-                    <img src="assets/images/client-caldor.png"
-                         alt="Caldor Africa Ltd"
-                         class="max-h-10 max-w-[140px] object-contain transition duration-300 group-hover:scale-105"
-                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                    <div style="display:none" class="flex-col items-center gap-1">
-                        <i class="fas fa-building text-2xl text-blue-400/70 group-hover:text-blue-400 transition"></i>
-                        <span class="text-white/70 group-hover:text-white text-[13px] font-semibold text-center tracking-wide transition">Caldor Africa Ltd</span>
-                    </div>
-                </div>
-
-                <!-- Client 3: Tarkwa Fashion Week — drop file: assets/images/client-tarkwa-fashion-week.png -->
-                <div class="group flex flex-col items-center justify-center gap-3 px-6 py-4 rounded-xl border border-white/10 bg-white hover:bg-white transition duration-300 min-w-[160px] min-h-[80px] shadow-lg">
-                    <img src="assets/images/client-tarkwa-fashion-week.png"
-                         alt="Tarkwa Fashion Week"
-                         class="max-h-10 max-w-[140px] object-contain transition duration-300 group-hover:scale-105"
-                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                    <div style="display:none" class="flex-col items-center gap-1">
-                        <i class="fas fa-tshirt text-2xl text-pink-400/70 group-hover:text-pink-400 transition"></i>
-                        <span class="text-white/70 group-hover:text-white text-[13px] font-semibold text-center tracking-wide transition">Tarkwa Fashion Week</span>
-                    </div>
-                </div>
-
-                <!-- Client 4: Evanex Pharmacy — drop file: assets/images/client-evanex.png -->
-                <div class="group flex flex-col items-center justify-center gap-3 px-6 py-4 rounded-xl border border-white/10 bg-white hover:bg-white transition duration-300 min-w-[160px] min-h-[80px] shadow-lg">
-                    <img src="assets/images/client-evanex.png"
-                         alt="Evanex Pharmacy"
-                         class="max-h-10 max-w-[140px] object-contain transition duration-300 group-hover:scale-105"
-                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                    <div style="display:none" class="flex-col items-center gap-1">
-                        <i class="fas fa-pills text-2xl text-green-400/70 group-hover:text-green-400 transition"></i>
-                        <span class="text-white/70 group-hover:text-white text-[13px] font-semibold text-center tracking-wide transition">Evanex Pharmacy</span>
-                    </div>
-                </div>
-
-                <!-- Client 5: Aseda Praise — drop file: assets/images/client-aseda-praise.png -->
-                <div class="group flex flex-col items-center justify-center gap-3 px-6 py-4 rounded-xl border border-white/10 bg-white hover:bg-white transition duration-300 min-w-[160px] min-h-[80px] shadow-lg">
-                    <img src="assets/images/client-aseda-praise.png"
-                         alt="Aseda Praise"
-                         class="max-h-10 max-w-[140px] object-contain transition duration-300 group-hover:scale-105"
-                         onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-                    <div style="display:none" class="flex-col items-center gap-1">
-                        <i class="fas fa-music text-2xl text-purple-400/70 group-hover:text-purple-400 transition"></i>
-                        <span class="text-white/70 group-hover:text-white text-[13px] font-semibold text-center tracking-wide transition">Aseda Praise</span>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Standard Footer embedded to match app scale -->
-        <footer class="mt-20 border-t border-white/[0.1] pt-10 pb-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-6">
-                <img src="assets/images/logo.png" alt="Cornel Media Productions" class="h-10 object-contain opacity-60 hover:opacity-100 transition" loading="lazy"><div class="flex gap-6 text-[13px] text-white/40">
-                    <a href="about.html" class="hover:text-white transition">About</a>
-                    <a href="services.html" class="hover:text-white transition">Services</a>
-                    <a href="pricing.html" class="hover:text-white transition">Pricing</a>
-                    <a href="contact.html" class="hover:text-white transition">Contact</a>
-                </div>
-                <div class="flex gap-5 text-lg text-white/50">
-    <a href="https://www.tiktok.com/@cornelmedia" target="_blank" class="hover:text-white hover:scale-110 transition shrink-0" title="Cornel Media TikTok"><i class="fab fa-tiktok"></i></a>
-    <a href="https://www.tiktok.com/@cornel.edits" target="_blank" class="hover:text-white hover:scale-110 transition shrink-0" title="Cornel Edits TikTok"><i class="fas fa-video"></i></a>
-    <a href="https://x.com/cornelmedia_" target="_blank" class="hover:text-white hover:scale-110 transition shrink-0" title="X (Twitter)"><i class="fab fa-twitter"></i></a>
-    <a href="https://www.instagram.com/quaysoncornel/" target="_blank" class="hover:text-white hover:scale-110 transition shrink-0" title="Instagram"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.youtube.com/@quaysoncornel" target="_blank" class="hover:text-white hover:scale-110 transition shrink-0" title="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://gh.linkedin.com/in/cornelius-quayson-49a170271" target="_blank" class="hover:text-white hover:scale-110 transition shrink-0" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-</div>
-<div class="text-xs text-white/40 text-center md:text-right w-full md:w-auto mt-4 md:mt-0 font-medium">
-    <a href="privacy-policy.html" class="hover:text-white transition decoration-white/30 hover:decoration-white underline underline-offset-4">Privacy</a> &middot; 
-    <a href="terms.html" class="hover:text-white transition decoration-white/30 hover:decoration-white underline underline-offset-4">Terms</a> &middot; 
-    © 2026 CMP
-</div>
-            </div>
-        </footer>
-
-    </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Intersection observer to fade the navbar out/in if needed based on scroll
-            const nav = document.querySelector('nav');
-            window.addEventListener('scroll', () => {
-                if(window.scrollY > window.innerHeight * 0.5) {
-                    nav.style.opacity = '0.3';
-                    if(window.scrollY > window.innerHeight) {
-                        nav.style.opacity = '1';
-                        nav.classList.add('bg-black/90');
-                        nav.classList.replace('top-8', 'top-4');
-                    }
-                } else {
-                    nav.style.opacity = '1';
-                    nav.classList.remove('bg-black/90');
-                    nav.classList.replace('top-4', 'top-8');
-                }
-            });
-            
-            // Video and Mute Button logic
-            const video = document.getElementById('heroVideo');
-            const muteButton = document.getElementById('muteToggle');
-            const muteIcon = document.getElementById('muteIcon');
-            
-            // Auto play fallback
-            if (video) {
-                video.play().catch(function(error) {
-                    console.log("Video Autoplay Blocked:", error);
-                });
-            }
-            
-            muteButton.addEventListener('click', () => {
-                if(video.muted) {
-                    video.muted = false;
-                    muteIcon.classList.replace('fa-volume-mute', 'fa-volume-up');
-                } else {
-                    video.muted = true;
-                    muteIcon.classList.replace('fa-volume-up', 'fa-volume-mute');
-                }
-            });
-        });
-    </script>
-    <!-- Mobile Bottom Navigation (Netflix/Streaming App Style) -->
-    <nav class="md:hidden fixed bottom-0 inset-x-0 z-50 flex justify-between items-center px-6 py-2 bg-black/90 backdrop-blur-xl border-t border-white/10 pb-sanf">
-        <a href="index.html" class="mobile-nav-active text-white flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
-            <i class="fas fa-home text-xl"></i>
-            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Home</span>
-        </a>
-        <a href="services.html" class="mobile-nav-item text-white/50 flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
-            <i class="fas fa-video text-xl"></i>
-            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Services</span>
-        </a>
-        <a href="portfolio.html" class="mobile-nav-item text-white/50 flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
-            <i class="fas fa-image text-xl"></i>
-            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Work</span>
-        </a>
-        <a href="pricing.html" class="mobile-nav-item text-white/50 flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
-            <i class="fas fa-tag text-xl"></i>
-            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Pricing</span>
-        </a>
-        <a href="contact.html" class="mobile-nav-item text-white/50 flex flex-col items-center gap-[3px] transition hover:text-white px-2 py-1">
-            <i class="fas fa-envelope text-xl"></i>
-            <span class="text-[9px] font-bold uppercase tracking-widest leading-none">Book</span>
-        </a>
-    </nav>
-    <!-- Conversion: Floating WhatsApp Custom Quote Connector -->
-    <a href="https://wa.me/233500020168" target="_blank" rel="noopener noreferrer" class="fixed bottom-24 md:bottom-8 right-6 z-50 w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center text-3xl shadow-[0_0_25px_rgba(34,197,94,0.4)] hover:scale-110 transition hover:bg-green-400 border border-white/20">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-        <!-- Persistent GDPR Cookie Consent Module -->
-    <div id="cookieCon" class="hidden fixed bottom-24 md:bottom-8 left-6 z-50 max-w-xs bg-black/90 backdrop-blur-2xl border border-white/10 p-5 rounded-2xl shadow-2xl flex-col gap-4">
-        <p class="text-[11px] text-white/70 font-medium leading-relaxed">We utilize secure caching and architectural cookies to ensure a perfectly seamless cinematic experience.</p>
-        <div class="flex gap-2">
-            <button onclick="acceptCookies()" class="bg-white text-black px-4 py-2 rounded-lg text-[10px] font-black uppercase tracking-wider w-full hover:bg-white/80 transition shadow-lg">Acknowledge</button>
-            <a href="privacy-policy.html" class="bg-transparent text-white px-4 py-2 rounded-lg text-[10px] font-bold uppercase tracking-widest w-full text-center border border-white/20 hover:bg-white/10 transition">Policy</a>
-        </div>
+  <div class="hero-content">
+    <p id="hero-subtitle" class="hero-subtitle reveal">Media. Creative. Digital. Social.</p>
+    <h1 id="hero-headline" class="hero-title reveal reveal-delay-1">Cornel Media<br>Productions</h1>
+    <p id="hero-description" class="hero-description reveal reveal-delay-2">Trusted by leading corporations, institutions, and brands across Ghana. We deliver cinematic stories that move audiences.</p>
+    <div class="hero-actions reveal reveal-delay-3">
+      <a href="portfolio.html" id="hero-cta-primary" class="btn-primary">Our Work</a>
+      <a href="contact.html" id="hero-cta-secondary" class="btn-glass" onclick="try{gtag('event','cta_click',{'event_category':'Lead Generation'});}catch(e){}">Book Now</a>
+      <button id="muteToggle" class="btn-glass" aria-label="Toggle video sound" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0">
+        <i id="muteIcon" class="fas fa-volume-mute"></i>
+      </button>
     </div>
-    <script>
-        if (!localStorage.getItem('cmp_cookie_consented')) {
-            document.getElementById('cookieCon').style.display = 'flex';
-        }
-        function acceptCookies() {
-            localStorage.setItem('cmp_cookie_consented', 'true');
-            document.getElementById('cookieCon').style.display = 'none';
-        }
-    </script>
+  </div>
+
+  <div class="hero-scroll-hint" aria-hidden="true">
+    <button onclick="document.getElementById('main-content').scrollIntoView({behavior:'smooth'})" style="background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);color:white;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center">
+      <i class="fas fa-chevron-down" style="font-size:0.75rem"></i>
+    </button>
+  </div>
+</section>
+
+<!-- ── MAIN CONTENT ── -->
+<main id="main-content">
+
+  <!-- Visual Excellence Intro -->
+  <section class="section" style="text-align:center;padding-bottom:40px">
+    <div class="container" style="max-width:640px;margin:0 auto">
+      <p class="section-label reveal">Our Craft</p>
+      <h2 class="section-title reveal reveal-delay-1">Visual Excellence</h2>
+      <div class="section-divider reveal reveal-delay-2" style="margin-left:auto;margin-right:auto"></div>
+      <p class="reveal reveal-delay-3" style="color:rgba(255,255,255,0.5);margin-top:24px;line-height:1.8">From concept to final cut, our world-class production team brings stories to life with cinematic precision — exactly the way they were meant to be seen.</p>
+    </div>
+  </section>
+
+  <!-- Featured Work Carousel -->
+  <section class="section" style="padding-top:0">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <h2 style="font-size:1.1rem;font-weight:700;margin:0" class="reveal">Featured Work</h2>
+        <a href="portfolio.html" class="reveal text-accent" style="font-size:0.85rem;font-weight:700;display:flex;align-items:center;gap:6px">
+          Explore All <i class="fas fa-arrow-right" style="font-size:0.7rem"></i>
+        </a>
+      </div>
+      <div id="featured-carousel" class="hide-scrollbar" style="display:flex;gap:12px;overflow-x:auto;padding-bottom:16px;scroll-snap-type:x mandatory;cursor:grab">
+        <a href="portfolio.html" class="movie-card" style="flex-shrink:0;width:150px;scroll-snap-align:start" aria-label="Commercial photography">
+          <img src="assets/images/AS8A3155.JPG" alt="Commercial photography" loading="lazy">
+          <div class="movie-card-badge">COMMERCIAL</div>
+          <div class="movie-card-overlay"><h3 style="font-size:0.75rem;font-weight:700">Commercials</h3></div>
+        </a>
+        <a href="portfolio.html" class="movie-card" style="flex-shrink:0;width:150px;scroll-snap-align:start" aria-label="Portrait photography">
+          <img src="assets/images/IMG_4341.JPG" alt="Portrait photography" loading="lazy">
+          <div class="movie-card-overlay"><h3 style="font-size:0.75rem;font-weight:700">Portraits</h3></div>
+        </a>
+        <a href="portfolio.html" class="movie-card" style="flex-shrink:0;width:150px;scroll-snap-align:start" aria-label="Wedding photography">
+          <img src="assets/images/IMG_3256.jpg" alt="Wedding photography" loading="lazy">
+          <div class="movie-card-overlay"><h3 style="font-size:0.75rem;font-weight:700">Weddings</h3></div>
+        </a>
+        <a href="portfolio.html" class="movie-card" style="flex-shrink:0;width:150px;scroll-snap-align:start" aria-label="Event photography">
+          <img src="assets/images/IMG_1180.JPG" alt="Event coverage" loading="lazy">
+          <div class="movie-card-overlay"><h3 style="font-size:0.75rem;font-weight:700">Events</h3></div>
+        </a>
+        <a href="portfolio.html" class="movie-card" style="flex-shrink:0;width:150px;scroll-snap-align:start" aria-label="Aerial photography">
+          <img src="assets/images/IMG_2701.JPG" alt="Aerial drone photography" loading="lazy">
+          <div class="movie-card-badge aerial">AERIAL</div>
+          <div class="movie-card-overlay"><h3 style="font-size:0.75rem;font-weight:700">Aerials</h3></div>
+        </a>
+        <a href="portfolio.html" class="movie-card" style="flex-shrink:0;width:150px;scroll-snap-align:start" aria-label="Corporate photography">
+          <img src="assets/images/AS8A3154.JPG" alt="Corporate photography" loading="lazy">
+          <div class="movie-card-badge corporate">CORPORATE</div>
+          <div class="movie-card-overlay"><h3 style="font-size:0.75rem;font-weight:700">Corporate</h3></div>
+        </a>
+        <a href="portfolio.html" class="movie-card" style="flex-shrink:0;width:150px;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:8px;text-align:center;padding:16px;text-decoration:none" aria-label="View full portfolio">
+          <i class="fas fa-plus-circle" style="font-size:2rem;color:rgba(255,255,255,0.25)"></i>
+          <span style="font-size:0.6rem;font-weight:700;text-transform:uppercase;letter-spacing:0.2em;color:rgba(255,255,255,0.25)">View More</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section style="padding:64px 24px">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-item reveal">
+          <span class="stat-number" id="stat-clients" data-target="50">50+</span>
+          <span class="stat-label">Happy Clients</span>
+        </div>
+        <div class="stat-item reveal reveal-delay-1">
+          <span class="stat-number" id="stat-projects" data-target="200">200+</span>
+          <span class="stat-label">Projects Delivered</span>
+        </div>
+        <div class="stat-item reveal reveal-delay-2">
+          <span class="stat-number" id="stat-years" data-target="5">5+</span>
+          <span class="stat-label">Years Active</span>
+        </div>
+        <div class="stat-item reveal reveal-delay-3">
+          <span class="stat-number" id="stat-awards" data-target="10">10</span>
+          <span class="stat-label">Recognitions</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- YouTube Videos -->
+  <section class="section">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px">
+        <p class="section-label reveal">Watch Our Work</p>
+        <h2 class="section-title reveal reveal-delay-1">Featured Videos</h2>
+        <div class="section-divider reveal reveal-delay-2" style="margin-left:auto;margin-right:auto"></div>
+      </div>
+      <div id="videos-grid" class="videos-grid">
+        <!-- Loaded dynamically from Firebase -->
+        <div class="skeleton" style="aspect-ratio:16/9;border-radius:12px"></div>
+        <div class="skeleton" style="aspect-ratio:16/9;border-radius:12px"></div>
+        <div class="skeleton" style="aspect-ratio:16/9;border-radius:12px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Preview -->
+  <section class="section">
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:40px;flex-wrap:wrap;gap:16px">
+        <div>
+          <p class="section-label reveal">What We Do</p>
+          <h2 class="section-title reveal reveal-delay-1">Our Services</h2>
+        </div>
+        <a href="services.html" class="reveal text-accent" style="font-size:0.875rem;font-weight:700;display:flex;align-items:center;gap:6px;flex-shrink:0">
+          All Services <i class="fas fa-arrow-right" style="font-size:0.7rem"></i>
+        </a>
+      </div>
+      <div id="services-grid" class="services-grid">
+        <!-- Loaded from Firebase -->
+        <div class="skeleton" style="height:260px;border-radius:16px"></div>
+        <div class="skeleton" style="height:260px;border-radius:16px"></div>
+        <div class="skeleton" style="height:260px;border-radius:16px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05);border-bottom:1px solid rgba(255,255,255,0.05)">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:40px">
+        <p class="section-label reveal">What Clients Say</p>
+        <h2 class="section-title reveal reveal-delay-1">Testimonials</h2>
+        <div class="section-divider reveal reveal-delay-2" style="margin-left:auto;margin-right:auto"></div>
+      </div>
+      <div id="testimonials-grid" class="testimonials-grid">
+        <div class="skeleton" style="height:180px;border-radius:16px"></div>
+        <div class="skeleton" style="height:180px;border-radius:16px"></div>
+        <div class="skeleton" style="height:180px;border-radius:16px"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients Marquee -->
+  <section class="section" style="padding:64px 0">
+    <div class="container" style="text-align:center;margin-bottom:40px">
+      <p class="section-label">Trusted By</p>
+      <h2 class="section-title">Our Clients</h2>
+      <div class="section-divider" style="margin-left:auto;margin-right:auto;margin-top:16px"></div>
+    </div>
+    <div class="clients-marquee-wrapper">
+      <div id="clients-marquee" class="clients-marquee animate">
+        <!-- Dynamically populated -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section reveal">
+    <div class="container">
+      <div class="cta-inner">
+        <h2 class="cta-title">Ready to Create?</h2>
+        <p class="cta-sub">Let's tell your story with cinematic precision.<br>Ghana's premier creative team is ready.</p>
+        <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
+          <a href="contact.html" class="btn-primary" onclick="try{gtag('event','cta_contact_click',{'event_category':'Lead Generation'});}catch(e){}">Get in Touch</a>
+          <a href="https://wa.me/233500020168" target="_blank" rel="noopener" class="btn-glass" style="display:flex;align-items:center;gap:8px">
+            <i class="fab fa-whatsapp"></i> WhatsApp Us
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-inner container">
+    <img src="assets/images/logo.png" alt="Cornel Media Productions" style="height:36px;object-fit:contain;opacity:0.6" loading="lazy" onerror="this.style.display='none'">
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.tiktok.com/@cornelmedia" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://x.com/cornelmedia_" target="_blank" rel="noopener" aria-label="Twitter/X"><i class="fab fa-twitter"></i></a>
+      <a href="https://www.instagram.com/quaysoncornel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/@quaysoncornel" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      <a href="https://gh.linkedin.com/in/cornelius-quayson-49a170271" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <div class="footer-copy">
+      <a href="privacy-policy.html">Privacy</a> &middot;
+      <a href="terms.html">Terms</a> &middot;
+      &copy; 2026 Cornel Media Productions
+    </div>
+  </div>
+</footer>
+
+<!-- ── MOBILE BOTTOM NAV ── -->
+<nav class="mobile-bottom-nav" aria-label="Mobile navigation">
+  <a href="index.html" class="mob-nav-item active" aria-current="page">
+    <i class="fas fa-home"></i><span>Home</span>
+  </a>
+  <a href="services.html" class="mob-nav-item">
+    <i class="fas fa-video"></i><span>Services</span>
+  </a>
+  <a href="portfolio.html" class="mob-nav-item">
+    <i class="fas fa-images"></i><span>Work</span>
+  </a>
+  <a href="pricing.html" class="mob-nav-item">
+    <i class="fas fa-tag"></i><span>Pricing</span>
+  </a>
+  <a href="contact.html" class="mob-nav-item">
+    <i class="fas fa-envelope"></i><span>Book</span>
+  </a>
+</nav>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/233500020168" target="_blank" rel="noopener noreferrer"
+   class="whatsapp-btn" aria-label="Chat on WhatsApp">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<!-- Cookie Banner -->
+<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
+  <p style="font-size:0.8rem;color:rgba(255,255,255,0.7);line-height:1.5;margin:0 0 14px">We use cookies to improve your experience on our site.</p>
+  <div style="display:flex;gap:8px">
+    <button onclick="acceptCookies()" class="btn-primary" style="flex:1;padding:10px;font-size:0.8rem;border-radius:20px">Accept</button>
+    <a href="privacy-policy.html" style="flex:1;padding:10px;font-size:0.8rem;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.1);border-radius:20px;text-decoration:none">Policy</a>
+  </div>
+</div>
+
+<!-- Scripts -->
+<script src="js/main.js" defer></script>
+<script type="module">
+  import initContentLoader from './js/content-loader.js';
+  document.addEventListener('DOMContentLoaded', initContentLoader);
+</script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
