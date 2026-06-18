@@ -4,12 +4,15 @@
  */
 
 import {
-  db, storage, auth,
+  db, auth,
   collection, doc, getDoc, getDocs, setDoc, addDoc, updateDoc, deleteDoc,
   query, orderBy, onSnapshot, serverTimestamp,
-  ref, uploadBytesResumable, getDownloadURL, deleteObject,
   signOut, onAuthStateChanged
 } from '../js/firebase-config.js';
+
+// ══ Cloudinary Config (image uploads — free, no card needed) ══
+const CLOUDINARY_CLOUD_NAME = 'davbbwdbm';
+const CLOUDINARY_UPLOAD_PRESET = 'cornelmedia_uploads';
 
 // ══ Global State ══════════════════════════════════════════
 let currentSection = 'overview';
@@ -510,20 +513,12 @@ window.handlePortfolioBatchUpload = async function(input) {
     const fill = itemEl.querySelector('.upload-queue-progress-fill');
     const status = itemEl.querySelector('.upload-queue-status');
     try {
-      const storageRef = ref(storage, `portfolio/${Date.now()}_${file.name}`);
-      const task = uploadBytesResumable(storageRef, file);
-      await new Promise((resolve, reject) => {
-        task.on('state_changed',
-          (snapshot) => { const pct = (snapshot.bytesTransferred / snapshot.totalBytes) * 100; if (fill) fill.style.width = pct + '%'; },
-          reject,
-          async () => {
-            const url = await getDownloadURL(task.snapshot.ref);
-            await addDoc(collection(db, 'portfolio'), { imageUrl: url, title: file.name.replace(/\.\w+$/, ''), category, order: order++, createdAt: serverTimestamp() });
-            if (status) { status.textContent = '✓ Done'; status.style.color = '#22c55e'; }
-            resolve();
-          }
-        );
-      });
+      if (fill) fill.style.width = '30%';
+      const url = await uploadFile(file, 'portfolio');
+      if (fill) fill.style.width = '80%';
+      await addDoc(collection(db, 'portfolio'), { imageUrl: url, title: file.name.replace(/\.\w+$/, ''), category, order: order++, createdAt: serverTimestamp() });
+      if (fill) fill.style.width = '100%';
+      if (status) { status.textContent = '\u2713 Done'; status.style.color = '#22c55e'; }
     } catch (e) {
       if (status) { status.textContent = '✗ Error: ' + e.message; status.style.color = '#ef4444'; }
     }
@@ -536,7 +531,7 @@ window.deletePortfolioItem = function(id, title, imageUrl) {
   showDeleteConfirm(`Delete "${title}" from portfolio?`, async () => {
     try {
       await deleteDoc(doc(db, 'portfolio', id));
-      if (imageUrl) { try { await deleteObject(ref(storage, imageUrl)); } catch(_) {} }
+      // Note: Cloudinary files can be managed directly in your Cloudinary dashboard
       showToast('Portfolio item deleted', 'info');
       loadPortfolio();
     } catch (e) { showToast('Error: ' + e.message, 'error'); }
@@ -989,16 +984,19 @@ window.saveSiteInfo = async function() {
 };
 
 // ══ FILE UPLOAD HELPER ════════════════════════════════════
-async function uploadFile(file, pathPrefix) {
-  return new Promise((resolve, reject) => {
-    const ext = file.name.split('.').pop();
-    const storageRef = ref(storage, `${pathPrefix}.${ext}`);
-    const task = uploadBytesResumable(storageRef, file);
-    task.on('state_changed', null, reject, async () => {
-      const url = await getDownloadURL(task.snapshot.ref);
-      resolve(url);
-    });
-  });
+async function uploadFile(file, folder = 'cornelmedia') {
+  const formData = new FormData();
+  formData.append('file', file);
+  formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET);
+  formData.append('folder', folder);
+
+  const res = await fetch(
+    `https://api.cloudinary.com/v1_1/${CLOUDINARY_CLOUD_NAME}/image/upload`,
+    { method: 'POST', body: formData }
+  );
+  if (!res.ok) throw new Error('Image upload failed. Check your Cloudinary upload preset is set to Unsigned.');
+  const data = await res.json();
+  return data.secure_url;
 }
 
 // ══ IMAGE PREVIEW HELPER ══════════════════════════════════
