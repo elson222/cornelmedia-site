@@ -6,12 +6,13 @@
 // ============================================================
 
 const FIREBASE_CONFIG = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyCOIV3IHP5N6aO9b1f1PtxSm9BsAoJh9qU",
+  authDomain: "cornelmedia-website.firebaseapp.com",
+  projectId: "cornelmedia-website",
+  storageBucket: "cornelmedia-website.firebasestorage.app",
+  messagingSenderId: "616072368820",
+  appId: "1:616072368820:web:151b67456f6df0eeb17de1",
+  measurementId: "G-Q5XWSWD0TZ"
 };
 
 // ============================================================
