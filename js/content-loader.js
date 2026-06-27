@@ -599,14 +599,20 @@ export function loadTestimonials(containerId) {
   onSnapshot(
     q,
     (snap) => {
+      let testItems = [];
       if (snap.empty) {
-        container.innerHTML = '';
-        return;
+        testItems = [
+          { id: 't1', data: () => ({ quote: 'Cornel Media delivered an exceptional cinematic experience for our wedding. Highly recommended!', clientName: 'Sarah & John', clientCompany: '' }) },
+          { id: 't2', data: () => ({ quote: 'Professional, reliable, and incredibly talented. They captured the essence of our corporate event perfectly.', clientName: 'Michael Ansah', clientCompany: 'Tech Innovators GH' }) },
+          { id: 't3', data: () => ({ quote: 'The drone footage was breathtaking. Cornelius and his team truly have an eye for storytelling.', clientName: 'Jessica Osei', clientCompany: 'Osei Events' }) }
+        ];
+      } else {
+        snap.forEach(d => testItems.push(d));
       }
 
       container.innerHTML = '';
 
-      snap.forEach((docSnap) => {
+      testItems.forEach((docSnap) => {
         const t = docSnap.data();
 
         let photoHtml = '';
@@ -659,9 +665,17 @@ export function loadClients(containerId) {
   onSnapshot(
     q,
     (snap) => {
+      let clientItems = [];
       if (snap.empty) {
-        container.innerHTML = '';
-        return;
+        clientItems = [
+          { id: 'c1', data: () => ({ name: 'Aseda Praise', logoUrl: 'assets/images/client-aseda-praise.png' }) },
+          { id: 'c2', data: () => ({ name: 'Caldor', logoUrl: 'assets/images/client-caldor.png' }) },
+          { id: 'c3', data: () => ({ name: 'Evanex', logoUrl: 'assets/images/client-evanex.png' }) },
+          { id: 'c4', data: () => ({ name: 'Goldfields', logoUrl: 'assets/images/client-goldfields.svg' }) },
+          { id: 'c5', data: () => ({ name: 'Tarkwa Fashion Week', logoUrl: 'assets/images/client-tarkwa-fashion-week.png' }) }
+        ];
+      } else {
+        snap.forEach(d => clientItems.push(d));
       }
 
       /**
@@ -713,7 +727,7 @@ export function loadClients(containerId) {
       track2.className = 'marquee-track';
       track2.setAttribute('aria-hidden', 'true');
 
-      snap.forEach((docSnap) => {
+      clientItems.forEach((docSnap) => {
         const c = docSnap.data();
         track1.appendChild(makeItem(c, docSnap.id));
         track2.appendChild(makeItem(c, docSnap.id + '-dup'));
