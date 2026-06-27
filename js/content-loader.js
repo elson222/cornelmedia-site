@@ -154,14 +154,20 @@ export function loadServicesSection(containerId) {
   onSnapshot(
     q,
     (snap) => {
+      let servicesItems = [];
       if (snap.empty) {
-        container.innerHTML = '<p class="no-content">Services coming soon.</p>';
-        return;
+        servicesItems = [
+          { data: () => ({ icon: '<i class="fas fa-video"></i>', title: 'Cinematic Videography', description: 'From commercials to weddings, we produce breathtaking videos that tell your story perfectly.', features: ['4K Resolution', 'Drone Footage', 'Color Grading'] }) },
+          { data: () => ({ icon: '<i class="fas fa-camera"></i>', title: 'Professional Photography', description: 'Capture life’s best moments with our premium photography services.', features: ['High-end Retouching', 'Studio & Outdoor', 'Event Coverage'] }) },
+          { data: () => ({ icon: '<i class="fas fa-broadcast-tower"></i>', title: 'Live Streaming', description: 'Broadcast your events live to a global audience with crystal-clear multi-cam setups.', features: ['Multi-Camera', 'Custom Graphics', 'Platform Integration'] }) }
+        ];
+      } else {
+        snap.forEach(d => servicesItems.push(d));
       }
 
       container.innerHTML = '';
 
-      snap.forEach((docSnap) => {
+      servicesItems.forEach((docSnap) => {
         const s = docSnap.data();
         const card = document.createElement('div');
         card.className = 'service-card';
@@ -281,10 +287,7 @@ export function loadPortfolio(containerId, filterCategory = 'all') {
 
           const overlay = document.createElement('div');
           overlay.className = 'portfolio-overlay';
-          overlay.innerHTML = `
-            <span class="portfolio-title">${escapeHtml(p.title || '')}</span>
-            ${p.category ? `<span class="portfolio-category">${escapeHtml(p.category)}</span>` : ''}
-          `;
+          overlay.innerHTML = `<i class="fas fa-expand" style="color:white;font-size:1.5rem"></i>`;
 
           item.appendChild(img);
           item.appendChild(overlay);
@@ -440,18 +443,13 @@ export function loadVideosSection(containerId) {
         card.dataset.id = docSnap.id;
 
         card.innerHTML = `
-          <div class="video-embed">
-            <iframe
-              src="https://www.youtube.com/embed/${escapeHtml(v.youtubeId)}"
-              title="${escapeHtml(v.title || 'Video')}"
-              allow="autoplay; encrypted-media"
-              allowfullscreen
-              loading="lazy"
-            ></iframe>
+          <div class="video-thumb-container" onclick="openVideoModal('${escapeHtml(v.youtubeId)}')">
+            <img src="https://img.youtube.com/vi/${escapeHtml(v.youtubeId)}/maxresdefault.jpg" class="video-thumb" alt="${escapeHtml(v.title || '')}" loading="lazy" />
+            <div class="play-btn-overlay"><i class="fas fa-play"></i></div>
           </div>
-          <div class="video-info">
-            <h3 class="video-title">${escapeHtml(v.title || '')}</h3>
-            ${v.description ? `<p class="video-desc">${escapeHtml(v.description)}</p>` : ''}
+          <div class="video-info" style="margin-top:12px;text-align:center">
+            <h3 class="video-title" style="font-size:1.1rem;margin:0">${escapeHtml(v.title || '')}</h3>
+            ${v.description ? `<p class="video-desc" style="font-size:0.85rem;opacity:0.7;margin-top:4px">${escapeHtml(v.description)}</p>` : ''}
           </div>
         `;
 

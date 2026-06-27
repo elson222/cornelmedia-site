@@ -20,7 +20,7 @@
   <meta name="theme-color" content="#000000">
   <title>Contact Us | Cornel Media Productions</title>
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
   <style>
@@ -142,11 +142,11 @@
                 <div style="font-weight:600">+233 500 020 168</div>
               </div>
             </a>
-            <a href="mailto:hello@cornel.media" class="contact-link-card" aria-label="Send email">
+            <a href="mailto:info@cornel.media" class="contact-link-card" aria-label="Send email">
               <div class="contact-icon" style="background:rgba(99,102,241,0.12);color:#818cf8"><i class="fas fa-envelope"></i></div>
               <div>
                 <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:3px">Email</div>
-                <div style="font-weight:600">hello@cornel.media</div>
+                <div style="font-weight:600">info@cornel.media</div>
               </div>
             </a>
             <div class="contact-link-card" style="cursor:default">
@@ -288,7 +288,7 @@ async function submitContactForm(e) {
     // Fallback: open mailto
     const subject = encodeURIComponent(`Inquiry from ${data.firstName || ''} ${data.lastName || ''}`);
     const body = encodeURIComponent(`Name: ${data.firstName||''} ${data.lastName||''}\nEmail: ${data.email||''}\nPhone: ${data.phone||'N/A'}\nService: ${data.service||'N/A'}\n\nMessage:\n${data.message||''}`);
-    window.open(`mailto:hello@cornel.media?subject=${subject}&body=${body}`);
+    window.open(`mailto:info@cornel.media?subject=${subject}&body=${body}`);
     successEl.style.display = 'block';
     form.reset();
   }
