@@ -183,7 +183,7 @@ export function loadServicesSection(containerId) {
         }
 
         card.innerHTML = `
-          <div class="service-icon" aria-hidden="true">${escapeHtml(s.icon || '')}</div>
+          <div class="service-icon" aria-hidden="true">${s.icon || ""}</div>
           <h3 class="service-title">${escapeHtml(s.title || 'Service')}</h3>
           <p class="service-description">${escapeHtml(s.description || '')}</p>
           ${featuresHtml}
@@ -1186,3 +1186,4 @@ function initContentLoader() {
 }
 
 export default initContentLoader;
+
