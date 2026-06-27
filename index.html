@@ -32,7 +32,7 @@
   <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
   <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <!-- Site CSS (no Tailwind) -->
@@ -53,10 +53,7 @@
 
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Hero">
-  <video id="heroVideo" autoplay muted loop playsinline preload="metadata"
-         poster="assets/images/hero-bg.jpg" class="hero-video">
-    <source src="assets/images/cornelmediawebsiteshowreel.mp4" type="video/mp4">
-  </video>
+  <img src="assets/images/hero-bg.jpg" alt="Cornel Media Productions" class="hero-video" loading="eager" decoding="async">
   <div class="hero-vignette-left" aria-hidden="true"></div>
   <div class="hero-vignette-bottom" aria-hidden="true"></div>
   <div class="hero-vignette-top" aria-hidden="true"></div>
@@ -69,9 +66,6 @@
     <div class="hero-actions reveal reveal-delay-3">
       <a href="portfolio.html" id="hero-cta-primary" class="btn-primary">Our Work</a>
       <a href="contact.html" id="hero-cta-secondary" class="btn-glass" onclick="try{gtag('event','cta_click',{'event_category':'Lead Generation'});}catch(e){}">Book Now</a>
-      <button id="muteToggle" class="btn-glass" aria-label="Toggle video sound" style="width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;padding:0">
-        <i id="muteIcon" class="fas fa-volume-mute"></i>
-      </button>
     </div>
   </div>
 

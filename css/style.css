@@ -36,9 +36,9 @@
   --shadow-glow: 0 0 30px rgba(232, 160, 48, 0.25), 0 0 60px rgba(232, 160, 48, 0.10);
 
   /* Glassmorphism */
-  --glass-bg:     rgba(255, 255, 255, 0.05);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-blur:   16px;
+  --glass-bg:     rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.04);
+  --glass-blur:   24px;
 
   /* Transitions */
   --transition:        0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -127,9 +127,10 @@ ol {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
-  line-height: 1.15;
-  letter-spacing: -0.01em;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
 :focus-visible {
@@ -712,11 +713,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-  font-size: clamp(2rem, 9vw, 5.5rem);
+  font-size: clamp(2.5rem, 10vw, 7.5rem);
   font-weight: 900;
-  letter-spacing: 0.05em;
+  letter-spacing: -0.02em;
   text-transform: uppercase;
-  line-height: 1.0;
+  line-height: 0.95;
   color: var(--text);
   animation: fadeUp 0.8s 0.1s ease both;
   will-change: transform, opacity;
@@ -727,11 +728,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-subtitle {
-  font-size: clamp(0.7rem, 2.2vw, 0.95rem);
-  letter-spacing: 0.28em;
+  font-size: clamp(0.75rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
-  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.85);
+  margin-top: 16px;
   animation: fadeUp 0.8s 0.2s ease both;
   will-change: transform, opacity;
 }
@@ -1007,7 +1008,7 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 1024px) {
   .section {
-    padding: 120px 80px;
+    padding: 160px 80px;
   }
 }
 
