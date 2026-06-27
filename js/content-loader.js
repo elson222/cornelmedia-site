@@ -231,16 +231,24 @@ export function loadPortfolio(containerId, filterCategory = 'all') {
     onSnapshot(
       q,
       (snap) => {
+        let itemsToRender = [];
         if (snap.empty) {
-          container.innerHTML = '<p class="no-content">Portfolio coming soon.</p>';
-          resolve([]);
-          return;
+          itemsToRender = [
+            { data: () => ({ imageUrl: 'assets/images/AS8A3155.JPG', title: 'Commercial', category: 'general' }) },
+            { data: () => ({ imageUrl: 'assets/images/IMG_4341.JPG', title: 'Portrait', category: 'portrait' }) },
+            { data: () => ({ imageUrl: 'assets/images/IMG_3256.jpg', title: 'Wedding', category: 'wedding' }) },
+            { data: () => ({ imageUrl: 'assets/images/IMG_1180.JPG', title: 'Event', category: 'event' }) },
+            { data: () => ({ imageUrl: 'assets/images/IMG_2701.JPG', title: 'Aerial', category: 'aerial' }) },
+            { data: () => ({ imageUrl: 'assets/images/AS8A3154.JPG', title: 'Portrait', category: 'portrait' }) }
+          ];
+        } else {
+          snap.forEach(d => itemsToRender.push(d));
         }
 
         const allItems = [];
         container.innerHTML = '';
 
-        snap.forEach((docSnap, index) => {
+        itemsToRender.forEach((docSnap, index) => {
           const p = docSnap.data();
           allItems.push({
             imageUrl: p.imageUrl || '',
@@ -407,14 +415,23 @@ export function loadVideosSection(containerId) {
   onSnapshot(
     q,
     (snap) => {
+      let videoItems = [];
       if (snap.empty) {
-        container.innerHTML = '<p class="no-content">Videos coming soon.</p>';
-        return;
+        videoItems = [
+          { id: 'v1', data: () => ({ youtubeId: 'l9dRrMZPano', title: 'Cornel Media Video 1' }) },
+          { id: 'v2', data: () => ({ youtubeId: 'SGr7FipUjyc', title: 'Cornel Media Video 2' }) },
+          { id: 'v3', data: () => ({ youtubeId: 'oQj3GvaZI-M', title: 'Cornel Media Video 3' }) },
+          { id: 'v4', data: () => ({ youtubeId: 'COjF_X5UKeA', title: 'Cornel Media Video 4' }) },
+          { id: 'v5', data: () => ({ youtubeId: 'DhWQNfoti-c', title: 'Cornel Media Video 5' }) },
+          { id: 'v6', data: () => ({ youtubeId: 'cTFRoehYzHs', title: 'Cornel Media Video 6' }) }
+        ];
+      } else {
+        snap.forEach(d => videoItems.push(d));
       }
 
       container.innerHTML = '';
 
-      snap.forEach((docSnap) => {
+      videoItems.forEach((docSnap) => {
         const v = docSnap.data();
         if (!v.youtubeId) return;
 
