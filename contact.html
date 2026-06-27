@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,6 +85,53 @@
       flex-shrink: 0;
     }
   </style>
+  <!-- Global JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Cornel Media Productions",
+        "image": "https://cornel.media/assets/images/favicon.png",
+        "description": "Ghana's premier creative and digital agency. Premium photography, videography, drone services, and social media management.",
+        "url": "https://cornel.media",
+        "telephone": "+233500020168",
+        "email": "info@cornel.media",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "East Legon, Accra",
+            "addressRegion": "Greater Accra",
+            "addressCountry": "GH"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Tarkwa",
+            "addressRegion": "Western Region",
+            "addressCountry": "GH"
+          }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Cornelius Quayson",
+          "jobTitle": "Founder & Creative Director"
+        },
+        "sameAs": [
+          "https://www.tiktok.com/@cornelmedia",
+          "https://www.instagram.com/quaysoncornel",
+          "https://gh.linkedin.com/in/cornelius-quayson-49a170271"
+        ],
+        "priceRange": "GH?"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Cornel Media Productions",
+        "url": "https://cornel.media"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 <!-- -- MOBILE TOP LOGO -- -->
@@ -103,7 +150,7 @@
   <a href="about.html" class="nav-item"><i class="fas fa-info-circle"></i> About</a>
   <a href="services.html" class="nav-item"><i class="fas fa-video"></i> Services</a>
   <a href="portfolio.html" class="nav-item"><i class="fas fa-images"></i> Portfolio</a>
-  <a href="pricing.html" class="nav-item"><i class="fas fa-tag"></i> Pricing</a>
+  <a href="pricing.html" class="nav-item"><i class="fas fa-handshake"></i> Work With Us</a>
   <div style="width:1px;height:16px;background:rgba(255,255,255,0.15);margin:0 4px"></div>
   <a href="contact.html" class="nav-item nav-active" aria-current="page" style="background:rgba(232,160,48,0.2);color:#E8A030"><i class="fas fa-envelope"></i> Book Now</a>
 </nav>
@@ -153,7 +200,7 @@
               <div class="contact-icon" style="background:rgba(232,160,48,0.12);color:#E8A030"><i class="fas fa-map-marker-alt"></i></div>
               <div>
                 <div style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.4);margin-bottom:3px">Location</div>
-                <div style="font-weight:600">Tarkwa &amp; East Legon, Accra</div>
+                <div style="font-weight:600">East Legon, Accra &amp; Tarkwa, Western Region</div>
                 <div style="font-size:0.8rem;color:rgba(255,255,255,0.45)">Western Region &amp; Greater Accra, Ghana</div>
               </div>
             </div>
@@ -230,7 +277,7 @@
 <footer class="site-footer">
   <div class="footer-inner container">
     <img src="assets/images/logo.png" alt="Cornel Media Productions" style="height:36px;opacity:0.6" loading="lazy" onerror="this.style.display='none'">
-    <nav class="footer-nav"><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></nav>
+    <nav class="footer-nav"><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html" class="nav-item"><i class="fas fa-handshake"></i> Work With Us</a><a href="contact.html">Contact</a></nav>
     <div class="footer-social">
       <a href="https://www.facebook.com/people/Cornel-Media/61574710385491/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
       <a href="https://www.tiktok.com/@cornelmedia" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
@@ -247,7 +294,7 @@
   <a href="index.html" class="mob-nav-item"><i class="fas fa-home"></i><span>Home</span></a>
   <a href="services.html" class="mob-nav-item"><i class="fas fa-video"></i><span>Services</span></a>
   <a href="portfolio.html" class="mob-nav-item"><i class="fas fa-images"></i><span>Work</span></a>
-  <a href="pricing.html" class="mob-nav-item"><i class="fas fa-tag"></i><span>Pricing</span></a>
+  <a href="pricing.html" class="nav-item"><i class="fas fa-handshake"></i> Work With Us</a>
   <a href="contact.html" class="mob-nav-item active" aria-current="page"><i class="fas fa-envelope"></i><span>Book</span></a>
 </nav>
 
@@ -304,6 +351,8 @@ async function submitContactForm(e) {
 </script>
 </body>
 </html>
+
+
 
 
 

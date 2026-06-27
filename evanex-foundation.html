@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -12,9 +12,7 @@
   <meta property="og:image" content="assets/images/ef-ig-05.jpg">
   <meta property="og:type" content="website">
   <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"NGO","name":"Evanex Foundation","description":"Empowering communities and transforming lives in Ghana's Western Region.","address":{"@type":"PostalAddress","addressRegion":"Western Region","addressCountry":"GH"}}
-  </script>
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -80,6 +78,53 @@
     ::-webkit-scrollbar-track { background:#000; }
     ::-webkit-scrollbar-thumb { background:#F26A22; border-radius:9999px; }
   </style>
+  <!-- Global JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Cornel Media Productions",
+        "image": "https://cornel.media/assets/images/favicon.png",
+        "description": "Ghana's premier creative and digital agency. Premium photography, videography, drone services, and social media management.",
+        "url": "https://cornel.media",
+        "telephone": "+233500020168",
+        "email": "info@cornel.media",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "East Legon, Accra",
+            "addressRegion": "Greater Accra",
+            "addressCountry": "GH"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Tarkwa",
+            "addressRegion": "Western Region",
+            "addressCountry": "GH"
+          }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Cornelius Quayson",
+          "jobTitle": "Founder & Creative Director"
+        },
+        "sameAs": [
+          "https://www.tiktok.com/@cornelmedia",
+          "https://www.instagram.com/quaysoncornel",
+          "https://gh.linkedin.com/in/cornelius-quayson-49a170271"
+        ],
+        "priceRange": "GH?"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Cornel Media Productions",
+        "url": "https://cornel.media"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-black antialiased">
 
@@ -706,6 +751,8 @@ form.addEventListener('submit', async e => {
 </script>
 </body>
 </html>
+
+
 
 
 

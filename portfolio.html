@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,9 +23,55 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Global JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Cornel Media Productions",
+        "image": "https://cornel.media/assets/images/favicon.png",
+        "description": "Ghana's premier creative and digital agency. Premium photography, videography, drone services, and social media management.",
+        "url": "https://cornel.media",
+        "telephone": "+233500020168",
+        "email": "info@cornel.media",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "East Legon, Accra",
+            "addressRegion": "Greater Accra",
+            "addressCountry": "GH"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Tarkwa",
+            "addressRegion": "Western Region",
+            "addressCountry": "GH"
+          }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Cornelius Quayson",
+          "jobTitle": "Founder & Creative Director"
+        },
+        "sameAs": [
+          "https://www.tiktok.com/@cornelmedia",
+          "https://www.instagram.com/quaysoncornel",
+          "https://gh.linkedin.com/in/cornelius-quayson-49a170271"
+        ],
+        "priceRange": "GH?"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Cornel Media Productions",
+        "url": "https://cornel.media"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
-<!-- -- MOBILE TOP LOGO -- -->
 <header class="mobile-header" style="display:flex; justify-content:center; align-items:center; padding:16px; position:absolute; top:0; left:0; width:100%; z-index:100;">
   <a href="index.html"><img src="assets/images/logo.png" alt="Cornel Media Productions" style="height:32px; object-fit:contain;"></a>
 </header>
@@ -41,77 +87,102 @@
   <a href="about.html" class="nav-item"><i class="fas fa-info-circle"></i> About</a>
   <a href="services.html" class="nav-item"><i class="fas fa-video"></i> Services</a>
   <a href="portfolio.html" class="nav-item nav-active" aria-current="page"><i class="fas fa-images"></i> Portfolio</a>
-  <a href="pricing.html" class="nav-item"><i class="fas fa-tag"></i> Pricing</a>
+  <a href="pricing.html" class="nav-item"><i class="fas fa-handshake"></i> Work With Us</a>
   <div style="width:1px;height:16px;background:rgba(255,255,255,0.15);margin:0 4px"></div>
   <a href="contact.html" class="nav-item" style="background:rgba(232,160,48,0.15);color:#E8A030"><i class="fas fa-envelope"></i> Book Now</a>
 </nav>
 
 <main>
-  <!-- Page Hero -->
   <section class="section" style="padding-top:120px;padding-bottom:40px">
     <div class="container" style="max-width:900px">
       <p class="section-label reveal">Our Work</p>
       <h1 class="section-title reveal reveal-delay-1">Portfolio</h1>
       <div class="section-divider reveal reveal-delay-2"></div>
-      <p class="reveal reveal-delay-3" style="color:rgba(255,255,255,0.5);margin-top:20px;max-width:540px;line-height:1.8">A curated selection of our finest work — from commercial campaigns to intimate wedding days.</p>
+      <p class="reveal reveal-delay-3" style="color:rgba(255,255,255,0.7);margin-top:20px;max-width:720px;line-height:1.8;font-size:1.05rem;">
+        We bring stories to life through uncompromising visual excellence. Whether it's a high-stakes corporate documentary, a sweeping aerial site map, or the intimate moments of a wedding day, our approach is always cinematic. We don't just point and shoot—we craft compelling narratives that resonate deeply with audiences across all industries.
+      </p>
     </div>
   </section>
 
-  <!-- Portfolio Filters + Grid -->
   <section class="section" style="padding-top:0">
     <div class="container">
-      <!-- Filter buttons (populated by content-loader.js) -->
-      <div id="portfolio-filters" class="portfolio-filters reveal">
+      <div class="portfolio-filters reveal" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;">
         <button class="filter-btn active" data-category="all">All</button>
+        <button class="filter-btn" data-category="corporate">Corporate</button>
+        <button class="filter-btn" data-category="documentary">Documentary</button>
+        <button class="filter-btn" data-category="events">Events</button>
+        <button class="filter-btn" data-category="drone">Drone</button>
+        <button class="filter-btn" data-category="weddings">Weddings</button>
+        <button class="filter-btn" data-category="portrait">Portrait</button>
+        <button class="filter-btn" data-category="commercial">Commercial</button>
       </div>
-      <!-- Masonry grid (populated by content-loader.js) -->
-      <div id="portfolio-grid" class="portfolio-grid">
-        <!-- Static fallback: local images while Firebase loads -->
-        <div class="portfolio-item">
-          <img src="assets/images/AS8A3155.JPG" alt="Commercial photography" loading="lazy">
-          <div class="portfolio-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.5rem"></i></div>
+
+      <div id="portfolio-grid-static" class="portfolio-grid" style="column-count: 3; column-gap: 16px;">
+        
+        <div class="portfolio-item reveal" data-category="commercial corporate">
+          <img src="assets/images/AS8A3155.JPG" alt="Commercial photography for corporate brand" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <div style="text-align:center;">
+              <span style="font-size:0.6rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px;">Commercial</span>
+              <h3 style="font-weight:700;font-size:1rem;">Brand Campaign</h3>
+            </div>
+          </div>
         </div>
-        <div class="portfolio-item">
-          <img src="assets/images/IMG_4341.JPG" alt="Portrait photography" loading="lazy">
-          <div class="portfolio-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.5rem"></i></div>
+
+        <div class="portfolio-item reveal" data-category="portrait corporate">
+          <img src="assets/images/IMG_4341.JPG" alt="Corporate portrait photography" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <div style="text-align:center;">
+              <span style="font-size:0.6rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px;">Portrait</span>
+              <h3 style="font-weight:700;font-size:1rem;">Executive Headshots</h3>
+            </div>
+          </div>
         </div>
-        <div class="portfolio-item">
-          <img src="assets/images/IMG_3256.jpg" alt="Wedding photography" loading="lazy">
-          <div class="portfolio-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.5rem"></i></div>
+
+        <div class="portfolio-item reveal" data-category="weddings events">
+          <img src="assets/images/IMG_3256.jpg" alt="Cinematic wedding photography" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <div style="text-align:center;">
+              <span style="font-size:0.6rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px;">Weddings</span>
+              <h3 style="font-weight:700;font-size:1rem;">Bridal Details</h3>
+            </div>
+          </div>
         </div>
-        <div class="portfolio-item">
-          <img src="assets/images/IMG_1180.JPG" alt="Event photography" loading="lazy">
-          <div class="portfolio-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.5rem"></i></div>
+
+        <div class="portfolio-item reveal" data-category="events documentary">
+          <img src="assets/images/IMG_1180.JPG" alt="Event photography coverage" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <div style="text-align:center;">
+              <span style="font-size:0.6rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px;">Events</span>
+              <h3 style="font-weight:700;font-size:1rem;">Tarkwa Fashion Week</h3>
+            </div>
+          </div>
         </div>
-        <div class="portfolio-item">
-          <img src="assets/images/IMG_2701.JPG" alt="Aerial photography" loading="lazy">
-          <div class="portfolio-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.5rem"></i></div>
+
+        <div class="portfolio-item reveal" data-category="drone commercial">
+          <img src="assets/images/IMG_2701.JPG" alt="Aerial drone photography" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <div style="text-align:center;">
+              <span style="font-size:0.6rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px;">Drone</span>
+              <h3 style="font-weight:700;font-size:1rem;">Site Documentation</h3>
+            </div>
+          </div>
         </div>
-        <div class="portfolio-item">
-          <img src="assets/images/AS8A3154.JPG" alt="Portrait photography" loading="lazy">
-          <div class="portfolio-item-overlay"><i class="fas fa-expand" style="color:white;font-size:1.5rem"></i></div>
+
+        <div class="portfolio-item reveal" data-category="documentary corporate">
+          <img src="assets/images/AS8A3154.JPG" alt="Corporate documentary photography" loading="lazy">
+          <div class="portfolio-item-overlay">
+            <div style="text-align:center;">
+              <span style="font-size:0.6rem;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;display:block;margin-bottom:8px;">Documentary</span>
+              <h3 style="font-weight:700;font-size:1rem;">Mining Operations</h3>
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Videos Section -->
-  <section class="section" style="background:rgba(255,255,255,0.02);border-top:1px solid rgba(255,255,255,0.05)">
-    <div class="container">
-      <div style="text-align:center;margin-bottom:40px">
-        <p class="section-label reveal">Watch Our Work</p>
-        <h2 class="section-title reveal reveal-delay-1">Video Portfolio</h2>
-        <div class="section-divider reveal reveal-delay-2" style="margin-left:auto;margin-right:auto"></div>
-      </div>
-      <div id="videos-grid" class="videos-grid">
-        <div class="skeleton" style="aspect-ratio:16/9;border-radius:12px"></div>
-        <div class="skeleton" style="aspect-ratio:16/9;border-radius:12px"></div>
-        <div class="skeleton" style="aspect-ratio:16/9;border-radius:12px"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
   <section class="cta-section reveal">
     <div class="container">
       <div class="cta-inner">
@@ -119,34 +190,35 @@
         <p class="cta-sub">Let's create something just as stunning for you.</p>
         <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
           <a href="contact.html" class="btn-primary">Book a Session</a>
-          <a href="pricing.html" class="btn-glass">View Pricing</a>
+          <a href="pricing.html" class="btn-glass">Work With Us</a>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- Lightbox (built by content-loader.js, anchored here) -->
-<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="Image lightbox">
-  <button class="lightbox-close" id="lightboxClose" aria-label="Close"><i class="fas fa-times"></i></button>
-  <button class="lightbox-prev" id="lightboxPrev" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
-  <button class="lightbox-next" id="lightboxNext" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
-  <img class="lightbox-img" id="lightboxImg" src="" alt="Portfolio image">
-</div>
-
 <footer class="site-footer">
   <div class="footer-inner container">
-    <img src="assets/images/logo.png" alt="Cornel Media Productions" style="height:36px;opacity:0.6" loading="lazy" onerror="this.style.display='none'">
-    <nav class="footer-nav"><a href="about.html">About</a><a href="services.html">Services</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></nav>
-    <div class="footer-social">
-      <a href="https://www.facebook.com/people/Cornel-Media/61574710385491/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.tiktok.com/@cornelmedia" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-      <a href="https://x.com/cornelmedia_" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-      <a href="https://www.instagram.com/quaysoncornel/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.youtube.com/@quaysoncornel" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      <a href="https://gh.linkedin.com/in/cornelius-quayson-49a170271" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start">
+      <img src="assets/images/logo.png" alt="Cornel Media Productions" style="height:36px;object-fit:contain;opacity:0.6" loading="lazy" onerror="this.style.display='none'">
+      <p style="color:rgba(255,255,255,0.5);font-size:0.85rem">East Legon, Accra<br>Tarkwa, Western Region, Ghana</p>
     </div>
-    <div class="footer-copy"><a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Terms</a> &middot; &copy; 2026 Cornel Media Productions</div>
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="pricing.html">Work With Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="footer-social">
+      <a href="https://www.tiktok.com/@cornelmedia" target="_blank" rel="noopener" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="https://www.instagram.com/quaysoncornel" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://gh.linkedin.com/in/cornelius-quayson-49a170271" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://wa.me/233500020168" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <div class="footer-copy">
+      &copy; 2026 Cornel Media Productions. All rights reserved.<br>
+      <a href="privacy-policy.html">Privacy</a> &middot; <a href="terms.html">Terms</a>
+    </div>
   </div>
 </footer>
 
@@ -154,28 +226,50 @@
   <a href="index.html" class="mob-nav-item"><i class="fas fa-home"></i><span>Home</span></a>
   <a href="services.html" class="mob-nav-item"><i class="fas fa-video"></i><span>Services</span></a>
   <a href="portfolio.html" class="mob-nav-item active" aria-current="page"><i class="fas fa-images"></i><span>Work</span></a>
-  <a href="pricing.html" class="mob-nav-item"><i class="fas fa-tag"></i><span>Pricing</span></a>
+  <a href="pricing.html" class="mob-nav-item"><i class="fas fa-handshake"></i><span>Process</span></a>
   <a href="contact.html" class="mob-nav-item"><i class="fas fa-envelope"></i><span>Book</span></a>
 </nav>
 
 <a href="https://wa.me/233500020168" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 
-<div id="cookieBanner" class="cookie-banner" role="dialog" aria-label="Cookie consent">
-  <p style="font-size:0.8rem;color:rgba(255,255,255,0.7);line-height:1.5;margin:0 0 14px">We use cookies to improve your experience.</p>
-  <div style="display:flex;gap:8px">
-    <button onclick="acceptCookies()" class="btn-primary" style="flex:1;padding:10px;font-size:0.8rem;border-radius:20px">Accept</button>
-    <a href="privacy-policy.html" style="flex:1;padding:10px;font-size:0.8rem;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.1);border-radius:20px;text-decoration:none">Policy</a>
-  </div>
-</div>
-
-<script src="js/main.js" defer></script>
-<script type="module">
-  import initContentLoader from './js/content-loader.js';
-  document.addEventListener('DOMContentLoaded', initContentLoader);
+<script>
+  function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 100;
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("visible");
+      }
+    }
+  }
+  window.addEventListener("scroll", reveal);
+  window.addEventListener("load", reveal);
+  
+  // Basic static filtering
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const items = document.querySelectorAll('.portfolio-item');
+    
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const cat = btn.dataset.category;
+        
+        items.forEach(item => {
+          if (cat === 'all' || item.dataset.category.includes(cat)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  });
 </script>
+
 </body>
 </html>
-
-
-
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Analytics Integration -->
@@ -10,23 +10,7 @@
       gtag('config', 'G-PLACEHOLDER');
     </script>
     <!-- SEO JSON-LD Architectural Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Cornel Media Productions",
-      "image": "https://cornel.media/assets/images/og-preview-black.png",
-      "url": "https://cornel.media",
-      "telephone": "+233500020168",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tarkwa",
-        "addressRegion": "Western Region",
-        "addressCountry": "GH"
-      },
-      "priceRange": "GH?3000+"
-    }
-    </script>
+    
     <!-- Open Graph Social Media Parsing -->
     <meta property="og:title" content="Cornel Media Productions" />
     <meta property="og:description" content="Cornel Media Productions is a full-service creative and digital agency in Accra, Ghana. We offer photography, videography, drone services, social media management, website development and live streaming." />
@@ -63,6 +47,53 @@
         .nav-active { background: #fff; color: #000; box-shadow: 0 2px 10px rgba(255,255,255,0.2); }
         .nav-active:hover { color: #000; text-shadow: none; background: #f0f0f0; }
     </style>
+  <!-- Global JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Cornel Media Productions",
+        "image": "https://cornel.media/assets/images/favicon.png",
+        "description": "Ghana's premier creative and digital agency. Premium photography, videography, drone services, and social media management.",
+        "url": "https://cornel.media",
+        "telephone": "+233500020168",
+        "email": "info@cornel.media",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "East Legon, Accra",
+            "addressRegion": "Greater Accra",
+            "addressCountry": "GH"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Tarkwa",
+            "addressRegion": "Western Region",
+            "addressCountry": "GH"
+          }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Cornelius Quayson",
+          "jobTitle": "Founder & Creative Director"
+        },
+        "sameAs": [
+          "https://www.tiktok.com/@cornelmedia",
+          "https://www.instagram.com/quaysoncornel",
+          "https://gh.linkedin.com/in/cornelius-quayson-49a170271"
+        ],
+        "priceRange": "GH?"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Cornel Media Productions",
+        "url": "https://cornel.media"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-black antialiased selection:bg-white selection:text-black min-h-screen flex items-center justify-center p-6">
     
@@ -137,6 +168,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 

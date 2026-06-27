@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Google Analytics Integration -->
@@ -10,23 +10,7 @@
       gtag('config', 'G-PLACEHOLDER');
     </script>
     <!-- SEO JSON-LD Architectural Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Cornel Media Productions",
-      "image": "https://cornel.media/assets/images/og-preview-black.png",
-      "url": "https://cornel.media",
-      "telephone": "+233500020168",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Tarkwa",
-        "addressRegion": "Western Region",
-        "addressCountry": "GH"
-      },
-      "priceRange": "GH?3000+"
-    }
-    </script>
+    
     <!-- Open Graph Social Media Parsing -->
     <meta property="og:title" content="Cornel Media Productions" />
     <meta property="og:description" content="Cornel Media Productions is a full-service creative and digital agency in Accra, Ghana. We offer photography, videography, drone services, social media management, website development and live streaming." />
@@ -70,6 +54,53 @@
                         radial-gradient(circle at 0% 0%, rgba(255,0,50,0.02) 0%, transparent 50%);
         }
     </style>
+  <!-- Global JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LocalBusiness",
+        "name": "Cornel Media Productions",
+        "image": "https://cornel.media/assets/images/favicon.png",
+        "description": "Ghana's premier creative and digital agency. Premium photography, videography, drone services, and social media management.",
+        "url": "https://cornel.media",
+        "telephone": "+233500020168",
+        "email": "info@cornel.media",
+        "address": [
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "East Legon, Accra",
+            "addressRegion": "Greater Accra",
+            "addressCountry": "GH"
+          },
+          {
+            "@type": "PostalAddress",
+            "addressLocality": "Tarkwa",
+            "addressRegion": "Western Region",
+            "addressCountry": "GH"
+          }
+        ],
+        "founder": {
+          "@type": "Person",
+          "name": "Cornelius Quayson",
+          "jobTitle": "Founder & Creative Director"
+        },
+        "sameAs": [
+          "https://www.tiktok.com/@cornelmedia",
+          "https://www.instagram.com/quaysoncornel",
+          "https://gh.linkedin.com/in/cornelius-quayson-49a170271"
+        ],
+        "priceRange": "GH?"
+      },
+      {
+        "@type": "WebSite",
+        "name": "Cornel Media Productions",
+        "url": "https://cornel.media"
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-black antialiased selection:bg-white selection:text-black min-h-screen flex flex-col hero-bg-vignette">
     
@@ -124,7 +155,7 @@
                 
                 <div class="space-y-6 text-zinc-400 text-[15px] leading-relaxed">
                     <p>
-                        Based in East Legon, Accra and Tarkwa, Western Region, Cornel Media Productions is a full-service media powerhouse specializing in premium videography, photography, drone piloting, and multi-cam live streaming. 
+                        Based in East Legon, Accra and Tarkwa, Western Region, Ghana, Cornel Media Productions is a full-service media powerhouse specializing in premium videography, photography, drone piloting, and multi-cam live streaming. 
                     </p>
                     <p>
                         We approach every project with a cinematic eye. Whether it's an intimate elopement, a high-octane music video, or a large-scale corporate broadcast, our team utilizes industry-standard 4K cameras and advanced lighting techniques to ensure your vision is captured flawlessly.
@@ -169,7 +200,7 @@
             <img src="assets/images/logo.png" alt="Cornel Media Productions" class="h-10 object-contain opacity-60 hover:opacity-100 transition" loading="lazy"><div class="flex gap-6 text-[13px] text-white/40">
                 <a href="about.html" class="hover:text-white transition">About</a>
                 <a href="services.html" class="hover:text-white transition">Services</a>
-                <a href="pricing.html" class="hover:text-white transition">Pricing</a>
+                <a href="pricing.html" class="nav-item"><i class="fas fa-handshake"></i> Work With Us</a>
                 <a href="contact.html" class="hover:text-white transition">Contact</a>
             </div>
             <div class="flex gap-5 text-lg text-white/50">
@@ -235,6 +266,8 @@
     </script>
 </body>
 </html>
+
+
 
 
 
