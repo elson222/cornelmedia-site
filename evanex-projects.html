@@ -50,8 +50,18 @@
         .filter-pill { cursor: pointer; transition: all .2s ease; }
         .filter-pill:hover { opacity: 0.85; }
     </style>
+
+  <meta property="og:title" content="Cornel Media Productions">
+  <meta property="og:description" content="Ghana's premier creative team. Cinematic stories that move audiences.">
+  <meta property="og:image" content="https://cornel.media/assets/images/logo.png">
+  <meta property="og:url" content="https://cornel.media/">
+  <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
+<!-- -- MOBILE TOP LOGO -- -->
+<header class="mobile-header" style="display:flex; justify-content:center; align-items:center; padding:16px; position:absolute; top:0; left:0; width:100%; z-index:100;">
+  <a href="index.html"><img src="assets/images/logo.png" alt="Cornel Media Productions" style="height:32px; object-fit:contain;"></a>
+</header>
 
 <!-- DESKTOP NAV -->
 <nav class="hidden md:flex fixed top-8 left-1/2 -translate-x-1/2 z-50 w-fit items-center pill-nav rounded-full px-2 py-2 gap-1 border border-white/5">
@@ -508,6 +518,8 @@ pills.forEach(pill => {
 </script>
 </body>
 </html>
+
+
 
 
 

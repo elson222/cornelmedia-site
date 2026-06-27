@@ -413,8 +413,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @media (min-width: 768px) {
-  .mobile-bottom-nav {
-    display: none;
+  .mobile-bottom-nav, .mobile-header {
+    display: none !important;
   }
 }
 
