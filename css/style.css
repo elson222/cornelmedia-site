@@ -8,6 +8,8 @@
    1. CSS CUSTOM PROPERTIES (Design Tokens)
    ============================================================ */
 :root {
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
   /* Backgrounds */
   --bg:        #000000;
   --surface:   #0a0a0a;
@@ -127,12 +129,12 @@ ol {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  --font-sans: 'Poppins', system-ui, -apple-system, sans-serif;
-  --font-display: 'Poppins', system-ui, -apple-system, sans-serif;
+  --font-sans: 'Manrope', system-ui, -apple-system, sans-serif;
+  --font-display: 'Montserrat', system-ui, -apple-system, sans-serif;
   font-family: var(--font-display);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: 0.02em;
 }
 
 :focus-visible {
@@ -719,14 +721,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 10vw, 7.5rem);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 900;
-  letter-spacing: -0.02em;
   text-transform: uppercase;
-  line-height: 0.95;
-  color: var(--text);
-  animation: fadeUp 0.8s 0.1s ease both;
-  will-change: transform, opacity;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin-bottom: 24px;
 }
 
 .hero-title .accent {
@@ -817,8 +817,13 @@ h1, h2, h3, h4, h5, h6 {
 
 @media (min-width: 640px) {
   .hero-title {
-    font-size: clamp(2.5rem, 7vw, 5rem);
-  }
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+}
 
   .hero-description {
     display: block;
@@ -2228,11 +2233,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cta-title {
-  font-size: clamp(1.75rem, 5vw, 3.5rem);
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
   font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
-  line-height: 1.05;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  margin-bottom: 24px;
 }
 
 .cta-sub {
@@ -3122,3 +3128,4 @@ select.form-control {
  . v i d e o - m o d a l - c o n t e n t   i f r a m e   {   w i d t h :   1 0 0 % ;   h e i g h t :   1 0 0 % ;   b o r d e r - r a d i u s :   1 2 p x ;   } 
   
  
+
