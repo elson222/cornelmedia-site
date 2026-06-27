@@ -687,6 +687,8 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   z-index: 10;
   width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
   padding: 0 24px;
   padding-bottom: calc(var(--nav-height-mobile) + var(--safe-bottom) + 24px);
 }
