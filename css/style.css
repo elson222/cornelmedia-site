@@ -602,6 +602,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   display: flex;
   align-items: center;
+  background-color: #000;
 }
 
 .hero-video {
@@ -612,10 +613,16 @@ h1, h2, h3, h4, h5, h6 {
   height: 100%;
   object-fit: cover;
   object-position: right center; /* Ensures the subject on the right stays visible on smaller screens */
-  opacity: 0.75;
+  opacity: 0.85;
   z-index: 0;
   pointer-events: none;
   will-change: transform;
+}
+
+@media (min-width: 768px) {
+  .hero-video {
+    object-fit: contain;
+  }
 }
 
 .hero-vignette-left {
