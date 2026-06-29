@@ -152,6 +152,13 @@
                     <div class="portfolio-item reveal" data-category="weddings events" style="break-inside: avoid; margin-bottom: 16px; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
             <video src="assets/videos/tiktok_3.mp4" autoplay loop muted playsinline style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; border-radius: 8px;"></video>
           </div>
+
+<div class="portfolio-item reveal" data-category="weddings events" style="break-inside: avoid; margin-bottom: 16px; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <video src="assets/videos/tiktok_4.mp4" autoplay loop muted playsinline style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; border-radius: 8px;"></video>
+          </div>
+          <div class="portfolio-item reveal" data-category="weddings events" style="break-inside: avoid; margin-bottom: 16px; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+            <video src="assets/videos/tiktok_5.mp4" autoplay loop muted playsinline style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; border-radius: 8px;"></video>
+          </div>
         </div>
 <div id="portfolio-grid-static" class="portfolio-grid" style="column-count: 3; column-gap: 16px;">
 <div class="portfolio-item reveal" data-category="weddings events">
@@ -160,11 +167,6 @@
 <div class="portfolio-item reveal" data-category="commercial corporate">
             <img src="assets/images/AS8A3155.JPG" alt="Corporate" loading="lazy">
             </div>
-
-          
-                    <div class="portfolio-item reveal" data-category="weddings events" style="break-inside: avoid; margin-bottom: 16px; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-            <video src="assets/videos/tiktok_4.mp4" autoplay loop muted playsinline style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; border-radius: 8px;"></video>
-          </div>
 <div class="portfolio-item reveal" data-category="commercial corporate">
             <img src="assets/images/CD-TEASE-1.jpg" alt="Commercial teaser" loading="lazy">
             </div>
@@ -174,12 +176,6 @@
 <div class="portfolio-item reveal" data-category="portrait corporate">
             <img src="assets/images/IMG_4341.JPG" alt="Executive Portrait" loading="lazy">
             </div>
-
-          
-          
-                    <div class="portfolio-item reveal" data-category="weddings events" style="break-inside: avoid; margin-bottom: 16px; border-radius: 8px; overflow: hidden; background: #000; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
-            <video src="assets/videos/tiktok_5.mp4" autoplay loop muted playsinline style="width:100%; aspect-ratio:16/9; object-fit:cover; display:block; border-radius: 8px;"></video>
-          </div>
 <div class="portfolio-item reveal" data-category="drone commercial">
             <img src="assets/images/IMG_2701.JPG" alt="Drone Photography" loading="lazy">
             </div>
@@ -360,7 +356,7 @@
       opacity: 1;
       pointer-events: all;
     }
-    .lightbox img {
+    .lightbox img, .lightbox video {
       max-width: 95vw;
       max-height: 90vh;
       border-radius: 8px;
@@ -369,14 +365,14 @@
       box-shadow: 0 20px 60px rgba(0,0,0,0.8);
       object-fit: contain;
     }
-    .lightbox.active img {
+    .lightbox.active img, .lightbox.active video {
       transform: scale(1);
     }
-    .portfolio-item img {
+    .portfolio-item img, .portfolio-item video, .top-videos-grid video {
       cursor: zoom-in;
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
     }
-    .portfolio-item:hover img {
+    .portfolio-item:hover img, .portfolio-item:hover video, .top-videos-grid video:hover {
       transform: scale(1.03);
       filter: brightness(1.1);
     }
@@ -385,36 +381,51 @@
     document.addEventListener('DOMContentLoaded', () => {
       const lightbox = document.createElement('div');
       lightbox.className = 'lightbox';
-      lightbox.innerHTML = '<img>';
+      lightbox.innerHTML = '<img><video controls autoplay loop playsinline style="display:none;"></video>';
       document.body.appendChild(lightbox);
+      
       const lightboxImg = lightbox.querySelector('img');
+      const lightboxVideo = lightbox.querySelector('video');
 
+      // Handle Image Clicks
       document.querySelectorAll('.portfolio-item img').forEach(img => {
         img.addEventListener('click', (e) => {
           e.stopPropagation();
+          lightboxVideo.style.display = 'none';
+          lightboxVideo.pause();
+          lightboxVideo.src = '';
+          
+          lightboxImg.style.display = 'block';
           lightboxImg.src = img.src;
+          
           lightbox.classList.add('active');
           document.body.style.overflow = 'hidden'; // prevent scrolling
+        });
+      });
+
+      // Handle Video Clicks
+      document.querySelectorAll('.portfolio-item video, .top-videos-grid video').forEach(vid => {
+        vid.addEventListener('click', (e) => {
+          e.stopPropagation();
+          lightboxImg.style.display = 'none';
+          lightboxImg.src = '';
+          
+          lightboxVideo.style.display = 'block';
+          lightboxVideo.src = vid.src;
+          lightboxVideo.play();
+          
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
         });
       });
 
       lightbox.addEventListener('click', () => {
         lightbox.classList.remove('active');
         document.body.style.overflow = '';
+        lightboxVideo.pause();
+        lightboxVideo.src = '';
       });
     });
   </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
