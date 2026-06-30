@@ -617,8 +617,8 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
   pointer-events: none;
   will-change: transform;
-  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
-  mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse closest-side, black 30%, transparent 95%);
+  mask-image: radial-gradient(ellipse closest-side, black 30%, transparent 95%);
 }
 
 @media (min-width: 768px) {
@@ -629,8 +629,8 @@ h1, h2, h3, h4, h5, h6 {
     left: 35%;
     object-fit: cover;
     object-position: center;
-    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
-    mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse closest-side, black 30%, transparent 95%);
+    mask-image: radial-gradient(ellipse closest-side, black 30%, transparent 95%);
   }
 }
 
