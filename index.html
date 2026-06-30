@@ -106,8 +106,8 @@
       const heroVid = document.getElementById('hero-vid');
       const setHeroVideo = () => {
         const isPortrait = window.matchMedia("(max-aspect-ratio: 1/1)").matches;
-        const newSrc = isPortrait ? "assets/videos/hero_montage_portrait.mp4" : "assets/videos/hero_montage_landscape.mp4";
-        if (!heroVid.src.endsWith(newSrc)) {
+        const newSrc = isPortrait ? "assets/videos/hero_montage_portrait.mp4#t=12" : "assets/videos/hero_montage_landscape.mp4#t=12";
+        if (!heroVid.src.includes(newSrc)) {
           heroVid.src = newSrc;
         }
       };
