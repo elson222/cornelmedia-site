@@ -100,7 +100,21 @@
 
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Hero">
-  <video src="assets/videos/tiktok_6.mp4" class="hero-video" autoplay loop muted playsinline poster="assets/images/CMP_8363-Recovered.jpg" ontimeupdate="if(this.currentTime >= 6) { this.currentTime = 0; this.play(); }"></video>
+  <video id="hero-vid" class="hero-video" autoplay loop muted playsinline poster="assets/images/CMP_8363-Recovered.jpg"></video>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const heroVid = document.getElementById('hero-vid');
+      const setHeroVideo = () => {
+        const isPortrait = window.matchMedia("(max-aspect-ratio: 1/1)").matches;
+        const newSrc = isPortrait ? "assets/videos/hero_montage_portrait.mp4" : "assets/videos/hero_montage_landscape.mp4";
+        if (!heroVid.src.endsWith(newSrc)) {
+          heroVid.src = newSrc;
+        }
+      };
+      setHeroVideo();
+      window.addEventListener("resize", setHeroVideo);
+    });
+  </script>
   <div class="hero-vignette-left" aria-hidden="true"></div>
   <div class="hero-vignette-bottom" aria-hidden="true"></div>
   <div class="hero-vignette-top" aria-hidden="true"></div>
