@@ -100,10 +100,12 @@
 
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Hero">
-  <video id="hero-vid" class="hero-video" autoplay loop muted playsinline poster="assets/images/CMP_8363-Recovered.jpg"></video>
+  <img id="hero-img" src="assets/images/CMP_8363-Recovered.jpg" alt="Cornel Media Productions" class="hero-video" style="z-index: 1; transition: opacity 1.5s ease-in-out; opacity: 1;">
+  <video id="hero-vid" class="hero-video" loop muted playsinline poster="assets/images/CMP_8363-Recovered.jpg" style="z-index: 0;"></video>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const heroVid = document.getElementById('hero-vid');
+      const heroImg = document.getElementById('hero-img');
       const setHeroVideo = () => {
         const isPortrait = window.matchMedia("(max-aspect-ratio: 1/1)").matches;
         const newSrc = isPortrait ? "assets/videos/hero_montage_portrait.mp4#t=12" : "assets/videos/hero_montage_landscape.mp4#t=12";
@@ -113,6 +115,14 @@
       };
       setHeroVideo();
       window.addEventListener("resize", setHeroVideo);
+
+      setTimeout(() => {
+        heroVid.play().catch(e => console.log("Auto-play prevented", e));
+        heroImg.style.opacity = '0';
+        setTimeout(() => {
+          heroImg.style.display = 'none';
+        }, 1500); 
+      }, 2500);
     });
   </script>
   <div class="hero-vignette-left" aria-hidden="true"></div>
