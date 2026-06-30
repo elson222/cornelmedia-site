@@ -617,8 +617,10 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 0;
   pointer-events: none;
   will-change: transform;
-  -webkit-mask-image: radial-gradient(ellipse closest-side, black 30%, transparent 95%);
-  mask-image: radial-gradient(ellipse closest-side, black 30%, transparent 95%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%), linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+  mask-composite: intersect;
 }
 
 @media (min-width: 768px) {
@@ -626,11 +628,13 @@ h1, h2, h3, h4, h5, h6 {
     width: 60%;
     height: 80%;
     top: 10%;
-    left: 35%;
+    left: 40%;
     object-fit: cover;
     object-position: center;
-    -webkit-mask-image: radial-gradient(ellipse closest-side, black 30%, transparent 95%);
-    mask-image: radial-gradient(ellipse closest-side, black 30%, transparent 95%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 30%), linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to right, transparent 0%, black 30%), linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%);
+    mask-composite: intersect;
   }
 }
 
