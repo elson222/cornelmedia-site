@@ -100,12 +100,16 @@
 
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Hero">
-  <img id="hero-img" src="assets/images/hero-desktop.jpg" alt="Cornel Media Productions" class="hero-video" style="z-index: 1; transition: opacity 1.5s ease-in-out; opacity: 1;">
-  <video id="hero-vid" class="hero-video" loop muted playsinline poster="assets/images/hero-desktop.jpg" style="z-index: 0;"></video>
+  <!-- Mobile-Optimized Blur Intro Overlay -->
+  <div id="hero-blur-overlay" style="position: absolute; inset: 0; z-index: 2; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); opacity: 1; transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 1.2s ease-out, -webkit-backdrop-filter 1.2s ease-out; pointer-events: none; will-change: opacity, backdrop-filter; transform: translateZ(0);"></div>
+
+  <video id="hero-vid" class="hero-video" loop muted playsinline poster="assets/images/CMP_8363-Recovered.jpg" style="z-index: 0; opacity: 1;"></video>
+
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const heroVid = document.getElementById('hero-vid');
-      const heroImg = document.getElementById('hero-img');
+      const blurOverlay = document.getElementById('hero-blur-overlay');
+      
       const setHeroVideo = () => {
         const isPortrait = window.matchMedia("(max-aspect-ratio: 1/1)").matches;
         const newSrc = isPortrait ? "assets/videos/hero_montage_portrait.mp4#t=12" : "assets/videos/hero_montage_landscape.mp4#t=12";
@@ -116,13 +120,24 @@
       setHeroVideo();
       window.addEventListener("resize", setHeroVideo);
 
-      setTimeout(() => {
-        heroVid.play().catch(e => console.log("Auto-play prevented", e));
-        heroImg.style.opacity = '0';
-        setTimeout(() => {
-          heroImg.style.display = 'none';
-        }, 1500); 
-      }, 2500);
+      const dismissBlur = () => {
+        if (blurOverlay) {
+          blurOverlay.style.opacity = '0';
+          blurOverlay.style.backdropFilter = 'blur(0px)';
+          blurOverlay.style.webkitBackdropFilter = 'blur(0px)';
+          setTimeout(() => {
+            blurOverlay.style.display = 'none';
+          }, 1200);
+        }
+      };
+
+      // Fade out blur smoothly once video starts playing
+      heroVid.play().then(() => {
+        setTimeout(dismissBlur, 400);
+      }).catch(e => {
+        console.log("Auto-play fallback", e);
+        setTimeout(dismissBlur, 800);
+      });
     });
   </script>
   <div class="hero-vignette-left" aria-hidden="true"></div>
