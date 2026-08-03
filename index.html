@@ -100,17 +100,51 @@
 
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Hero">
-  <!-- Mobile-Optimized Blur Intro Overlay -->
-  <div id="hero-blur-overlay" style="position: absolute; inset: 0; z-index: 2; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); opacity: 1; transition: opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1), backdrop-filter 1.4s ease-out, -webkit-backdrop-filter 1.4s ease-out; pointer-events: none; will-change: opacity, backdrop-filter; transform: translateZ(0);"></div>
+  <!-- Failsafe Image Carousel (Cycles immediately until video is fully ready) -->
+  <div id="hero-slideshow" class="hero-video" style="z-index: 1; opacity: 1; transition: opacity 1.5s ease-out; pointer-events: none;">
+    <img src="assets/images/hero-desktop.jpg" class="hero-slide active" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 1; transition: opacity 1.2s ease-in-out;" alt="Cornel Media Productions">
+    <img src="assets/images/videography.jpg" class="hero-slide" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease-in-out;" alt="Videography Services">
+    <img src="assets/images/livestream.jpg" class="hero-slide" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease-in-out;" alt="Live Streaming Production">
+    <img src="assets/images/editing.jpg" class="hero-slide" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease-in-out;" alt="Post Production & Editing">
+  </div>
 
-  <video id="hero-vid" class="hero-video" loop muted playsinline poster="assets/images/CMP_8363-Recovered.jpg" style="z-index: 0; opacity: 1;"></video>
+  <!-- Mobile-Optimized Blur Intro Overlay -->
+  <div id="hero-blur-overlay" style="position: absolute; inset: 0; z-index: 2; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); opacity: 1; transition: opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1), backdrop-filter 1.4s ease-out, -webkit-backdrop-filter 1.4s ease-out; pointer-events: none; will-change: opacity, backdrop-filter; transform: translateZ(0);"></div>
+
+  <!-- Background Showreel Video -->
+  <video id="hero-vid" class="hero-video" loop muted playsinline preload="auto" style="z-index: 0; opacity: 0; transition: opacity 1.5s ease-in;"></video>
 
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const heroVid = document.getElementById('hero-vid');
       const blurOverlay = document.getElementById('hero-blur-overlay');
-      let isBlurDismissed = false;
+      const slideshow = document.getElementById('hero-slideshow');
+      const slides = slideshow ? slideshow.querySelectorAll('.hero-slide') : [];
+      let currentSlide = 0;
+      let slideshowInterval = null;
+      let isVideoActive = false;
 
+      // 1. Start Failsafe Image Carousel Immediately
+      if (slides.length > 1) {
+        slideshowInterval = setInterval(() => {
+          if (isVideoActive) return; // Stop cycling once video takes over
+          slides[currentSlide].style.opacity = '0';
+          currentSlide = (currentSlide + 1) % slides.length;
+          slides[currentSlide].style.opacity = '1';
+        }, 3200);
+      }
+
+      // 2. Dismiss Blur Overlay on Load
+      setTimeout(() => {
+        if (blurOverlay) {
+          blurOverlay.style.opacity = '0';
+          blurOverlay.style.backdropFilter = 'blur(0px)';
+          blurOverlay.style.webkitBackdropFilter = 'blur(0px)';
+          setTimeout(() => blurOverlay.style.display = 'none', 1400);
+        }
+      }, 500);
+
+      // 3. Set Video Source (#t=5)
       const setHeroVideo = () => {
         const isPortrait = window.matchMedia("(max-aspect-ratio: 1/1)").matches;
         const targetSrc = isPortrait ? "assets/videos/hero_montage_portrait.mp4#t=5" : "assets/videos/hero_montage_landscape.mp4#t=5";
@@ -122,48 +156,47 @@
       setHeroVideo();
       window.addEventListener("resize", setHeroVideo);
 
-      const dismissBlur = () => {
-        if (blurOverlay && !isBlurDismissed) {
-          isBlurDismissed = true;
-          blurOverlay.style.opacity = '0';
-          blurOverlay.style.backdropFilter = 'blur(0px)';
-          blurOverlay.style.webkitBackdropFilter = 'blur(0px)';
-          setTimeout(() => {
-            blurOverlay.style.display = 'none';
-          }, 1400);
+      // 4. Smooth Transition from Image Slideshow to Video once Video is Ready & Playing
+      const transitionToVideo = () => {
+        if (isVideoActive) return;
+        if (heroVid.readyState >= 2 && !heroVid.paused) {
+          isVideoActive = true;
+          heroVid.style.opacity = '1';
+          if (slideshow) {
+            slideshow.style.opacity = '0';
+            setTimeout(() => {
+              slideshow.style.display = 'none';
+              if (slideshowInterval) clearInterval(slideshowInterval);
+            }, 1500);
+          }
         }
       };
 
-      // Ensure video starts at 5 seconds and loops from 5 seconds
       heroVid.addEventListener("loadedmetadata", function() {
-        if (heroVid.currentTime < 5) {
-          heroVid.currentTime = 5;
-        }
+        if (heroVid.currentTime < 5) heroVid.currentTime = 5;
       });
 
       heroVid.addEventListener("timeupdate", function() {
-        // Loop back to 5 seconds when reaching end
+        // Custom 5s Loop
         if (heroVid.duration && heroVid.currentTime >= heroVid.duration - 0.3) {
           heroVid.currentTime = 5;
           heroVid.play().catch(() => {});
         }
-        // Seamless transition: dismiss blur as soon as video playback reaches 5s frames
-        if (heroVid.currentTime >= 5 && !isBlurDismissed) {
-          dismissBlur();
+        // Check if video is playing smoothly
+        if (heroVid.currentTime >= 5 && !heroVid.paused) {
+          transitionToVideo();
         }
       });
 
-      // Start video playback immediately while under the blur overlay
+      heroVid.addEventListener("playing", transitionToVideo);
+
+      // Try autoplaying immediately in background
       heroVid.currentTime = 5;
-      const playPromise = heroVid.play();
-      if (playPromise !== undefined) {
-        playPromise.then(() => {
-          setTimeout(dismissBlur, 600);
-        }).catch(err => {
-          console.log("Autoplay fallback:", err);
-          setTimeout(dismissBlur, 1000);
-        });
-      }
+      heroVid.play().then(() => {
+        setTimeout(transitionToVideo, 800);
+      }).catch(err => {
+        console.log("Autoplay fallback - Image slideshow active:", err);
+      });
     });
   </script>
   <div class="hero-vignette-left" aria-hidden="true"></div>
