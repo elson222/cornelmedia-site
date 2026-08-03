@@ -101,7 +101,7 @@
 <!-- ── HERO ── -->
 <section class="hero" aria-label="Hero">
   <!-- Mobile-Optimized Blur Intro Overlay -->
-  <div id="hero-blur-overlay" style="position: absolute; inset: 0; z-index: 2; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); opacity: 1; transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), backdrop-filter 1.2s ease-out, -webkit-backdrop-filter 1.2s ease-out; pointer-events: none; will-change: opacity, backdrop-filter; transform: translateZ(0);"></div>
+  <div id="hero-blur-overlay" style="position: absolute; inset: 0; z-index: 2; background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); opacity: 1; transition: opacity 1.4s cubic-bezier(0.25, 1, 0.5, 1), backdrop-filter 1.4s ease-out, -webkit-backdrop-filter 1.4s ease-out; pointer-events: none; will-change: opacity, backdrop-filter; transform: translateZ(0);"></div>
 
   <video id="hero-vid" class="hero-video" loop muted playsinline poster="assets/images/CMP_8363-Recovered.jpg" style="z-index: 0; opacity: 1;"></video>
 
@@ -109,35 +109,61 @@
     document.addEventListener("DOMContentLoaded", function() {
       const heroVid = document.getElementById('hero-vid');
       const blurOverlay = document.getElementById('hero-blur-overlay');
-      
+      let isBlurDismissed = false;
+
       const setHeroVideo = () => {
         const isPortrait = window.matchMedia("(max-aspect-ratio: 1/1)").matches;
-        const newSrc = isPortrait ? "assets/videos/hero_montage_portrait.mp4#t=12" : "assets/videos/hero_montage_landscape.mp4#t=12";
-        if (!heroVid.src.includes(newSrc)) {
-          heroVid.src = newSrc;
+        const targetSrc = isPortrait ? "assets/videos/hero_montage_portrait.mp4#t=5" : "assets/videos/hero_montage_landscape.mp4#t=5";
+        if (!heroVid.src.includes(targetSrc.split('#')[0])) {
+          heroVid.src = targetSrc;
+          heroVid.currentTime = 5;
         }
       };
       setHeroVideo();
       window.addEventListener("resize", setHeroVideo);
 
       const dismissBlur = () => {
-        if (blurOverlay) {
+        if (blurOverlay && !isBlurDismissed) {
+          isBlurDismissed = true;
           blurOverlay.style.opacity = '0';
           blurOverlay.style.backdropFilter = 'blur(0px)';
           blurOverlay.style.webkitBackdropFilter = 'blur(0px)';
           setTimeout(() => {
             blurOverlay.style.display = 'none';
-          }, 1200);
+          }, 1400);
         }
       };
 
-      // Fade out blur smoothly once video starts playing
-      heroVid.play().then(() => {
-        setTimeout(dismissBlur, 400);
-      }).catch(e => {
-        console.log("Auto-play fallback", e);
-        setTimeout(dismissBlur, 800);
+      // Ensure video starts at 5 seconds and loops from 5 seconds
+      heroVid.addEventListener("loadedmetadata", function() {
+        if (heroVid.currentTime < 5) {
+          heroVid.currentTime = 5;
+        }
       });
+
+      heroVid.addEventListener("timeupdate", function() {
+        // Loop back to 5 seconds when reaching end
+        if (heroVid.duration && heroVid.currentTime >= heroVid.duration - 0.3) {
+          heroVid.currentTime = 5;
+          heroVid.play().catch(() => {});
+        }
+        // Seamless transition: dismiss blur as soon as video playback reaches 5s frames
+        if (heroVid.currentTime >= 5 && !isBlurDismissed) {
+          dismissBlur();
+        }
+      });
+
+      // Start video playback immediately while under the blur overlay
+      heroVid.currentTime = 5;
+      const playPromise = heroVid.play();
+      if (playPromise !== undefined) {
+        playPromise.then(() => {
+          setTimeout(dismissBlur, 600);
+        }).catch(err => {
+          console.log("Autoplay fallback:", err);
+          setTimeout(dismissBlur, 1000);
+        });
+      }
     });
   </script>
   <div class="hero-vignette-left" aria-hidden="true"></div>
