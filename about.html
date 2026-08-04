@@ -29,54 +29,175 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "LocalBusiness",
+        "@type": ["LocalBusiness", "ProfessionalService", "Corporation"],
+        "@id": "https://cornel.media/#organization",
         "name": "Cornel Media Productions",
-        "image": "https://cornel.media/assets/images/logo.png",
-        "logo": "https://cornel.media/assets/images/logo.png",
-        "description": "Ghana's premier creative and digital agency. Premium photography, videography, drone services, and social media management.",
+        "legalName": "Cornel Media Productions Ltd.",
+        "alternateName": ["Cornel Media", "CMP", "Cornel Media Ghana"],
         "url": "https://cornel.media",
+        "logo": "https://cornel.media/assets/images/logo.png",
+        "image": "https://cornel.media/assets/images/hero-desktop.jpg",
+        "description": "Ghana's premier media production, videography, photography, aerial drone mapping, and creative digital agency based in East Legon, Accra and Tarkwa.",
         "telephone": "+233500020168",
         "email": "info@cornel.media",
+        "priceRange": "$$",
         "address": [
           {
             "@type": "PostalAddress",
-            "addressLocality": "East Legon, Accra",
+            "streetAddress": "East Legon",
+            "addressLocality": "Accra",
             "addressRegion": "Greater Accra",
             "addressCountry": "GH"
           },
           {
             "@type": "PostalAddress",
+            "streetAddress": "Tarkwa Central",
             "addressLocality": "Tarkwa",
             "addressRegion": "Western Region",
             "addressCountry": "GH"
           }
         ],
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "5.6358",
+          "longitude": "-0.1585"
+        },
+        "areaServed": [
+          "Ghana",
+          "Accra",
+          "Tarkwa",
+          "Kumasi",
+          "Takoradi",
+          "West Africa",
+          "Worldwide"
+        ],
+        "knowsAbout": [
+          "Media Production",
+          "Videography",
+          "Photography",
+          "Drone Piloting",
+          "Drone Mapping",
+          "4K Orthomosaic Surveying",
+          "Live Streaming",
+          "Multi-Cam Broadcasting",
+          "Web Development",
+          "AI Automation",
+          "Brand Strategy",
+          "Digital Systems"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Media & Creative Tech Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Cinematography & Video Production",
+                "description": "High-end 4K commercial videos, music videos, brand documentaries, and corporate event videography."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Professional Photography",
+                "description": "Executive portraits, commercial campaigns, fashion shows, and event photography."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Aerial Drone Services & Drone Mapping",
+                "description": "4K aerial videography, orthomosaic mapping, topography surveying, and real estate site inspection."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Multi-Cam Live Streaming",
+                "description": "High-reliability broadcast live streaming for corporate AGMs, summits, weddings, and hybrid events."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Web & Custom App Development",
+                "description": "Custom corporate websites, e-commerce stores, and high-performance web applications."
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "AI Automation & Workflow Integration",
+                "description": "Smart AI tools integration, business process automation, and system optimization."
+              }
+            }
+          ]
+        },
         "founder": {
           "@type": "Person",
           "name": "Cornelius Quayson",
-          "jobTitle": "Founder & Creative Director",
+          "jobTitle": "Founder, Tech Director & Creative Director",
+          "almaMater": "BSc Computer Science & Engineering",
           "image": "https://cornel.media/assets/images/CMP_8363-Recovered.jpg",
-          "url": "https://cornel.media",
           "sameAs": [
             "https://www.instagram.com/quaysoncornel",
             "https://gh.linkedin.com/in/cornelius-quayson-49a170271"
           ]
         },
+        "member": [
+          {
+            "@type": "Person",
+            "name": "Foster K. Boadu",
+            "jobTitle": "Creative & Production Crew"
+          },
+          {
+            "@type": "Person",
+            "name": "Mr. Casper",
+            "jobTitle": "Production Crew"
+          },
+          {
+            "@type": "Person",
+            "name": "P.Kay (Paa Kwesi)",
+            "jobTitle": "Cinematographer & Production Crew"
+          },
+          {
+            "@type": "Person",
+            "name": "Maame Esi",
+            "jobTitle": "Creative Crew"
+          },
+          {
+            "@type": "Person",
+            "name": "Shadrack Antoh",
+            "jobTitle": "Production Crew"
+          }
+        ],
         "sameAs": [
+          "https://www.youtube.com/@quaysoncornel",
           "https://www.tiktok.com/@cornelmedia",
           "https://www.instagram.com/quaysoncornel",
+          "https://www.facebook.com/people/Cornel-Media/61574710385491/",
           "https://gh.linkedin.com/in/cornelius-quayson-49a170271"
-        ],
-        "priceRange": "GH?"
+        ]
       },
       {
         "@type": "WebSite",
+        "@id": "https://cornel.media/#website",
+        "url": "https://cornel.media",
         "name": "Cornel Media Productions",
-        "url": "https://cornel.media"
+        "publisher": {
+          "@id": "https://cornel.media/#organization"
+        }
       }
     ]
   }
   </script>
+  <link rel="help" type="text/plain" href="llms.txt" title="LLM Agent Knowledge File">
 </head>
 <body>
 <!-- -- MOBILE TOP LOGO -- -->

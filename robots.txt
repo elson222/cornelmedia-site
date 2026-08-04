@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Explicitly allow AI search engine crawlers to index rich text
+# Directives for AI Search Agents and LLM Crawlers
 User-agent: GPTBot
 Allow: /
 
@@ -11,22 +11,13 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-User-agent: PerplexityBot
-Allow: /
-
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: anthropic-ai
+User-agent: PerplexityBot
 Allow: /
 
-User-agent: OmgiliBot
-Allow: /
-
-User-agent: FacebookBot
-Allow: /
-
-User-agent: Bingbot
+User-agent: Bytespider
 Allow: /
 
 Sitemap: https://cornel.media/sitemap.xml
