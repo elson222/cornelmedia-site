@@ -1,14 +1,13 @@
-﻿include:
+﻿theme: jekyll-theme-primer
+include:
   - google97f16f0fa82b3862.html
+  - index.html
+  - about.html
+  - services.html
+  - portfolio.html
+  - pricing.html
+  - contact.html
+  - booking.html
+  - privacy-policy.html
+  - terms.html
   - .htaccess
-
-exclude:
-  - index.php
-  - about.php
-  - services.php
-  - portfolio.php
-  - pricing.php
-  - contact.php
-  - booking.php
-  - privacy-policy.php
-  - terms.php
