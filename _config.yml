@@ -1,3 +1,14 @@
 ﻿include:
   - google97f16f0fa82b3862.html
   - .htaccess
+
+exclude:
+  - index.php
+  - about.php
+  - services.php
+  - portfolio.php
+  - pricing.php
+  - contact.php
+  - booking.php
+  - privacy-policy.php
+  - terms.php
