@@ -1,13 +1,1 @@
-﻿theme: jekyll-theme-primer
-include:
-  - google97f16f0fa82b3862.html
-  - index.html
-  - about.html
-  - services.html
-  - portfolio.html
-  - pricing.html
-  - contact.html
-  - booking.html
-  - privacy-policy.html
-  - terms.html
-  - .htaccess
+﻿# Disable Jekyll processing for static site
