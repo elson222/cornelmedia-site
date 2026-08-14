@@ -1,23 +1,31 @@
 User-agent: *
+Disallow: /admin/
+Disallow: /admin/*
 Allow: /
 
 # Directives for AI Search Agents and LLM Crawlers
 User-agent: GPTBot
+Disallow: /admin/
 Allow: /
 
 User-agent: ChatGPT-User
+Disallow: /admin/
 Allow: /
 
 User-agent: Google-Extended
+Disallow: /admin/
 Allow: /
 
 User-agent: ClaudeBot
+Disallow: /admin/
 Allow: /
 
 User-agent: PerplexityBot
+Disallow: /admin/
 Allow: /
 
 User-agent: Bytespider
+Disallow: /admin/
 Allow: /
 
 Sitemap: https://cornel.media/sitemap.xml

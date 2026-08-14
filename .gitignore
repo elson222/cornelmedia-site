@@ -1,0 +1,40 @@
+# Environment Variables and Credentials
+.env
+.env.*
+*.env
+credentials.json
+secrets.json
+service-account*.json
+*.pem
+*.key
+
+# Executables & Binaries
+*.exe
+*.bin
+*.dll
+*.so
+*.dylib
+
+# OS and Editor Metadata
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node & Package Managers
+node_modules/
+package-lock.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Temporary & Build Files
+*.tmp
+*.bak
+*.log
+temp_*
+dist/
+build/
+.cache/

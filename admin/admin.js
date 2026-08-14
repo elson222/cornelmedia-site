@@ -14,6 +14,17 @@ import {
 const CLOUDINARY_CLOUD_NAME = 'davbbwdbm';
 const CLOUDINARY_UPLOAD_PRESET = 'cornelmedia_uploads';
 
+// ══ Security Helper: HTML Entity Escaping ══════════════════
+function escapeHtml(str) {
+  if (typeof str !== 'string') return '';
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 // ══ Global State ══════════════════════════════════════════
 let currentSection = 'overview';
 let currentEditId = null;
@@ -298,16 +309,24 @@ function renderCrewList(members) {
   members.forEach(m => {
     const card = document.createElement('div');
     card.className = 'item-card';
+    const nameEsc = escapeHtml(m.name || '—');
+    const roleEsc = escapeHtml(m.role || '');
+    const bioEsc  = escapeHtml(m.bio || '');
+    const photoUrlEsc = m.photoUrl ? encodeURI(m.photoUrl) : '';
+    const initialEsc = escapeHtml((m.name || '?')[0]);
+    const idEsc = encodeURIComponent(m.id);
+    const rawNameClean = (m.name || '').replace(/['"\\]/g, ' ');
+
     card.innerHTML = `
-      <div class="item-card-img">${m.photoUrl ? `<img src="${m.photoUrl}" alt="${m.name}" style="width:100%;height:100%;object-fit:cover">` : `<div style="width:80px;height:80px;border-radius:50%;background:rgba(232,160,48,0.15);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#E8A030">${(m.name||'?')[0]}</div>`}</div>
+      <div class="item-card-img">${photoUrlEsc ? `<img src="${photoUrlEsc}" alt="${nameEsc}" style="width:100%;height:100%;object-fit:cover">` : `<div style="width:80px;height:80px;border-radius:50%;background:rgba(232,160,48,0.15);display:flex;align-items:center;justify-content:center;font-size:2rem;color:#E8A030">${initialEsc}</div>`}</div>
       <div class="item-card-body">
-        <div class="item-card-name">${m.name||'—'}</div>
-        <div class="item-card-meta">${m.role||''}</div>
-        <div class="item-card-bio">${m.bio||''}</div>
+        <div class="item-card-name">${nameEsc}</div>
+        <div class="item-card-meta">${roleEsc}</div>
+        <div class="item-card-bio">${bioEsc}</div>
       </div>
       <div class="item-card-actions">
-        <button class="btn-icon btn-icon-edit" onclick="editCrew('${m.id}')" title="Edit"><i class="fas fa-edit"></i></button>
-        <button class="btn-icon btn-icon-delete" onclick="deleteCrew('${m.id}', '${(m.name||'').replace(/'/g,"\\'")}', '${m.photoUrl||''}')" title="Delete"><i class="fas fa-trash"></i></button>
+        <button class="btn-icon btn-icon-edit" onclick="editCrew('${idEsc}')" title="Edit"><i class="fas fa-edit"></i></button>
+        <button class="btn-icon btn-icon-delete" onclick="deleteCrew('${idEsc}', '${rawNameClean}', '${photoUrlEsc}')" title="Delete"><i class="fas fa-trash"></i></button>
       </div>`;
     grid.appendChild(card);
   });
@@ -416,12 +435,18 @@ function renderPortfolioGrid(items) {
   filtered.forEach(item => {
     const el = document.createElement('div');
     el.className = 'portfolio-admin-item';
+    const titleEsc = escapeHtml(item.title || '');
+    const catEsc = escapeHtml(item.category || '');
+    const imgUrlEsc = item.imageUrl ? encodeURI(item.imageUrl) : '';
+    const idEsc = encodeURIComponent(item.id);
+    const rawTitleClean = (item.title || '').replace(/['"\\]/g, ' ');
+
     el.innerHTML = `
-      <img src="${item.imageUrl}" alt="${item.title||''}" loading="lazy">
-      ${item.category ? `<div class="portfolio-admin-badge">${item.category}</div>` : ''}
+      <img src="${imgUrlEsc}" alt="${titleEsc}" loading="lazy">
+      ${catEsc ? `<div class="portfolio-admin-badge">${catEsc}</div>` : ''}
       <div class="portfolio-admin-overlay">
-        <button class="btn-icon btn-icon-edit" onclick="editPortfolioItem('${item.id}')" title="Edit"><i class="fas fa-edit"></i></button>
-        <button class="btn-icon btn-icon-delete" onclick="deletePortfolioItem('${item.id}', '${(item.title||'').replace(/'/g,"\\'")}', '${item.imageUrl||''}')" title="Delete"><i class="fas fa-trash"></i></button>
+        <button class="btn-icon btn-icon-edit" onclick="editPortfolioItem('${idEsc}')" title="Edit"><i class="fas fa-edit"></i></button>
+        <button class="btn-icon btn-icon-delete" onclick="deletePortfolioItem('${idEsc}', '${rawTitleClean}', '${imgUrlEsc}')" title="Delete"><i class="fas fa-trash"></i></button>
       </div>`;
     container.appendChild(el);
   });
@@ -555,15 +580,20 @@ async function loadVideos() {
     videos.forEach(v => {
       const el = document.createElement('div');
       el.className = 'list-item';
+      const titleEsc = escapeHtml(v.title || 'Untitled');
+      const ytIdEsc = escapeHtml(v.youtubeId || '—');
+      const idEsc = encodeURIComponent(v.id);
+      const rawTitleClean = (v.title || '').replace(/['"\\]/g, ' ');
+
       el.innerHTML = `
         <div class="list-item-icon"><i class="fab fa-youtube" style="color:#ff0000"></i></div>
         <div class="list-item-info">
-          <div class="list-item-title">${v.title||'Untitled'}</div>
-          <div class="list-item-meta">ID: ${v.youtubeId||'—'} &nbsp;·&nbsp; Order: ${v.order ?? 0}</div>
+          <div class="list-item-title">${titleEsc}</div>
+          <div class="list-item-meta">ID: ${ytIdEsc} &nbsp;·&nbsp; Order: ${v.order ?? 0}</div>
         </div>
         <div class="list-item-actions">
-          <button class="btn-icon btn-icon-edit" onclick="editVideo('${v.id}')" title="Edit"><i class="fas fa-edit"></i></button>
-          <button class="btn-icon btn-icon-delete" onclick="deleteVideo('${v.id}', '${(v.title||'').replace(/'/g,"\\'")}' )" title="Delete"><i class="fas fa-trash"></i></button>
+          <button class="btn-icon btn-icon-edit" onclick="editVideo('${idEsc}')" title="Edit"><i class="fas fa-edit"></i></button>
+          <button class="btn-icon btn-icon-delete" onclick="deleteVideo('${idEsc}', '${rawTitleClean}' )" title="Delete"><i class="fas fa-trash"></i></button>
         </div>`;
       container.appendChild(el);
     });
@@ -649,15 +679,21 @@ async function loadServices() {
     items.forEach(s => {
       const el = document.createElement('div');
       el.className = 'list-item';
+      const titleEsc = escapeHtml(s.title || '—');
+      const iconEsc = escapeHtml(s.icon || 'fas fa-star');
+      const descSnippet = escapeHtml((s.description || '').slice(0, 70) + (s.description?.length > 70 ? '…' : ''));
+      const idEsc = encodeURIComponent(s.id);
+      const rawTitleClean = (s.title || '').replace(/['"\\]/g, ' ');
+
       el.innerHTML = `
-        <div class="list-item-icon"><i class="${s.icon||'fas fa-star'}"></i></div>
+        <div class="list-item-icon"><i class="${iconEsc}"></i></div>
         <div class="list-item-info">
-          <div class="list-item-title">${s.title||'—'}</div>
-          <div class="list-item-meta">${(s.description||'').slice(0,70)}${s.description?.length > 70 ? '…' : ''}</div>
+          <div class="list-item-title">${titleEsc}</div>
+          <div class="list-item-meta">${descSnippet}</div>
         </div>
         <div class="list-item-actions">
-          <button class="btn-icon btn-icon-edit" onclick="editService('${s.id}')" title="Edit"><i class="fas fa-edit"></i></button>
-          <button class="btn-icon btn-icon-delete" onclick="deleteService('${s.id}', '${(s.title||'').replace(/'/g,"\\'")}' )" title="Delete"><i class="fas fa-trash"></i></button>
+          <button class="btn-icon btn-icon-edit" onclick="editService('${idEsc}')" title="Edit"><i class="fas fa-edit"></i></button>
+          <button class="btn-icon btn-icon-delete" onclick="deleteService('${idEsc}', '${rawTitleClean}' )" title="Delete"><i class="fas fa-trash"></i></button>
         </div>`;
       container.appendChild(el);
     });
@@ -723,15 +759,21 @@ async function loadPricing() {
     items.forEach(p => {
       const el = document.createElement('div');
       el.className = 'list-item';
+      const nameEsc = escapeHtml(p.name || '—');
+      const priceEsc = escapeHtml(p.price || '—');
+      const periodEsc = escapeHtml(p.period || '');
+      const idEsc = encodeURIComponent(p.id);
+      const rawNameClean = (p.name || '').replace(/['"\\]/g, ' ');
+
       el.innerHTML = `
         <div class="list-item-icon"><i class="fas fa-tag" style="color:${p.featured?'#E8A030':'inherit'}"></i></div>
         <div class="list-item-info">
-          <div class="list-item-title">${p.name||'—'} ${p.featured ? '<span style="color:#E8A030;font-size:0.75rem;font-weight:700"> ★ Featured</span>' : ''}</div>
-          <div class="list-item-meta">GH₵${p.price||'—'} ${p.period||''}</div>
+          <div class="list-item-title">${nameEsc} ${p.featured ? '<span style="color:#E8A030;font-size:0.75rem;font-weight:700"> ★ Featured</span>' : ''}</div>
+          <div class="list-item-meta">GH₵${priceEsc} ${periodEsc}</div>
         </div>
         <div class="list-item-actions">
-          <button class="btn-icon btn-icon-edit" onclick="editPricing('${p.id}')" title="Edit"><i class="fas fa-edit"></i></button>
-          <button class="btn-icon btn-icon-delete" onclick="deletePricing('${p.id}', '${(p.name||'').replace(/'/g,"\\'")}' )" title="Delete"><i class="fas fa-trash"></i></button>
+          <button class="btn-icon btn-icon-edit" onclick="editPricing('${idEsc}')" title="Edit"><i class="fas fa-edit"></i></button>
+          <button class="btn-icon btn-icon-delete" onclick="deletePricing('${idEsc}', '${rawNameClean}' )" title="Delete"><i class="fas fa-trash"></i></button>
         </div>`;
       container.appendChild(el);
     });
@@ -809,15 +851,21 @@ async function loadTestimonials() {
     items.forEach(t => {
       const el = document.createElement('div');
       el.className = 'list-item';
+      const authorEsc = escapeHtml(t.authorName || '—');
+      const companyEsc = escapeHtml(t.company || '');
+      const quoteSnippet = escapeHtml((t.quote || '').slice(0, 70) + ((t.quote || '').length > 70 ? '…' : ''));
+      const idEsc = encodeURIComponent(t.id);
+      const rawAuthorClean = (t.authorName || '').replace(/['"\\]/g, ' ');
+
       el.innerHTML = `
         <div class="list-item-icon"><i class="fas fa-quote-left"></i></div>
         <div class="list-item-info">
-          <div class="list-item-title">${t.authorName||'—'} <span style="font-weight:400;color:var(--admin-text-muted)">${t.company||''}</span></div>
-          <div class="list-item-meta">${(t.quote||'').slice(0,70)}${(t.quote||'').length>70?'…':''}</div>
+          <div class="list-item-title">${authorEsc} <span style="font-weight:400;color:var(--admin-text-muted)">${companyEsc}</span></div>
+          <div class="list-item-meta">${quoteSnippet}</div>
         </div>
         <div class="list-item-actions">
-          <button class="btn-icon btn-icon-edit" onclick="editTestimonial('${t.id}')" title="Edit"><i class="fas fa-edit"></i></button>
-          <button class="btn-icon btn-icon-delete" onclick="deleteTestimonial('${t.id}', '${(t.authorName||'').replace(/'/g,"\\'")}' )" title="Delete"><i class="fas fa-trash"></i></button>
+          <button class="btn-icon btn-icon-edit" onclick="editTestimonial('${idEsc}')" title="Edit"><i class="fas fa-edit"></i></button>
+          <button class="btn-icon btn-icon-delete" onclick="deleteTestimonial('${idEsc}', '${rawAuthorClean}' )" title="Delete"><i class="fas fa-trash"></i></button>
         </div>`;
       container.appendChild(el);
     });
@@ -884,11 +932,17 @@ async function loadClients() {
     items.forEach(c => {
       const card = document.createElement('div');
       card.className = 'client-admin-card';
+      const nameEsc = escapeHtml(c.name || '—');
+      const logoUrlEsc = c.logoUrl ? encodeURI(c.logoUrl) : '';
+      const initialEsc = escapeHtml((c.name || '?')[0]);
+      const idEsc = encodeURIComponent(c.id);
+      const rawNameClean = (c.name || '').replace(/['"\\]/g, ' ');
+
       card.innerHTML = `
-        ${c.logoUrl ? `<img src="${c.logoUrl}" alt="${c.name||''}" loading="lazy">` : `<div style="font-size:1.25rem;font-weight:800;color:#333">${(c.name||'?')[0]}</div>`}
-        <div class="client-admin-name">${c.name||'—'}</div>
+        ${logoUrlEsc ? `<img src="${logoUrlEsc}" alt="${nameEsc}" loading="lazy">` : `<div style="font-size:1.25rem;font-weight:800;color:#333">${initialEsc}</div>`}
+        <div class="client-admin-name">${nameEsc}</div>
         <div class="client-admin-actions">
-          <button class="btn-icon btn-icon-delete" onclick="deleteClient('${c.id}', '${(c.name||'').replace(/'/g,"\\'")}', '${c.logoUrl||''}')" title="Delete" style="background:rgba(239,68,68,0.1);color:#ef4444"><i class="fas fa-trash"></i></button>
+          <button class="btn-icon btn-icon-delete" onclick="deleteClient('${idEsc}', '${rawNameClean}', '${logoUrlEsc}')" title="Delete" style="background:rgba(239,68,68,0.1);color:#ef4444"><i class="fas fa-trash"></i></button>
         </div>`;
       grid.appendChild(card);
     });
